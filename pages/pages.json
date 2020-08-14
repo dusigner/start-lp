@@ -1,0 +1,35 @@
+{
+  "routes": {
+    "store/lancamentorefri": {
+      "path": "/eletrodomesticos/lancamentorefri"
+    }
+  },
+  "pages": {
+    "store/lancamentorefri": [
+      {
+        "name": "Brastemp",
+        "template": "lancamentorefri"
+      }
+    ]
+  },
+  "templates": {
+    "lancamentorefri": {
+      "component": "Index",
+      "extensions": {
+        "header": {
+          "component": "brastemp.header/Header"
+        },
+        "heroCarousel": {
+          "component": "brastemp.components/HeroCarousel"
+        },
+        "footer": {
+          "component": "brastemp.footer/Footer"
+        }
+      },
+      "props": {
+        "title": "Lançamento Refrigerador Jupter!",
+        "description": "A mais nova Lançamento Refrigerador Jupter"
+      }
+    }
+  }
+}

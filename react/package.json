@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "apollo-client": "^2.4.7",
+    "apollo-client-preset": "^1.0.8",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.7.3",
+    "react-apollo": "^2.3.2",
+    "react-headroom": "^3.0.0",
+    "react-lazyload": "^2.6.5",
+    "react-responsive": "^8.0.3",
+    "react-responsive-picture": "^3.2.2"
+  },
+  "license": "MIT",
+  "devDependencies": {}
+}

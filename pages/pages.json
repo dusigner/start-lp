@@ -2,6 +2,12 @@
   "routes": {
     "store/lancamentorefri": {
       "path": "/eletrodomesticos/lancamentorefri"
+    },
+    "store/lancamentorefrivideo": {
+      "path": "/eletrodomesticos/lancamentorefrivideo"
+    },
+    "store/lancamentorefriespecificacoes": {
+      "path": "/eletrodomesticos/lancamentorefriespecificacoes"
     }
   },
   "pages": {
@@ -10,11 +16,59 @@
         "name": "Brastemp",
         "template": "lancamentorefri"
       }
+    ],
+    "store/lancamentorefrivideo": [
+      {
+        "name": "Brastemp",
+        "template": "lancamentorefrivideo"
+      }
+    ],
+    "store/lancamentorefriespecificacoes": [
+      {
+        "name": "Brastemp",
+        "template": "lancamentorefriespecificacoes"
+      }
     ]
   },
   "templates": {
     "lancamentorefri": {
-      "component": "Index",
+      "component": "Lancamentorefri",
+      "extensions": {
+        "header": {
+          "component": "brastemp.header/Header"
+        },
+        "heroCarousel": {
+          "component": "brastemp.components/HeroCarousel"
+        },
+        "footer": {
+          "component": "brastemp.footer/Footer"
+        }
+      },
+      "props": {
+        "title": "Lançamento Refrigerador Jupter!",
+        "description": "A mais nova Lançamento Refrigerador Jupter"
+      }
+    },
+    "lancamentorefrivideo": {
+      "component": "Lancamentorefrivideo",
+      "extensions": {
+        "header": {
+          "component": "brastemp.header/Header"
+        },
+        "heroCarousel": {
+          "component": "brastemp.components/HeroCarousel"
+        },
+        "footer": {
+          "component": "brastemp.footer/Footer"
+        }
+      },
+      "props": {
+        "title": "Lançamento Refrigerador Jupter!",
+        "description": "A mais nova Lançamento Refrigerador Jupter"
+      }
+    },
+    "lancamentorefriespecificacoes": {
+      "component": "Lancamentorefriespecificacoes",
       "extensions": {
         "header": {
           "component": "brastemp.header/Header"

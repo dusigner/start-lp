@@ -1,0 +1,26 @@
+html {
+    scroll-behavior: smooth;
+}
+.refriespecificacoes .headroom {
+    top: 100px;
+    left: 0;
+    right: 0;
+    z-index: 5 !important;
+}
+.refriespecificacoes .headroom--unfixed {
+    position: relative;
+    transform: translateY(-100px);
+}
+.refriespecificacoes .headroom--scrolled {
+    transition: transform 200ms ease-in-out;
+}
+.refriespecificacoes .headroom--unpinned {
+    position: fixed;
+    transform: translate3d(0px, -172%, 0px);
+    transition: all 0.5s ease-in-out 0s;
+}
+.refriespecificacoes .headroom--pinned {
+    position: fixed;
+    transform: translate3d(0px, 0px, 0px);
+    transition: all 0.5s ease-in-out 0s;
+}

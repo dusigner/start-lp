@@ -1,0 +1,32 @@
+.scrollvideo {
+    background: black;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    position: fixed;
+}
+.scrollvideo__wrap {
+    width: 95%;
+}
+@media only screen and (min-width: 1800px) {
+    .scrollvideo__wrap {
+        width: 70%;
+    }
+}
+
+#video {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.steps {
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    background-color: rgba(red, green, blue, 0.3);
+    color: white;
+    position: relative;
+    z-index: 5;
+}
+

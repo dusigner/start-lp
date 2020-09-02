@@ -4,11 +4,15 @@
     "apollo-client-preset": "^1.0.8",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.7.3",
+    "gsap": "^3.5.1",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-apollo": "^2.3.2",
+    "react-gsap": "^2.2.1",
     "react-headroom": "^3.0.0",
     "react-lazyload": "^2.6.5",
     "react-responsive": "^8.0.3",
-    "react-responsive-picture": "^3.2.2"
+    "react-responsive-picture": "^3.2.2",
+    "react-video-scroll": "^1.0.1"
   },
   "license": "MIT",
   "devDependencies": {}

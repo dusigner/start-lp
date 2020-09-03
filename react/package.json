@@ -5,6 +5,7 @@
     "graphql": "^14.0.2",
     "graphql-tag": "^2.7.3",
     "gsap": "^3.5.1",
+    "jquery": "^3.5.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-apollo": "^2.3.2",
     "react-gsap": "^2.2.1",

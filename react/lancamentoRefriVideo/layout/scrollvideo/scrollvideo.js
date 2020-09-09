@@ -145,7 +145,7 @@ class Scrollvideo extends React.Component {
                     </div>
                     <div className="scene2__content-mouse">
                         Role para ver mais
-                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
                         <path d="M1.41 0.590088L6 5.17009L10.59 0.590088L12 2.00009L6 8.00009L0 2.00009L1.41 0.590088Z" fill="white"/>
                         </svg>
                     </div>
@@ -166,7 +166,7 @@ class Scrollvideo extends React.Component {
                 </div>
             </div>
             <video className="videobg" preload="true" muted>
-                <source src="http://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/Brastemp_Jupter_Interacao_P013-2.mp4" type="video/mp4" />
+                <source src="https://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/Brastemp_Jupter_Interacao_P013-2.mp4" type="video/mp4" />
             </video>
         </div>
         <section>

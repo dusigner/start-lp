@@ -9,21 +9,21 @@ body.bg-base {
     overflow: hidden;
 }
 .refrivideo .headroom {
-    top: 100px;
+    top: 49.99px;
     left: 0;
     right: 0;
     z-index: 5 !important;
 }
 .refrivideo .headroom--unfixed {
     position: relative;
-    transform: translateY(-100px);
+    transform: translateY(-53px);
 }
 .refrivideo .headroom--scrolled {
     transition: transform 200ms ease-in-out;
 }
 .refrivideo .headroom--unpinned {
     position: fixed;
-    transform: translate3d(0px, -172%, 0px);
+    transform: translate3d(0px, -99%, 0px);
     transition: all 0.5s ease-in-out 0s;
 }
 .refrivideo .headroom--pinned {

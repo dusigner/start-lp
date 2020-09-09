@@ -23,9 +23,9 @@ class LancamentoRefriVideo extends React.Component {
 
 		return (
 			<div className="refrivideo">
-				{/* <Headroom disableInlineStyles>
+				<Headroom disableInlineStyles>
 					<Menu/>
-				</Headroom> */}
+				</Headroom>
 				<Scrollvideo />
 			</div>
 		)

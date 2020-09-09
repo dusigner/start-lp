@@ -1,62 +1,12 @@
-/* .scrollvideo {
-    background: black;
-    display: flex;
-    justify-content: center;
+.intro {
     height: 100vh;
-    position: fixed;
 }
-.scrollvideo__wrap {
-    width: 95%;
-}
-@media only screen and (min-width: 1800px) {
-    .scrollvideo__wrap {
-        width: 70%;
-    }
-}
-
-#video {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    top: 0;
-}
-.steps {
-    width: 100%;
-    height: 100vh;
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
-    background-color: rgba(red, green, blue, 0.3);
-    color: white;
-    position: relative;
-    z-index: 5;
-}
-section {
-    height: 100vh;
-    color: black;
-  } */
-
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: sans-serif;
-  }
-  
-  .intro {
-    height: 100vh;
-  }
-  
 .videobg {
     height: 100%;
     width: 100%;
     object-fit: cover;
     position: fixed;
-    top: 0;
+    top: 50px;
     z-index: 1;
 }
 .scene1,
@@ -69,8 +19,8 @@ section {
     display: flex;
     color: white;
     position: fixed;
-    padding-top: 5%;
     opacity: 0;
+    padding-top: 50px;
 }
 /*********
  Scene 1
@@ -84,6 +34,7 @@ section {
     font-weight: normal;
     font-size: 52px;
     margin-bottom: 30px;
+    margin-top: 15px;
 }
 .scene1 p {
     text-align: center;
@@ -182,12 +133,10 @@ section {
     transform: translate(0,-50%);
     z-index: 2;
 }
-
 .switch-dispenser__video a.active::before {
     background-color: #F55D2F;
     border: 1px solid #F55D2F;
 }
-
 .switch-dispenser__video a.active::after {
     content: "";
     position: absolute;
@@ -213,7 +162,7 @@ section {
 }
 .scene2__content-mouse {
     position: absolute;
-    bottom: 30px;
+    bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -221,7 +170,6 @@ section {
 .scene2__content-mouse svg {
     margin-top: 10px;
 }
-
 /*********
  Scene 3
 *********/
@@ -264,7 +212,6 @@ section {
     width: 667px;
     text-align: center;
 }
-
 /*********
  Scene 4
 *********/
@@ -280,8 +227,6 @@ section {
     font-size: 52px;
     margin-bottom: 30px;
 }
-
-  
 section {
     z-index: 2;
     position: relative;

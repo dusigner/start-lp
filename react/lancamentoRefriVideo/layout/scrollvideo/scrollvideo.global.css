@@ -51,7 +51,7 @@ section {
     height: 100vh;
   }
   
-.video {
+.videobg {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -127,7 +127,7 @@ section {
     justify-content: center;
     align-items: center;
 }
-.switch-dispenser {
+.switch-dispenser__video {
     width: 160px;
     height: 179px;
     background: rgba(0, 0, 0, 0.5);
@@ -137,7 +137,7 @@ section {
     padding-left: 25px;
     margin-left: -75px;
 }
-.switch-dispenser a {
+.switch-dispenser__video a {
     display: block;
     position: relative;
     font-family: Soleto;
@@ -150,17 +150,17 @@ section {
     padding-left: 25px;
     width: 90px;
 }
-.switch-dispenser a.active {
+.switch-dispenser__video a.active {
     color: white;
 }
-.switch-dispenser .line {
+.switch-dispenser__video .line {
     display: block;
     height: 55px;
     width: 1px;
     margin: 4px 0 4px 10px;
     background-color: #C4A08B;
 }
-.switch-dispenser a::before {
+.switch-dispenser__video a::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -172,7 +172,7 @@ section {
     transform: translate(0,-50%);
     z-index: 2;
 }
-.switch-dispenser a::after {
+.switch-dispenser__video a::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -183,12 +183,12 @@ section {
     z-index: 2;
 }
 
-.switch-dispenser a.active::before {
+.switch-dispenser__video a.active::before {
     background-color: #F55D2F;
     border: 1px solid #F55D2F;
 }
 
-.switch-dispenser a.active::after {
+.switch-dispenser__video a.active::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -283,59 +283,6 @@ section {
 
   
 section {
-height: 100vh;
-color: white;
-z-index: 2;
-position: relative;
-background: #242424;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-.section__content {
-    max-width: 1216px;
-    width: 100%;
-}
-
-.featured__image-container {
-    margin: 0;
-}
-.border {
+    z-index: 2;
     position: relative;
-    display: inline-flex;
-    
 }
-.featured__image-container:hover .effect__hover img {
-    -webkit-transform: scale(1.09);
-    transform: scale(1.09);
-}
-.border::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    border: 1px solid #F08B1D;
-    position: absolute;
-    top: 7px;
-    left: 7px;
-    z-index: 4;
-}
-
-.effect__hover {
-    overflow: hidden;
-    width: 100%;
-    cursor: pointer;
-}
-.effect__hover img {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-transition: all .25s;
-    transition: all .25s;
-}
-
-section h2 {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 40px;
-    line-height: 50px;
-}
-  

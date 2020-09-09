@@ -1,0 +1,47 @@
+.edge-title.left {
+    text-align: left;
+}
+.edge-title.center {
+    text-align: center;
+}
+.edge-title.right {
+    text-align: right;
+}
+
+.edge-title h2 {
+    font-family: Soleto,sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 40px;
+
+    color: #FFF;
+}
+
+.edge-title .mobile {
+    display: block;
+}
+
+.edge-title .desktop {
+    display: none;
+}
+
+@media (min-width: 768px) {
+
+    .edge-title h2 {
+        font-size: 40px;
+        line-height: 82px;
+    }
+
+    .edge-title span h2:last-child::before {
+        height: 10px;
+        bottom: -10px;
+    }
+
+    .edge-title .mobile {
+        display: none;
+    }
+    .edge-title .desktop {
+        display: block;
+    }
+}

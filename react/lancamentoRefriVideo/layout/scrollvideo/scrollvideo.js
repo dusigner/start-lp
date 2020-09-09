@@ -5,9 +5,8 @@ import gsap, { TimelineMax, TweenMax, TweenLite } from "gsap";
 import './scrollvideo.global.css';
 import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 import $ from 'jquery'
-
-
-const slider01Jpeg = 'https://res.cloudinary.com/brastempwebp/image/upload/c_fill,g_faces,w_448/2020-lava-loucas/economia-tempo_x0vkki.jpeg';
+import AtencaoDetalhes from '../../../lancamentoRefri/layout/atencao-detalhes/atencao-detalhes';
+import Video from '../video/video';
 
 class Scrollvideo extends React.Component {
   constructor(props) {
@@ -16,7 +15,7 @@ class Scrollvideo extends React.Component {
 
     componentDidMount() {
         
-        const video = document.querySelector("video");
+        const video = document.querySelector(".videobg");
         const intro = document.querySelector(".intro");
         const scene1 = document.querySelector(".scene1");
         const scene2 = document.querySelector(".scene2");
@@ -63,13 +62,13 @@ class Scrollvideo extends React.Component {
 
         video.addEventListener('timeupdate', (event) => {
             /** Scene 1 - PAUSE */
-            if(video.currentTime >= 2.2 && video.currentTime <= 2.9){
+            if(video.currentTime >= 2.2 && video.currentTime <= 2.7){
                 video.pause()
                 TweenLite.to(scene1, 1, {opacity: 1});
                 TweenLite.to(scene2, 1, {opacity: 0});
             }
             /** Scene 2 - PLAY */
-            if(video.currentTime >= 3 && video.currentTime <= 3.7){
+            if(video.currentTime >= 2.8 && video.currentTime <= 3.7){
                 video.play()
                 TweenLite.to(scene1, 1, {opacity: 0});
             }
@@ -137,7 +136,7 @@ class Scrollvideo extends React.Component {
                             <p>Tenha água fresca e mais de 1,5kg de gelo por dia e ainda escolha entre gelo em cubos ou gelo picado</p>
                         </div>
                         <div className="scene2__content-col2">
-                            <div class="switch-dispenser">
+                            <div class="switch-dispenser__video">
                                 <a id="gelo" href="#">Gelo</a>
                                 <span class="line"></span>
                                 <a id="agua" href="#">Água</a>
@@ -166,24 +165,13 @@ class Scrollvideo extends React.Component {
                     <h2>Brastemp Space</h2>
                 </div>
             </div>
-            <video className="video" preload="true" muted>
-                <source src="https://dusigner.com.br/video.mp4" type="video/mp4" />
+            <video className="videobg" preload="true" muted>
+                <source src="http://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/Brastemp_Jupter_Interacao_P013-2.mp4" type="video/mp4" />
             </video>
         </div>
         <section>
-            <div className="section__content">
-                <h2>Atencão aos detalhes</h2>
-                <div>
-                    <div>
-                        <figure className="featured__image-container border">
-                            <div className="effect__hover">
-                                <img src={slider01Jpeg}  title="Economia de tempo"/> 
-                            </div>
-                        </figure>
-                    </div>
-                    <div></div>
-                </div>
-            </div>
+            <AtencaoDetalhes/>
+            <Video/>
         </section>
       </>
     );

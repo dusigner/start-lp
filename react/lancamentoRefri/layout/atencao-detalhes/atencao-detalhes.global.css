@@ -39,6 +39,15 @@
     position: relative;
     text-align: center;
 }
+.atencao-detalhes .acesso-info picture img{
+    transition: all .2s ease-in-out;
+}
+.atencao-detalhes .acesso-info picture:hover img{
+    transform: scale(1.1);
+}
+.atencao-detalhes .acesso-info picture .efectHover {
+    overflow: hidden;
+}
 .atencao-detalhes .acesso-info picture::before {
     content: '';
     left: 50%;

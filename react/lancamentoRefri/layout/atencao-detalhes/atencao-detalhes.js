@@ -19,7 +19,9 @@ class AtencaoDetalhes extends React.Component {
                         <p>Deslize a bandeja e acesse os produtos <br></br> do dia a dia</p>
                     </div>
                     <picture>
-                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/easyAccess.png"></img>
+                        <div className="efectHover">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/easyAccess.png"></img>
+                        </div>
                     </picture>
                 </div>
 
@@ -29,7 +31,9 @@ class AtencaoDetalhes extends React.Component {
                         <p>Exclusiva fabricação de gelo integrada <br></br> à porta: mais espaço interno na sua <br></br> geladeira</p>
                     </div>
                     <picture>
-                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/inDorIce.png"></img>
+                        <div className="efectHover">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/inDorIce.png"></img>
+                        </div>
                     </picture>
                 </div>
 

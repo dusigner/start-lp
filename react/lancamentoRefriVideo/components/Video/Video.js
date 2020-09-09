@@ -98,10 +98,6 @@ class Video extends React.Component {
     render() {
         return (
             <video id="myVideo" poster={this.props.poster} className="video" width="100%" height="100%" controls>
-                <svg width="186" height="186" viewBox="0 0 186 186" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M77.1987 59.3511L122.677 93.8915L77.1987 128.432" stroke="#F08B1D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="93.3166" cy="93.3167" r="90.1834" stroke="#F08B1D" stroke-width="5"/>
-                </svg>
                 <source src={this.props.setSrc} type="video/mp4"></source>
             </video>
         )

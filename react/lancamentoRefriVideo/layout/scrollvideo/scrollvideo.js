@@ -4,6 +4,10 @@ import ScrollMagic from "scrollmagic";
 import gsap, { TimelineMax, TweenMax, TweenLite } from "gsap";
 import './scrollvideo.global.css';
 import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
+import $ from 'jquery'
+
+
+const slider01Jpeg = 'https://res.cloudinary.com/brastempwebp/image/upload/c_fill,g_faces,w_448/2020-lava-loucas/economia-tempo_x0vkki.jpeg';
 
 class Scrollvideo extends React.Component {
   constructor(props) {
@@ -13,10 +17,11 @@ class Scrollvideo extends React.Component {
     componentDidMount() {
         
         const video = document.querySelector("video");
-        const sceneIntro = document.querySelector(".scene1");
-        const sceneDispe = document.querySelector(".scene2");
-        const sceneFresh = document.querySelector(".scene3");
-        const sceneSpace = document.querySelector(".scene4");
+        const intro = document.querySelector(".intro");
+        const scene1 = document.querySelector(".scene1");
+        const scene2 = document.querySelector(".scene2");
+        const scene3 = document.querySelector(".scene3");
+        const scene4 = document.querySelector(".scene4");
         //END SECTION
         const section = document.querySelector("section");
 
@@ -28,135 +33,157 @@ class Scrollvideo extends React.Component {
             video.pause();
         }
 
+        $(window).bind('mousewheel DOMMouseScroll', function(event){
+            if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+            video.currentTime -= 0.1;
+            }
+            else {
+            video.currentTime += 0.1;
+            }
+        });
+
+        $("#gelo").click(function(e) {
+            e.preventDefault();
+            video.currentTime = 6.5;
+            $("#agua").removeClass('active');
+            $(this).addClass('active');
+            video.play()
+        });
+        $("#agua").click(function(e) {
+            e.preventDefault();
+            video.currentTime = 9.3;
+            $("#gelo").removeClass('active');
+            $(this).addClass('active');
+            video.play()
+        });
+
+
+        /** Scene 1 - PLAY */
+        video.play()
+
+        video.addEventListener('timeupdate', (event) => {
+            /** Scene 1 - PAUSE */
+            if(video.currentTime >= 2.2 && video.currentTime <= 2.9){
+                video.pause()
+                TweenLite.to(scene1, 1, {opacity: 1});
+                TweenLite.to(scene2, 1, {opacity: 0});
+            }
+            /** Scene 2 - PLAY */
+            if(video.currentTime >= 3 && video.currentTime <= 3.7){
+                video.play()
+                TweenLite.to(scene1, 1, {opacity: 0});
+            }
+            /** Scene 2 */
+            if(video.currentTime >= 6.0 && video.currentTime <= 6.7){
+                TweenLite.to(scene2, 1, {opacity: 1, zIndex:3,});
+                $("#gelo").addClass('active');
+            }
+            /** Scene 2 */
+            if(video.currentTime >= 9.5){
+                $("#gelo").removeClass('active');
+                $("#agua").addClass('active');
+            }
+            /** Scene 2 - PAUSE */
+            if(video.currentTime >= 14.7 && video.currentTime <= 15.4){
+                video.pause()
+            }
+            /** Scene 3 - PLAY */
+            if(video.currentTime >= 15.5 &&  video.currentTime <= 16.2){
+                TweenLite.to(scene2, 1, {opacity: 0, zIndex:2,});
+                video.play()
+            }
+            /** Scene 3 - PAUSE */
+            if(video.currentTime >= 17.8 &&  video.currentTime <= 18.3){
+                TweenLite.to(scene3, 1, {opacity: 1, zIndex:3,});
+                video.pause()
+            }
+            /** Scene 4 - PLAY */
+            if(video.currentTime >= 18.4 &&  video.currentTime <= 19.1){
+                TweenLite.to(scene3, 1, {opacity: 0, zIndex:2,});
+                video.play()
+            }
+            /** Scene 4 - PAUSE */
+            if(video.currentTime >= 32){
+                video.pause()
+            }
+          });
+
         //Scenes
         /** Intro */
-        let scene1 = new ScrollMagic.Scene({
-            duration: 1000,
-            triggerElement: sceneIntro,
+        let scenes = new ScrollMagic.Scene({
+            duration: 1600,
+            triggerElement: intro,
             triggerHook: 0
         })
         .addTo(controller)
-        .setPin(sceneIntro)
-        .on("start", 
-            function () {
-                video.play();
-                // Exibe o Titulo
-                TweenMax.fromTo(sceneIntro, 1,  { opacity: 0 }, { opacity: 1}).delay(2)
-                video.addEventListener("timeupdate", function(){
-                    if(video.currentTime >= 2.7){
-                        video.pause()
-                    }
-                })
-            })
-        .on("update",
-            function () {
-                video.play()
-                // Oculta o Titulo
-                TweenMax.fromTo(sceneIntro, 1,  { opacity: 1 }, { opacity: 0})
-                // Exibe o Dispenser
-                TweenMax.fromTo(sceneDispe, 1,  { opacity: 0 }, { opacity: 1})
-                video.addEventListener("timeupdate", function(){
-                    if(video.currentTime >= 14.7){
-                        video.pause()
-                    }
-                })
-            })
-
-        /** Dispenser */
-        let scene2 = new ScrollMagic.Scene({
-            duration: 1000,
-            triggerElement: sceneDispe,
-            triggerHook: 0
-        })
-        .addTo(controller)
-        .setPin(sceneDispe)
-        .on("end",
-            function () {
-                video.play()
-                // Oculta o Titulo
-                TweenMax.fromTo(sceneDispe, 1,  { opacity: 1 }, { opacity: 0})
-                // Exibe o Fresh
-                TweenMax.fromTo(sceneFresh, 1,  { opacity: 0 }, { opacity: 1})
-                video.addEventListener("timeupdate", function(){
-                    if(video.currentTime >= 20.10){
-                        video.pause()
-                    }
-                })
-            })
-
-        /** Fresh */
-        let scene3 = new ScrollMagic.Scene({
-            duration: 1000,
-            triggerElement: sceneFresh,
-            triggerHook: 0
-        })
-        .addTo(controller)
-        .setPin(sceneFresh)
-        .on("update",
-            function () {
-                video.play()
-                console.log("Play Video")
-                // Oculta o Titulo
-                TweenMax.fromTo(sceneFresh, 1,  { opacity: 1 }, { opacity: 0})
-                // Exibe o Fresh
-                TweenMax.fromTo(sceneSpace, 1,  { opacity: 0 }, { opacity: 1})
-                video.addEventListener("timeupdate", function(){
-                    if(video.currentTime >= 20.10){
-                        video.pause()
-                    }
-                })
-            })
-
-        /** Space */
-        let scene4 = new ScrollMagic.Scene({
-            duration: 1000,
-            triggerElement: sceneSpace,
-            triggerHook: 0
-        })
-        .addTo(controller)
-        .setPin(sceneSpace)
-        .on("end",
-            function () {
-                video.play()
-            })
-
-
-            video.addEventListener("timeupdate", function(){
-                console.log(video.currentTime)
-            })
-
-
+        .setPin(intro)
   }
 
   render() {
     return (
       <>
-        <div className="scene1">
-            <div className="scene1__content">
-                <h2>Brastemp Inverse | 4</h2>
-                <p>Máximo design, máxima sofisticação. Com 4 compartimentos e mais de 500L para você armazenar tudo o que quiser.</p>
+        <div className="intro">
+            <div className="scene1">
+                <div className="scene1__content">
+                    <h2>Brastemp Inverse | 4</h2>
+                    <p>Máximo design, máxima sofisticação. Com 4 compartimentos e mais de 500L para você armazenar tudo o que quiser.</p>
+                </div>
             </div>
-        </div>
-        <div className="scene2">
-            <div className="scene2__content">
-                <h2>Brastemp Dispenser</h2>
+            <div className="scene2">
+                <div className="scene2__content">
+                    <div className="scene2__content-grid">
+                        <div className="scene2__content-col1">
+                            <h2>Dispenser de água e gelo</h2>
+                            <p>Tenha água fresca e mais de 1,5kg de gelo por dia e ainda escolha entre gelo em cubos ou gelo picado</p>
+                        </div>
+                        <div className="scene2__content-col2">
+                            <div class="switch-dispenser">
+                                <a id="gelo" href="#">Gelo</a>
+                                <span class="line"></span>
+                                <a id="agua" href="#">Água</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="scene2__content-mouse">
+                        Role para ver mais
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.41 0.590088L6 5.17009L10.59 0.590088L12 2.00009L6 8.00009L0 2.00009L1.41 0.590088Z" fill="white"/>
+                        </svg>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div className="scene3">
-            <div className="scene3__content">
-                <h2>Brastemp Fresh</h2>
+            <div className="scene3">
+                <div className="scene3__content">
+                    <div className="scene3__content-text">
+                        <h2>Fresh Control</h2>
+                        <p>Com o exclusivo sistema Fresh Control, conserve os alimentos frescos por até 15 dias e elimine até 99% das bactérias em qualquer lugar da geladeira</p>
+                    </div>
+                    <div className="scene3__content-filter"/>
+                </div>
             </div>
-        </div>
-        <div className="scene4">
-            <div className="scene4__content">
-                <h2>Brastemp Space</h2>
+            <div className="scene4">
+                <div className="scene4__content">
+                    <h2>Brastemp Space</h2>
+                </div>
             </div>
+            <video className="video" preload="true" muted>
+                <source src="https://dusigner.com.br/video.mp4" type="video/mp4" />
+            </video>
         </div>
-        <video className="video" preload="true" controls muted>
-            <source src="https://dusigner.com.br/video.mp4" type="video/mp4" />
-        </video>
         <section>
-            <h1>REVOLUTIONARRY</h1>
+            <div className="section__content">
+                <h2>Atencão aos detalhes</h2>
+                <div>
+                    <div>
+                        <figure className="featured__image-container border">
+                            <div className="effect__hover">
+                                <img src={slider01Jpeg}  title="Economia de tempo"/> 
+                            </div>
+                        </figure>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
         </section>
       </>
     );

@@ -9,12 +9,12 @@ class FrechControl extends React.Component {
         return (
             <div id="fresh-control" className="fresh-control">
 
-                <Title setClass="center" textMF="Dispenser de água e gelo" textDF="Dispenser de água e gelo"/>
+                <Title setClass="center" textMF="Fresh Control" textDF="Fresh Control"/>
 
-                <p>Tenha água fresca e mais de 1,5kg de gelo por <br className="mobile"></br> dia e ainda <br className="desktop"></br> escolha entre gelo em cubos ou <br className="mobile"></br> gelo picado</p>
+                <p>Com o exclusivo sistema Fresh Control, <br className="mobile"></br> conserve os alimentos frescos por até 15 dias  <br className="desktop"></br><br className="mobile"></br> e elimine até 99% das bactérias em qualquer <br className="mobile"></br> lugar da geladeira</p>
 
                 <div className="fresh-animate">
-                    <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/FreshControl-Brastemp.gif"></img>
+                    <img src="http://bimg.visie.com.br/media/FreshControl-Brastemp.gif"></img>
                 </div>
 
                 <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/freshcontrol.png"></img>

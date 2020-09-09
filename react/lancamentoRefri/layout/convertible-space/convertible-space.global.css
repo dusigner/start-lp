@@ -137,7 +137,7 @@
     .convertible-space .edge-title {
         position: absolute;
         right: 45%;
-        top: calc(50% - 80px);
+        top: calc(50% - 145px);
         width: 385px;
         text-align: left;
     }
@@ -146,7 +146,7 @@
         position: absolute;
         font-size: 18px;
         right: 45%;
-        top: calc(50% + 25px);
+        top: calc(50% - 35px);
         width: 385px;
         text-align: left;
     }
@@ -168,4 +168,45 @@
         right: 55%;
     }
 
+}
+
+@media (min-width: 1025px) {
+
+    .convertible-space {
+        height: 830px;
+        background-size: cover;
+        background-position: left 60% bottom 0;
+    }
+
+    .convertible-space .line-chose {
+        bottom: 50%;
+    }
+
+    .convertible-space .line-chose .slider{
+        width: 350px;
+        padding: 0px 50px;
+    }
+    
+    .convertible-space .line-chose .line-text {
+        right: 95px;
+        top: -200px;
+    }
+
+    .convertible-space .line-chose .line-text h3 {
+        font-size: 12px;
+        margin: 0 0 18px;
+    }
+
+    .convertible-space .line-chose .line-text p {
+        font-size: 18px;
+        font-weight: lighter;
+        margin: 0 0 30px;
+    }
+
+    .convertible-space .line-chose .slider::-webkit-slider-thumb {
+        width: 31px;
+        height: 113px;
+        padding-top: 2px;
+        background: transparent url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/slider-convertible.png') no-repeat;
+    }
 }

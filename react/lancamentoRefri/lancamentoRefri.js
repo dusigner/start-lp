@@ -6,6 +6,8 @@ import GeladeiraInverse from './layout/geladeira-inverse/geladeira-inverse';
 import Dispenser from './layout/dispenser/dispenser';
 import FreshControl from './layout/fresh-control/fresh-control';
 import ConvertibleSpace from './layout/convertible-space/convertible-space';
+import AtencaoDetalhes from './layout/atencao-detalhes/atencao-detalhes';
+import Video from './layout/video/video';
 import EspecificacoesTecnicas from './layout/especificacoes/especificacoes';
 
 
@@ -36,7 +38,8 @@ class LancamentoRefri extends React.Component {
 					<Dispenser></Dispenser>
 					<FreshControl></FreshControl>
 					<ConvertibleSpace></ConvertibleSpace>
-
+					<AtencaoDetalhes></AtencaoDetalhes>
+					<Video></Video>
 					<EspecificacoesTecnicas></EspecificacoesTecnicas>
 
 			</div>

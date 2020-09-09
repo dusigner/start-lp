@@ -17,7 +17,9 @@ class EspecificacoesTecnicas extends React.Component {
 
                 <Title setClass="center" textMF="Especificações técnicas" textDF="Especificações técnicas"/>
 
-                <p>O exclusivo sistema Fresh Control combina <br className="mobile"></br> maior estabilidade de temperatura, <br className="desktop"></br> controle <br className="mobile"></br> de umidade e purificação do ar para manter <br className="mobile"></br> os alimentos bem preservados <br className="desktop"></br> em qualquer <br className="mobile"></br> lugar da geladeira.</p>
+                {
+                    //<p>O exclusivo sistema Fresh Control combina <br className="mobile"></br> maior estabilidade de temperatura, <br className="desktop"></br> controle <br className="mobile"></br> de umidade e purificação do ar para manter <br className="mobile"></br> os alimentos bem preservados <br className="desktop"></br> em qualquer <br className="mobile"></br> lugar da geladeira.</p>
+                }
 
                 <dl className="especDiv">
                     <dt>Cor principal <br className="mobile"></br> (visão frontal)</dt>
@@ -40,6 +42,10 @@ class EspecificacoesTecnicas extends React.Component {
                     <dd>127 V - A</dd>
                     <dt>Classificação <br className="mobile"></br> energética</dt>
                     <dd>220 V - A</dd>
+                    <dt>Dimensões sem embalagem</dt>
+                    <dd>Largura 90.5cm <br></br> Altura 187.2cm <br></br> Profundidade 72.4cm</dd>
+                    <dt>Dimensões com embalagem</dt>
+                    <dd>Largura 99.1 cm <br></br> Altura 198.1cm <br></br> Profundidade 79.5cm </dd>
                 </dl>
 
                 <Picture

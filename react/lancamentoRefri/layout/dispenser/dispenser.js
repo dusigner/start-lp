@@ -19,6 +19,13 @@ class Dispenser extends React.Component {
                     <a href="#">Água</a>
                 </div>
 
+                <img 
+                    className="interactive"
+                    data-agua="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/agua.gif"
+                    data-gelo="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/gelo.gif"
+                    data-estatico="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/gelo.gif"
+                ></img>
+
                 <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/dispenser-bg.png"></img>
 
             </div>

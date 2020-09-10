@@ -37,6 +37,15 @@ class ConvertibleSpace extends React.Component {
                         <p className={`${this.state.value > 920 ? "active" : "" }`}>-16°C a<br></br>22°C</p>
                     </div>
 
+                    <div className="line-text-index">
+                        <p className={`${this.state.value < 110 ? "active" : "" }`}>Vinhos e <br></br>cervejas artesanais</p>
+                        <p className={`${this.state.value > 110 && this.state.value < 260   ? "active" : "" }`}>Frutas e <br></br> vegetais</p>
+                        <p className={`${this.state.value > 260 && this.state.value < 550 ? "active" : "" }`}>Carnes e <br></br> peixes</p>
+                        <p className={`${this.state.value > 550 && this.state.value < 740 ? "active" : "" }`}>Congelamento <br></br> suave</p>
+                        <p className={`${this.state.value > 740 && this.state.value < 920 ? "active" : "" }`}>Congelamento <br></br> médio</p>
+                        <p className={`${this.state.value > 920 ? "active" : "" }`}>Congelamento <br></br> intenso</p>
+                    </div>
+
                     <input 
                     className="slider"
                     type="range" 

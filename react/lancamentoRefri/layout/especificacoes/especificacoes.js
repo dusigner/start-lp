@@ -30,6 +30,10 @@ class EspecificacoesTecnicas extends React.Component {
                     <dd>543 Litros</dd>
                     <dt>Tipo de degelo</dt>
                     <dd>Frost Free</dd>
+                    <dt>Dimensões sem embalagem</dt>
+                    <dd>Largura 90.5cm <br></br> Altura 187.2cm <br></br> Profundidade 72.4cm</dd>
+                    <dt>Dimensões com embalagem</dt>
+                    <dd>Largura 99.1 cm <br></br> Altura 198.1cm <br></br> Profundidade 79.5cm </dd>
                     <dt>Número de portas</dt>
                     <dd>4</dd>
                     <dt>Posição do freezer</dt>
@@ -42,10 +46,6 @@ class EspecificacoesTecnicas extends React.Component {
                     <dd>127 V - A</dd>
                     <dt>Classificação <br className="mobile"></br> energética</dt>
                     <dd>220 V - A</dd>
-                    <dt>Dimensões sem embalagem</dt>
-                    <dd>Largura 90.5cm <br></br> Altura 187.2cm <br></br> Profundidade 72.4cm</dd>
-                    <dt>Dimensões com embalagem</dt>
-                    <dd>Largura 99.1 cm <br></br> Altura 198.1cm <br></br> Profundidade 79.5cm </dd>
                 </dl>
 
                 <Picture

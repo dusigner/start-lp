@@ -688,5 +688,5 @@ class moduloCompra extends Component {
 }
 
 export default GetDataUtils.searchProductPrice(moduloCompra, (props) => ({
-    slug: props.slug || "lavadora-brastemp-9kg-bwj09ab",
+    slug: props.slug || "/lavadora-brastemp-9kg-bwj09ab/p",
 }));

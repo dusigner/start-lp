@@ -8,6 +8,8 @@ import FreshControl from './layout/fresh-control/fresh-control';
 import ConvertibleSpace from './layout/convertible-space/convertible-space';
 import AtencaoDetalhes from './layout/atencao-detalhes/atencao-detalhes';
 import Video from './layout/video/video';
+import Vitrine from './layout/vitrine/vitrine'
+import Compra from './layout/compra/ModuloCompra'
 import EspecificacoesTecnicas from './layout/especificacoes/especificacoes';
 
 
@@ -40,6 +42,8 @@ class LancamentoRefri extends React.Component {
 					<ConvertibleSpace></ConvertibleSpace>
 					<AtencaoDetalhes></AtencaoDetalhes>
 					<Video></Video>
+					{/* <Compra></Compra> */}
+					<Vitrine></Vitrine>
 					<EspecificacoesTecnicas></EspecificacoesTecnicas>
 
 			</div>

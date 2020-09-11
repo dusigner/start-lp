@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAEA,AAAA,gBAAgB,AAAC,CACb,KAAK,CAAE,GAAG,CAeb,AAbI,AAAD,0BAAW,AAAC,CACR,MAAM,CAAE,GAAG,CAAC,KAAK,CANjB,IAAI,CAOJ,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,YAAY,CAC7B,KAAK,CAAE,IAAI,CACd,AAEA,AAAD,uBAAQ,AAAC,CACL,MAAM,CAAE,GAAG,CAAC,KAAK,CAbjB,IAAI,CAcJ,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,YAAY,CAC7B,KAAK,CAAE,IAAI,CACd",
-    "sources": [
-        "../src/frete.global.scss"
-    ],
-    "names": [],
-    "file": "frete.global.min.css"
-}

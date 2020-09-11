@@ -1,6 +1,0 @@
-mutation saveCloudDB($object: String!) 
-{
-  saveCloudDB(object: $object) {
-    status
-  }
-}

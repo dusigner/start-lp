@@ -22,7 +22,7 @@ class lancamentoRefriVideo extends Component {
                             propsClass="header"
                         />
                         <VersaoOriginal 
-                            versao="video"
+                            versao="qrcode"
                         />
                         <HeaderFooter
                             propsClass="footer"

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Slider from "../../../node_modules/react-slick";
 //components
-import './vitrine.global.css';
+import './vitrine-compra.global.css';
 
 class Vitrine extends React.Component {
 

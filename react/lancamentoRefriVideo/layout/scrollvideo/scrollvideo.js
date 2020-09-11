@@ -13,17 +13,11 @@ class Scrollvideo extends React.Component {
     constructor(props) {
 		super(props);
 		this.state = {
-			value: 0
-		}
-	}
-    
-    handleChange = (event) => {
-        this.setState({value: event.target.value});
-        console.log(this.state.value);
+            value: 0,
+        }
     }
-
-    componentDidMount() {
-        
+    
+    componentDidMount() {        
         const video = document.querySelector(".videobg");
         const intro = document.querySelector(".intro");
         const scene1 = document.querySelector(".scene1");
@@ -36,17 +30,11 @@ class Scrollvideo extends React.Component {
         //SCROLLMAGIC
         const controller = new ScrollMagic.Controller({addIndicators: true});
 
-        //Pause Video
-        function pauseVideo() {
-            video.pause();
-        }
-
         $(window).bind('mousewheel DOMMouseScroll', function(event){
             if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-            video.currentTime -= 0.1;
-            }
-            else {
-            video.currentTime += 0.1;
+                video.currentTime -= 0.1;
+            } else {
+                video.currentTime += 0.1;
             }
         });
 
@@ -71,13 +59,13 @@ class Scrollvideo extends React.Component {
 
         video.addEventListener('timeupdate', (event) => {
             /** Scene 1 - PAUSE */
-            if(video.currentTime >= 2.2 && video.currentTime <= 2.7){
+            if(video.currentTime >= 2.2 && video.currentTime <= 2.5){
                 video.pause()
                 TweenLite.to(scene1, 1, {opacity: 1});
                 TweenLite.to([scene2,scene3,scene4], 1, {opacity: 0});
             }
             /** Scene 2 - PLAY */
-            if(video.currentTime >= 2.8 && video.currentTime <= 3.7){
+            if(video.currentTime >= 2.6 && video.currentTime <= 3.7){
                 video.play()
                 TweenLite.to(scene1, 1, {opacity: 0});
             }
@@ -93,11 +81,11 @@ class Scrollvideo extends React.Component {
                 $("#agua").addClass('active');
             }
             /** Scene 2 - PAUSE */
-            if(video.currentTime >= 14.7 && video.currentTime <= 15.4){
+            if(video.currentTime >= 14.7 && video.currentTime <= 15.0){
                 video.pause()
             }
             /** Scene 3 - PLAY */
-            if(video.currentTime >= 15.5 &&  video.currentTime <= 16.2){
+            if(video.currentTime >= 15.1 &&  video.currentTime <= 16.2){
                 TweenLite.to(scene2, 1, {opacity: 0, zIndex:2,});
                 video.play()
             }
@@ -112,11 +100,41 @@ class Scrollvideo extends React.Component {
                 TweenLite.to(scene3, 1, {opacity: 0, zIndex:2,});
                 video.play()
             }
+            if(video.currentTime >= 25 && video.currentTime <= 25.3){
+                TweenLite.to(scene4, 1, {opacity: 1, zIndex:3,});
+                TweenLite.to([scene1,scene2,scene3], 1, {opacity: 0});
+            }
+            let valid = 0
+            if(valid == 0){
+                valid = 1
+                if(video.currentTime >= 25){
+                    $(".slider").val(26)
+                    this.setState({value: 26});
+                }
+                if(video.currentTime >= 26.5){
+                    $(".slider").val(180)
+                    this.setState({value: 180})
+                }
+                if(video.currentTime >= 27.5){
+                    $(".slider").val(337)
+                    this.setState({value: 337})
+                }
+                if(video.currentTime >= 28.5){
+                    $(".slider").val(651)
+                    this.setState({value: 651})
+                }
+                if(video.currentTime >= 29.5){
+                    $(".slider").val(811)
+                    this.setState({value: 811})
+                }
+                if(video.currentTime >= 30.5){
+                    $(".slider").val(1000)
+                    this.setState({value: 1000})
+                }
+            }
             /** Scene 4 - PAUSE */
             if(video.currentTime >= 32){
                 video.pause()
-                TweenLite.to(scene4, 1, {opacity: 1, zIndex:3,});
-                TweenLite.to([scene1,scene2,scene3], 1, {opacity: 0});
             }
           });
 
@@ -129,7 +147,32 @@ class Scrollvideo extends React.Component {
         })
         .addTo(controller)
         .setPin(intro)
-  }
+    }
+
+    handleChange=(e)=>{
+
+        const video = document.querySelector(".videobg");
+
+        this.setState({value: e.target.value});
+
+        if(this.state.value < 110){
+            video.currentTime = "25.5"
+        }
+        if(this.state.value > 110 && this.state.value < 260){
+            video.currentTime = "27.5"
+        }
+        if(this.state.value > 260 && this.state.value < 550){
+            video.currentTime = "27.5"
+        }
+        if(this.state.value > 550 && this.state.value < 740){
+            video.currentTime = "28.5"
+        }
+        if(this.state.value > 920){
+            video.currentTime = "30.5"
+        }
+        
+    }
+
 
   render() {
     return (
@@ -149,9 +192,9 @@ class Scrollvideo extends React.Component {
                             <p>Tenha água fresca e mais de 1,5kg de gelo por dia e ainda escolha entre gelo em cubos ou gelo picado</p>
                         </div>
                         <div className="scene2__content-col2">
-                            <div class="switch-dispenser__video">
+                            <div className="switch-dispenser__video">
                                 <a id="gelo" href="#">Gelo</a>
-                                <span class="line"></span>
+                                <span className="line"></span>
                                 <a id="agua" href="#">Água</a>
                             </div>
                         </div>
@@ -181,32 +224,42 @@ class Scrollvideo extends React.Component {
                     </div>
                     <div>
                         <div className="line-chose">
+                            <div className="line-text-index">
+                                <p className={`${this.state.value < 110 ? "active" : "" }`}>Vinhos e <br></br>cervejas artesanais</p>
+                                <p className={`${this.state.value > 110 && this.state.value < 260   ? "active" : "" }`}>Frutas e <br></br> vegetais</p>
+                                <p className={`${this.state.value > 260 && this.state.value < 550 ? "active" : "" }`}>Carnes e <br></br> peixes</p>
+                                <p className={`${this.state.value > 550 && this.state.value < 740 ? "active" : "" }`}>Congelamento <br></br> suave</p>
+                                <p className={`${this.state.value > 740 && this.state.value < 920 ? "active" : "" }`}>Congelamento <br></br> médio</p>
+                                <p className={`${this.state.value > 920 ? "active" : "" }`}>Congelamento <br></br> intenso</p>
+                            </div>
+
+                            <input 
+                                className="slider"
+                                type="range" 
+                                min="0" max="1000" 
+                                value={this.state.value} 
+                                onInput={this.handleChange}
+                                // onInput={ this.handleInput.bind(this)}
+                                />
+
                             <div className="line-text">
                                 <h3>MODO<br></br>REFRIGERADOR</h3>
                                 <p className={`${this.state.value < 110 ? "active" : "" }`}>10°C</p>
-                                <p className={`${this.state.value > 110 && this.state.value < 260   ? "active" : "" }`}>4°C</p>
+                                <p className={`${this.state.value > 110 && this.state.value < 260 ? "active" : "" }`}>4°C</p>
                                 <p className={`${this.state.value > 260 && this.state.value < 550 ? "active" : "" }`}>0°C</p>
                                 <h3>MODO<br></br>FREEZER</h3>
                                 <p className={`${this.state.value > 550 && this.state.value < 740 ? "active" : "" }`}>-7°C</p>
                                 <p className={`${this.state.value > 740 && this.state.value < 920 ? "active" : "" }`}>-12°C</p>
                                 <p className={`${this.state.value > 920 ? "active" : "" }`}>-16°C a<br></br>22°C</p>
                             </div>
-
-                            <input 
-                            className="slider"
-                            type="range" 
-                            min="0" max="1000" 
-                            value={this.state.value} 
-                            onChange={this.handleChange}
-                            data-orientation="vertical"
-                            step="1"/>
+                            <div className="bg-filter"></div>
                         </div>
                     </div>
                     {/* <div id="convertible-space" className={`convertible-space  ${this.state.value < 110 ? "vinhos" : ""} ${this.state.value > 110 && this.state.value < 260 ? "frutas-vegetais" : "" } ${this.state.value > 260 && this.state.value < 550 ? "carnes-peixes" : "" } ${this.state.value > 550 && this.state.value < 740 ? "congelamento-suave" : "" } ${this.state.value > 740 && this.state.value < 920 ? "congelamento-medio" : "" } ${this.state.value > 920 ? "congelamento-intenso" : "" } `}>
                     </div> */}
                 </div>
             </div>
-            <video className="videobg" preload="true" muted>
+            <video className="videobg" controls="true" preload="true" muted>
                 <source src="https://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/Brastemp_Jupter_Interacao_P013-2.mp4" type="video/mp4" />
             </video>
         </div>

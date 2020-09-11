@@ -2,22 +2,12 @@ import React, { Component } from 'react';
 import Headroom from 'react-headroom';
 import Menu from "./components/menu/menu";
 import Scrollvideo from "./layout/scrollvideo/scrollvideo";
+import EspecificacoesTecnicas from '../versaoOriginal/layout/especificacoes/especificacoes'
 
 // Assets
 import './lancamentorefrivideo.global.css';
 
 class LancamentoRefriVideo extends React.Component {
-
-	constructor(props) {
-		super(props);
-		this.state = {
-
-		}
-	}
-
-	componentDidMount() {
-
-	}
 
 	render() {
 
@@ -26,7 +16,8 @@ class LancamentoRefriVideo extends React.Component {
 				<Headroom disableInlineStyles>
 					<Menu/>
 				</Headroom>
-				<Scrollvideo />
+				<Scrollvideo  />
+				<EspecificacoesTecnicas />
 			</div>
 		)
 	}

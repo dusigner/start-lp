@@ -8,17 +8,6 @@ import './lancamentorefrivideo.global.css';
 
 class LancamentoRefriVideo extends React.Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-
-		}
-	}
-
-	componentDidMount() {
-
-	}
-
 	render() {
 
 		return (

@@ -6,10 +6,14 @@ import LazyLoad from 'react-lazyload';
 
 class lancamentoRefriVideo extends Component {
 
+    constructor(props) {
+		super(props);
+	}
+
     render() {
         return (
             <React.Fragment>
-                <SEO title={"Jupter!"} description={"Jupter"} />
+                <SEO title={this.props.title} description={this.props.description} />
                 <LazyLoad height={'100%'} offset={0}>
                     <main id="main" className="main">
                         <ExtensionPoint id="header" hideSupportMenu={true} />

@@ -73,7 +73,6 @@
 .menu__lp nav ul li:last-child a {
     padding: 5px 0px;
     border: 1px solid #F08B1D;
-    border-radius: 50px;
     color: #F08B1D;
     font-weight: normal;
     font-size: 12px;
@@ -104,16 +103,6 @@
 .menu__lp nav ul{
     width: 100%;
     justify-content: center;
-}
-.menu__lp nav ul li:last-child a {
-    padding: 5px 20px;
-    border: 1px solid #F08B1D;
-    border-radius: 50px;
-    color: #F08B1D;
-    font-weight: normal;
-    font-size: 12px;
-    text-transform: uppercase;
-    width: 142px;
 }
 .menu__lp::before {
     position: absolute;

@@ -4,7 +4,7 @@
       "path": "/eletrodomesticos/lancamentorefri"
     },
     "store/lancamentorefrivideo": {
-      "path": "/eletrodomesticos/lancamentorefrivideo"
+      "path": "/eletrodomesticos/geladeira---refrigerador/4-portas"
     },
     "store/lancamentorefriespecificacoes": {
       "path": "/eletrodomesticos/lancamentorefriespecificacoes"
@@ -63,8 +63,8 @@
         }
       },
       "props": {
-        "title": "Lançamento Refrigerador Jupter!",
-        "description": "A mais nova Lançamento Refrigerador Jupter"
+        "title": "Geladeira 4 Portas: Geladeira Inverse",
+        "description": "Conheça a nova Geladeira Brastemp Inverse: Confira o novo modelo de Geladeira 4 portas com Freezer Embaixo e degelo Frost Free. Clique já!"
       }
     },
     "lancamentorefriespecificacoes": {

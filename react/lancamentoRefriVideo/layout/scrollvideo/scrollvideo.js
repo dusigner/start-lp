@@ -14,6 +14,7 @@ class Scrollvideo extends React.Component {
 		super(props);
 		this.state = {
             value: 0,
+            lastScroll: 0
         }
     }
     
@@ -30,11 +31,28 @@ class Scrollvideo extends React.Component {
         //SCROLLMAGIC
         const controller = new ScrollMagic.Controller({addIndicators: true});
 
+        $(window).on("scroll", function() {
+            var st = $(this).scrollTop();
+            if (st == 0){
+                video.currentTime = 0;
+                video.play()
+            }
+            if (st > 1718){
+                video.currentTime = 32;
+                video.pause()
+            }
+        });
+
         $(window).bind('mousewheel DOMMouseScroll', function(event){
             if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
                 video.currentTime -= 0.1;
+                video.pause()
+            } else if(video.currentTime >= 32) {
+                video.currentTime = 32;
+                video.pause()
             } else {
                 video.currentTime += 0.1;
+                video.play()
             }
         });
 
@@ -59,6 +77,9 @@ class Scrollvideo extends React.Component {
 
         video.addEventListener('timeupdate', (event) => {
             /** Scene 1 - PAUSE */
+            if(video.currentTime >= 0 && video.currentTime < 2.2){
+                TweenLite.to([scene1, scene2,scene3,scene4], 1, {opacity: 0});
+            }
             if(video.currentTime >= 2.2 && video.currentTime <= 2.5){
                 video.pause()
                 TweenLite.to(scene1, 1, {opacity: 1});
@@ -66,17 +87,20 @@ class Scrollvideo extends React.Component {
             }
             /** Scene 2 - PLAY */
             if(video.currentTime >= 2.6 && video.currentTime <= 3.7){
-                video.play()
                 TweenLite.to(scene1, 1, {opacity: 0});
+            }
+            if(video.currentTime < 6.0 && video.currentTime > 13.9){
+                $("#gelo","#agua").removeClass('active');
             }
             /** Scene 2 */
             if(video.currentTime >= 6.0 && video.currentTime <= 6.7){
                 TweenLite.to(scene2, 1, {opacity: 1, zIndex:3,});
                 TweenLite.to([scene1,scene3,scene4], 1, {opacity: 0});
+                $("#agua").removeClass('active');
                 $("#gelo").addClass('active');
             }
             /** Scene 2 */
-            if(video.currentTime >= 9.5){
+            if(video.currentTime >= 9.5 && video.currentTime <= 13.9){
                 $("#gelo").removeClass('active');
                 $("#agua").addClass('active');
             }
@@ -87,7 +111,6 @@ class Scrollvideo extends React.Component {
             /** Scene 3 - PLAY */
             if(video.currentTime >= 15.1 &&  video.currentTime <= 16.2){
                 TweenLite.to(scene2, 1, {opacity: 0, zIndex:2,});
-                video.play()
             }
             /** Scene 3 - PAUSE */
             if(video.currentTime >= 17.8 &&  video.currentTime <= 18.3){
@@ -98,39 +121,35 @@ class Scrollvideo extends React.Component {
             /** Scene 4 - PLAY */
             if(video.currentTime >= 18.4 &&  video.currentTime <= 19.1){
                 TweenLite.to(scene3, 1, {opacity: 0, zIndex:2,});
-                video.play()
             }
             if(video.currentTime >= 25 && video.currentTime <= 25.3){
                 TweenLite.to(scene4, 1, {opacity: 1, zIndex:3,});
                 TweenLite.to([scene1,scene2,scene3], 1, {opacity: 0});
             }
-            let valid = 0
-            if(valid == 0){
-                valid = 1
-                if(video.currentTime >= 25){
-                    $(".slider").val(26)
-                    this.setState({value: 26});
-                }
-                if(video.currentTime >= 26.5){
-                    $(".slider").val(180)
-                    this.setState({value: 180})
-                }
-                if(video.currentTime >= 27.5){
-                    $(".slider").val(337)
-                    this.setState({value: 337})
-                }
-                if(video.currentTime >= 28.5){
-                    $(".slider").val(651)
-                    this.setState({value: 651})
-                }
-                if(video.currentTime >= 29.5){
-                    $(".slider").val(811)
-                    this.setState({value: 811})
-                }
-                if(video.currentTime >= 30.5){
-                    $(".slider").val(1000)
-                    this.setState({value: 1000})
-                }
+       
+            if(video.currentTime >= 25){
+                $(".slider").val(26)
+                this.setState({value: 26});
+            }
+            if(video.currentTime >= 26.5){
+                $(".slider").val(180)
+                this.setState({value: 180})
+            }
+            if(video.currentTime >= 27.5){
+                $(".slider").val(337)
+                this.setState({value: 337})
+            }
+            if(video.currentTime >= 28.5){
+                $(".slider").val(651)
+                this.setState({value: 651})
+            }
+            if(video.currentTime >= 29.5){
+                $(".slider").val(811)
+                this.setState({value: 811})
+            }
+            if(video.currentTime >= 30.5){
+                $(".slider").val(1000)
+                this.setState({value: 1000})
             }
             /** Scene 4 - PAUSE */
             if(video.currentTime >= 32){
@@ -155,22 +174,24 @@ class Scrollvideo extends React.Component {
 
         this.setState({value: e.target.value});
 
-        if(this.state.value < 110){
-            video.currentTime = "25.5"
+        if(e.target.value < 110){
+            video.currentTime = "25.708"
         }
-        if(this.state.value > 110 && this.state.value < 260){
-            video.currentTime = "27.5"
+        if(e.target.value > 110 && e.target.value < 260){
+            video.currentTime = "27.166"
         }
-        if(this.state.value > 260 && this.state.value < 550){
-            video.currentTime = "27.5"
+        if(e.target.value > 260 && e.target.value < 550){
+            video.currentTime = "28.250"
         }
-        if(this.state.value > 550 && this.state.value < 740){
-            video.currentTime = "28.5"
+        if(e.target.value > 550 && e.target.value < 740){
+            video.currentTime = "29.250"
         }
-        if(this.state.value > 920){
-            video.currentTime = "30.5"
+        if(e.target.value > 740 && e.target.value < 920 ){
+            video.currentTime = "30.291"
         }
-        
+        if(e.target.value > 920){
+            video.currentTime = "31.666"
+        }
     }
 
 
@@ -255,11 +276,9 @@ class Scrollvideo extends React.Component {
                             <div className="bg-filter"></div>
                         </div>
                     </div>
-                    {/* <div id="convertible-space" className={`convertible-space  ${this.state.value < 110 ? "vinhos" : ""} ${this.state.value > 110 && this.state.value < 260 ? "frutas-vegetais" : "" } ${this.state.value > 260 && this.state.value < 550 ? "carnes-peixes" : "" } ${this.state.value > 550 && this.state.value < 740 ? "congelamento-suave" : "" } ${this.state.value > 740 && this.state.value < 920 ? "congelamento-medio" : "" } ${this.state.value > 920 ? "congelamento-intenso" : "" } `}>
-                    </div> */}
                 </div>
             </div>
-            <video className="videobg" controls="true" preload="true" muted>
+            <video className="videobg" preload="true" muted>
                 <source src="https://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/Brastemp_Jupter_Interacao_P013-2.mp4" type="video/mp4" />
             </video>
         </div>

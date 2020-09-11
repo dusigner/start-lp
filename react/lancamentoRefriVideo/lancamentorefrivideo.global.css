@@ -1,9 +1,6 @@
 html {
     scroll-behavior: smooth;
 }
-body.bg-base {
-    overflow: hidden;
-}
 .refrivideo {
     width: 100%;
     overflow: hidden;

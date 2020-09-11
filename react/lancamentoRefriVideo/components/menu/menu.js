@@ -8,17 +8,22 @@ class Menu extends React.Component {
         return (
             <div className="menu__lp">
                 <div className="menu__lp-wrap">
-                    <h1>Geladeira Inverse | 4</h1>
+                    <h1>Geladeira 4 Portas</h1>
                     <nav id="nav">
                         <ul>
                             <li>
-                                <AnchorLink offset={() => 55} href='#assistencia' name="assistencia_tecnica" className="links">
+                                <AnchorLink offset={() => 55} href='#assistencia' name="visao_geral" className="links active">
                                     <span>Visão Geral</span>
                                 </AnchorLink>
                             </li>
                             <li>
+                                <AnchorLink offset={() => 55} href='#assistencia' name="especificacoes_tecnica" className="links">
+                                    <span>Especificações técnicas</span>
+                                </AnchorLink>
+                            </li>
+                            <li>
                                 <AnchorLink offset={() => 55} href='#vitrine' name="menu_superior" className="links">
-                                    <span>Eu Quero</span>
+                                    <span>Comprar</span>
                                 </AnchorLink>
                             </li>
                         </ul>

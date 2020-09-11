@@ -16,14 +16,14 @@ body.bg-base {
 }
 .refrivideo .headroom--unfixed {
     position: relative;
-    transform: translateY(-53px);
+    transform: translateY(-50px);
 }
 .refrivideo .headroom--scrolled {
     transition: transform 200ms ease-in-out;
 }
 .refrivideo .headroom--unpinned {
     position: fixed;
-    transform: translate3d(0px, -99%, 0px);
+    transform: translate3d(0px, -50px, 0px);
     transition: all 0.5s ease-in-out 0s;
 }
 .refrivideo .headroom--pinned {

@@ -36,19 +36,19 @@ class Vitrine extends React.Component {
                     ref={slider => (this.slider1 = slider)}
                 >
                     <div className="item">
-                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/produto-vitrine-.png"></img>
+                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-1.png"></img>
                     </div>
                     <div className="item">
-                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/produto-vitrine-1-.png"></img>
+                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-2.png"></img>
                     </div>
                     <div className="item">
-                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/produto-vitrine-2-.png"></img>
+                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod3.png"></img>
                     </div>
                     <div className="item">
-                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/produto-vitrine-3-.png"></img>
+                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-4.png"></img>
                     </div>
                     <div className="item">
-                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/produto-vitrine-4-.png"></img>
+                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-5.png"></img>
                     </div>
                 </Slider>
 
@@ -62,19 +62,19 @@ class Vitrine extends React.Component {
                 centerMode={true}
                 >
                     <div className="item">
-                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/produto-vitrine-.png"></img>
+                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-1.png"></img>
                     </div>
                     <div className="item">
-                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/produto-vitrine-1-.png"></img>
+                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-2.png"></img>
                     </div>
                     <div className="item">
-                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/produto-vitrine-2-.png"></img>
+                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod3.png"></img>
                     </div>
                     <div className="item">
-                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/produto-vitrine-3-.png"></img>
+                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-4.png"></img>
                     </div>
                     <div className="item">
-                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/produto-vitrine-4-.png"></img>
+                        <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-5.png"></img>
                     </div>
                 </Slider>
             </div>

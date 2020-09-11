@@ -1,31 +1,32 @@
 import React, { Component } from 'react'
-import { SEO } from 'brastemp.components';
+import { Header, Footer, SEO } from 'brastemp.components';
 import { ExtensionPoint } from "render";
 import VersaoOriginal from "./versaoOriginal/lancamentoRefri";
-import VersaoVideo from "./versaoVideo/lancamentoRefriVideo";
 import LazyLoad from 'react-lazyload';
+import HeaderFooter from './versaoOriginal/layout/header-footer/header-footer'
+import './versaoQrcode.global.css'
 
-// Assets
-import './versaoOriginal.global.css';
-
-class lancamentoRefri extends Component {
+class lancamentoRefriVideo extends Component {
 
     constructor(props) {
 		super(props);
-    }
-    
+	}
+
     render() {
         return (
             <React.Fragment>
                 <SEO title={this.props.title} description={this.props.description} />
                 <LazyLoad height={'100%'} offset={0}>
                     <main id="main" className="main">
-                        <ExtensionPoint id="header" hideSupportMenu={true} />
+                        <HeaderFooter
+                            propsClass="header"
+                        />
                         <VersaoOriginal 
                             versao="video"
                         />
-                        <VersaoVideo/>
-                        <ExtensionPoint id="footer" hideSupportMenu={true} />
+                        <HeaderFooter
+                            propsClass="footer"
+                        />
                     </main>
                 </LazyLoad>
             </React.Fragment>
@@ -34,4 +35,4 @@ class lancamentoRefri extends Component {
 
 }
 
-export default lancamentoRefri;
+export default lancamentoRefriVideo;

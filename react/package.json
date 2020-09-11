@@ -13,11 +13,8 @@
     "react-lazyload": "^2.6.5",
     "react-responsive": "^8.0.3",
     "react-responsive-picture": "^3.2.2",
-    "react-scrollmagic": "^2.2.0",
-    "react-video-scroll": "^1.0.1",
     "scrollmagic": "^2.0.7",
     "scrollmagic-plugin-gsap": "^1.0.4",
-    "styled-components": "^5.1.1",
     "react-slick": "^0.25.2",
     "slick-carousel": "^1.8.1"
   },

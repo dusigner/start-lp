@@ -7,7 +7,7 @@ class FrechControl extends React.Component {
 
     render() {
         return (
-            <div id="fresh-control" className="fresh-control">
+            <div id="fresh-control" className="fresh-control section">
 
                 <Title setClass="center" textMF="Fresh Control" textDF="Fresh Control"/>
 

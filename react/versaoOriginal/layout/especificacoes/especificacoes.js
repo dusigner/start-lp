@@ -13,7 +13,7 @@ class EspecificacoesTecnicas extends React.Component {
 
     render() {
         return (
-            <div id="especificacoes" className="especificacoes">
+            <div id="especificacoes" className="especificacoes section">
 
                 <Title setClass="center" textMF="Especificações técnicas" textDF="Especificações técnicas"/>
 

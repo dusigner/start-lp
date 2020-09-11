@@ -24,7 +24,7 @@ class Vitrine extends React.Component {
     
       render() {
         return (
-            <div id="vitrine" className="vitrine -sem-compra section">
+            <div id="vitrine" className="vitrine -sem-compra">
 
                 <h2>Geladeira Brastemp Inverse | 4</h2>
                 <h3>543 litros cor Inox com Convertible Space</h3>

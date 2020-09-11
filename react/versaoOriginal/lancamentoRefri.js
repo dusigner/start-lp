@@ -42,7 +42,6 @@ class LancamentoRefri extends React.Component {
 				<ConvertibleSpace></ConvertibleSpace>
 				<AtencaoDetalhes></AtencaoDetalhes>
 				<Video></Video>
-				{/* <Compra></Compra> */}
 				<Vitrine></Vitrine>
 				<EspecificacoesTecnicas></EspecificacoesTecnicas>
 

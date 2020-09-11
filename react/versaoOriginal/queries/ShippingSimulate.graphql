@@ -1,0 +1,28 @@
+query variables($postalCode: String, $quantity: String, $idProduto: String, $sellerId: String){
+    shipping(items: [{id: $idProduto, quantity: $quantity, seller: $sellerId}], postalCode: $postalCode, country: "BRA") {
+        logisticsInfo {
+            itemIndex
+            selectedSla
+            slas {
+                id
+                name
+                price
+                shippingEstimate
+                shippingEstimateDate
+                deliveryIds {
+                    courierId
+                    warehouseId
+                    dockId
+                    courierName
+                    quantity
+                }
+                friendlyName
+            }   
+        }
+        messages {
+            code
+            text
+            status
+        }
+    }
+}

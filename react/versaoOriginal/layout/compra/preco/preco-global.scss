@@ -1,0 +1,91 @@
+$desktop: 1025px;
+$mobile: 1024px;
+
+@mixin fontStd($size, $color) {
+    color: $color;
+    font-family: Soleto;
+    font-size: $size;
+    font-weight: 300;
+}
+
+.preco-new {
+    display: flex;
+    flex-direction: column;
+
+    &_onTop {
+        align-items: center;
+        display: flex;
+
+        &_de {
+            color: #999;
+            font: normal 18px/28px Soleto;
+            text-decoration: line-through;
+
+            @media screen and (max-width: $mobile) {   
+                font: normal 14px/25px Soleto;
+            }
+        }
+
+        &_label_desconto {
+            background: var(--orange) 0% 0% no-repeat padding-box;
+            color: #fafafa;
+            font: normal 13px/18px Soleto;
+            height: 19px;
+            margin-left: 8px;
+            text-align: center;
+            width: 44px;
+        }
+    }
+
+    &_onMiddle {
+        letter-spacing: 0.16px;
+        padding: 9px 0;
+
+
+        @media screen and (max-width: 768px) { 
+            letter-spacing: 0.14px;
+        }
+
+        &_preco {
+            color: var(--orange);
+            font: normal 30px/25px Soleto;
+            letter-spacing: 0.16px;
+
+            @media screen and (max-width: 768px) {   
+                font: normal 22px/25px Soleto;
+                letter-spacing: 0.22px;
+            }
+        }
+
+        &_text {
+            color: #999;
+            font: 300 16px/25px Soleto;
+
+            @media screen and (max-width: $mobile) {   
+                font: 300 14px/25px Soleto;
+            }
+        }
+
+        &_desconto {
+            color: var(--orange);
+            font: 200 18px/25px Soleto;
+
+            @media screen and (max-width: $mobile) {   
+                font: normal 14px/25px Soleto;
+            }
+        }
+    }
+
+
+    &_onBottom {
+        font-size: 14px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 300;
+
+        &_preco {
+            font-weight: normal;
+        }
+
+    }
+}

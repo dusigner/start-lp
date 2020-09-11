@@ -1,0 +1,220 @@
+.flag.todos {
+  display: none !important;
+}
+
+.flag {
+  font-size: 0;
+  margin: 0;
+  position: absolute;
+}
+
+.produto .FlagsHightLight .flag,
+.produto .prod-selos .flag {
+  margin-right: 60px;
+  top: 0;
+}
+
+body .flag {
+  background-size: contain !important;
+  height: 70px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70px;
+  z-index: 3;
+}
+
+@media (min-width: 500px) {
+  body .flag {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+@media (min-width: 769px) {
+  body .flag {
+    right: -20px;
+    top: -20px;
+  }
+}
+
+body .purchase-module[class*='btp-colecao-1'],
+body .FlagsHightLight[class*='btp-colecao-1'],
+body .prod-selos[class*='btp-colecao-1'],
+body .flag[class*='btp-colecao-1'] {
+  background: transparent url("/arquivos/btp-selo-1.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-2'],
+body .FlagsHightLight[class*='btp-colecao-2'],
+body .prod-selos[class*='btp-colecao-2'],
+body .flag[class*='btp-colecao-2'] {
+  background: transparent url("/arquivos/btp-selo-2.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-3'],
+body .FlagsHightLight[class*='btp-colecao-3'],
+body .prod-selos[class*='btp-colecao-3'],
+body .flag[class*='btp-colecao-3'] {
+  background: transparent url("/arquivos/btp-selo-3.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-4'],
+body .FlagsHightLight[class*='btp-colecao-4'],
+body .prod-selos[class*='btp-colecao-4'],
+body .flag[class*='btp-colecao-4'] {
+  background: transparent url("/arquivos/btp-selo-4.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-5'],
+body .FlagsHightLight[class*='btp-colecao-5'],
+body .prod-selos[class*='btp-colecao-5'],
+body .flag[class*='btp-colecao-5'] {
+  background: transparent url("/arquivos/btp-selo-5.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-6'],
+body .FlagsHightLight[class*='btp-colecao-6'],
+body .prod-selos[class*='btp-colecao-6'],
+body .flag[class*='btp-colecao-6'] {
+  background: transparent url("/arquivos/btp-selo-6.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-7'],
+body .FlagsHightLight[class*='btp-colecao-7'],
+body .prod-selos[class*='btp-colecao-7'],
+body .flag[class*='btp-colecao-7'] {
+  background: transparent url("/arquivos/btp-selo-7.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-8'],
+body .FlagsHightLight[class*='btp-colecao-8'],
+body .prod-selos[class*='btp-colecao-8'],
+body .flag[class*='btp-colecao-8'] {
+  background: transparent url("/arquivos/btp-selo-8.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-9'],
+body .FlagsHightLight[class*='btp-colecao-9'],
+body .prod-selos[class*='btp-colecao-9'],
+body .flag[class*='btp-colecao-9'] {
+  background: transparent url("/arquivos/btp-selo-9.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-10'],
+body .FlagsHightLight[class*='btp-colecao-10'],
+body .prod-selos[class*='btp-colecao-10'],
+body .flag[class*='btp-colecao-10'] {
+  background: transparent url("/arquivos/btp-selo-10.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-11'],
+body .FlagsHightLight[class*='btp-colecao-11'],
+body .prod-selos[class*='btp-colecao-11'],
+body .flag[class*='btp-colecao-11'] {
+  background: transparent url("/arquivos/btp-selo-11.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-12'],
+body .FlagsHightLight[class*='btp-colecao-12'],
+body .prod-selos[class*='btp-colecao-12'],
+body .flag[class*='btp-colecao-12'] {
+  background: transparent url("/arquivos/btp-selo-12.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-13'],
+body .FlagsHightLight[class*='btp-colecao-13'],
+body .prod-selos[class*='btp-colecao-13'],
+body .flag[class*='btp-colecao-13'] {
+  background: transparent url("/arquivos/btp-selo-13.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-14'],
+body .FlagsHightLight[class*='btp-colecao-14'],
+body .prod-selos[class*='btp-colecao-14'],
+body .flag[class*='btp-colecao-14'] {
+  background: transparent url("/arquivos/btp-selo-14.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-15'],
+body .FlagsHightLight[class*='btp-colecao-15'],
+body .prod-selos[class*='btp-colecao-15'],
+body .flag[class*='btp-colecao-15'] {
+  background: transparent url("/arquivos/btp-selo-15.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-16'],
+body .FlagsHightLight[class*='btp-colecao-16'],
+body .prod-selos[class*='btp-colecao-16'],
+body .flag[class*='btp-colecao-16'] {
+  background: transparent url("/arquivos/btp-selo-16.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-17'],
+body .FlagsHightLight[class*='btp-colecao-17'],
+body .prod-selos[class*='btp-colecao-17'],
+body .flag[class*='btp-colecao-17'] {
+  background: transparent url("/arquivos/btp-selo-17.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-18'],
+body .FlagsHightLight[class*='btp-colecao-18'],
+body .prod-selos[class*='btp-colecao-18'],
+body .flag[class*='btp-colecao-18'] {
+  background: transparent url("/arquivos/btp-selo-18.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-19'],
+body .FlagsHightLight[class*='btp-colecao-19'],
+body .prod-selos[class*='btp-colecao-19'],
+body .flag[class*='btp-colecao-19'] {
+  background: transparent url("/arquivos/btp-selo-19.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+
+body .purchase-module[class*='btp-colecao-20'],
+body .FlagsHightLight[class*='btp-colecao-20'],
+body .prod-selos[class*='btp-colecao-20'],
+body .flag[class*='btp-colecao-20'] {
+  background: transparent url("/arquivos/btp-selo-20.png") 0 100% no-repeat;
+  overflow: hidden;
+  text-indent: -99999px;
+}
+/*# sourceMappingURL=selos.global.css.map */

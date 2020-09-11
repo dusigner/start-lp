@@ -1,0 +1,289 @@
+.convertible-space {
+    position: relative;
+    background-color: #000;
+    overflow: hidden;
+    margin-top: 0;
+
+    height: 650px;
+    background-position: left 80% bottom 0;
+    background-size: 850px;
+    background-repeat: no-repeat;
+
+    -webkit-transition: background-image 0.5s;
+    -moz-transition: background-image 0.5s;
+    -o-transition: background-image 0.5s;
+    transition: background-image 0.5s;
+}
+.convertible-space.vinhos{
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vinhos.jpg');
+}
+.convertible-space.frutas-vegetais{
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/frutas-vegetais.jpg');
+}
+.convertible-space.carnes-peixes{
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/carnes-peixes.jpg');
+}
+.convertible-space.congelamento-suave{
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/refeicoes-semanais.jpg');
+}
+.convertible-space.congelamento-medio{
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/sorvetes-sobremesas.jpg');
+}
+.convertible-space.congelamento-intenso{
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/congelamento-intenso.jpg');
+}
+
+.convertible-space .line-chose {
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+    transform: translate(10%);
+}
+
+.convertible-space .line-chose .line-text {
+    position: absolute;
+    right: 60px;
+    top: -140px;
+}
+
+.convertible-space .line-chose .line-text h3 {
+    font-family: Soleto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 9px;
+    line-height: 133.83%;
+    margin: 0 0 5px
+}
+
+.convertible-space .line-chose .line-text p {
+    font-family: Soleto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 118.83%;
+    text-align: left;
+    margin: 0 0 25.7px;
+}
+.convertible-space .line-chose .line-text p.active {
+    font-weight: bold;
+}
+
+.convertible-space .line-chose .line-text h3,
+.convertible-space .line-chose .line-text p {
+    display: block;
+    color: #fff;
+}
+
+
+
+
+.convertible-space .line-chose .line-text-index {
+    position: absolute;
+    right: 170px;
+    top: -122px;
+}
+
+
+.convertible-space .line-chose .line-text-index p {
+    font-family: Soleto;
+    min-width: 160px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 118.83%;
+    text-align: right;
+    margin: 0 0 10px;
+    padding: 0 35px 0 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background-position: right 0 top 50%;
+    background-repeat: no-repeat;
+    background-size: 27px;
+}
+
+.convertible-space .line-chose .line-text-index p:nth-child(1) {
+    background-position: right 10px top 50%;
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/ico-7.png');
+    background-size: 8px;
+}
+.convertible-space .line-chose .line-text-index p:nth-child(2) {
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/ico-8.png');
+}
+.convertible-space .line-chose .line-text-index p:nth-child(3) {
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/ico-9.png');
+    margin: 0 0 35px;
+}
+.convertible-space .line-chose .line-text-index p:nth-child(4) {
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/ico-10.png');
+    margin: 0 0 15px;
+}
+.convertible-space .line-chose .line-text-index p:nth-child(5) {
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/ico-11.png');
+    margin: 0 0 15px;
+}
+.convertible-space .line-chose .line-text-index p:nth-child(6) {
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/ico-12.png');
+}
+
+.convertible-space .line-chose .line-text-index p.active {
+    opacity: 1;
+}
+
+
+
+.convertible-space .line-chose .slider{
+    -webkit-appearance: none;
+    appearance: none;
+    width: calc(350px - 95px);
+    padding: 0 25px;
+    height: 2px;
+    background-color: #278DAD;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    
+    transform: rotate(90deg);
+}
+
+.convertible-space .line-chose .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 61px;
+    background: transparent url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/slider-mobile-slider-convertible.png') no-repeat;
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+
+.convertible-space p {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-family: Soleto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    z-index: 1;
+}
+
+.convertible-space p .mobile {
+    display: block;
+}
+.convertible-space p .desktop {
+    display: none;
+}
+
+.convertible-space .edge-title h2 {
+    margin: 0;
+}
+.convertible-space .edge-title{
+    position: relative;
+    margin: 32px 0 13px;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    
+    .convertible-space {
+        height: 590px;
+        background-size: 1300px;
+        background-position: left 70% bottom 0;
+    }
+
+    .convertible-space .edge-title {
+        position: absolute;
+        right: 45%;
+        top: calc(50% - 145px);
+        width: 385px;
+        text-align: left;
+    }
+
+    .convertible-space > p {
+        position: absolute;
+        font-size: 18px;
+        right: 45%;
+        top: calc(50% - 35px);
+        width: 385px;
+        text-align: left;
+    }
+
+    .convertible-space .line-chose {
+        bottom: 50%;
+        transform: translate(0%);
+    }
+
+}
+
+@media (min-width: 1000px) {
+    
+    .convertible-space .edge-title {
+        right: 55%;
+    }
+
+    .convertible-space > p {
+        right: 55%;
+    }
+
+}
+
+@media (min-width: 1025px) {
+
+    .convertible-space {
+        height: 830px;
+        background-size: cover;
+        background-position: left 60% bottom 0;
+    }
+
+    .convertible-space .line-chose {
+        bottom: 50%;
+    }
+
+    .convertible-space .line-chose .slider{
+        width: 350px;
+        padding: 0px 50px;
+    }
+    
+    .convertible-space .line-chose .line-text {
+        right: 95px;
+        top: -200px;
+    }
+
+    .convertible-space .line-chose .line-text h3 {
+        font-size: 12px;
+        margin: 0 0 18px;
+    }
+
+    .convertible-space .line-chose .line-text p {
+        font-size: 18px;
+        font-weight: lighter;
+        margin: 0 0 30px;
+    }
+
+    .convertible-space .line-chose .line-text-index {
+        right: 260px;
+        top: -160px;
+    }
+
+    .convertible-space .line-chose .line-text-index p {
+        min-width: 200px;
+        font-size: 18px;
+        margin: 0 0 10px;
+    }
+    .convertible-space .line-chose .line-text-index p:nth-child(1) {
+        background-size: 8px;
+    }
+    .convertible-space .line-chose .line-text-index p:nth-child(3) {
+        margin: 0 0 54px;
+    }
+    .convertible-space .line-chose .line-text-index p:nth-child(5) {
+        margin: 0 0 12px;
+    }
+
+    .convertible-space .line-chose .slider::-webkit-slider-thumb {
+        width: 31px;
+        height: 113px;
+        padding-top: 2px;
+        background: transparent url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/slider-convertible.png') no-repeat;
+    }
+}

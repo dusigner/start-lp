@@ -1,0 +1,76 @@
+@charset 'UTF-8';
+
+$qtdColecaoSelos: 20;
+$img-path: '/arquivos/';
+$breakpoint-map: (
+    'extra-small': 30em,
+    //480px
+        'small': 48em,
+    //768px
+        'medium': 60em,
+    //960px
+        'large': 70em,
+    //1120px
+        'extra-large': 80em //1280px
+);
+
+@mixin replaceText($bg-img, $x, $y) {
+    background: transparent url($bg-img) $x $y no-repeat;
+    overflow: hidden;
+    text-indent: -99999px;
+}
+
+.flag.todos {
+    display: none !important;
+}
+
+.flag {
+    font-size: 0;
+    margin: 0;
+    position: absolute;
+}
+
+.produto {
+    .FlagsHightLight,
+    .prod-selos {
+        .flag {
+            margin-right: 60px;
+            top: 0;
+        }
+    }
+}
+
+body {
+    .flag {
+        background-size: contain !important;
+        height: 70px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 70px;
+        z-index: 3;
+
+        @media (min-width: 500px) {
+            height: 80px;
+            width: 80px;
+        }
+
+        @media (min-width: 769px) {
+            right: -20px;
+            top: -20px;
+        }
+    }
+}
+
+body {
+    .purchase-module,
+    .FlagsHightLight,
+    .prod-selos,
+    .flag {
+        @for $i from 1 through $qtdColecaoSelos {
+            &[class*='btp-colecao-#{$i}'] {
+                @include replaceText('#{$img-path}btp-selo-#{$i}.png', 0, 100%);
+            }
+        }
+    }
+}

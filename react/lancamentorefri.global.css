@@ -7,7 +7,7 @@
 .footer {
     z-index: 3 !important;
 }
-@media (min-width: 920px) {
+@media (min-width: 1023px) {
     .lancamento__refri {
         display: none;
     }

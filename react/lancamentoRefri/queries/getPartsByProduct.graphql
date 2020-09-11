@@ -1,0 +1,6 @@
+query variables($sku: String)
+{
+  getPartsByProduct(sku:$sku){
+    pecas
+  }
+} 

@@ -3,9 +3,47 @@ import React from 'react';
 import Title from '../../components/title/title';
 import './dispenser.global.css';
 
+// img
+let agua="http://bimg.visie.com.br/media/agua-ot.gif",
+    gelo="http://bimg.visie.com.br/media/gelo-ot.gif",
+    estatico="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/gelo-ot.gif";
+
+
+
 class Dispenser extends React.Component {
 
+    componentDidMount(){
+
+
+        let target = document.querySelector('.interactive');
+        let links = document.querySelectorAll('#dispenser-de-agua-e-gelo .switch-dispenser a')
+
+        links.forEach(element => {
+            element.addEventListener('click', ()=>{
+
+                links.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+
+                if (element.dataset.agua == "true") {
+                    element.classList.add('active');
+                    target.src = agua;
+                }
+
+                if (element.dataset.gelo == "true") {
+                    element.classList.add('active');
+                    target.src = gelo;
+                }
+
+            })
+        });
+
+    }
+
+    
+
     render() {
+
         return (
             <div id="dispenser-de-agua-e-gelo" className="dispenser-de-agua-e-gelo">
 
@@ -14,17 +52,18 @@ class Dispenser extends React.Component {
                 <p>Tenha água fresca e mais de 1,5kg de gelo por <br className="mobile"></br> dia e ainda <br className="desktop"></br> escolha entre gelo em cubos ou <br className="mobile"></br> gelo picado</p>
 
                 <div className="switch-dispenser">
-                    <a href="#" className="active">Gelo</a>
+                    <a data-gelo="true">Gelo</a>
                     <span className="line"></span>
-                    <a href="#">Água</a>
+                    <a data-agua="true">Água</a>
                 </div>
 
                 <img 
                     className="interactive"
-                    data-agua="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/agua.gif"
-                    data-gelo="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/gelo.gif"
-                    data-estatico="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/gelo.gif"
+                    src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/gelo-ot.gif"
                 ></img>
+
+                <img src={agua} className="invisible"></img>
+                <img src={gelo} className="invisible"></img>
 
                 <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/dispenser-bg.png"></img>
 

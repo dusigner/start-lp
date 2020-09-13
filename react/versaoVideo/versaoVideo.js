@@ -4,6 +4,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Scrollvideo from "./layout/scrollvideo/scrollvideo";
 import EspecificacoesTecnicas from '../versaoOriginal/layout/especificacoes/especificacoes'
 import $ from 'jquery'
+import VitrineCompra from '../versaoOriginal/layout/vitrine-compra/vitrine'
 
 // CSSs
 import './versaoVideo.global.css';
@@ -14,8 +15,9 @@ class VersaoVideo extends React.Component {
 	constructor(props) {
 		super();
 		this.state = {
-			visao_geral: !false,
+			visao_geral: true,
 			especificacoes: false,
+			vitrine: false
 		};
     }
 
@@ -24,14 +26,22 @@ class VersaoVideo extends React.Component {
 			$(window).scrollTop(0);
 			this.setState({
 				visao_geral: false,
-				especificacoes: !false,
+				especificacoes: true,
+				vitrine: false,
 			})
-		} else {
+		} else if(e == "visao_geral") {
+			$(window).scrollTop(0);
 			this.setState({
-				visao_geral: !false,
+				visao_geral: true,
 				especificacoes: false,
-			})
-		}
+				vitrine: false,
+		})} else {
+			$(window).scrollTop(0);
+			this.setState({
+				visao_geral: false,
+				especificacoes: false,
+				vitrine: true,
+		})}
 	}
 
 	render() {
@@ -56,7 +66,7 @@ class VersaoVideo extends React.Component {
 										</a>
 									</li>
 									<li>
-										<a href='#vitrine' name="menu_superior" className="links">
+										<a href='#vitrine' name="menu_superior"  onClick={() => this.handleClick("vitrine")} className={`${this.state.vitrine ? "active link" : "link" }`}>
 											<span>Comprar</span>
 										</a>
 									</li>
@@ -71,6 +81,9 @@ class VersaoVideo extends React.Component {
 				)}
 				{this.state.especificacoes && (
 					<EspecificacoesTecnicas />
+				)}
+				{this.state.vitrine && (
+					<VitrineCompra/>
 				)}
 			</div>
 		)

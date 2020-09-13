@@ -110,11 +110,11 @@ html {
     font-size: 12px;
     text-transform: uppercase;
     width: 100px;
-    bottom: 13px;
+    bottom: 0 !important;
     background: black;
 }
 
-.menu__lp nav ul li:last-child a:hover {
+.menu__lp nav ul li:last-child a:hover, .menu__lp nav ul li:last-child a.active {
     background: #F08B1D;
     color: white;
     padding: 5px 0;

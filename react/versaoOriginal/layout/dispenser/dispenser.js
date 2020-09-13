@@ -45,7 +45,7 @@ class Dispenser extends React.Component {
     render() {
 
         return (
-            <div id="dispenser-de-agua-e-gelo" className="dispenser-de-agua-e-gelo">
+            <div id="dispenser-de-agua-e-gelo" className="dispenser-de-agua-e-gelo section">
 
                 <Title setClass="center" textMF="Dispenser de água e gelo" textDF="Dispenser de água e gelo"/>
 

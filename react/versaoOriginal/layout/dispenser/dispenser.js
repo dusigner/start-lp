@@ -4,8 +4,8 @@ import Title from '../../components/title/title';
 import './dispenser.global.css';
 
 // img
-let agua="http://bimg.visie.com.br/media/agua-ot.gif",
-    gelo="http://bimg.visie.com.br/media/gelo-ot.gif",
+let agua="https://img.imageboss.me/consul/cdn/animation:true/wp-content/uploads/2020/09/agua-ot.gif",
+    gelo="https://img.imageboss.me/consul/cdn/animation:true/wp-content/uploads/2020/09/gelo-ot.gif",
     estatico="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/gelo-ot.gif";
 
 

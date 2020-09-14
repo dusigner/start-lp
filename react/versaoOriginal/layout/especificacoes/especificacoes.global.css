@@ -1,6 +1,8 @@
 .especificacoes {
     padding: 32px 0 0;
     background: linear-gradient(180deg, #000000 0%, #1C1C1C 62.5%);
+    z-index: 2;
+    position: relative;
 }
 
 .especificacoes picture {

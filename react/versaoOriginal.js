@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { SEO } from 'brastemp.components';
 import { ExtensionPoint } from "render";
 import VersaoOriginal from "./versaoOriginal/lancamentoRefri";
-import VersaoVideo from "./versaoVideo/lancamentoRefriVideo";
+import VersaoVideo from "./versaoVideo/versaoVideo";
 import LazyLoad from 'react-lazyload';
 
 // Assets

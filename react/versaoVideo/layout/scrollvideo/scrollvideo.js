@@ -9,6 +9,7 @@ import AtencaoDetalhes from '../../../versaoOriginal/layout/atencao-detalhes/ate
 import Video from '../video/video';
 import Title from '../../../versaoOriginal/components/title/title'
 
+const _isMounted = false;
 class Scrollvideo extends React.Component {
     constructor(props) {
 		super(props);
@@ -18,7 +19,8 @@ class Scrollvideo extends React.Component {
         }
     }
     
-    componentDidMount() {        
+    componentDidMount() {    
+        this._isMounted = true;    
         const video = document.querySelector(".videobg");
         const intro = document.querySelector(".intro");
         const scene1 = document.querySelector(".scene1");
@@ -29,7 +31,7 @@ class Scrollvideo extends React.Component {
         const section = document.querySelector("section");
 
         //SCROLLMAGIC
-        const controller = new ScrollMagic.Controller({addIndicators: true});
+        const controller = new ScrollMagic.Controller({addIndicators: false});
 
         $(window).on("scroll", function() {
             var st = $(this).scrollTop();
@@ -168,6 +170,10 @@ class Scrollvideo extends React.Component {
         .setPin(intro)
     }
 
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
     handleChange=(e)=>{
 
         const video = document.querySelector(".videobg");
@@ -197,7 +203,7 @@ class Scrollvideo extends React.Component {
 
   render() {
     return (
-      <>
+      <div>
         <div className="intro">
             <div className="scene1">
                 <div className="scene1__content">
@@ -286,7 +292,7 @@ class Scrollvideo extends React.Component {
             <AtencaoDetalhes/>
             <Video/>
         </section>
-      </>
+      </div>
     );
   }
 }

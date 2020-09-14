@@ -7,6 +7,10 @@
 .footer {
     z-index: 3 !important;
 }
+body.bg-base {
+    overflow: hidden;
+    background: #000;
+}
 @media (min-width: 1025px) {
     .lancamento__refri {
         display: none;

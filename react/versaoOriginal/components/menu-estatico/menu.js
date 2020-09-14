@@ -27,7 +27,6 @@ class Menu extends React.Component {
 
             const menu = document.getElementsByClassName('menu-edge')[0];
             const active = document.querySelectorAll('nav .active');
-            const height = document.getElementsByClassName("design-inovador")[0].clientHeight;
             if(document.documentElement.scrollTop > height + 300) menu.scrollLeft = active[0].offsetLeft - 10;
             else menu.scrollLeft = active[0].offsetLeft - 10;
 

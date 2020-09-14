@@ -12,12 +12,15 @@ const imgDesktop = 'https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/
 
 class GeladeiraInverse extends React.Component {
 
+    componentDidMount(){
+        const video = document.querySelector("video")
+    }
+
     render() {
         return (
             <div id="video-refri" className="video-refri section">
-
                 <Video
-                    poster="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video-promo-video-thumb-brastemp-1.jpg" 
+                    poster="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/poster-video-geladeira-inverse-4.jpg" 
                     setSrc="https://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/brastemp_geladeira_jupiter_.mp4"/>
 
             </div>

@@ -12,7 +12,6 @@
         width: calc(100% - 50px);
         display: block;
         margin: 0 auto;
-        border: 2px solid #FF5C00;
     }
 
 }
@@ -28,7 +27,6 @@
         max-width: 1200px;
         display: block;
         margin: 0 auto;
-        border: 2px solid #FF5C00;
     }
 
 }

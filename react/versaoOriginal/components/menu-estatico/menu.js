@@ -20,7 +20,7 @@ class Menu extends React.Component {
         function changeLinkState() {
             let index = sections.length;
 
-            while(--index && window.scrollY + 54 < sections[index].offsetTop) {}
+            while(--index && window.scrollY + 55 < sections[index].offsetTop) {}
             
             links.forEach(
                 (link) => link.classList.remove('active') && console.log(link)
@@ -31,11 +31,9 @@ class Menu extends React.Component {
             const menu = document.getElementsByClassName('menu__lp')[0];
             const active = document.querySelectorAll('nav .active');
             const height = document.getElementsByClassName("geladeira-inverse")[0].clientHeight;
-            if(document.documentElement.scrollTop > height + 300){
-                menu.scrollLeft = active[0].offsetLeft - (screen.width / 2 - active[0].offsetWidth / 2);  
-            }else {
+            
                 menu.scrollLeft = active[0].offsetLeft - 10;
-            }
+            
         }
 
         changeLinkState();

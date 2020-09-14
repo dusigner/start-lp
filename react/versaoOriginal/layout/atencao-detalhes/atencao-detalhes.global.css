@@ -32,12 +32,12 @@
     display: block;
     position: relative;
     width: 300px;
-    margin: 0 auto 30px;
 }
 .atencao-detalhes .acesso-info picture {
     display: block;
     position: relative;
     text-align: center;
+    margin: 0 0 30px;
 }
 .atencao-detalhes .acesso-info picture img{
     transition: all .2s ease-in-out;
@@ -46,6 +46,7 @@
     transform: scale(1.1);
 }
 .atencao-detalhes .acesso-info picture .efectHover {
+    display: inline-block;
     overflow: hidden;
 }
 .atencao-detalhes .acesso-info picture::before {

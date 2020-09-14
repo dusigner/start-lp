@@ -48,7 +48,7 @@ class ConvertibleSpace extends React.Component {
 
                     <input 
                     className="slider"
-                    type="range" 
+                    type="range"
                     min="0" max="1000" 
                     value={this.state.value} 
                     onChange={this.handleChange}

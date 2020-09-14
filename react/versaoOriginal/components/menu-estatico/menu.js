@@ -47,7 +47,7 @@ class Menu extends React.Component {
                         <ul>
                             <li>
                                 <AnchorLink offset={() => 55} href='#geladeira-inverse-4' name="geladeira-inverse" className="links">
-                                    <h1>Geladeira Inverse | 4</h1>
+                                    <h1>Geladeira 4 portas</h1>
                                 </AnchorLink>
                             </li>
                             <li>

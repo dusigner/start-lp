@@ -50,7 +50,7 @@ class Menu extends React.Component {
         <div className="menu-edge">
             <nav id="nav">
                 <AnchorLink offset={() => 100} href='#geladeira-inverse-4' className="links">
-                    <span>Geladeira Inverse | 4</span>
+                    <h1>Geladeira 4 portas</h1>
                 </AnchorLink>
                 <AnchorLink offset={() => 0} href='#dispenser-de-agua-e-gelo' className="links">
                     <span>Dispenser de água e gelo</span>

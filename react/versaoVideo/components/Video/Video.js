@@ -112,7 +112,7 @@ class Video extends React.Component {
                     </svg>
                     <img src={this.props.poster}/>
                 </div>
-                <video id="myVideo" ref="videoRef" poster={this.props.poster} className="video" width="100%" height="100%" controls>
+                <video id="myVideo" ref="videoRef" poster={this.props.poster}  preload="true" className="video" width="100%" height="100%" controls>
                     <source src={this.props.setSrc} type="video/mp4"></source>
                 </video>
             </div>

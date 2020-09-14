@@ -7,7 +7,7 @@ function SliderNextArrow(props) {
 	const { onClick } = props;
 	return (
 	  	<div className="SliderNextArrow" onClick={onClick} >
-			<svg width="37" height="33" viewBox="0 0 37 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<svg width="37" height="33" viewBox="0 0 37 33" fill="none">
 				<path d="M30.7749 16.3875L2 16.3874" stroke="#DB532A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 				<path d="M22.5533 28.7186L34.8854 16.3865L22.5533 4.05442" stroke="#DB532A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 			</svg>
@@ -19,7 +19,7 @@ function SliderPrevArrow(props) {
 	const { onClick } = props;
 	return (
 		<div className="SliderPrevArrow" onClick={onClick} >
-			<svg width="37" height="33" viewBox="0 0 37 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<svg width="37" height="33" viewBox="0 0 37 33" fill="none">
 				<path d="M6.1106 16.6126L34.8855 16.6125" stroke="#DB532A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 				<path d="M14.3322 4.28137L2.00005 16.6135L14.3322 28.9456" stroke="#DB532A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 			</svg>

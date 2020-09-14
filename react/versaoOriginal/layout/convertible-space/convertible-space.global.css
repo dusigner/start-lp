@@ -137,7 +137,7 @@
     width: calc(350px - 95px);
     padding: 0 25px;
     height: 2px;
-    background-color: #278DAD;
+    background-color: transparent;
     outline: none;
     -webkit-transition: .2s;
     transition: opacity .2s;
@@ -242,6 +242,7 @@
     .convertible-space .line-chose .slider{
         width: 350px;
         padding: 0px 50px;
+        background-color: #278DAD;
     }
     
     .convertible-space .line-chose .line-text {

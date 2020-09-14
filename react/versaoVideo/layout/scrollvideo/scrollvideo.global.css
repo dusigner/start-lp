@@ -1,0 +1,462 @@
+.intro {
+    height: 100vh;
+}
+.videobg {
+    height: calc(100vh - 50px);
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    top: 50px;
+    z-index: 1;
+}
+.scene1,
+.scene2,
+.scene3,
+.scene4{
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    color: white;
+    position: fixed;
+    opacity: 0;
+    padding-top: 50px;
+    top: 0;
+}
+/*********
+ Scene 1
+*********/
+.scene1 {
+    align-items: center;
+    flex-direction: column;
+}
+.scene1__content {
+    margin-top: 80px;
+}
+.scene1 h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 40px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+.scene1 p {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 29px;
+    width: 495px;
+}
+/*********
+ Scene 2
+*********/
+.scene2 {
+    align-items: center;
+    flex-direction: column;
+}
+
+.scene2__content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.scene2__content-grid {
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 93%;
+}
+.scene2__content-col1 {
+    width: 285px;
+    height: 296px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.scene2__content-col2 {
+    width: 337px;
+    height: 296px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.switch-dispenser__video {
+    width: 160px;
+    height: 179px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 25px;
+    margin-left: -75px;
+}
+.switch-dispenser__video a {
+    display: block;
+    position: relative;
+    font-family: Soleto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 140%;
+    color: #BBBBBB;
+    text-decoration: none;
+    padding-left: 25px;
+    width: 90px;
+}
+.switch-dispenser__video a.active {
+    color: white;
+}
+.switch-dispenser__video .line {
+    display: block;
+    height: 55px;
+    width: 1px;
+    margin: 4px 0 4px 10px;
+    background-color: #C4A08B;
+}
+.switch-dispenser__video a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    width: 6px;
+    height: 6px;
+    background-color: #F2F2F2;
+    border: 1px solid #F55D2F;
+    transform: translate(0,-50%);
+    z-index: 2;
+}
+.switch-dispenser__video a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    width: 12px;
+    height: 12px;
+    transform: translate(0,-50%);
+    z-index: 2;
+}
+.switch-dispenser__video a.active::before {
+    background-color: #F55D2F;
+    border: 1px solid #F55D2F;
+}
+.switch-dispenser__video a.active::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    width: 12px;
+    height: 12px;
+    background-color: #F2F2F2;
+    border: 1px solid #F55D2F;
+    transform: translate(0,-50%);
+    z-index: 1;
+}
+.scene2__content-col1 h2 {
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 52px;
+    margin-bottom: 25px;
+}
+.scene2__content-col1 p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+}
+.scene2__content-mouse {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.scene2__content-mouse svg {
+    margin-top: 10px;
+}
+/*********
+ Scene 3
+*********/
+.scene3 {
+    align-items: center;
+    flex-direction: column;
+}
+.scene3__content {
+    width: 930px;
+    height: 334px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.scene3__content-filter {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    filter: blur(250px);
+    position: absolute;
+    top: -40%;
+}
+.scene3__content-text {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.scene3__content-text h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+.scene3__content-text p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 0.015em;
+    width: 667px;
+    text-align: center;
+}
+/*********
+ Scene 4
+*********/
+.scene4 {
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+    
+}
+.scene4 h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 52px;
+    margin-bottom: 30px;
+}
+.scene4__content {
+    width: 100%;
+    max-width: 1055px;
+}
+.convertible__space {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.convertible__space.vinhos{
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vinhos.jpg');
+}
+.convertible__space.frutas-vegetais{
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/frutas-vegetais.jpg');
+}
+.convertible__space.carnes-peixes{
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/carnes-peixes.jpg');
+}
+.convertible__space.congelamento-suave{
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/refeicoes-semanais.jpg');
+}
+.convertible__space.congelamento-medio{
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/sorvetes-sobremesas.jpg');
+}
+.convertible__space.congelamento-intenso{
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/congelamento-intenso.jpg');
+}
+.convertible__space .line-chose .line-text h3 {
+    font-family: Soleto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 9px;
+    line-height: 133.83%;
+    margin: 0 0 5px
+}
+.convertible__space .line-chose .line-text p {
+    font-family: Soleto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 118.83%;
+    text-align: left;
+    margin: 0 0 25.7px;
+}
+.convertible__space .line-chose .line-text p.active {
+    font-weight: bold;
+}
+
+.convertible__space .line-chose .line-text h3,
+.convertible__space .line-chose .line-text p {
+    display: block;
+    color: #fff;
+}
+
+
+
+
+/* .convertible__space .line-chose .line-text-index {
+    position: absolute;
+    right: 170px;
+    top: -122px;
+} */
+
+
+.convertible__space .line-chose .line-text-index p {
+    font-family: Soleto;
+    min-width: 160px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 118.83%;
+    text-align: right;
+    margin: 0 0 10px;
+    padding: 0 35px 0 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background-position: right 0 top 50%;
+    background-repeat: no-repeat;
+    background-size: 27px;
+}
+
+.convertible__space .line-chose .line-text-index p:nth-child(1) {
+    background-position: right 10px top 50%;
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/ico-7.png');
+    background-size: 8px;
+}
+.convertible__space .line-chose .line-text-index p:nth-child(2) {
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/ico-8.png');
+}
+.convertible__space .line-chose .line-text-index p:nth-child(3) {
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/ico-9.png');
+    margin: 0 0 35px;
+}
+.convertible__space .line-chose .line-text-index p:nth-child(4) {
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/ico-10.png');
+    margin: 0 0 15px;
+}
+.convertible__space .line-chose .line-text-index p:nth-child(5) {
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/ico-11.png');
+    margin: 0 0 15px;
+}
+.convertible__space .line-chose .line-text-index p:nth-child(6) {
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/ico-12.png');
+}
+
+.convertible__space .line-chose .line-text-index p.active {
+    opacity: 1;
+}
+
+
+
+.convertible__space .line-chose .slider{
+    -webkit-appearance: none;
+    appearance: none;
+    height: 2px;
+    background: rgb(39,141,173);
+    background: linear-gradient(-90deg, rgba(39,141,173,1) 0%, rgba(43,76,87,1) 100%);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    transform: rotate(90deg);
+    width: 350px;
+    position: absolute;
+}
+
+.convertible__space .line-chose .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 31px;
+    height: 113px;
+    background: transparent url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/slider-convertible.png') no-repeat;
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+.convertible__space p {
+    position: relative;
+    text-align: left;
+    color: #fff;
+    font-family: Soleto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 140%;
+    z-index: 1;
+}
+
+.convertible__space p .mobile {
+    display: block;
+}
+.convertible__space p .desktop {
+    display: none;
+}
+
+.convertible__space .edge-title h2 {
+    margin: 0;
+    text-align: left;
+}
+.convertible__space .edge-title{
+    position: relative;
+    margin: 32px 0 13px;
+    z-index: 1;
+}
+.convertible__space .line-chose .bg-filter {
+    background: rgba(0, 0, 0, 0.6);
+    filter: blur(100px);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.convertible__space .line-chose {
+    height: 80vh;
+    display: flex;
+    width: 340px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-right: 40px;
+    
+}
+
+.convertible__space .line-chose .slider{
+    width: 350px;
+    position: absolute;
+    margin-left: 50px;
+    z-index: 1;
+}
+
+.convertible__space .line-chose .line-text {
+    z-index: 1;
+}
+
+.convertible__space .line-chose .line-text h3 {
+    font-size: 12px;
+    margin: 0 0 18px;
+}
+
+.convertible__space .line-chose .line-text p {
+    font-size: 18px;
+    font-weight: lighter;
+    margin: 0 0 30px;
+}
+
+.convertible__space .line-chose .line-text-index p {
+    min-width: 200px;
+    font-size: 18px;
+    margin: 16px 0 10px;
+}
+.convertible__space .line-chose .line-text-index p:nth-child(1) {
+    background-size: 8px;
+}
+.convertible__space .line-chose .line-text-index p:nth-child(3) {
+    margin: 0 0 54px;
+}
+.convertible__space .line-chose .line-text-index p:nth-child(5) {
+    margin: 0 0 12px;
+}
+
+section {
+    position: relative;
+    z-index: 3;
+}
+
+.footer {
+    z-index: 3;
+}

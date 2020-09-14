@@ -1,0 +1,75 @@
+.geladeira-inverse {
+    padding: 32px 0 0;
+    background: linear-gradient(180deg, #000000 0%, #1C1C1C 89.38%);
+}
+
+.geladeira-inverse picture img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.geladeira-inverse p {
+    text-align: center;
+    color: #fff;
+    font-family: Soleto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    margin: 0;
+}
+
+.geladeira-inverse p .mobile {
+    display: block;
+}
+.geladeira-inverse p .desktop {
+    display: none;
+}
+
+.geladeira-inverse .edge-title{
+    line-height: 1em;
+}
+
+@media (min-width: 768px) {
+    .geladeira-inverse {
+        padding: 60px 40px 0;
+    }
+
+    .geladeira-inverse picture img {
+        max-width: 400px;
+    }
+
+    .geladeira-inverse p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .geladeira-inverse p .mobile {
+        display: none;
+    }
+    .geladeira-inverse p .desktop {
+        display: block;
+    }
+
+    .geladeira-inverse .edge-title h2 {
+        margin: 0 0 27px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .geladeira-inverse picture img {
+        display: block;
+        width: 50%;
+        max-width: 980px;
+        margin: 0 auto;
+    }
+
+    .geladeira-inverse p {
+        font-size: 18px;
+    }
+
+}

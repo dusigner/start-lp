@@ -1,0 +1,162 @@
+query searchChaordic(
+    $terms: String!, 
+    $pids: String, 
+    $page: Int , 
+    $resultsPerPage: Int, 
+    $sortBy: String = "relevance", 
+    $salesChannel: String, 
+    $hide: String, 
+    $showOnlyAvailable: Boolean, 
+    $allowRedirect: Boolean, 
+    $filter: String, 
+    $deviceId: String, 
+    $userId: String)
+    {
+	searchChaordic( 
+        terms: $terms, 
+        pids: $pids, 
+        page: $page, 
+        resultsPerPage: $resultsPerPage, 
+        sortBy: $sortBy, 
+        salesChannel: $salesChannel, 
+        hide: $hide, 
+        showOnlyAvailable: $showOnlyAvailable, 
+        allowRedirect: $allowRedirect, 
+        filter: $filter, 
+        deviceId: $deviceId, 
+        userId: $userId
+    ){
+        queryType
+        link
+        query {
+            original
+        }
+		requestId
+		searchId
+        size
+        sort {
+            label
+            name
+            type
+            applyLink
+        } 
+        quickFilters {
+            name
+            applyLink
+            image
+            type
+        }
+        pagination {
+            first
+            last
+            next
+        }
+        filters {
+            id
+            attribute
+            type
+            fType
+            
+            values {
+                label
+                size
+                idO
+                id
+                applyLink
+                removeLink
+                unityId
+                unN
+                min {
+                    value
+                    unity
+                    minN
+                }
+                max {
+                    value
+                    unity
+                    maxN
+                }
+                filters {
+                    label
+                    size
+                    idO
+                    id
+                    applyLink                 
+                }
+            }
+            
+        }
+        selectedFilters {
+            name
+            nameId
+            unId
+            valueId
+            value
+        }
+        suggestions {
+            query
+            link
+        }
+		queries {
+			original
+            normalized
+            processed
+            queryType
+		}
+		products {
+			id
+			name
+			price
+			oldPrice
+			url
+			images {
+				norm_400x400
+				norm_1000x1000
+				norm_200x200
+				default
+				template
+				template_192123
+				template_192124
+				template_192127
+				template_196759
+			}
+			installment {
+				count
+				price
+			}
+			status
+			clickUrl
+			categories {
+				id
+			}
+			tags {
+				id
+			}
+			specs{
+				Voltagem {
+					id
+				}
+			}
+			created
+			brand
+			cId
+			iId
+			details {
+				categoryName
+				productFamily
+				Classificacao_Energetica_110v
+				Painel_de_Controle
+				Pes_niveladores
+				Nome_modelo_prateleira
+			}
+			description
+			percentage
+			skus {
+				sku
+			}
+			collectInfo {
+				productId
+			}
+		}
+	}
+}

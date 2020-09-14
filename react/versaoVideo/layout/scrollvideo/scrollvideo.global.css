@@ -36,16 +36,16 @@
 .scene1 h2 {
     text-align: center;
     font-weight: normal;
-    font-size: 52px;
-    margin-bottom: 30px;
-    margin-top: 15px;
+    font-size: 40px;
+    margin-bottom: 0px;
+    margin-top: 5px;
 }
 .scene1 p {
     text-align: center;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 29px;
-    width: 675px;
+    width: 495px;
 }
 /*********
  Scene 2

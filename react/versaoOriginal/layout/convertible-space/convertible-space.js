@@ -51,6 +51,14 @@ class ConvertibleSpace extends React.Component {
         }
 
     }
+
+    btn_vinho = (event) => { this.setState({value: 0}); }
+    btn_fruta = (event) => { this.setState({value: 170}); }
+    btn_carne = (event) => { this.setState({value: 330}); }
+    btn_suave = (event) => { this.setState({value: 640}); }
+    btn_medio = (event) => { this.setState({value: 810}); }
+    btn_intenso = (event) => { this.setState({value: 1000}); }
+
     render() {
 
         return (
@@ -64,13 +72,13 @@ class ConvertibleSpace extends React.Component {
 
                     <div className="line-text">
                         <h3>MODO<br></br>REFRIGERADOR</h3>
-                        <p className={`${this.state.value < 110 ? "active" : "" }`}>10°C</p>
-                        <p className={`${this.state.value > 110 && this.state.value < 260   ? "active" : "" }`}>4°C</p>
-                        <p className={`${this.state.value > 260 && this.state.value < 550 ? "active" : "" }`}>0°C</p>
+                        <p className={`${this.state.value < 110 ? "active" : "" }`} onClick={this.btn_vinho}>10°C</p>
+                        <p className={`${this.state.value > 110 && this.state.value < 260   ? "active" : "" }`} onClick={this.btn_fruta}>4°C</p>
+                        <p className={`${this.state.value > 260 && this.state.value < 550 ? "active" : "" }`} onClick={this.btn_carne}>0°C</p>
                         <h3>MODO<br></br>FREEZER</h3>
-                        <p className={`${this.state.value > 550 && this.state.value < 740 ? "active" : "" }`}>-7°C</p>
-                        <p className={`${this.state.value > 740 && this.state.value < 920 ? "active" : "" }`}>-12°C</p>
-                        <p className={`${this.state.value > 920 ? "active" : "" }`}>-16°C a<br></br>22°C</p>
+                        <p className={`${this.state.value > 550 && this.state.value < 740 ? "active" : "" }`} onClick={this.btn_suave}>-7°C</p>
+                        <p className={`${this.state.value > 740 && this.state.value < 920 ? "active" : "" }`} onClick={this.btn_medio}>-12°C</p>
+                        <p className={`${this.state.value > 920 ? "active" : "" }`} onClick={this.btn_intenso}>-16°C a<br></br>22°C</p>
                     </div>
 
                     <div className="line-text-index">

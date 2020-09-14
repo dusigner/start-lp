@@ -32,7 +32,7 @@ class Vitrine extends React.Component {
                     <h3>543 litros cor Inox com Convertible Space</h3>
                     <h4 className="mobile">BRO90AK</h4>
 
-                    <a className="desktop" href="https://www.brastemp.com.br/geladeira-brastemp-inverse-4-frost-free-543-litros-cor-inox-com-convertible-space-bro90AK">Comprar</a>
+                    <a className="desktop" href="https://www.brastemp.com.br/geladeira-brastemp-inverse-4-frost-free-543-litros-cor-inox-com-convertible-space-bro90ak/p?idsku=326029418">Comprar</a>
                 </div>
 
                 <div className="vitrine-imagens">
@@ -87,7 +87,7 @@ class Vitrine extends React.Component {
 
                 <div className="vitrine-info mobile">
 
-                    <a href="https://www.brastemp.com.br/geladeira-brastemp-inverse-4-frost-free-543-litros-cor-inox-com-convertible-space-bro90AK">Comprar</a>
+                    <a href="https://www.brastemp.com.br/geladeira-brastemp-inverse-4-frost-free-543-litros-cor-inox-com-convertible-space-bro90ak/p?idsku=326029418">Comprar</a>
 
                 </div>
                 

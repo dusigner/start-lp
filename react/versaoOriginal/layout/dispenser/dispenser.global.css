@@ -4,7 +4,7 @@
     overflow: hidden;
 }
 
-.dispenser-de-agua-e-gelo > img {
+.dispenser-de-agua-e-gelo .overflow_img img {
     position: relative;
     display: block;
     width: 1000px;
@@ -15,11 +15,15 @@
     -webkit-transform: translate(-50%,-155px);
     z-index: 0;
 }
+.dispenser-de-agua-e-gelo .overflow_img {
+    overflow: hidden;
+    height: 350px;
+}
 
 .dispenser-de-agua-e-gelo > img.interactive {
     position: absolute;
-    left: calc(50% - 2px);
-    top: calc(50% - 43px);
+    left: calc(50% - 90px);
+    top: calc(50% - 75px);
     width: 177px;
     height: 307px;
     z-index: 1;
@@ -130,7 +134,7 @@
         margin-bottom: -280px;
     }
     
-    .dispenser-de-agua-e-gelo > img {
+    .dispenser-de-agua-e-gelo div img {
         width: 1300px;
         transform: translate(-50%,-205px);
         -webkit-transform: translate(-50%,-205px);

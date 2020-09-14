@@ -48,37 +48,37 @@ class Menu extends React.Component {
                     <nav id="nav">
                         <ul>
                             <li>
-                                <AnchorLink offset={() => 55} href='#geladeira-inverse-4' name="geladeira-inverse" className="links">
+                                <AnchorLink offset={() => 40} href='#geladeira-inverse-4' name="geladeira-inverse" className="links">
                                     <h1>Geladeira 4 portas</h1>
                                 </AnchorLink>
                             </li>
                             <li>
-                                <AnchorLink offset={() => 55} href='#dispenser-de-agua-e-gelo' name="dispenser-de-agua-e-gelo" className="links">
+                                <AnchorLink offset={() => 40} href='#dispenser-de-agua-e-gelo' name="dispenser-de-agua-e-gelo" className="links">
                                     <span>Dispenser de água e gelo</span>
                                 </AnchorLink>
                             </li>
                             <li>
-                                <AnchorLink offset={() => 55} href='#fresh-control' name="fresh-control" className="links">
+                                <AnchorLink offset={() => 40} href='#fresh-control' name="fresh-control" className="links">
                                     <span>Fresh Control</span>
                                 </AnchorLink>
                             </li>
                             <li>
-                                <AnchorLink offset={() => 55} href='#convertible-space' name="convertible-space" className="links">
+                                <AnchorLink offset={() => 40} href='#convertible-space' name="convertible-space" className="links">
                                     <span>Convertible Space</span>
                                 </AnchorLink>
                             </li>
                             <li>
-                                <AnchorLink offset={() => 55} href='#atencao-detalhes' name="atencao-detalhes" className="links">
+                                <AnchorLink offset={() => 40} href='#atencao-detalhes' name="atencao-detalhes" className="links">
                                     <span>Atenção nos detalhes</span>
                                 </AnchorLink>
                             </li>
                             <li>
-                                <AnchorLink offset={() => 55} href='#especificacoes' name="especificacoes" className="links">
+                                <AnchorLink offset={() => 40} href='#especificacoes' name="especificacoes" className="links">
                                     <span>Especificações</span>
                                 </AnchorLink>
                             </li>
                             <li>
-                                <AnchorLink offset={() => 55} href='#vitrine' name="video-refri">
+                                <AnchorLink offset={() => 40} href='#vitrine' name="video-refri">
                                     <span>Comprar</span>
                                 </AnchorLink>
                             </li>

@@ -44,14 +44,11 @@ class ConvertibleSpace extends React.Component {
                     this.setState({value: 0});
                 }
 
-
             }   
 
         } else {
             this.setState({value: event.target.value});
         }
-
-        console.log(event.target.value);
 
     }
     render() {

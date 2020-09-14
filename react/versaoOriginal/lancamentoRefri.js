@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Headroom from 'react-headroom';
 
 // Layout
-import Menu from './components/menu-estatico/menu'
+import MenuEstatico from './components/menu-estatico/menu'
+import Menu from './components/menu/menu'
 import GeladeiraInverse from './layout/geladeira-inverse/geladeira-inverse';
 import Dispenser from './layout/dispenser/dispenser';
 import FreshControl from './layout/fresh-control/fresh-control';
@@ -34,7 +35,8 @@ class LancamentoRefri extends React.Component {
 			<div className="lancamento__refri">
 
 				<Headroom disableInlineStyles>
-					<Menu></Menu>
+					{ this.props.versao == "qrcode" && <MenuEstatico/> }
+					{ this.props.versao == "video" && <Menu/> }
 				</Headroom>
 
 				<GeladeiraInverse></GeladeiraInverse>

@@ -15,11 +15,26 @@ class Scrollvideo extends React.Component {
 		super(props);
 		this.state = {
             value: 0,
-            lastScroll: 0
+            lastScroll: 0,
+            mobile: false
         }
     }
     
-    componentDidMount() {    
+    componentDidMount() {   
+
+
+        if(window.screen.width < 1025){
+            this.setState({
+                mobile: true
+            })
+        } else {
+            this.setState({
+                mobile: false
+            })
+        }
+        
+        
+
         this._isMounted = true;    
         const video = document.querySelector(".videobg");
         const intro = document.querySelector(".intro");
@@ -288,10 +303,12 @@ class Scrollvideo extends React.Component {
                 <source src="https://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/Brastemp_Jupter_Interacao_P013-2.mp4" type="video/mp4" />
             </video>
         </div>
-        <section>
-            <AtencaoDetalhes/>
-            <Video/>
-        </section>
+        {!this.state.mobile && (
+            <section>
+                <AtencaoDetalhes/>
+                <Video/>
+            </section>
+        )}
       </div>
     );
   }

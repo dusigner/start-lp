@@ -19,8 +19,8 @@ class VersaoVideo extends React.Component {
 			especificacoes: false,
 			vitrine: false
 		};
-    }
-
+	}
+	
 	handleClick(e) {
 		if(e == "especificacoes"){
 			$(window).scrollTop(0);

@@ -21,9 +21,7 @@ class lancamentoRefri extends Component {
                 <LazyLoad height={'100%'} offset={0}>
                     <main id="main" className="main">
                         <ExtensionPoint id="header" hideSupportMenu={true} />
-                        <VersaoOriginal 
-                            versao="video"
-                        />
+                        <VersaoOriginal versao="video" />
                         <VersaoVideo/>
                         <ExtensionPoint id="footer" hideSupportMenu={true} />
                     </main>

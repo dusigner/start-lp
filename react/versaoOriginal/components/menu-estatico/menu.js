@@ -20,9 +20,12 @@ class Menu extends React.Component {
         function changeLinkState() {
             let index = sections.length;
 
-            while(--index && window.scrollY + 55 < sections[index].offsetTop) {}
+            while(--index && window.scrollY + 54 < sections[index].offsetTop) {}
             
-            links.forEach((link) => link.classList.remove('active'));
+            links.forEach(
+                (link) => link.classList.remove('active') && console.log(link)
+                
+            );
             links[index].classList.add('active');
 
             const menu = document.getElementsByClassName('menu__lp')[0];
@@ -49,7 +52,7 @@ class Menu extends React.Component {
                         <ul>
                             <li>
                                 <AnchorLink offset={() => 55} href='#geladeira-inverse-4' name="geladeira-inverse" className="links">
-                                    <h1>Geladeira Inverse | 4</h1>
+                                    <h1>Geladeira 4 Portas</h1>
                                 </AnchorLink>
                             </li>
                             <li>

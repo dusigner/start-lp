@@ -47,7 +47,7 @@ export default class Preco extends Component {
                         {this.discountPercentage()}
                     </div>
                 }
-                <div itemProp="offers" itemScope itemType="http://schema.org/Product" className="preco-new_onMiddle">
+                <div itemProp="offers" itemScope itemType="https://schema.org/Product" className="preco-new_onMiddle">
                     <strong itemProp="price" className="preco-new_onMiddle_preco">{GetDataUtils.formatarMoeda(finalPrice)}</strong>
                     {!!discountValue &&
                         <>

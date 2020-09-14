@@ -1,0 +1,170 @@
+.dispenser-de-agua-e-gelo {
+    position: relative;
+    background-color: #000;
+    overflow: hidden;
+    margin-bottom: -220px;
+}
+
+.dispenser-de-agua-e-gelo > img {
+    position: relative;
+    display: block;
+    width: 1000px;
+    max-width: initial;
+    left: 50%;
+    height: auto;
+    transform: translate(-50%,-155px);
+    -webkit-transform: translate(-50%,-155px);
+    z-index: 0;
+}
+
+.dispenser-de-agua-e-gelo > img.interactive {
+    position: absolute;
+    left: calc(50% - 2px);
+    top: calc(50% - 43px);
+    width: 177px;
+    height: 307px;
+    z-index: 1;
+    background: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/gelo.gif') no-repeat;
+    background-size: cover;
+}
+
+.dispenser-de-agua-e-gelo > img.invisible {
+    width: 1px;
+}
+
+.dispenser-de-agua-e-gelo p {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-family: Soleto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    z-index: 1;
+}
+
+.dispenser-de-agua-e-gelo p .mobile {
+    display: block;
+}
+.dispenser-de-agua-e-gelo p .desktop {
+    display: none;
+}
+
+.dispenser-de-agua-e-gelo .edge-title h2 {
+    margin: 0;
+}
+.dispenser-de-agua-e-gelo .edge-title{
+    position: relative;
+    margin: 32px 0 13px;
+    z-index: 1;
+}
+
+.switch-dispenser {
+    position: absolute;
+    z-index: 1;
+    left: calc(50% + 100px);
+    margin: 100px 0 0;
+}
+
+.switch-dispenser .line {
+    display: block;
+    height: 30px;
+    width: 1px;
+    margin: 4px 0 4px 10px;
+    background-color: #C4A08B;
+}
+
+.switch-dispenser a {
+    display: block;
+    position: relative;
+    font-family: Soleto;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 14px;
+    line-height: 140%;
+    color: #BBBBBB;
+    text-decoration: none;
+    padding-left: 25px;
+}
+
+.switch-dispenser a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    width: 6px;
+    height: 6px;
+    background-color: #F2F2F2;
+    border: 1px solid #F55D2F;
+    transform: translate(0,-50%);
+    z-index: 2;
+}
+
+.switch-dispenser a.active {
+    font-weight: 900;
+    color: #FFF;
+}
+
+.switch-dispenser a.active::before {
+    background-color: #F55D2F;
+    border: 1px solid #F55D2F;
+}
+
+.switch-dispenser a.active::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    width: 12px;
+    height: 12px;
+    background-color: #F2F2F2;
+    border: 1px solid #F55D2F;
+    transform: translate(0,-50%);
+    z-index: 1;
+}
+
+
+@media (min-width: 768px) {
+
+    .dispenser-de-agua-e-gelo {
+        margin-bottom: -280px;
+    }
+    
+    .dispenser-de-agua-e-gelo > img {
+        width: 1300px;
+        transform: translate(-50%,-205px);
+        -webkit-transform: translate(-50%,-205px);
+    }
+
+    .dispenser-de-agua-e-gelo > img.interactive {
+        width: 225px;
+        height: 390px;
+    }
+
+    .switch-dispenser {
+        left: calc(50% + 225px);
+    }
+
+    .switch-dispenser a {
+        font-size: 16px;
+        cursor: pointer
+    }
+
+    .dispenser-de-agua-e-gelo .edge-title{
+        margin: 32px 0 20px;
+    }
+
+    .dispenser-de-agua-e-gelo p {
+        font-size: 16px;
+        line-height: 29px;
+    }
+
+    .dispenser-de-agua-e-gelo p .mobile {
+        display: none;
+    }
+    .dispenser-de-agua-e-gelo p .desktop {
+        display: block;
+    }
+
+}

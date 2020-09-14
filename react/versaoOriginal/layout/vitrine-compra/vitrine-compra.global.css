@@ -1,0 +1,197 @@
+.vitrine.-com-compra {
+    padding: 25px 0;
+    background-color: #242424;
+}
+
+.vitrine.-com-compra h2,
+.vitrine.-com-compra h3,
+.vitrine.-com-compra h4 {
+    font-family: Soleto;
+    text-align: center;
+}
+
+.vitrine.-com-compra h2,
+.vitrine.-com-compra h3 {
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.vitrine.-com-compra h3 {
+    font-weight: lighter;
+}
+
+.vitrine.-com-compra h4 {
+    color: #BBBBBB;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.vitrine.-com-compra .galeria-slider {
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.vitrine.-com-compra .galeria-slider .slick-prev,
+.vitrine.-com-compra .galeria-slider .slick-next{
+    width: 13px;
+    height: 22px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 45%;
+    background: none;
+    border: none;
+    color: rgba(0,0,0,0);
+}
+.vitrine.-com-compra .galeria-slider .slick-prev {
+    left: -13px;
+}
+.vitrine.-com-compra .galeria-slider .slick-next {
+    right: -13px;
+}
+
+
+.vitrine.-com-compra .galeria-slider .slick-prev::before,
+.vitrine.-com-compra .galeria-slider .slick-next::before {
+    content: "";
+    display: block;
+    width: 13px;
+    height: 22px;
+    background-size: cover ;
+}
+.vitrine.-com-compra .galeria-slider .slick-prev::before {
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/arr-prev.png');
+}
+.vitrine.-com-compra .galeria-slider .slick-next::before {
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/arr-next.png');
+}
+.vitrine.-com-compra .galeria-slider .slick-list {
+    overflow: hidden;
+}
+.vitrine.-com-compra .galeria-slider .slick-track {
+    display: flex;
+}
+
+.vitrine.-com-compra .galeria-slider-thumb {
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.vitrine.-com-compra .galeria-slider-thumb .slick-track {
+    width: 100%!important;
+}
+.vitrine.-com-compra .galeria-slider-thumb .slick-slide {
+    width: 20%!important;
+    display: inline-block;
+}
+.vitrine.-com-compra .galeria-slider-thumb div.item {
+    width: auto!important;
+    position: relative;
+    padding: 5px;
+    border: 1px solid #101010;
+    margin: 5px;
+}
+
+.vitrine.-com-compra .vitrine-info a {
+    font-family: Soleto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 140%;
+    width: 300px;
+    margin: 20px auto 0;
+    padding: 14px 0;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    background-color: #F55D2F;
+    background-image: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/iconArrowBt_white2.svg');
+    background-position: top 50% right 30px;
+    background-repeat: no-repeat;
+}
+
+.vitrine.-com-compra .mobile {
+    display: block!important;
+}
+.vitrine.-com-compra .desktop {
+    display: none!important;
+}
+
+@media (min-width: 768px){
+
+    .vitrine.-com-compra {
+        padding: 35px 0;
+        background-color: #242424;
+    }
+
+    .vitrine.-com-compra .galeria-slider {
+        width: 400px;
+    }
+    .vitrine.-com-compra .galeria-slider-thumb {
+        width: 480px;
+    }
+
+    .vitrine.-com-compra .galeria-slider .slick-prev,
+    .vitrine.-com-compra .galeria-slider .slick-next{
+        width: 16px;
+        height: 27px;
+    }
+
+    .vitrine.-com-compra .galeria-slider .slick-prev::before,
+    .vitrine.-com-compra .galeria-slider .slick-next::before {
+        width: 16px;
+        height: 27px;
+    }
+
+}
+
+@media (min-width: 1025px){
+
+    .vitrine.-com-compra {
+        padding: 70px 0;
+        background-color: #242424;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .vitrine.-com-compra h2,
+    .vitrine.-com-compra h3 {
+        font-size: 22px;
+        line-height: 140%;
+        text-align: left;
+    }
+
+    .vitrine.-com-compra h4 {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .vitrine.-com-compra .galeria-slider {
+        width: 400px;
+    }
+    .vitrine.-com-compra .galeria-slider-thumb {
+        width: 450px;
+    }
+
+    .vitrine.-com-compra .mobile {
+        display: none!important;
+    }
+    .vitrine.-com-compra .desktop {
+        display: block!important;
+    }
+
+    .vitrine.-com-compra .vitrine-info {
+        margin: 0 0 0 40px;
+    }
+    .vitrine.-com-compra .vitrine-info a {
+        margin: 35px 0 0;
+    }
+
+}

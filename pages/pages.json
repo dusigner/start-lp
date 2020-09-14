@@ -1,88 +1,55 @@
 {
   "routes": {
-    "store/lancamentorefri": {
-      "path": "/eletrodomesticos/lancamentorefri"
+    "store/versaoOriginal": {
+      "path": "/eletrodomesticos/geladeira---refrigerador/4-portas"
     },
-    "store/lancamentorefrivideo": {
-      "path": "/eletrodomesticos/lancamentorefrivideo"
-    },
-    "store/lancamentorefriespecificacoes": {
-      "path": "/eletrodomesticos/lancamentorefriespecificacoes"
+    "store/versaoQrcode": {
+      "path": "/inverse4"
     }
   },
   "pages": {
-    "store/lancamentorefri": [
+    "store/versaoOriginal": [
       {
         "name": "Brastemp",
-        "template": "lancamentorefri"
+        "template": "versaoOriginal"
       }
     ],
-    "store/lancamentorefrivideo": [
+    "store/versaoQrcode": [
       {
         "name": "Brastemp",
-        "template": "lancamentorefrivideo"
-      }
-    ],
-    "store/lancamentorefriespecificacoes": [
-      {
-        "name": "Brastemp",
-        "template": "lancamentorefriespecificacoes"
+        "template": "versaoQrcode"
       }
     ]
   },
   "templates": {
-    "lancamentorefri": {
-      "component": "Lancamentorefri",
+    "versaoOriginal": {
+      "component": "versaoOriginal",
       "extensions": {
         "header": {
           "component": "brastemp.header/Header"
-        },
-        "heroCarousel": {
-          "component": "brastemp.components/HeroCarousel"
         },
         "footer": {
           "component": "brastemp.footer/Footer"
         }
       },
       "props": {
-        "title": "Lançamento Refrigerador Jupter!",
-        "description": "A mais nova Lançamento Refrigerador Jupter"
+        "title": "Geladeira 4 Portas: Geladeira Inverse",
+        "description": "Conheça a nova Geladeira Brastemp Inverse: Confira o novo modelo de Geladeira 4 portas com Freezer Embaixo e degelo Frost Free. Clique já!"
       }
     },
-    "lancamentorefrivideo": {
-      "component": "Lancamentorefrivideo",
+    "versaoQrcode": {
+      "component": "versaoQrcode",
       "extensions": {
         "header": {
           "component": "brastemp.header/Header"
-        },
-        "heroCarousel": {
-          "component": "brastemp.components/HeroCarousel"
         },
         "footer": {
           "component": "brastemp.footer/Footer"
         }
       },
       "props": {
-        "title": "Lançamento Refrigerador Jupter!",
-        "description": "A mais nova Lançamento Refrigerador Jupter"
-      }
-    },
-    "lancamentorefriespecificacoes": {
-      "component": "Lancamentorefriespecificacoes",
-      "extensions": {
-        "header": {
-          "component": "brastemp.header/Header"
-        },
-        "heroCarousel": {
-          "component": "brastemp.components/HeroCarousel"
-        },
-        "footer": {
-          "component": "brastemp.footer/Footer"
-        }
-      },
-      "props": {
-        "title": "Lançamento Refrigerador Jupter!",
-        "description": "A mais nova Lançamento Refrigerador Jupter"
+        "title": "Geladeira Inverse: Geladeira 500 Litros",
+        "description": "Conheça a nova Geladeira 4 Portas: Confira o novo modelo de Geladeira Inverse com 500 litros e mais compartimentos para refrigerar seus alimentos. Clique já!"
       }
     }
   }

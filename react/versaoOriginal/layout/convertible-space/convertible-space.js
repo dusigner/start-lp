@@ -13,10 +13,49 @@ class ConvertibleSpace extends React.Component {
 	}
     
     handleChange = (event) => {
-        this.setState({value: event.target.value});
-        console.log(this.state.value);
+        
+        if ( window.innerWidth <= 1024) {
+
+            if (this.state.value < event.target.value) {
+
+                if ( event.target.value > 0 && event.target.value < 170 ){
+                    this.setState({value: 170});
+                } else if (event.target.value > 170 && event.target.value < 330) {
+                    this.setState({value: 330});
+                } else if (event.target.value > 330 && event.target.value < 640) {
+                    this.setState({value: 640});
+                } else if (event.target.value > 640 && event.target.value < 810) {
+                    this.setState({value: 810});
+                } else if (event.target.value > 810) {
+                    this.setState({value: 1000});
+                }
+
+            } else if (this.state.value > event.target.value) {
+
+                if (event.target.value < 1000 && event.target.value > 810) {
+                    this.setState({value: 810});
+                } else if (event.target.value < 810 && event.target.value > 640) {
+                    this.setState({value: 640});
+                } else if (event.target.value < 640 && event.target.value > 340) {
+                    this.setState({value: 340});
+                } else if (event.target.value < 340 && event.target.value > 170) {
+                    this.setState({value: 170});
+                } else if (event.target.value < 170) {
+                    this.setState({value: 0});
+                }
+
+
+            }   
+
+        } else {
+            this.setState({value: event.target.value});
+        }
+
+        console.log(event.target.value);
+
     }
     render() {
+
         return (
             <div id="convertible-space" className={`convertible-space section ${this.state.value < 110 ? "vinhos" : ""} ${this.state.value > 110 && this.state.value < 260 ? "frutas-vegetais" : "" } ${this.state.value > 260 && this.state.value < 550 ? "carnes-peixes" : "" } ${this.state.value > 550 && this.state.value < 740 ? "congelamento-suave" : "" } ${this.state.value > 740 && this.state.value < 920 ? "congelamento-medio" : "" } ${this.state.value > 920 ? "congelamento-intenso" : "" } `}>
 

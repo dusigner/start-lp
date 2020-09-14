@@ -64,9 +64,7 @@ class Dispenser extends React.Component {
 
                 <img src={agua} className="invisible"></img>
                 <img src={gelo} className="invisible"></img>
-                <div>
                     <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/dispenser-bg.png"></img>
-                </div>
             </div>
         )
     }

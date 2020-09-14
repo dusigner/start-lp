@@ -12,7 +12,6 @@ import AtencaoDetalhes from './layout/atencao-detalhes/atencao-detalhes';
 import Video from '../versaoVideo/layout/video/video';
 import Vitrine from './layout/vitrine/vitrine'
 import VitrineCompra from './layout/vitrine-compra/vitrine'
-import Compra from './layout/compra/ModuloCompra'
 import EspecificacoesTecnicas from './layout/especificacoes/especificacoes';
 
 

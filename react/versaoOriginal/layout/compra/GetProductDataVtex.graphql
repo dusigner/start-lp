@@ -1,8 +1,0 @@
-query GetProduct($slug: String) {
-    product(slug: $slug) {
-        clusterHighlights {
-            id
-            name
-        }
-    }
-}

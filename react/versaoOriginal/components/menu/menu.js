@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-
-import "./menu.css";
+import "./menu.global.css";
 
 class Menu extends React.Component {
 
@@ -21,16 +20,19 @@ class Menu extends React.Component {
         function changeLinkState() {
             let index = sections.length;
 
-            while(--index && window.scrollY + 55 < sections[index].offsetTop) {}
+            while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
             
             links.forEach((link) => link.classList.remove('active'));
             links[index].classList.add('active');
 
-            const menu = document.getElementsByClassName('menu-edge')[0 ];
+            const menu = document.getElementsByClassName('menu__lp')[0];
             const active = document.querySelectorAll('nav .active');
-            if(document.documentElement.scrollTop > height + 300) menu.scrollLeft = active[0].offsetLeft - 10;
-            else menu.scrollLeft = active[0].offsetLeft - 10;
-
+            const height = document.getElementsByClassName("geladeira-inverse")[0].clientHeight;
+            if(document.documentElement.scrollTop > height + 300){
+                menu.scrollLeft = active[0].offsetLeft - (screen.width / 2 - active[0].offsetWidth / 2);  
+            }else {
+                menu.scrollLeft = active[0].offsetLeft - 10;
+            }
         }
 
         changeLinkState();
@@ -38,40 +40,53 @@ class Menu extends React.Component {
 
     };
 
-    handleScroll() {
-		
-	}
-		 
-  
-
     render() {
         return (
-        <div className="menu-edge">
-            <nav id="nav">
-                <AnchorLink offset={() => 100} href='#geladeira-inverse-4' className="links">
-                    <h1>Geladeira 4 portas</h1>
-                </AnchorLink>
-                <AnchorLink offset={() => 0} href='#dispenser-de-agua-e-gelo' className="links">
-                    <span>Dispenser de água e gelo</span>
-                </AnchorLink>
-                <AnchorLink offset={() => 55} href='#fresh-control' className="links">
-                    <span>Fresh Control</span>
-                </AnchorLink>
-                <AnchorLink offset={() => -100} href='#convertable-space' className="links">
-                    <span>Convertable Space</span>
-                </AnchorLink>
-                <AnchorLink offset={() => 55} href='#atencao-nos-detalhes' className="links">
-                    <span>Atenção nos detalhes</span>
-                </AnchorLink>
-                <AnchorLink offset={() => 55} href='#especificacoes' className="links">
-                    <span>Especificações</span>
-                </AnchorLink>
-                <AnchorLink offset={() => 55} href='#ver-video' className="links">
-                    <span>Ver vídeo</span>
-                </AnchorLink>
-            </nav>
-        </div>
-    )
+            <div className="menu__lp">
+                <div className="menu__lp-wrap">
+                    
+                    <nav id="nav">
+                        <ul>
+                            <li>
+                                <AnchorLink offset={() => 55} href='#geladeira-inverse-4' name="geladeira-inverse" className="links">
+                                    <h1>Geladeira Inverse | 4</h1>
+                                </AnchorLink>
+                            </li>
+                            <li>
+                                <AnchorLink offset={() => 55} href='#dispenser-de-agua-e-gelo' name="dispenser-de-agua-e-gelo" className="links">
+                                    <span>Dispenser de água e gelo</span>
+                                </AnchorLink>
+                            </li>
+                            <li>
+                                <AnchorLink offset={() => 55} href='#fresh-control' name="fresh-control" className="links">
+                                    <span>Fresh Control</span>
+                                </AnchorLink>
+                            </li>
+                            <li>
+                                <AnchorLink offset={() => 55} href='#convertible-space' name="convertible-space" className="links">
+                                    <span>Convertible Space</span>
+                                </AnchorLink>
+                            </li>
+                            <li>
+                                <AnchorLink offset={() => 55} href='#atencao-detalhes' name="atencao-detalhes" className="links">
+                                    <span>Atenção nos detalhes</span>
+                                </AnchorLink>
+                            </li>
+                            <li>
+                                <AnchorLink offset={() => 55} href='#especificacoes' name="especificacoes" className="links">
+                                    <span>Especificações</span>
+                                </AnchorLink>
+                            </li>
+                            <li>
+                                <AnchorLink offset={() => 55} href='#video-refri' name="video-refri">
+                                    <span>Ver vídeo</span>
+                                </AnchorLink>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        )
     }
 }
 export default Menu;

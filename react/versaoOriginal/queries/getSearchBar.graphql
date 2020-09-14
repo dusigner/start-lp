@@ -1,0 +1,19 @@
+query getSearchBar($search: String!)
+{
+  getSearchBar(search:$search){
+		responses{
+    hits{
+    hits{
+				_id
+  			_index
+    			_score
+      			_source {
+      			  title
+      			  slug
+							answer
+      			}
+    	}
+  	}
+  }
+	}
+}

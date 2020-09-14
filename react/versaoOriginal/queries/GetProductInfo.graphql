@@ -1,0 +1,189 @@
+query variables($tag: String!) {
+	getProductInfo(tag: $tag) {
+		id
+		title
+		content
+		name
+		post_type
+		taxonomy {
+			cores {
+				taxonomy
+				description
+				name
+				slug
+				option_name
+				option_value
+				color_hex
+			}
+			category {
+				taxonomy
+				description
+				name
+				slug
+			}
+			voltagem {
+				taxonomy
+				description
+				name
+				slug
+			}
+			post_tag {
+				taxonomy
+				description
+				name
+				slug
+			}
+			associacao_vtex {
+				taxonomy
+				description
+				name
+				slug
+			}
+		}
+		product {
+			layout
+			name
+			description
+			hero_list {
+				url_image
+				image
+				model
+				color
+				taxonomy_cores {
+					taxonomy
+					description
+					name
+					slug
+
+					color_hex
+				}
+			}
+			model_sku
+			cardimage_list {
+				url_image
+				image
+				model
+				color
+				taxonomy_cores {
+					taxonomy
+					description
+					name
+					slug
+					option_name
+					option_value
+					color_hex
+				}
+			}
+			features_list {
+				title
+			}
+			template_default
+			utm_rules {
+				parameter
+				values {
+					info
+				}
+				template
+				campaign
+			}
+			video_do_produto {
+				url_thumbnail_do_video
+  				url_do_video
+			}
+			videos {
+				url_HeroShot
+				url_External
+				url_Internal
+				KillerFeatures {
+					Name
+					url_Link
+					url_Imagem
+				}
+			}
+		}
+		highlights {
+			section_title
+			list_name
+			killerfeature {
+				title
+				description_short
+				description_long
+				url_image
+				image
+				url_image_mobile
+				image_mobile
+				content_list {
+					title
+					description
+					url_image
+					image
+				}
+			}
+		}
+		external {
+            section_title
+            list_name
+            url_section_background
+            section_background
+            features_list {
+                title
+                description
+                url_image
+                image
+                template
+                position
+            }
+        }
+        internal {
+            section_title
+            list_name
+            url_section_background
+            section_background
+            features_list {
+                title
+                description
+                url_image
+                image
+                template
+                position
+            }
+        }
+		ambient {
+			section_title
+			list_name
+			image_list {
+				name
+				url_image
+				image
+			}
+		}
+		technical {
+			measures_list {
+				type
+				field
+				value
+			}
+			features_list {
+				field
+				value
+			}
+		}
+		documents {
+			manual
+			guide
+			eficiency
+			title_guia_produto
+			title_guia_opcional_produto
+			url_manual_produto
+			url_guia_produto
+			url_guia_opcional_produto
+			url_selo_produto
+		}
+		seo {
+			page_title
+			page_description
+		}
+		
+		status_instalacao
+	}
+}

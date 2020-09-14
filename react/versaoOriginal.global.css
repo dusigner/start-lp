@@ -1,0 +1,21 @@
+.lancamento__refri {
+    display: block;
+}
+.refrivideo  {
+    display: none;
+}
+.footer {
+    z-index: 3 !important;
+}
+body.bg-base {
+    overflow: hidden;
+    background: #000;
+}
+@media (min-width: 1025px) {
+    .lancamento__refri {
+        display: none;
+    }
+    .refrivideo  {
+        display: block;
+    }
+}

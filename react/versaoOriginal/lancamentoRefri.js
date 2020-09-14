@@ -9,7 +9,7 @@ import Dispenser from './layout/dispenser/dispenser';
 import FreshControl from './layout/fresh-control/fresh-control';
 import ConvertibleSpace from './layout/convertible-space/convertible-space';
 import AtencaoDetalhes from './layout/atencao-detalhes/atencao-detalhes';
-import Video from './layout/video/video';
+import Video from '../versaoVideo/layout/video/video';
 import Vitrine from './layout/vitrine/vitrine'
 import VitrineCompra from './layout/vitrine-compra/vitrine'
 import Compra from './layout/compra/ModuloCompra'

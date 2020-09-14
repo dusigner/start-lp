@@ -13,9 +13,9 @@
 }
 
 .poster__video {
-    width: calc(100% - 50px);
+    width:100%;
     max-width: 1200px;
-    height: 75%;
+    height: 100%;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -70,6 +70,12 @@
         max-width: 1200px;
         display: block;
         margin: 0 auto;
+    }
+
+    .poster__video {
+        width: calc(100% - 50px);
+        max-width: 1200px;
+        height: 75%;
     }
 
 }

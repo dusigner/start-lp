@@ -33,6 +33,12 @@
 .scene1__content {
     margin-top: 80px;
 }
+.scene1__content a{
+    color: white;
+}
+.scene1__content a:hover {
+    text-decoration: none;
+}
 .scene1 h2 {
     text-align: center;
     font-weight: normal;

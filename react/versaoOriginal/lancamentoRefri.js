@@ -38,7 +38,7 @@ class LancamentoRefri extends React.Component {
 					{ this.props.versao == "video" && <Menu/> }
 				</Headroom>
 
-				<GeladeiraInverse></GeladeiraInverse>
+				<GeladeiraInverse versao={this.props.versao}></GeladeiraInverse>
 				<Dispenser></Dispenser>
 				<FreshControl></FreshControl>
 				<ConvertibleSpace></ConvertibleSpace>

@@ -23,7 +23,7 @@ class Menu extends React.Component {
             while(--index && window.scrollY + 55 < sections[index].offsetTop) {}
             
             links.forEach(
-                (link) => link.classList.remove('active') && console.log(link)
+                (link) => link.classList.remove('active')
                 
             );
             links[index].classList.add('active');

@@ -19,7 +19,6 @@ class Vitrine extends React.Component {
           nav2: this.slider2
         });
 
-        console.log(this.props);
       }
     
       render() {

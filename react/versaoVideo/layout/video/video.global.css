@@ -31,6 +31,8 @@
 .poster__video svg {
     position: relative;
     z-index: 1;
+    max-height: 50%;
+    width: 100%;
 }
 .poster__video svg path{
     fill: white;

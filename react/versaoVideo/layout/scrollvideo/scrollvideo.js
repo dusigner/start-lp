@@ -95,16 +95,16 @@ class Scrollvideo extends React.Component {
         video.addEventListener('timeupdate', (event) => {
             /** Scene 1 - PAUSE */
             if(video.currentTime >= 0 && video.currentTime < 2.2){
-                TweenLite.to([scene1, scene2,scene3,scene4], 1, {opacity: 0});
+                TweenLite.to([scene1, scene2,scene3,scene4], 1, {opacity: 0, zIndex:0});
             }
             if(video.currentTime >= 2.2 && video.currentTime <= 2.5){
                 video.pause()
-                TweenLite.to(scene1, 1, {opacity: 1});
-                TweenLite.to([scene2,scene3,scene4], 1, {opacity: 0});
+                TweenLite.to(scene1, 1, {opacity: 1, zIndex:3});
+                TweenLite.to([scene2,scene3,scene4], 1, {opacity: 0, zIndex:0});
             }
             /** Scene 2 - PLAY */
             if(video.currentTime >= 2.6 && video.currentTime <= 3.7){
-                TweenLite.to(scene1, 1, {opacity: 0});
+                TweenLite.to(scene1, 1, {opacity: 0, zIndex:0});
             }
             if(video.currentTime < 6.0 && video.currentTime > 13.9){
                 $("#gelo","#agua").removeClass('active');
@@ -112,7 +112,7 @@ class Scrollvideo extends React.Component {
             /** Scene 2 */
             if(video.currentTime >= 6.0 && video.currentTime <= 6.7){
                 TweenLite.to(scene2, 1, {opacity: 1, zIndex:3,});
-                TweenLite.to([scene1,scene3,scene4], 1, {opacity: 0});
+                TweenLite.to([scene1,scene3,scene4], 1, {opacity: 0, zIndex:0});
                 $("#agua").removeClass('active');
                 $("#gelo").addClass('active');
             }
@@ -133,7 +133,7 @@ class Scrollvideo extends React.Component {
             if(video.currentTime >= 17.8 &&  video.currentTime <= 18.3){
                 TweenLite.to(scene3, 1, {opacity: 1, zIndex:3,});
                 video.pause()
-                TweenLite.to([scene1,scene2,scene4], 1, {opacity: 0});
+                TweenLite.to([scene1,scene2,scene4], 1, {opacity: 0, zIndex:0});
             }
             /** Scene 4 - PLAY */
             if(video.currentTime >= 18.4 &&  video.currentTime <= 19.1){
@@ -141,7 +141,7 @@ class Scrollvideo extends React.Component {
             }
             if(video.currentTime >= 25 && video.currentTime <= 25.3){
                 TweenLite.to(scene4, 1, {opacity: 1, zIndex:3,});
-                TweenLite.to([scene1,scene2,scene3], 1, {opacity: 0});
+                TweenLite.to([scene1,scene2,scene3], 1, {opacity: 0, zIndex:0});
             }
        
             if(video.currentTime >= 25){
@@ -223,7 +223,7 @@ class Scrollvideo extends React.Component {
             <div className="scene1">
                 <div className="scene1__content">
                     <h2>Brastemp Inverse | 4</h2>
-                    <p>Máximo design, máxima sofisticação. Com 4 compartimentos e mais de 500L para você armazenar tudo o que quiser.</p>
+                    <p>Máximo design, máxima sofisticação. Com 4 compartimentos e mais de <a href="https://www.brastemp.com.br/eletrodomesticos/geladeira---refrigerador" title="Geladeira Brastemp">500L</a> para você armazenar tudo o que quiser.</p>
                 </div>
             </div>
             <div className="scene2">

@@ -29,8 +29,7 @@ html {
     transition: all 0.5s ease-in-out 0s;
 }
 
-
-.menu__lp {
+.refrivideo .menu__lp {
     background: #000;
     width: 100%;
     display: block;
@@ -38,7 +37,7 @@ html {
     position: relative;
     z-index: 5;
 }
-.menu__lp::before {
+.refrivideo .menu__lp::before {
     content: "";
     width: 100%;
     height: 1px;
@@ -47,14 +46,18 @@ html {
     bottom: 0;
     left: 0;
 }
-.menu__lp h1 {
+.refrivideo .menu__lp h1 {
     font-family: Soleto,sans-serif;
     font-weight: bold;
     font-size: 14px;
     line-height: 18px;
     color: white;
 }
-.menu__lp nav ul{
+.refrivideo .menu__lp nav {
+    margin: unset;
+    padding-right: 90px;
+}
+.refrivideo .menu__lp nav ul{
     display: flex;
     align-items: flex-end;
     width: 1165px;
@@ -62,11 +65,11 @@ html {
     padding: 0;
     margin: 0;
 }
-.menu__lp nav ul li {
+.refrivideo .menu__lp nav ul li {
     list-style: none;
 }
 
-.menu__lp nav ul li a{
+.refrivideo .menu__lp nav ul li a{
     width: auto;
     display: flex;
     align-items: center;
@@ -88,7 +91,7 @@ html {
     text-align: center;
 }
 
-.menu__lp nav ul li a.active::before {
+.refrivideo .menu__lp nav ul li a.active::before {
     content: "";
     width: 100%;
     height: 3px;
@@ -97,12 +100,12 @@ html {
     bottom: 1px;
 }
 
-.menu__lp nav a.active {
+.refrivideo .menu__lp nav a.active {
     text-shadow: 0px 0px #fff;  
 }
 
 /* BOTÃO EU QUERO - COMPRAR */
-.menu__lp nav ul li:last-child a {
+.refrivideo .menu__lp nav ul li:last-child a {
     padding: 5px 0px;
     border: 1px solid #F08B1D;
     color: #F08B1D;
@@ -114,17 +117,17 @@ html {
     background: black;
 }
 
-.menu__lp nav ul li:last-child a:hover, .menu__lp nav ul li:last-child a.active {
+.refrivideo .menu__lp nav ul li:last-child a:hover, .refrivideo .menu__lp nav ul li:last-child a.active {
     background: #F08B1D;
     color: white;
     padding: 5px 0;
 }
 
-.menu__lp {
+.refrivideo .menu__lp {
     display: flex;
     justify-content: center;
 }
-.menu__lp-wrap {
+.refrivideo .menu__lp-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -132,24 +135,24 @@ html {
     max-width: none;
     width: 95%;
 }
-.menu__lp nav ul{
-    width: 100%;
+.refrivideo .menu__lp nav ul{
+width: 100%;
     justify-content: center;
 }
-.menu__lp::before {
+.refrivideo .menu__lp::before {
     position: absolute;
     top: unset;
     bottom: 0;
 }
-.menu__lp nav ul li a:hover {
+.refrivideo .menu__lp nav ul li a:hover {
     text-shadow: 0px 0px #fff;  
 }
 
 @media only screen and (min-width: 1800px) {
-    .menu__lp-wrap {
+    .refrivideo .menu__lp-wrap {
         width: 70%;
     }
-    .menu__lp::before {
+    .refrivideo .menu__lp::before {
         width: 70%;
     }
 }

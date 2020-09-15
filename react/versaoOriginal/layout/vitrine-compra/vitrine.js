@@ -42,19 +42,49 @@ class Vitrine extends React.Component {
                         ref={slider => (this.slider1 = slider)}
                     >
                         <div className="item">
-                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-1.png"></img>
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-01.png"></img>
                         </div>
                         <div className="item">
-                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-2.png"></img>
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-02.png"></img>
                         </div>
                         <div className="item">
-                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod3.png"></img>
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-03.png"></img>
                         </div>
                         <div className="item">
-                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-4.png"></img>
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-04.png"></img>
                         </div>
                         <div className="item">
-                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-5.png"></img>
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-05.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-06.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-07.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-08.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-09.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-10.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-11.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-12.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-13.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-15.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-16.png"></img>
                         </div>
                     </Slider>
 
@@ -63,24 +93,58 @@ class Vitrine extends React.Component {
                     asNavFor={this.state.nav1}
                     ref={slider => (this.slider2 = slider)}
                     slidesToShow={5}
+                    centerPadding={"0px"}
                     swipeToSlide={true}
                     focusOnSelect={true}
                     centerMode={true}
                     >
                         <div className="item">
-                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-1.png"></img>
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-01.png"></img>
                         </div>
                         <div className="item">
-                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-2.png"></img>
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-02.png"></img>
                         </div>
                         <div className="item">
-                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod3.png"></img>
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-03.png"></img>
                         </div>
                         <div className="item">
-                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-4.png"></img>
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-04.png"></img>
                         </div>
                         <div className="item">
-                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/prod-5.png"></img>
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-05.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-06.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-07.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-08.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-09.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-10.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-11.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-12.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-13.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-14.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-15.png"></img>
+                        </div>
+                        <div className="item">
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-16.png"></img>
                         </div>
                     </Slider>
                 </div>

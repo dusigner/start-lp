@@ -83,11 +83,7 @@
     text-align: center;
 }
 .vitrine.-com-compra .galeria-slider-thumb .slick-track {
-    width: 100%!important;
-}
-.vitrine.-com-compra .galeria-slider-thumb .slick-slide {
-    width: 20%!important;
-    display: inline-block;
+    display: flex;
 }
 .vitrine.-com-compra .galeria-slider-thumb div.item {
     width: auto!important;
@@ -95,6 +91,18 @@
     padding: 5px;
     border: 1px solid #101010;
     margin: 5px;
+}
+
+.vitrine.-com-compra .galeria-slider-thumb .slick-current div.item {
+    border: 1px solid #F55D2F;
+}
+
+.vitrine.-com-compra .galeria-slider-thumb .slick-list {
+    overflow: hidden;
+}
+
+.vitrine.-com-compra .galeria-slider-thumb .slick-arrow {
+    display: none!important;
 }
 
 .vitrine.-com-compra .vitrine-info a {

@@ -6,14 +6,14 @@ import './dispenser.global.css';
 // img
 let agua="https://img.imageboss.me/consul/cdn/animation:true/wp-content/uploads/2020/09/agua-ot.gif",
     gelo="https://img.imageboss.me/consul/cdn/animation:true/wp-content/uploads/2020/09/gelo-ot.gif",
-    estatico="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/gelo-ot.gif";
+    estatico="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/gelo-ot.gif",
+    vali = 0;
 
 
 
 class Dispenser extends React.Component {
 
     componentDidMount(){
-
 
         let target = document.querySelector('.interactive');
         let links = document.querySelectorAll('#dispenser-de-agua-e-gelo .switch-dispenser a')
@@ -37,6 +37,41 @@ class Dispenser extends React.Component {
 
             })
         });
+
+        window.addEventListener('scroll', this.onWindowScroll);
+
+    }
+     
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.onWindowScroll);
+    }
+
+    onWindowScroll = () => {
+
+        console.log("scrollllllll");
+
+        if ((document.documentElement.scrollTop + 55) > document.querySelector("#dispenser-de-agua-e-gelo").offsetTop){
+            
+            if (vali == 0) {
+
+                let target = document.querySelector('.interactive');
+                let links = document.querySelectorAll('#dispenser-de-agua-e-gelo .switch-dispenser a');
+
+                links[0].classList.add('active');
+                target.src = gelo;
+
+                setTimeout( function(){ 
+                    links[0].classList.remove('active');
+                    links[1].classList.add('active');
+                    target.src = agua;
+                }, 3000);
+
+                vali = 1;
+                window.removeEventListener('scroll', this.onWindowScroll);
+
+            }
+
+        }
 
     }
 

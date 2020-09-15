@@ -32,7 +32,9 @@ class VersaoVideo extends React.Component {
 				video: false
 			})
 		}else if(e == "video"){
-			$(window).scrollTop(3600)
+			setTimeout(function() { 
+				$(window).scrollTop(3600)
+			}, 100);
 			this.setState({
 				visao_geral: true,
 				especificacoes: false,

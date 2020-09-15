@@ -11,13 +11,25 @@ const imgDesktop = 'https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/
 
 class GeladeiraInverse extends React.Component {
 
+    constructor(props) {
+		super(props);
+	}
+
     render() {
         return (
             <div id="geladeira-inverse-4" className="geladeira-inverse section">
 
                 <Title setClass="center" textMF="Brastemp Inverse | 4" textDF="Brastemp Inverse | 4"/>
 
-                <p>Máximo design, máxima sofisticação. Com <br className="mobile"></br> 4 compartimentos<br className="desktop"></br>e mais de <a href="https://www.brastemp.com.br/eletrodomesticos/geladeira---refrigerador" title="Geladeira Brastemp">500L</a> para <br className="mobile"></br> você armazenar tudo o que quiser. </p>
+                <p>
+                        Máximo design, máxima sofisticação. Com 
+                        <br className="mobile"></br> 4 compartimentos
+                        <br className="desktop"></br>e mais de 
+                        { this.props.versao == "qrcode" && <> 500L </> }
+					    { this.props.versao == "video" && <a href="https://www.brastemp.com.br/eletrodomesticos/geladeira---refrigerador" title="Geladeira Brastemp">500L</a> }
+                         para 
+                        <br className="mobile"></br> você armazenar tudo o que quiser. 
+                </p>
 
                 <div >
                     <Picture

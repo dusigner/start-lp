@@ -17,7 +17,8 @@ class VersaoVideo extends React.Component {
 		this.state = {
 			visao_geral: true,
 			especificacoes: false,
-			vitrine: false
+			vitrine: false,
+			video: false
 		};
 	}
 	
@@ -28,19 +29,31 @@ class VersaoVideo extends React.Component {
 				visao_geral: false,
 				especificacoes: true,
 				vitrine: false,
+				video: false
 			})
-		} else if(e == "visao_geral") {
+		}else if(e == "video"){
+			$(window).scrollTop(3600)
+			this.setState({
+				visao_geral: true,
+				especificacoes: false,
+				vitrine: false,
+				video: true
+			})
+		}
+		 else if(e == "visao_geral") {
 			$(window).scrollTop(0);
 			this.setState({
 				visao_geral: true,
 				especificacoes: false,
 				vitrine: false,
+				video: false
 		})} else {
 			$(window).scrollTop(0);
 			this.setState({
 				visao_geral: false,
 				especificacoes: false,
 				vitrine: true,
+				video: false
 		})}
 	}
 
@@ -58,6 +71,11 @@ class VersaoVideo extends React.Component {
 									<li>
 										<a href='#visao_geral' onClick={() => this.handleClick("visao_geral")} className={`${this.state.visao_geral ? "active link" : "link" }`}>
 											<span>Visão Geral</span>
+										</a>
+									</li>
+									<li>
+										<a href='#video-inverse4' onClick={() => this.handleClick("video")} className={`${this.state.video ? "active link" : "link" }`}>
+											<span>Ver Vídeo</span>
 										</a>
 									</li>
 									<li>

@@ -11,7 +11,31 @@ import './versaoOriginal.global.css';
 class lancamentoRefri extends Component {
 
     constructor(props) {
-		super(props);
+        super(props);
+        
+    }
+
+    renderContent(){
+        if(window.innerWidth > 1025){
+            return (
+                <VersaoVideo/>
+            )
+        } else {
+            return (
+                <VersaoOriginal versao="video" />
+            )
+        }
+    }
+
+
+    updateDimensions = () => {
+        this.setState({ width: window.innerWidth });
+    };
+    componentDidMount() {
+        window.addEventListener('resize', this.updateDimensions);
+    }
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateDimensions);
     }
     
     render() {
@@ -21,8 +45,7 @@ class lancamentoRefri extends Component {
                 <LazyLoad height={'100%'} offset={0}>
                     <main id="main" className="main">
                         <ExtensionPoint id="header" hideSupportMenu={true} />
-                        <VersaoVideo/>
-                        <VersaoOriginal versao="video" />
+                        {this.renderContent()}
                         <ExtensionPoint id="footer" hideSupportMenu={true} />
                     </main>
                 </LazyLoad>

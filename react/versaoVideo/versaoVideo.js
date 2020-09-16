@@ -6,6 +6,8 @@ import Scrollvideo from "./layout/scrollvideo/scrollvideo";
 import EspecificacoesTecnicas from '../versaoOriginal/layout/especificacoes/especificacoes'
 import $ from 'jquery'
 import VitrineCompra from '../versaoOriginal/layout/vitrine-compra/vitrine'
+import AtencaoDetalhes from '../versaoOriginal/layout/atencao-detalhes/atencao-detalhes';
+import Video from './layout/video/video';
 
 // CSSs
 import './versaoVideo.global.css';
@@ -17,14 +19,19 @@ class VersaoVideo extends React.Component {
 		super();
 		this.state = {
 			visao_geral: true,
+			video: true,
 			especificacoes: false,
-			vitrine: false,
-			video: false
+			vitrine: false
 		};
 	}
 	
      componentDidMount() {
-        window.addEventListener('scroll', this.onWindowScroll)
+		window.addEventListener('scroll', this.onWindowScroll)
+		if(this.state.visao_geral){
+			setTimeout(function() { 
+				disableScroll.on()
+			}, 2000);
+		}
      }
     
      componentWillUnmount() {
@@ -52,51 +59,46 @@ class VersaoVideo extends React.Component {
 			}, { threshold: [0.5] });
 		
 			videoActive.observe(document.querySelector(".observevideo"));
-
-	
 		}
 	}
 
 	handleClick(e) {
 		if(e == "especificacoes"){
 			disableScroll.off()
-			$(window).scrollTop(0);
 			this.setState({
 				visao_geral: false,
+				video: false,
 				especificacoes: true,
 				vitrine: false,
-				video: false
 			})
 		}else if(e == "video"){
 			disableScroll.off()
 			this.setState({
 				visao_geral: true,
+				video: true,
 				especificacoes: false,
 				vitrine: false,
-				video: true
 			})
-			setTimeout(function() { 
-				$(window).scrollTop(2100)
-			}, 100);
+			
 		}
 		 else if(e == "visao_geral") {
 			this.setState({
 				visao_geral: true,
+				video: true,
 				especificacoes: false,
 				vitrine: false,
-				video: false
 			})
-			$(window).scrollTop(0);
 		} else if(e == "vitrine") {
 			disableScroll.off()
 			this.setState({
 				visao_geral: false,
+				video: false,
 				especificacoes: false,
 				vitrine: true,
-				video: false
 			})
-			$(window).scrollTop(0);
 		}
+
+		
 	}
 	
 	render() {
@@ -111,7 +113,7 @@ class VersaoVideo extends React.Component {
 							<nav id="nav">
 								<ul>
 									<li>
-										<a href='#visao_geral' id="visao_geral" onClick={() => this.handleClick("visao_geral")} className="link">
+										<a href='#geral' id="visao_geral" onClick={() => this.handleClick("visao_geral")} className="link">
 											<span>Visão Geral</span>
 										</a>
 									</li>
@@ -137,13 +139,25 @@ class VersaoVideo extends React.Component {
 					</>
 				</Headroom>
 				{this.state.visao_geral && (
-					<Scrollvideo />
+					<section id="geral">
+						<Scrollvideo />
+					</section>
+				)}
+				{this.state.video && (
+					<section className="observerSection">
+						<AtencaoDetalhes/>
+						<Video/>
+					</section>
 				)}
 				{this.state.especificacoes && (
-					<EspecificacoesTecnicas />
+					<section>
+						<EspecificacoesTecnicas />
+						</section>
 				)}
 				{this.state.vitrine && (
-					<VitrineCompra/>
+					<section>
+						<VitrineCompra/>
+					</section>
 				)}
 			</div>
 		)

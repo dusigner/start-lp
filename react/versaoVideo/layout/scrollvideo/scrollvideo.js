@@ -6,8 +6,7 @@ import './scrollvideo.global.css';
 import disableScroll from 'disable-scroll';
 import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 import $ from 'jquery'
-import AtencaoDetalhes from '../../../versaoOriginal/layout/atencao-detalhes/atencao-detalhes';
-import Video from '../video/video';
+
 import Title from '../../../versaoOriginal/components/title/title'
 
 const _isMounted = false;
@@ -64,8 +63,8 @@ class Scrollvideo extends React.Component {
         $(window).bind('mousewheel DOMMouseScroll', function(event){
             if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
                 if(window.scrollY == 0){
-                    video.currentTime = 0
-                    video.play()
+                    // video.currentTime = 0
+                    // video.play()
                 } 
             } else {
                 if(video.currentTime < 25){
@@ -95,7 +94,6 @@ class Scrollvideo extends React.Component {
                 disableScroll.on()
             } else {
                 disableScroll.off()
-                window.scrollTo(0, 110)
             }
             /** Scene 1 - Play */
             if(video.currentTime >= 0 && video.currentTime < 2.1){
@@ -212,7 +210,6 @@ class Scrollvideo extends React.Component {
 
   render() {
     return (
-      <div>
         <div className="intro">
             <div className="scene1">
                 <div className="scene1__content">
@@ -296,14 +293,13 @@ class Scrollvideo extends React.Component {
             <video className="videobg" preload="true" muted>
                 <source src="https://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/Brastemp_Jupter_Interacao_P013-2.mp4" type="video/mp4" />
             </video>
+            {/* {!this.state.mobile && (
+                <section className="observerSection">
+                    <AtencaoDetalhes/>
+                    <Video/>
+                </section>
+            )} */}
         </div>
-        {!this.state.mobile && (
-            <section className="observerSection">
-                <AtencaoDetalhes/>
-                <Video/>
-            </section>
-        )}
-      </div>
     );
   }
 }

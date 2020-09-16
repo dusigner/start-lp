@@ -59,6 +59,7 @@ class VersaoVideo extends React.Component {
 
 	handleClick(e) {
 		if(e == "especificacoes"){
+			disableScroll.off()
 			$(window).scrollTop(0);
 			this.setState({
 				visao_geral: false,
@@ -87,6 +88,7 @@ class VersaoVideo extends React.Component {
 			})
 			$(window).scrollTop(0);
 		} else if(e == "vitrine") {
+			disableScroll.off()
 			this.setState({
 				visao_geral: false,
 				especificacoes: false,

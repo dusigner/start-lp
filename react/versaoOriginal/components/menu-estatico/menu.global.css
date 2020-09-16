@@ -98,6 +98,7 @@
     padding: 0 10px;
     background: #000;
     transform: translate(0,-50%);
+    height: 32px
 }
 
 .menu__lp {

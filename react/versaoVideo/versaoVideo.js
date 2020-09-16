@@ -30,30 +30,31 @@ class VersaoVideo extends React.Component {
      componentWillUnmount() {
         window.removeEventListener('scroll', this.onWindowScroll);
      }
-    /* OBSERVER VIDEO */
+    /* OBSERVER IDs */
 	onWindowScroll = () => {
 		const introActive = new IntersectionObserver(function(entries) {
 			if(entries[0].isIntersecting === true) {
 				$("#visao_geral").addClass("active")
-				$("#video-inverse4").removeClass("active")
-			
+				$("#ver_video").removeClass("active")
 			} else {
 				$("#visao_geral").removeClass("active")
+				$("#ver_video").addClass("active")
 			}
 		}, { threshold: [0.5] });
 	
 		introActive.observe(document.querySelector(".intro"));
 
-		const vidActive = new IntersectionObserver(function(entries) {
+		const videoActive = new IntersectionObserver(function(entries) {
 			if(entries[0].isIntersecting === true) {
-				$("#video-inverse4").addClass("active")
-				
+				$("#ver_video").addClass("active")
 			} else {
-				$("#video-inverse4").removeClass("active")
+				$("#ver_video").removeClass("active")
 			}
-		}, { threshold: [0.5] });
+		}, { threshold: [1] });
 	
-		vidActive.observe(document.querySelector("#video_inverse4"));
+		videoActive.observe(document.getElementsByClassName("observevideo"));
+
+	
 	}
 
 	handleClick(e) {
@@ -75,12 +76,10 @@ class VersaoVideo extends React.Component {
 
 			setTimeout(function() { 
 				$(window).scrollTop(3600)
-				$("#visao_geral").removeClass("active")
 			}, 100);
 		}
 		 else if(e == "visao_geral") {
 			$(window).scrollTop(0);
-			$("#visao_geral").addClass("active")
 			this.setState({
 				visao_geral: true,
 				especificacoes: false,
@@ -113,7 +112,7 @@ class VersaoVideo extends React.Component {
 										</a>
 									</li>
 									<li>
-										<a href='#video-inverse4' id="video_inverse4" onClick={() => this.handleClick("video")} className={`${this.state.video ? "active link" : "link" }`}>
+										<a href='#video-inverse4' id="ver_video" onClick={() => this.handleClick("video")}>
 											<span>Ver Vídeo</span>
 										</a>
 									</li>

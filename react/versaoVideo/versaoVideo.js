@@ -32,16 +32,28 @@ class VersaoVideo extends React.Component {
      }
     /* OBSERVER VIDEO */
 	onWindowScroll = () => {
-		const observer = new IntersectionObserver(function(entries) {
+		const introActive = new IntersectionObserver(function(entries) {
 			if(entries[0].isIntersecting === true) {
 				$("#visao_geral").addClass("active")
+				$("#video-inverse4").removeClass("active")
 			
 			} else {
 				$("#visao_geral").removeClass("active")
 			}
 		}, { threshold: [0.5] });
 	
-		observer.observe(document.querySelector(".intro"));
+		introActive.observe(document.querySelector(".intro"));
+
+		const vidActive = new IntersectionObserver(function(entries) {
+			if(entries[0].isIntersecting === true) {
+				$("#video-inverse4").addClass("active")
+				
+			} else {
+				$("#video-inverse4").removeClass("active")
+			}
+		}, { threshold: [0.5] });
+	
+		vidActive.observe(document.querySelector("#video_inverse4"));
 	}
 
 	handleClick(e) {
@@ -101,7 +113,7 @@ class VersaoVideo extends React.Component {
 										</a>
 									</li>
 									<li>
-										<a href='#video-inverse4' onClick={() => this.handleClick("video")} className={`${this.state.video ? "active link" : "link" }`}>
+										<a href='#video-inverse4' id="video_inverse4" onClick={() => this.handleClick("video")} className={`${this.state.video ? "active link" : "link" }`}>
 											<span>Ver Vídeo</span>
 										</a>
 									</li>

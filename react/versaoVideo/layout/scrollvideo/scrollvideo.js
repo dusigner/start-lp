@@ -136,7 +136,6 @@ class Scrollvideo extends React.Component {
             /** Scene 3 - PLAY */
             if(video.currentTime >= 15.1 &&  video.currentTime <= 16.2){
                 TweenLite.to(scene2, 1, {opacity: 0, zIndex:2,});
-                window.scrollTo(0, 300);
             }
             /** Scene 3 - PAUSE */
             if(video.currentTime >= 17.8 &&  video.currentTime <= 18.3){
@@ -146,7 +145,6 @@ class Scrollvideo extends React.Component {
             /** Scene 4 - PLAY */
             if(video.currentTime >= 18.4 &&  video.currentTime <= 19.1){
                 TweenLite.to(scene3, 1, {opacity: 0, zIndex:2,});
-                window.scrollTo(0, 400);
             }
             if(video.currentTime >= 25 && video.currentTime <= 25.3){
                 TweenLite.to(scene4, 1, {opacity: 1, zIndex:3,});
@@ -179,17 +177,10 @@ class Scrollvideo extends React.Component {
             }
           });
 
-         window.addEventListener('scroll', this.onWindowScroll)
     }
-
-	onWindowScroll = () => {
-		let scroll = window.scrollY;
-        console.log(scroll)
-	}
 
     componentWillUnmount() {
         this._isMounted = false;
-        window.removeEventListener('scroll', this.onWindowScroll);
     }
 
     handleChange=(e)=>{

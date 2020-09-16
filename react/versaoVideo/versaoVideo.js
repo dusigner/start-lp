@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Headroom from 'react-headroom';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import disableScroll from 'disable-scroll';
 import Scrollvideo from "./layout/scrollvideo/scrollvideo";
 import EspecificacoesTecnicas from '../versaoOriginal/layout/especificacoes/especificacoes'
 import $ from 'jquery'
@@ -35,10 +36,8 @@ class VersaoVideo extends React.Component {
 			const introActive = new IntersectionObserver(function(entries) {
 				if(entries[0].isIntersecting === true) {
 					$("#visao_geral").addClass("active")
-					console.log("visao_geral active")
 				} else {
 					$("#visao_geral").removeClass("active")
-					console.log("visao_geral remove")
 				}
 			}, { threshold: [0.5] });
 		
@@ -47,9 +46,7 @@ class VersaoVideo extends React.Component {
 			const videoActive = new IntersectionObserver(function(entries) {
 				if(entries[0].isIntersecting === true) {
 					$("#ver_video").addClass("active")
-					console.log("video active")
 				} else {
-					console.log("video remove")
 					$("#ver_video").removeClass("active")
 				}
 			}, { threshold: [0.5] });
@@ -70,6 +67,7 @@ class VersaoVideo extends React.Component {
 				video: false
 			})
 		}else if(e == "video"){
+			disableScroll.off()
 			this.setState({
 				visao_geral: true,
 				especificacoes: false,
@@ -77,7 +75,7 @@ class VersaoVideo extends React.Component {
 				video: true
 			})
 			setTimeout(function() { 
-				$(window).scrollTop(3600)
+				$(window).scrollTop(2100)
 			}, 100);
 		}
 		 else if(e == "visao_geral") {

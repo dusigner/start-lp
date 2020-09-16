@@ -15,13 +15,14 @@
 .scene4{
     width: 100%;
     height: 100vh;
-    z-index: 2;
+    z-index: 1;
     display: flex;
     color: white;
     position: fixed;
     opacity: 0;
     padding-top: 50px;
     top: 0;
+    transition: all 1s;
 }
 /*********
  Scene 1

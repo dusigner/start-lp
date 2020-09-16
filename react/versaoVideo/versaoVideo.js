@@ -18,10 +18,32 @@ class VersaoVideo extends React.Component {
 			visao_geral: true,
 			especificacoes: false,
 			vitrine: false,
-			video: false
+		video: false
 		};
 	}
 	
+	/** TAGUEAMENTO VÍDEO */
+     componentDidMount() {
+        window.addEventListener('scroll', this.onWindowScroll)
+     }
+    
+     componentWillUnmount() {
+        window.removeEventListener('scroll', this.onWindowScroll);
+     }
+    /* OBSERVER VIDEO */
+	onWindowScroll = () => {
+		const observer = new IntersectionObserver(function(entries) {
+			if(entries[0].isIntersecting === true) {
+				$("#visao_geral").addClass("active")
+			
+			} else {
+				$("#visao_geral").removeClass("active")
+			}
+		}, { threshold: [0.5] });
+	
+		observer.observe(document.querySelector(".intro"));
+	}
+
 	handleClick(e) {
 		if(e == "especificacoes"){
 			$(window).scrollTop(0);
@@ -32,18 +54,21 @@ class VersaoVideo extends React.Component {
 				video: false
 			})
 		}else if(e == "video"){
-			setTimeout(function() { 
-				$(window).scrollTop(3600)
-			}, 100);
 			this.setState({
 				visao_geral: true,
 				especificacoes: false,
 				vitrine: false,
 				video: true
 			})
+
+			setTimeout(function() { 
+				$(window).scrollTop(3600)
+				$("#visao_geral").removeClass("active")
+			}, 100);
 		}
 		 else if(e == "visao_geral") {
 			$(window).scrollTop(0);
+			$("#visao_geral").addClass("active")
 			this.setState({
 				visao_geral: true,
 				especificacoes: false,
@@ -58,7 +83,7 @@ class VersaoVideo extends React.Component {
 				video: false
 		})}
 	}
-
+	
 	render() {
 
 		return (
@@ -71,7 +96,7 @@ class VersaoVideo extends React.Component {
 							<nav id="nav">
 								<ul>
 									<li>
-										<a href='#visao_geral' onClick={() => this.handleClick("visao_geral")} className={`${this.state.visao_geral ? "active link" : "link" }`}>
+										<a href='#visao_geral' id="visao_geral" onClick={() => this.handleClick("visao_geral")} className="link">
 											<span>Visão Geral</span>
 										</a>
 									</li>

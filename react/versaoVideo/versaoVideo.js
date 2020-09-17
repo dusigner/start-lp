@@ -27,18 +27,22 @@ class VersaoVideo extends React.Component {
 	
      componentDidMount() {
 		window.addEventListener('scroll', this.onWindowScroll)
-		if(this.state.visao_geral){
-			setTimeout(function() { 
-				disableScroll.on()
-			}, 2000);
-		}
+		window.scrollTo(0, 50)
      }
     
      componentWillUnmount() {
+		disableScroll.off()
         window.removeEventListener('scroll', this.onWindowScroll);
      }
     /* OBSERVER IDs */
 	onWindowScroll = () => {
+		console.log(window.scrollY)
+		if(window.scrollY >= 50 && window.scrollY <= 51.16){
+			disableScroll.on()
+		} 
+		if(window.scrollY >= 52){
+			disableScroll.off()
+		}
 		if(this.state.visao_geral) {
 			const introActive = new IntersectionObserver(function(entries) {
 				if(entries[0].isIntersecting === true) {
@@ -46,7 +50,7 @@ class VersaoVideo extends React.Component {
 				} else {
 					$("#visao_geral").removeClass("active")
 				}
-			}, { threshold: [0.5] });
+			}, { threshold: [0.6] });
 		
 			introActive.observe(document.querySelector(".intro"));
 
@@ -63,16 +67,18 @@ class VersaoVideo extends React.Component {
 	}
 
 	handleClick(e) {
-		if(e == "especificacoes"){
-			disableScroll.off()
+		if(e == "visao_geral") {
+			window.scrollTo(0, 50)
 			this.setState({
-				visao_geral: false,
-				video: false,
-				especificacoes: true,
+				visao_geral: true,
+				video: true,
+				especificacoes: false,
 				vitrine: false,
 			})
-		}else if(e == "video"){
+		}
+		if(e == "video"){
 			disableScroll.off()
+			window.scrollTo(0, 2150)
 			this.setState({
 				visao_geral: true,
 				video: true,
@@ -81,14 +87,18 @@ class VersaoVideo extends React.Component {
 			})
 			
 		}
-		 else if(e == "visao_geral") {
+		if(e == "especificacoes"){
+			disableScroll.off()
+			window.scrollTo(0, 52)
 			this.setState({
-				visao_geral: true,
-				video: true,
-				especificacoes: false,
+				visao_geral: false,
+				video: false,
+				especificacoes: true,
 				vitrine: false,
 			})
-		} else if(e == "vitrine") {
+		} 
+		if(e == "vitrine") {
+			window.scrollTo(0, 52)
 			disableScroll.off()
 			this.setState({
 				visao_geral: false,
@@ -102,7 +112,7 @@ class VersaoVideo extends React.Component {
 	}
 	
 	render() {
-
+		
 		return (
 			<div className="refrivideo">
 				<Headroom disableInlineStyles>
@@ -113,22 +123,22 @@ class VersaoVideo extends React.Component {
 							<nav id="nav">
 								<ul>
 									<li>
-										<a href='#geral' id="visao_geral" onClick={() => this.handleClick("visao_geral")} className="link">
+										<a id="visao_geral" onClick={() => this.handleClick("visao_geral")} className="link">
 											<span>Visão Geral</span>
 										</a>
 									</li>
 									<li>
-										<a href='#video-inverse4' id="ver_video" onClick={() => this.handleClick("video")} className="link">
+										<a id="ver_video" onClick={() => this.handleClick("video")} className="link">
 											<span>Ver Vídeo</span>
 										</a>
 									</li>
 									<li>
-										<a href='#especificacoes' onClick={() => this.handleClick("especificacoes")} className={`${this.state.especificacoes ? "active link" : "link" }`}>
+										<a onClick={() => this.handleClick("especificacoes")} className={`${this.state.especificacoes ? "active link" : "link" }`}>
 											<span>Especificações técnicas</span>
 										</a>
 									</li>
 									<li>
-										<a href='#vitrine' name="menu_superior"  onClick={() => this.handleClick("vitrine")} className={`${this.state.vitrine ? "active link" : "link" }`}>
+										<a name="menu_superior"  onClick={() => this.handleClick("vitrine")} className={`${this.state.vitrine ? "active link" : "link" }`}>
 											<span>Comprar</span>
 										</a>
 									</li>

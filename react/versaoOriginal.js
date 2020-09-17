@@ -20,7 +20,8 @@ class versaoOriginal extends Component {
             return (
                 <VersaoVideo/>
             )
-        } else {
+        } 
+        if(window.innerWidth < 1025) {
             return (
                 <VersaoOriginal versao="video" />
             )
@@ -42,6 +43,7 @@ class versaoOriginal extends Component {
         return (
             <React.Fragment>
                 <SEO title={this.props.title} description={this.props.description} />
+                <h1 style={{position: "absolute", top: "-100px"}}>Geladeira 4 Portas</h1>
                 <LazyLoad height={'100%'} offset={0}>
                     <main id="main" className="main">
                         <ExtensionPoint id="header" hideSupportMenu={true} />

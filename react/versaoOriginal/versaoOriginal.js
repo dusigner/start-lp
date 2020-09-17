@@ -24,18 +24,14 @@ class versaoOriginal extends React.Component {
 		super(props);
 	}
 
-	componentDidMount() {
-
-	}
-
 	render() {
 
 		return (
-			<div className="lancamento__refri">
+			<div className="versaoOriginal">
 
 				<Headroom disableInlineStyles>
 					{ this.props.versao == "qrcode" && <MenuEstatico/> }
-					{ this.props.versao == "video" && <Menu/> }
+					{ this.props.versao == "video" &&  <Menu/> }
 				</Headroom>
 
 				<GeladeiraInverse versao={this.props.versao}></GeladeiraInverse>

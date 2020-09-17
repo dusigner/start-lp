@@ -1,7 +1,8 @@
-.lancamento__refri {
+.versaoOriginal {
     display: block;
+    background: #000;
 }
-.refrivideo  {
+.versaoVideo  {
     display: none;
 }
 .footer {
@@ -9,13 +10,12 @@
 }
 body.bg-base {
     overflow: hidden;
-    background: #000;
 }
 @media (min-width: 1025px) {
-    .lancamento__refri {
+    .versaoOriginal {
         display: none;
     }
-    .refrivideo  {
+    .versaoVideo  {
         display: block;
     }
 }

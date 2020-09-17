@@ -44,7 +44,6 @@ class Menu extends React.Component {
         return (
             <div className="menu__lp">
                 <div className="menu__lp-wrap">
-                    
                     <nav id="nav">
                         <ul>
                             <li>

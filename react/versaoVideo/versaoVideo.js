@@ -113,7 +113,7 @@ class VersaoVideo extends React.Component {
 	render() {
 		
 		return (
-			<div className="refrivideo">
+			<div className="versaoVideo">
 				<Headroom disableInlineStyles>
 					<>
 					<div className="menu__lp">

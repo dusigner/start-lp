@@ -54,11 +54,7 @@ class Scrollvideo extends React.Component {
         .addTo(controller)
         .setPin(intro)
 
-        let valid = 0
-        if(valid == 0){
-            video.play()
-            valid = 1
-        }
+        video.play()
 
         $(window).bind('mousewheel DOMMouseScroll', function(event){
             if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
@@ -89,17 +85,14 @@ class Scrollvideo extends React.Component {
         });
 
         video.addEventListener('timeupdate', (event) => {
-            //disableScroll
-            if(video.currentTime > 1 && video.currentTime < 25){
-                disableScroll.on()
-            } else {
+            //disableScroll.OFF
+            if(video.currentTime > 25){
                 disableScroll.off()
-            }
+            } 
             /** Scene 1 - Play */
             if(video.currentTime >= 0 && video.currentTime < 2.1){
                 TweenLite.to([scene1, scene2,scene3,scene4], 0.5, {opacity: 0});
                 video.play()
-                window.scrollTo(0, 100)
             }
             
             if(video.currentTime >= 1.2 && video.currentTime <= 2.5 ){

@@ -8,7 +8,9 @@ class Menu extends React.Component {
         return (
             <div className="menu__lp">
                 <div className="menu__lp-wrap">
-                    <h1>Geladeira 4 Portas</h1>
+                    <a href="https://www.brastemp.com.br/eletrodomesticos/geladeira---refrigerador/4-portas" title="Geladeira 4 Portas">
+                        <h1>Geladeira 4 Portas</h1>
+                    </a>
                     <nav id="nav">
                         <ul>
                             <li>

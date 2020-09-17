@@ -68,7 +68,9 @@ html {
 .refrivideo .menu__lp nav ul li {
     list-style: none;
 }
-
+.linkH1 {
+    text-decoration: none;
+}
 .refrivideo .menu__lp nav ul li a{
     width: auto;
     display: flex;

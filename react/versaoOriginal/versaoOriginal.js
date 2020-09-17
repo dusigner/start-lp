@@ -16,9 +16,9 @@ import EspecificacoesTecnicas from './layout/especificacoes/especificacoes';
 
 
 // Assets
-import './lancamentorefri.global.css';
+import './versaoOriginal.global.css';
 
-class LancamentoRefri extends React.Component {
+class versaoOriginal extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -52,4 +52,4 @@ class LancamentoRefri extends React.Component {
 		)
 	}
 }
-export default LancamentoRefri;
+export default versaoOriginal;

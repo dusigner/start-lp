@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Header, Footer, SEO } from 'brastemp.components';
 import { ExtensionPoint } from "render";
-import VersaoOriginal from "./versaoOriginal/lancamentoRefri";
+import VersaoOriginal from "./versaoOriginal/versaoOriginal";
 import LazyLoad from 'react-lazyload';
 import HeaderFooter from './versaoOriginal/layout/header-footer/header-footer'
 import './versaoQrcode.global.css'
 
-class lancamentoRefriVideo extends Component {
+class versaoQrcode extends Component {
 
     constructor(props) {
 		super(props);
@@ -35,4 +35,4 @@ class lancamentoRefriVideo extends Component {
 
 }
 
-export default lancamentoRefriVideo;
+export default versaoQrcode;

@@ -36,7 +36,6 @@ class VersaoVideo extends React.Component {
      }
     /* OBSERVER IDs */
 	onWindowScroll = () => {
-		console.log(window.scrollY)
 		if(window.scrollY >= 50 && window.scrollY <= 51.16){
 			disableScroll.on()
 		} 

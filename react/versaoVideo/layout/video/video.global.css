@@ -6,7 +6,7 @@
     justify-content: center;
 }
 
-.play__video {
+#play__video {
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { SEO } from 'brastemp.components';
 import { ExtensionPoint } from "render";
-import VersaoOriginal from "./versaoOriginal/lancamentoRefri";
+import VersaoOriginal from "./versaoOriginal/versaoOriginal";
 import VersaoVideo from "./versaoVideo/versaoVideo";
 import LazyLoad from 'react-lazyload';
 
 // Assets
 import './versaoOriginal.global.css';
 
-class lancamentoRefri extends Component {
+class versaoOriginal extends Component {
 
     constructor(props) {
         super(props);
@@ -55,4 +55,4 @@ class lancamentoRefri extends Component {
 
 }
 
-export default lancamentoRefri;
+export default versaoOriginal;

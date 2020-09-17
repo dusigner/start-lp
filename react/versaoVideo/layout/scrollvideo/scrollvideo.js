@@ -59,8 +59,9 @@ class Scrollvideo extends React.Component {
         $(window).bind('mousewheel DOMMouseScroll', function(event){
             if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
                 if(window.scrollY == 0){
-                    // video.currentTime = 0
-                    // video.play()
+                    window.scrollTo(0, 50)
+                    video.currentTime = 0
+                    video.play()
                 } 
             } else {
                 if(video.currentTime < 25){

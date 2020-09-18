@@ -3,6 +3,7 @@
     padding: 32px 0 32px;
     background: #242424;
     position: relative;
+    z-index: 3;
 }
 
 .atencao-detalhes .edge-title{

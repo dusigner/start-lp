@@ -11,7 +11,7 @@ class AtencaoDetalhes extends React.Component {
         return (
             <div id="atencao-detalhes" className="atencao-detalhes section">
 
-                <Title setClass="center" textMF="Atencão aos detalhes" textDF="Atencão aos" textDS="detalhes"/>
+                <Title setClass="center" textMF="Atenção aos detalhes" textDF="Atenção aos" textDS="detalhes"/>
 
                 <div className="acesso-info">
                     <div>

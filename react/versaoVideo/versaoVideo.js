@@ -27,21 +27,13 @@ class VersaoVideo extends React.Component {
 	
      componentDidMount() {
 		window.addEventListener('scroll', this.onWindowScroll)
-		window.scrollTo(0, 50)
      }
     
      componentWillUnmount() {
-		disableScroll.off()
         window.removeEventListener('scroll', this.onWindowScroll);
      }
     /* OBSERVER IDs */
 	onWindowScroll = () => {
-		if(window.scrollY >= 50 && window.scrollY <= 51.16){
-			disableScroll.on()
-		} 
-		if(window.scrollY >= 52){
-			disableScroll.off()
-		}
 		if(this.state.visao_geral) {
 			const introActive = new IntersectionObserver(function(entries) {
 				if(entries[0].isIntersecting === true) {
@@ -66,8 +58,14 @@ class VersaoVideo extends React.Component {
 	}
 
 	handleClick(e) {
+		const video = document.querySelector(".videobg");
+
 		if(e == "visao_geral") {
-			window.scrollTo(0, 50)
+			window.scrollTo(0, 0)
+			// setTimeout(function(){
+			// 	video.currentTime = 0;
+			// 	disableScroll.on()
+			// }, 1000);
 			this.setState({
 				visao_geral: true,
 				video: true,
@@ -77,7 +75,6 @@ class VersaoVideo extends React.Component {
 		}
 		if(e == "video"){
 			disableScroll.off()
-			window.scrollTo(0, 2150)
 			this.setState({
 				visao_geral: true,
 				video: true,
@@ -88,7 +85,7 @@ class VersaoVideo extends React.Component {
 		}
 		if(e == "especificacoes"){
 			disableScroll.off()
-			window.scrollTo(0, 52)
+			window.scrollTo(0, 10)
 			this.setState({
 				visao_geral: false,
 				video: false,
@@ -97,7 +94,7 @@ class VersaoVideo extends React.Component {
 			})
 		} 
 		if(e == "vitrine") {
-			window.scrollTo(0, 52)
+			window.scrollTo(0, 10)
 			disableScroll.off()
 			this.setState({
 				visao_geral: false,
@@ -106,8 +103,6 @@ class VersaoVideo extends React.Component {
 				vitrine: true,
 			})
 		}
-
-		
 	}
 	
 	render() {
@@ -129,7 +124,7 @@ class VersaoVideo extends React.Component {
 										</a>
 									</li>
 									<li>
-										<a id="ver_video" onClick={() => this.handleClick("video")} className="link">
+										<a href="#video-inverse4" id="ver_video" onClick={() => this.handleClick("video")} className="link">
 											<span>Ver Vídeo</span>
 										</a>
 									</li>

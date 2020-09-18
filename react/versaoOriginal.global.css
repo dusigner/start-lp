@@ -2,6 +2,9 @@
     display: block;
     background: #000;
 }
+.main {
+    background: #000;
+}
 .versaoVideo  {
     display: none;
 }

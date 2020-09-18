@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ScrollMagic from "scrollmagic";
 //all the css animations need gsap as dependency
 import gsap, { TimelineMax, TweenMax, TweenLite } from "gsap";
 import './scrollvideo.global.css';
@@ -10,6 +9,7 @@ import $ from 'jquery'
 import Title from '../../../versaoOriginal/components/title/title'
 
 const _isMounted = false;
+let valid = 0
 class Scrollvideo extends React.Component {
     constructor(props) {
 		super(props);
@@ -20,7 +20,10 @@ class Scrollvideo extends React.Component {
         }
     }
     
-    componentDidMount() {   
+    componentDidMount() {
+
+        disableScroll.on() 
+
         if(window.screen.width < 1025){
             this.setState({
                 mobile: true
@@ -33,38 +36,27 @@ class Scrollvideo extends React.Component {
 
         this._isMounted = true;    
         const video = document.querySelector(".videobg");
-        const intro = document.querySelector(".intro");
         const scene1 = document.querySelector(".scene1");
         const scene2 = document.querySelector(".scene2");
         const scene3 = document.querySelector(".scene3");
         const scene4 = document.querySelector(".scene4");
-        //END SECTION
-        const section = document.querySelector("section");
+        const actionMouse = document.querySelector(".scene2__content-mouse");
+        const arrow  = document.querySelector("#arrow")
 
-        //SCROLLMAGIC
-        const controller = new ScrollMagic.Controller({addIndicators: false});
-
-        //Scenes
-        /** Intro */
-        let scenes = new ScrollMagic.Scene({
-            duration: 150,
-            triggerElement: intro,
-            triggerHook: 0
-        })
-        .addTo(controller)
-        .setPin(intro)
-
+        //Frist Play Video Bg
         video.play()
-
         $(window).bind('mousewheel DOMMouseScroll', function(event){
             if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                if(window.scrollY == 0){
-                    window.scrollTo(0, 50)
+                // UP
+                if(window.scrollY == 0 && video.currentTime > 3 && valid == 1){
+                    valid = 0
                     video.currentTime = 0
                     video.play()
+                    disableScroll.on()
                 } 
             } else {
-                if(video.currentTime < 25){
+                // DOWN
+                if(video.currentTime < 31){
                     video.play()
                 }
             }
@@ -72,7 +64,7 @@ class Scrollvideo extends React.Component {
 
         $("#gelo").click(function(e) {
             e.preventDefault();
-            video.currentTime = 6.5;
+            video.currentTime = 6.8;
             $("#agua").removeClass('active');
             $(this).addClass('active');
             video.play()
@@ -86,25 +78,30 @@ class Scrollvideo extends React.Component {
         });
 
         video.addEventListener('timeupdate', (event) => {
-            //disableScroll.OFF
-            if(video.currentTime > 25){
+            if(valid == 1){
                 disableScroll.off()
             } 
+            if(video.currentTime > 31){
+                valid = 1
+            } 
+            
             /** Scene 1 - Play */
             if(video.currentTime >= 0 && video.currentTime < 2.1){
-                TweenLite.to([scene1, scene2,scene3,scene4], 0.5, {opacity: 0});
+                TweenLite.to([scene1, scene2,scene3,scene4, actionMouse], 0.5, {opacity: 0});
                 video.play()
             }
-            
             if(video.currentTime >= 1.2 && video.currentTime <= 2.5 ){
                 TweenLite.to(scene1, 0.9, { opacity: 1, zIndex:3 });
             }
             if(video.currentTime >= 2.2 && video.currentTime <= 2.5){
-                video.pause()
+                video.pause();
+                TweenLite.to(actionMouse, 0.9, { opacity: 1, zIndex:3 });
+                TweenMax.fromTo(arrow, 1, { y: -5 }, { y: 20, yoyo: false, repeat: -1 });
+            
             }
             /** Scene 2 - PLAY */
             if(video.currentTime >= 2.6 && video.currentTime <= 3.7){
-                TweenLite.to(scene1, 0.9, { opacity: 0, zIndex:1 });
+                TweenLite.to([scene1,actionMouse], 0.5, { opacity: 0, zIndex:1 });
             }
             //
             if(video.currentTime < 6.0 && video.currentTime > 13.9){
@@ -122,21 +119,25 @@ class Scrollvideo extends React.Component {
                 $("#agua").addClass('active');
             }
             /** Scene 2 - PAUSE */
-            if(video.currentTime >= 14.7 && video.currentTime <= 15.0){
+            if(video.currentTime >= 14.1 && video.currentTime <= 14.50){
                 video.pause()
+                TweenLite.to(actionMouse, 0.9, { opacity: 1, zIndex:3 });
+                TweenMax.fromTo(arrow, 1, { y: -5 }, { y: 20, yoyo: false, repeat: -1 });
             }
             /** Scene 3 - PLAY */
-            if(video.currentTime >= 15.1 &&  video.currentTime <= 16.2){
-                TweenLite.to(scene2, 1, {opacity: 0, zIndex:2,});
+            if(video.currentTime >= 14.53 &&  video.currentTime <= 16.2){
+                TweenLite.to([scene2,actionMouse], 1, {opacity: 0, zIndex:2,});
             }
             /** Scene 3 - PAUSE */
-            if(video.currentTime >= 17.8 &&  video.currentTime <= 18.3){
-                TweenLite.to(scene3, 1, {opacity: 1, zIndex:3,});
+            if(video.currentTime >= 17.8 &&  video.currentTime <= 18.0){
                 video.pause()
+                TweenLite.to(scene3, 1, {opacity: 1, zIndex:3,});
+                TweenLite.to(actionMouse, 0.9, { opacity: 1, zIndex:3 });
+                TweenMax.fromTo(arrow, 1, { y: -5 }, { y: 20, yoyo: false, repeat: -1 });
             }
             /** Scene 4 - PLAY */
-            if(video.currentTime >= 18.4 &&  video.currentTime <= 19.1){
-                TweenLite.to(scene3, 1, {opacity: 0, zIndex:2,});
+            if(video.currentTime >= 18.09 &&  video.currentTime <= 19.1){
+                TweenLite.to([scene3,actionMouse], 1, {opacity: 0, zIndex:2,});
             }
             if(video.currentTime >= 25 && video.currentTime <= 25.3){
                 TweenLite.to(scene4, 1, {opacity: 1, zIndex:3,});
@@ -205,6 +206,12 @@ class Scrollvideo extends React.Component {
   render() {
     return (
         <div className="intro">
+            <div className="scene2__content-mouse">
+                Role para ver mais
+                <svg id="arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                <path d="M1.41 0.590088L6 5.17009L10.59 0.590088L12 2.00009L6 8.00009L0 2.00009L1.41 0.590088Z" fill="white"/>
+                </svg>
+            </div>
             <div className="scene1">
                 <div className="scene1__content">
                     <h2>Brastemp Inverse | 4</h2>
@@ -226,12 +233,7 @@ class Scrollvideo extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="scene2__content-mouse">
-                        Role para ver mais
-                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-                        <path d="M1.41 0.590088L6 5.17009L10.59 0.590088L12 2.00009L6 8.00009L0 2.00009L1.41 0.590088Z" fill="white"/>
-                        </svg>
-                    </div>
+                    
                 </div>
             </div>
             <div className="scene3">
@@ -266,6 +268,8 @@ class Scrollvideo extends React.Component {
                                 min="0" max="1000" 
                                 value={this.state.value} 
                                 onInput={this.handleChange}
+                                disabled = {(valid == 0)? "disabled" : ""}
+
                                 // onInput={ this.handleInput.bind(this)}
                                 />
 

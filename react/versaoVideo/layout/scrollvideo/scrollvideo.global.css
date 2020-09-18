@@ -1,5 +1,6 @@
 .intro {
     height: calc(100vh - 107.87px);
+    position: relative;
 }
 .videobg {
     height: 100%;

@@ -15,24 +15,10 @@ class Scrollvideo extends React.Component {
 		super(props);
 		this.state = {
             value: 0,
-            lastScroll: 0,
-            mobile: false
         }
     }
     
     componentDidMount() {
-
-        disableScroll.on() 
-
-        if(window.screen.width < 1025){
-            this.setState({
-                mobile: true
-            })
-        } else {
-            this.setState({
-                mobile: false
-            })
-        }
 
         this._isMounted = true;    
         const video = document.querySelector(".videobg");
@@ -44,7 +30,12 @@ class Scrollvideo extends React.Component {
         const arrow  = document.querySelector("#arrow")
 
         //Frist Play Video Bg
+        window.scrollTo(0, 0)
         video.play()
+        if(window.scrollY <= 1){
+            disableScroll.on()
+        }
+
         $(window).bind('mousewheel DOMMouseScroll', function(event){
             if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
                 // UP
@@ -174,6 +165,7 @@ class Scrollvideo extends React.Component {
 
     componentWillUnmount() {
         this._isMounted = false;
+        window.scrollTo(0, 0)
     }
 
     handleChange=(e)=>{

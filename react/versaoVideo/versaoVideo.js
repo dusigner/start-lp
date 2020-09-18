@@ -19,7 +19,7 @@ class VersaoVideo extends React.Component {
 		super();
 		this.state = {
 			visao_geral: true,
-			video: true,
+			video: false,
 			especificacoes: false,
 			vitrine: false
 		};
@@ -34,6 +34,11 @@ class VersaoVideo extends React.Component {
      }
     /* OBSERVER IDs */
 	onWindowScroll = () => {
+
+		if(window.scrollY == 0 && this.state.visao_geral){
+            disableScroll.on()
+        }
+
 		if(this.state.visao_geral) {
 			const introActive = new IntersectionObserver(function(entries) {
 				if(entries[0].isIntersecting === true) {
@@ -62,13 +67,9 @@ class VersaoVideo extends React.Component {
 
 		if(e == "visao_geral") {
 			window.scrollTo(0, 0)
-			// setTimeout(function(){
-			// 	video.currentTime = 0;
-			// 	disableScroll.on()
-			// }, 1000);
 			this.setState({
 				visao_geral: true,
-				video: true,
+				video: false,
 				especificacoes: false,
 				vitrine: false,
 			})
@@ -76,7 +77,7 @@ class VersaoVideo extends React.Component {
 		if(e == "video"){
 			disableScroll.off()
 			this.setState({
-				visao_geral: true,
+				visao_geral: false,
 				video: true,
 				especificacoes: false,
 				vitrine: false,
@@ -85,7 +86,7 @@ class VersaoVideo extends React.Component {
 		}
 		if(e == "especificacoes"){
 			disableScroll.off()
-			window.scrollTo(0, 10)
+			window.scrollTo(0, 0)
 			this.setState({
 				visao_geral: false,
 				video: false,
@@ -94,7 +95,7 @@ class VersaoVideo extends React.Component {
 			})
 		} 
 		if(e == "vitrine") {
-			window.scrollTo(0, 10)
+			window.scrollTo(0, 0)
 			disableScroll.off()
 			this.setState({
 				visao_geral: false,
@@ -119,12 +120,12 @@ class VersaoVideo extends React.Component {
 							<nav id="nav">
 								<ul>
 									<li>
-										<a id="visao_geral" onClick={() => this.handleClick("visao_geral")} className="link">
+										<a id="visao_geral" onClick={() => this.handleClick("visao_geral")} className={`${this.state.visao_geral ? "active link" : "link" }`}>
 											<span>Visão Geral</span>
 										</a>
 									</li>
 									<li>
-										<a href="#video-inverse4" id="ver_video" onClick={() => this.handleClick("video")} className="link">
+										<a id="ver_video" onClick={() => this.handleClick("video")}className={`${this.state.video ? "active link" : "link" }`}>
 											<span>Ver Vídeo</span>
 										</a>
 									</li>
@@ -147,18 +148,19 @@ class VersaoVideo extends React.Component {
 				{this.state.visao_geral && (
 					<section id="geral">
 						<Scrollvideo />
+						<AtencaoDetalhes/>
+						<Video/>
 					</section>
 				)}
 				{this.state.video && (
 					<section className="observerSection">
-						<AtencaoDetalhes/>
 						<Video/>
 					</section>
 				)}
 				{this.state.especificacoes && (
 					<section>
 						<EspecificacoesTecnicas />
-						</section>
+					</section>
 				)}
 				{this.state.vitrine && (
 					<section>

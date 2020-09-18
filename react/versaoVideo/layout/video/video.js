@@ -16,6 +16,10 @@ class GeladeiraInverse extends React.Component {
         const video = document.querySelector("video")
     }
 
+    componentWillUnmount() {
+        window.scrollTo(0, 0)
+    }
+
     render() {
         return (
             <div id="video-inverse4" className="video-refri section observevideo">

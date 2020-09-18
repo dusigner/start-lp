@@ -11,6 +11,10 @@ const imgDesktop = 'https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/
 
 class EspecificacoesTecnicas extends React.Component {
 
+    componentWillUnmount() {
+        window.scrollTo(0, 0)
+    }
+
     render() {
         return (
             <div id="especificacoes" className="especificacoes section">

@@ -30,7 +30,8 @@ class VersaoVideo extends React.Component {
      }
     
      componentWillUnmount() {
-        window.removeEventListener('scroll', this.onWindowScroll);
+		window.removeEventListener('scroll', this.onWindowScroll);
+		disableScroll.off()
      }
     /* OBSERVER IDs */
 	onWindowScroll = () => {

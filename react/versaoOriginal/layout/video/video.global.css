@@ -1,5 +1,6 @@
 .video-refri {
     background: #000;
+    z-index: 3;
 }
 
 @media (min-width: 768px){

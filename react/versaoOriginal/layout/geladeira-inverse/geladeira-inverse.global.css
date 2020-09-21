@@ -4,6 +4,7 @@
 }
 .geladeira-inverse a{
     color: white;
+    text-decoration: none;
 }
 .geladeira-inverse a:hover{
     text-decoration: none;

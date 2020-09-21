@@ -28,6 +28,7 @@
     z-index: 1;
     background: url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/gelo.gif') no-repeat;
     background-size: cover;
+    border-radius: 10px;
 }
 
 .dispenser-de-agua-e-gelo > img.invisible {
@@ -172,6 +173,28 @@
     }
     .dispenser-de-agua-e-gelo p .desktop {
         display: block;
+    }
+
+}
+
+@media (min-width: 1025px) {
+
+    .dispenser-de-agua-e-gelo > img.interactive {
+        width: 225px;
+        top: calc(50% - 230px);
+        left: calc(50% - 115px);
+    }
+
+    .dispenser-de-agua-e-gelo .overflow_img img {
+        width: 1300px;
+    }
+
+    .dispenser-de-agua-e-gelo .overflow_img {
+        height: 820px;
+    }
+
+    .switch-dispenser {
+        margin: 165px 0 0;
     }
 
 }

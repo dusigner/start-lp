@@ -55,7 +55,7 @@ html {
 }
 .versaoVideo .menu__lp nav {
     margin: unset;
-    padding-right: 90px;
+    padding-right: 110px;
 }
 .versaoVideo .menu__lp nav ul{
     display: flex;
@@ -104,6 +104,10 @@ html {
 
 .versaoVideo .menu__lp nav a.active {
     text-shadow: 0px 0px #fff;  
+}
+
+.versaoVideo .menu__lp nav ul li:last-child {
+    left: calc(100% - 150px);
 }
 
 /* BOTÃO EU QUERO - COMPRAR */

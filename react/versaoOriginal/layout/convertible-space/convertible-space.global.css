@@ -134,7 +134,7 @@
 .convertible-space .line-chose .slider{
     -webkit-appearance: none;
     appearance: none;
-    width: calc(350px - 95px);
+    width: 310px;
     padding: 0 25px;
     height: 2px;
     background-color: transparent;
@@ -143,6 +143,14 @@
     transition: opacity .2s;
     
     transform: rotate(90deg);
+
+    border: none;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    vertical-align: top;
+    outline: none;
+
+    margin: 14px -7px 0 0;
 }
 
 .convertible-space .line-chose .slider::-webkit-slider-thumb {
@@ -196,6 +204,9 @@
         right: 45%;
         top: calc(50% - 145px);
         width: 385px;
+    }
+
+    .convertible-space .edge-title h2 {
         text-align: left;
     }
 
@@ -215,19 +226,15 @@
 
 }
 
-@media (min-width: 1000px) {
-    
+@media (min-width: 1025px) {
+
     .convertible-space .edge-title {
-        right: 55%;
+        right: calc(50% + 150px);
     }
 
     .convertible-space > p {
-        right: 55%;
+        right: calc(50% + 150px);
     }
-
-}
-
-@media (min-width: 1025px) {
 
     .convertible-space {
         height: 830px;
@@ -237,12 +244,15 @@
 
     .convertible-space .line-chose {
         bottom: 50%;
+        left: calc(50% + 200px);
+        right: initial;
     }
 
     .convertible-space .line-chose .slider{
-        width: 350px;
-        padding: 0px 50px;
+        width: 405px;
+        padding: 0px 35px;
         background-color: #278DAD;
+        margin: 10px 16px 0 0;
     }
     
     .convertible-space .line-chose .line-text {

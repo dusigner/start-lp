@@ -13,6 +13,7 @@ import Video from '../versaoVideo/layout/video/video';
 import Vitrine from './layout/vitrine/vitrine'
 import VitrineCompra from './layout/vitrine-compra/vitrine'
 import EspecificacoesTecnicas from './layout/especificacoes/especificacoes';
+import JaTenho from './layout/ja-tenho/ja-tenho'
 
 
 // Assets
@@ -41,6 +42,7 @@ class versaoOriginal extends React.Component {
 				<AtencaoDetalhes></AtencaoDetalhes>
 				<Video></Video>
 				{ this.props.versao == "qrcode" && <Vitrine/> }
+				{ this.props.versao == "qrcode" && <JaTenho/> }
 				{ this.props.versao == "video" && <VitrineCompra/> }
 				<EspecificacoesTecnicas></EspecificacoesTecnicas>
 

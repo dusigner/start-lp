@@ -16,16 +16,19 @@ class versaoOriginal extends Component {
     }
 
     renderContent(){
-        if(window.innerWidth > 1025){
-            return (
+        return (
                 <VersaoVideo/>
             )
-        } 
-        if(window.innerWidth < 1025) {
-            return (
-                <VersaoOriginal versao="video" />
-            )
-        }
+        // if(window.innerWidth > 1025){
+        //     return (
+        //         <VersaoVideo/>
+        //     )
+        // } 
+        // if(window.innerWidth < 1025) {
+        //     return (
+        //         <VersaoOriginal versao="video" />
+        //     )
+        // }
     }
 
 

@@ -79,6 +79,11 @@ class Menu extends React.Component {
                                 </AnchorLink>
                             </li>
                             <li>
+                                <AnchorLink offset={() => 55} href='#ja-tenho' name="ja-tenho" className="links">
+                                    <span>Já tenho essa geladeira</span>
+                                </AnchorLink>
+                            </li>
+                            <li>
                                 <AnchorLink offset={() => 55} href='#video-refri' name="video-refri">
                                     <span>Ver vídeo</span>
                                 </AnchorLink>

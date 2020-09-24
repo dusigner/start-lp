@@ -1,23 +1,14 @@
 import React from 'react';
-import Api from '../../services';
-//components
 import { Picture } from 'react-responsive-picture';
 import Slider from "../../../node_modules/react-slick";
 import './ja-tenho.global.css';
-import api from '../../services';
 import { Mutation } from "react-apollo";
-
 import ClientesJupter from "./clientesJupter.graphql";
 
 //IMG
 const imgMobile = 'https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/bg-galadeira-onverser4-mobile.png';
 const imgTablet = 'https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/bg-galadeira-onverser4.png';
 const imgDesktop = 'https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/bg-galadeira-onverser4.png';
-
-const imgPost1 = 'https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/Post01.jpg'
-const imgPost2 = 'https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/Post02.jpg'
-const imgPost3 = 'https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/Post03.jpg'
-const imgPost4 = 'https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/Post04.jpg'
 
 class JaTenho extends React.Component {
 

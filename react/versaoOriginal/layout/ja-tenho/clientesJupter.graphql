@@ -1,0 +1,16 @@
+mutation ClientesJupter(
+  $email: String
+  $name: String
+) {
+  createDocument(
+    acronym: "CJ"
+    document: {
+      fields: [
+        { key: "name", value: $name }
+        { key: "email", value: $email }
+      ]
+    }
+  ) {
+    documentId
+  }
+}

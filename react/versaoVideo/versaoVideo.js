@@ -103,13 +103,26 @@ class VersaoVideo extends React.Component {
 		if(e == "vitrine") {
 			window.scrollTo(0, 0)
 			disableScroll.off()
-			this.setState({
-				visao_geral: false,
-				video: false,
-				especificacoes: false,
-				vitrine: true,
-				jatenho: false
-			})
+			if(!this.state.vitrine){
+				this.setState({
+					visao_geral: false,
+					video: false,
+					especificacoes: false,
+					vitrine: true,
+					jatenho: false
+				})
+			} else {
+				this.setState({
+					visao_geral: true,
+					video: false,
+					especificacoes: false,
+					vitrine: false,
+					jatenho: false
+				})
+			}
+			
+		
+			
 		}
 		if(e == "jatenho") {
 			window.scrollTo(0, 0)
@@ -159,7 +172,7 @@ class VersaoVideo extends React.Component {
 									</li>
 									<li>
 										<a name="menu_superior"  onClick={() => this.handleClick("vitrine")} className={`${this.state.vitrine ? "active link" : "link" }`}>
-											<span>Comprar</span>
+											<span>{this.state.vitrine ? "Fechar" : "Comprar" }</span>
 										</a>
 									</li>
 								</ul>

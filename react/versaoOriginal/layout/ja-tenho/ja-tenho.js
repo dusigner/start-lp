@@ -4,6 +4,7 @@ import Slider from "../../../node_modules/react-slick";
 import './ja-tenho.global.css';
 import { Mutation } from "react-apollo";
 import ClientesJupter from "./clientesJupter.graphql";
+import ModalCenter from '../../components/modalCenter/src/ModalCenter'
 
 //IMG
 const imgMobile = 'https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/bg-galadeira-onverser4-mobile.png';
@@ -20,6 +21,12 @@ class JaTenho extends React.Component {
         form: {
             name: "",
             email: "",
+        },
+        videos: {
+            video1: false,
+            video2: false,
+            video3: false,
+            video4: false
         }
         
     }
@@ -82,8 +89,6 @@ class JaTenho extends React.Component {
                 formSuccess: false
             })
         }
-
-        
     }
 
     saveForm = form => {
@@ -103,6 +108,63 @@ class JaTenho extends React.Component {
             } );
         } );
     };
+
+    showModal() {
+		return (
+			<ModalCenter
+				click={() => this.onClickHide()}
+                event={this.state.eventModal}
+			>
+            {this.state.videos.video1 && (
+                <video className="modal__video" width="100%" autoPlay="true" height="80%" controls >
+                    <source src="http://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/brastemp-geladeiras-instalacao.mp4" type="video/mp4"></source>
+                </video>
+                
+            )}
+            {this.state.videos.video2 && (
+                <video className="modal__video" width="100%" autoPlay="true" height="80%" controls >
+                    <source src="http://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/brastemp-geladeiras-dispenser.mp4" type="video/mp4"></source>
+                </video>
+            )}
+            {this.state.videos.video3 && (
+                <video className="modal__video" width="100%" autoPlay="true" height="80%" controls >
+                    <source src="https://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/brastemp-geladeiras-fresh-control.mp4" type="video/mp4"></source>
+                </video>  
+            )}
+            {this.state.videos.video4 && (
+                <video className="modal__video" width="100%" autoPlay="true" height="80%" controls >
+                    <source src="http://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/brastemp-geladeiras-programacao.mp4" type="video/mp4"></source>
+                </video>
+            )}
+		  </ModalCenter>
+		);
+    };
+    
+    onClickHide() {
+       
+		this.setState({
+		  eventModal: "hide",
+		  modalRequest: false,
+          cancelRequest: false,
+          videos : {
+            video01:false,
+            video02:false,
+            video03:false,
+            video04:false
+        }
+		});
+	
+	}
+
+	onClickShow(videoNum) {
+		this.setState({
+            videos : {
+                [videoNum]: true,
+            },
+            eventModal: "show",
+            scroll: window.scrollY,
+        });
+	}
     
 
     render() {
@@ -141,7 +203,7 @@ class JaTenho extends React.Component {
           
         return (
             <div id="jatenho" className="ja-tenho">
-
+                {this.state.eventModal == "show" && this.showModal()}
                 <section className="banner">
                     <div className="banner__text">
                         <h2>Já tem a nova geladeira Brastemp Inverse | 4?</h2>
@@ -209,6 +271,7 @@ class JaTenho extends React.Component {
                     </div>
                 </section>
                 <section className="videos">
+                    
                     <div className="videos__wrap">
                         <div className="videos__wrap-desk">
                             <div className="videos__wrap-txt">
@@ -216,7 +279,7 @@ class JaTenho extends React.Component {
                                 <p>Confira o conteúdo especial da Brastemp para novos donos.</p>
                                 <h3>Como solicitar a instalação da minha geladeira?</h3>
                             </div>
-                            <div className="videos__play">
+                            <div onClick={() => this.onClickShow("video1")} className="videos__play">
                                 <span className="videos__play-border"></span>
                                 <svg width="186" height="186" viewBox="0 0 186 186" fill="none">
                                     <path d="M76.5698 58.72L77.477 57.5254C77.0232 57.1808 76.4134 57.1231 75.903 57.3763C75.3926 57.6296 75.0698 58.1502 75.0698 58.72H76.5698ZM122.05 93.26L122.957 94.4546C123.33 94.1709 123.55 93.729 123.55 93.26C123.55 92.791 123.33 92.3491 122.957 92.0654L122.05 93.26ZM76.5698 127.8H75.0698C75.0698 128.37 75.3926 128.89 75.903 129.144C76.4134 129.397 77.0232 129.339 77.477 128.995L76.5698 127.8ZM1.50977 92.68L3.00977 92.68L3.00977 92.6797L1.50977 92.68ZM75.6626 59.9146L121.143 94.4546L122.957 92.0654L77.477 57.5254L75.6626 59.9146ZM121.143 92.0654L75.6626 126.605L77.477 128.995L122.957 94.4546L121.143 92.0654ZM78.0698 127.8V58.72H75.0698V127.8H78.0698ZM182.37 92.68C182.37 142.212 142.221 182.36 92.6898 182.36V185.36C143.878 185.36 185.37 143.868 185.37 92.68H182.37ZM92.6898 182.36C43.1582 182.36 3.00977 142.212 3.00977 92.68H0.00976746C0.00976746 143.868 41.5013 185.36 92.6898 185.36V182.36ZM3.00977 92.6797C2.99993 43.1484 43.1481 3 92.6798 3V0C41.4914 0 -0.000397067 41.4916 0.00976749 92.6803L3.00977 92.6797ZM92.6798 3C142.212 3 182.37 43.1486 182.37 92.68H185.37C185.37 41.4914 143.868 0 92.6798 0V3Z" fill="#F08B1D"/>
@@ -241,7 +304,7 @@ class JaTenho extends React.Component {
                         </div>
                         <div className="videos__gallery">
                             <div className="videos__gallery-wrap">
-                                <div className="videos__play">
+                                <div onClick={() => this.onClickShow("video2")}  className="videos__play">
                                     <span className="videos__play-border"></span>
                                     <svg width="186" height="186" viewBox="0 0 186 186" fill="none">
                                         <path d="M76.5698 58.72L77.477 57.5254C77.0232 57.1808 76.4134 57.1231 75.903 57.3763C75.3926 57.6296 75.0698 58.1502 75.0698 58.72H76.5698ZM122.05 93.26L122.957 94.4546C123.33 94.1709 123.55 93.729 123.55 93.26C123.55 92.791 123.33 92.3491 122.957 92.0654L122.05 93.26ZM76.5698 127.8H75.0698C75.0698 128.37 75.3926 128.89 75.903 129.144C76.4134 129.397 77.0232 129.339 77.477 128.995L76.5698 127.8ZM1.50977 92.68L3.00977 92.68L3.00977 92.6797L1.50977 92.68ZM75.6626 59.9146L121.143 94.4546L122.957 92.0654L77.477 57.5254L75.6626 59.9146ZM121.143 92.0654L75.6626 126.605L77.477 128.995L122.957 94.4546L121.143 92.0654ZM78.0698 127.8V58.72H75.0698V127.8H78.0698ZM182.37 92.68C182.37 142.212 142.221 182.36 92.6898 182.36V185.36C143.878 185.36 185.37 143.868 185.37 92.68H182.37ZM92.6898 182.36C43.1582 182.36 3.00977 142.212 3.00977 92.68H0.00976746C0.00976746 143.868 41.5013 185.36 92.6898 185.36V182.36ZM3.00977 92.6797C2.99993 43.1484 43.1481 3 92.6798 3V0C41.4914 0 -0.000397067 41.4916 0.00976749 92.6803L3.00977 92.6797ZM92.6798 3C142.212 3 182.37 43.1486 182.37 92.68H185.37C185.37 41.4914 143.868 0 92.6798 0V3Z" fill="#F08B1D"/>
@@ -266,7 +329,7 @@ class JaTenho extends React.Component {
                                 <p>Como ter água fresca e gelo pronto na porta da minha geladeira?</p>
                             </div>
                             <div className="videos__gallery-wrap">
-                                <div className="videos__play">
+                                <div  onClick={() => this.onClickShow("video3")}  className="videos__play">
                                     <span className="videos__play-border"></span>
                                     <svg width="186" height="186" viewBox="0 0 186 186" fill="none">
                                         <path d="M76.5698 58.72L77.477 57.5254C77.0232 57.1808 76.4134 57.1231 75.903 57.3763C75.3926 57.6296 75.0698 58.1502 75.0698 58.72H76.5698ZM122.05 93.26L122.957 94.4546C123.33 94.1709 123.55 93.729 123.55 93.26C123.55 92.791 123.33 92.3491 122.957 92.0654L122.05 93.26ZM76.5698 127.8H75.0698C75.0698 128.37 75.3926 128.89 75.903 129.144C76.4134 129.397 77.0232 129.339 77.477 128.995L76.5698 127.8ZM1.50977 92.68L3.00977 92.68L3.00977 92.6797L1.50977 92.68ZM75.6626 59.9146L121.143 94.4546L122.957 92.0654L77.477 57.5254L75.6626 59.9146ZM121.143 92.0654L75.6626 126.605L77.477 128.995L122.957 94.4546L121.143 92.0654ZM78.0698 127.8V58.72H75.0698V127.8H78.0698ZM182.37 92.68C182.37 142.212 142.221 182.36 92.6898 182.36V185.36C143.878 185.36 185.37 143.868 185.37 92.68H182.37ZM92.6898 182.36C43.1582 182.36 3.00977 142.212 3.00977 92.68H0.00976746C0.00976746 143.868 41.5013 185.36 92.6898 185.36V182.36ZM3.00977 92.6797C2.99993 43.1484 43.1481 3 92.6798 3V0C41.4914 0 -0.000397067 41.4916 0.00976749 92.6803L3.00977 92.6797ZM92.6798 3C142.212 3 182.37 43.1486 182.37 92.68H185.37C185.37 41.4914 143.868 0 92.6798 0V3Z" fill="#F08B1D"/>
@@ -291,7 +354,7 @@ class JaTenho extends React.Component {
                                 <p>Como conservar os alimentos frescos por até 15 dias na minha geladeira?</p>
                             </div>
                             <div className="videos__gallery-wrap">
-                                <div className="videos__play">
+                                <div onClick={() => this.onClickShow("video4")}  className="videos__play">
                                     <span className="videos__play-border"></span>
                                     <svg width="186" height="186" viewBox="0 0 186 186" fill="none">
                                         <path d="M76.5698 58.72L77.477 57.5254C77.0232 57.1808 76.4134 57.1231 75.903 57.3763C75.3926 57.6296 75.0698 58.1502 75.0698 58.72H76.5698ZM122.05 93.26L122.957 94.4546C123.33 94.1709 123.55 93.729 123.55 93.26C123.55 92.791 123.33 92.3491 122.957 92.0654L122.05 93.26ZM76.5698 127.8H75.0698C75.0698 128.37 75.3926 128.89 75.903 129.144C76.4134 129.397 77.0232 129.339 77.477 128.995L76.5698 127.8ZM1.50977 92.68L3.00977 92.68L3.00977 92.6797L1.50977 92.68ZM75.6626 59.9146L121.143 94.4546L122.957 92.0654L77.477 57.5254L75.6626 59.9146ZM121.143 92.0654L75.6626 126.605L77.477 128.995L122.957 94.4546L121.143 92.0654ZM78.0698 127.8V58.72H75.0698V127.8H78.0698ZM182.37 92.68C182.37 142.212 142.221 182.36 92.6898 182.36V185.36C143.878 185.36 185.37 143.868 185.37 92.68H182.37ZM92.6898 182.36C43.1582 182.36 3.00977 142.212 3.00977 92.68H0.00976746C0.00976746 143.868 41.5013 185.36 92.6898 185.36V182.36ZM3.00977 92.6797C2.99993 43.1484 43.1481 3 92.6798 3V0C41.4914 0 -0.000397067 41.4916 0.00976749 92.6803L3.00977 92.6797ZM92.6798 3C142.212 3 182.37 43.1486 182.37 92.68H185.37C185.37 41.4914 143.868 0 92.6798 0V3Z" fill="#F08B1D"/>
@@ -328,7 +391,7 @@ class JaTenho extends React.Component {
                     </div>
                         <Slider ref={c => (this.slider = c)} {...settings}>
                             <div className="posts__itens" key={1}>
-                                <a href="#" className="posts__itens-img" title="Link para o Post">
+                                <a href="https://www.brastemp.com.br/experience/casa-e-decor/como-organizar-geladeira-dicas-simples-para-nao-errar-mais" className="posts__itens-img" title="Link para o Post">
                                     <Picture
                                         sources = {[
                                             {
@@ -361,7 +424,7 @@ class JaTenho extends React.Component {
                                 </div>
                             </div>
                             <div className="posts__itens" key={2}>
-                                <a href="#" className="posts__itens-img" title="Link para o Post">
+                                <a href="https://www.brastemp.com.br/experience/casa-e-decor/como-limpar-geladeira" className="posts__itens-img" title="Link para o Post">
                                     <Picture
                                         sources = {[
                                             {
@@ -393,7 +456,7 @@ class JaTenho extends React.Component {
                                 </div>
                             </div>
                             <div className="posts__itens" key={3}>
-                                <a href="#" className="posts__itens-img" title="Link para o Post">
+                                <a href="https://www.brastemp.com.br/experience/tech/da-geladeira-a-lava-louca-os-utensilios-que-agucam-os-5-sentidos-na-cozinha" className="posts__itens-img" title="Link para o Post">
                                     <Picture
                                         sources = {[
                                             {
@@ -425,7 +488,7 @@ class JaTenho extends React.Component {
                                 </div>
                             </div>
                             <div className="posts__itens" key={4}>
-                                <a href="#" className="posts__itens-img" title="Link para o Post">
+                                <a href="https://www.brastemp.com.br/experience/gastronomia/receitas-de-drinks" className="posts__itens-img" title="Link para o Post">
                                     <Picture
                                         sources = {[
                                             {

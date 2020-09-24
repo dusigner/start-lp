@@ -7,6 +7,11 @@
     align-items: center;
     justify-content: center;
 }
+.modal__video {
+    width: 100%;
+    height: 56.25vw;
+    object-fit: contain;
+}
 .banner__text {
     position: absolute;
     display: flex;

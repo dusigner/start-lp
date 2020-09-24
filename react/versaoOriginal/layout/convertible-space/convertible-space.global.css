@@ -161,6 +161,9 @@
     background: transparent url('https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/slider-mobile-slider-convertible.png') no-repeat;
     cursor: pointer;
     transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);  
 }
 
 .convertible-space p {

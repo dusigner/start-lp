@@ -107,6 +107,7 @@
     width: 100%;
     max-width: 90%;
     padding: 25px 20px;
+    position: relative;
 }
 .newslatter__wrap h2 {
     margin: 0;
@@ -387,6 +388,13 @@
     display: block;
 }
 
+.newslatter__from-error {
+    color: #F55D2F;
+    font-size: 12px;
+    display: block;
+    margin-top: 7px;
+    position: absolute;
+}
 
 
 @media (min-width:1025px) {
@@ -434,6 +442,10 @@
     }
     .newslatter__from label.checkbox {
         margin-top: 0;
+    }
+    .newslatter__from-error {
+        margin-top: 97px;
+        right: 72px;
     }
     .posts .slick-slider {
         margin-right: 20px;

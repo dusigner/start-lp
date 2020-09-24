@@ -5,6 +5,9 @@ import { Picture } from 'react-responsive-picture';
 import Slider from "../../../node_modules/react-slick";
 import './ja-tenho.global.css';
 import api from '../../services';
+import { Mutation } from "react-apollo";
+
+import ClientesJupter from "./clientesJupter.graphql";
 
 //IMG
 const imgMobile = 'https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/bg-galadeira-onverser4-mobile.png';
@@ -20,11 +23,14 @@ class JaTenho extends React.Component {
 
     state = {
         loading: false,
+        formSuccess: false,
+        formError: false,
         checkedTerms: false,
-        form : {
+        form: {
             name: "",
             email: "",
-        },
+        }
+        
     }
 
     next = () => {
@@ -47,60 +53,68 @@ class JaTenho extends React.Component {
         )
     }
 
-    // cadastro = () => {
-    //     console.log(this.state.checkedTerms)
-
-    //     const { name,email } = this.state;
-    //     console.log(name + " " + email)
-    //     const payload = {
-    //         name,email
-    //     }
-    //     this.setState({
-    //         loading: true
-    //     })
-    //     try{
-    //         const data = await api.cadastro(payload)
-    //     }
-    //     catch{
-    //         console.log("erro")
-    //         console.log(name + " " + email)
-    //     }
-    //     this.setState({
-    //         loading: false
-    //     })
-
-    // }
-
-    submitHandler = async (e) => {
-        e.preventDefault();
-        
-        const { name,email } = this.state;
-        const payload = { name,email }
-
-        try {
-            const data = await api.cadastro(payload)
-            return data
-        } catch (error) {
-            console.log("error")
-        }            
-    };
-
     handleChange = (e) =>{
-        
         const nameInput = e.target.name
         const valueInput = e.target.value
-
         this.setState({
-            ...this.state.form,
-            [nameInput]:valueInput
+            form : {
+                ...this.state.form,
+                [nameInput]:valueInput
+            }
         })
-        console.log(this.state)
     }
+
+    handleClick = (e, checkedTerms, name, email) => {
+        e.preventDefault();
+        this.setState({
+            loading: true,
+            formError: false,
+            formSuccess: false
+        })
+
+        if(checkedTerms){
+            this.setState( {
+                checkedTerms: checkedTerms,
+                form: {
+                  name: name,
+                  email: email
+                }
+              } );
+            this.saveForm({
+                name: name,
+                email: email
+            });
+        } else {
+            this.setState({
+                loading: false,
+                formError: true,
+                formSuccess: false
+            })
+        }
+
+        
+    }
+
+    saveForm = form => {
+        this.ClientesJupter( { variables: form } )
+        .then( response => {
+            this.setState( {
+                loading: false,
+                formError: false,
+                formSuccess: true
+            } );
+        } )
+        .catch( error => {
+            this.setState( {
+                loading: false,
+                formError: true,
+                formSuccess: false
+            } );
+        } );
+    };
     
 
     render() {
-
-        const {name,email,checkedTerms} = this.state.form
 
         const settings = {
             dots: false,
@@ -129,6 +143,11 @@ class JaTenho extends React.Component {
                 }
               ]
           };
+
+          const {checkedTerms} = this.state;
+          const {name,email} = this.state.form;
+          
+          
         return (
             <div id="jatenho" className="ja-tenho">
 
@@ -161,7 +180,7 @@ class JaTenho extends React.Component {
                             <h2>Exclusivo para novos donos</h2>
                             <p>Receba <span>dicas</span>, <span>receitas</span> e outros <span>conteúdos especiais!</span></p>
                         </div>
-                        <form onSubmit={this.submitHandler} className="newslatter__from">
+                        <form className="newslatter__from">
                             <div className="newslatter__from-grid">
                                 <div>
                                     <label htmlFor="name">Nome</label>
@@ -173,7 +192,7 @@ class JaTenho extends React.Component {
                                 </div>
                             </div>
 
-                            <button className="button__tertiary">Cadastrar</button>
+                            <button onClick={(e)=> this.handleClick(e, checkedTerms, name, email)} className="button__tertiary">Cadastrar</button>
                             
                             <label className="checkbox" htmlFor="privacy">
                                 <input 
@@ -186,6 +205,15 @@ class JaTenho extends React.Component {
                                     Li e concordo com as  <a href="">Políticas e Privacidade</a>
                                 </span>
                             </label>
+                            {this.state.formError && (
+                                <span className="newslatter__from-error">Por favor preencha todos os campos corretamente.</span>
+                            )}
+                            {this.state.loading && (
+                                <span className="newslatter__from-error">Enviando...</span>
+                            )}
+                            {this.state.formSuccess && (
+                                <span className="newslatter__from-error">Obrigado cadastro realizado com sucesso!</span>
+                            )}
                         </form>
                     </div>
                 </section>
@@ -440,6 +468,12 @@ class JaTenho extends React.Component {
                         </Slider>
                     
                 </section>
+                <Mutation mutation={ClientesJupter}>
+                    {ClientesJupter => {
+                        this.ClientesJupter = ClientesJupter;
+                        return null;
+                    }}
+                </Mutation>
             </div>
         )
     }

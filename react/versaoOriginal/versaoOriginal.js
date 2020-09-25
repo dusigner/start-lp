@@ -30,19 +30,19 @@ class versaoOriginal extends React.Component {
 			<div className="versaoOriginal">
 
 				<Headroom disableInlineStyles>
-					{ this.props.versao == "qrcode" && <MenuEstatico/> }
-					{ this.props.versao == "video" &&  <Menu/> }
+					{ this.props.versao == "qrcode" && <MenuEstatico versao={this.props.versao} /> }
+					{ this.props.versao == "video" &&  <Menu versao={this.props.versao} /> }
 				</Headroom>
 
 				<GeladeiraInverse versao={this.props.versao}></GeladeiraInverse>
-				<Dispenser></Dispenser>
-				<FreshControl></FreshControl>
-				<ConvertibleSpace></ConvertibleSpace>
-				<AtencaoDetalhes></AtencaoDetalhes>
-				<Video></Video>
-				{ this.props.versao == "qrcode" && <Vitrine/> }
-				{ this.props.versao == "video" && <VitrineCompra/> }
-				<EspecificacoesTecnicas></EspecificacoesTecnicas>
+				<Dispenser versao={this.props.versao}></Dispenser>
+				<FreshControl versao={this.props.versao}></FreshControl>
+				<ConvertibleSpace versao={this.props.versao}></ConvertibleSpace>
+				<AtencaoDetalhes versao={this.props.versao}></AtencaoDetalhes>
+				<Video versao={this.props.versao}></Video>
+				{ this.props.versao == "qrcode" && <Vitrine versao={this.props.versao}/> }
+				{ this.props.versao == "video" && <VitrineCompra versao={this.props.versao}/> }
+				<EspecificacoesTecnicas versao={this.props.versao}></EspecificacoesTecnicas>
 
 			</div>
 		)

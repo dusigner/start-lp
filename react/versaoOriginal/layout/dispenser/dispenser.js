@@ -48,8 +48,6 @@ class Dispenser extends React.Component {
 
     onWindowScroll = () => {
 
-        console.log("scrollllllll");
-
         if ((document.documentElement.scrollTop + 55) > document.querySelector("#dispenser-de-agua-e-gelo").offsetTop){
             
             if (vali == 0) {

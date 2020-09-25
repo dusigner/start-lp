@@ -6,7 +6,7 @@
     background: #000;
 }
 .versaoVideo  {
-    display: block;
+    display: none;
 }
 /*
 .footer {
@@ -18,7 +18,7 @@ body.bg-base {
 }
 @media (min-width: 1025px) {
     .versaoOriginal {
-        display: block;
+        display: none;
     }
     .versaoVideo  {
         display: block;

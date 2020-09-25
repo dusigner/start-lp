@@ -202,13 +202,13 @@ class JaTenho extends React.Component {
           
           
         return (
-            <div id="jatenho" className="ja-tenho">
+            <div id="jatenho" className="ja-tenho section">
                 {this.state.eventModal == "show" && this.showModal()}
                 <section className="banner">
                     <div className="banner__text">
                         <h2>Já tem a nova geladeira Brastemp Inverse | 4?</h2>
                         <p>Confira o conteúdo especial da Brastemp para novos donos</p>
-                        <a href="" title="" className="button__secondary">Ver mais</a>
+                        <a href="#ver-mais" title="" className="button__secondary">Ver mais</a>
                     </div>
                     <Picture
                     sources = {[
@@ -270,7 +270,7 @@ class JaTenho extends React.Component {
                         </form>
                     </div>
                 </section>
-                <section className="videos">
+                <section id="ver-mais" className="videos">
                     
                     <div className="videos__wrap">
                         <div className="videos__wrap-desk">

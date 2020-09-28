@@ -33,7 +33,45 @@ class versaoOriginal extends React.Component {
 	}
 
 	componentDidMount() {
-        document.addEventListener('scroll', this.trackScrolling);
+		document.addEventListener('scroll', this.trackScrolling);
+		
+		// Inicio Tag
+		const linksMenu = document.querySelectorAll('.tagMenu');
+	
+		if (this.props.versao == "qrcode") {
+
+			linksMenu.forEach(element => {
+				element.addEventListener('click', ()=>{
+					
+					dataLayer.push({
+						event: 'generic',
+						category: 'jupiter_inverse4_lp_external',
+						action: 'click_header_inverse4 ',
+						label: element.dataset.tag,
+					})
+	
+				})
+			});
+
+		}
+
+		if (this.props.versao == "video") {
+
+			linksMenu.forEach(element => {
+				element.addEventListener('click', ()=>{
+					
+					dataLayer.push({
+						event: 'generic',
+						category: 'jupiter_inverse4_lp_internal_mobile',
+						action: 'click_header_inverse4 ',
+						label: element.dataset.tag,
+					})
+	
+				})
+			});
+			
+		}
+		// Fim Tag
     }
   
     componentWillUnmount() {
@@ -105,87 +143,72 @@ class versaoOriginal extends React.Component {
 		return (
 			<div className="versaoOriginal">
 				<Headroom disableInlineStyles>
-<<<<<<< HEAD
-					{ this.props.versao == "qrcode" && <MenuEstatico versao={this.props.versao} /> }
-					{ this.props.versao == "video" &&  <Menu versao={this.props.versao} /> }
-				</Headroom>
+					<div className="menu__lp">
+						<div className="menu__lp-wrap">
+							<nav id="nav">
+								<ul>
+									<li>
+										<a onClick={(e) => {this.handleClick(e)}} href='#geladeira-inverse-4' name="geladeira-inverse-4"  className={`${this.state.jatenho ? "links menu__title tagMenu" : "links menu__title" }`} data-tag="click_geladeira_4_portas">
+											Geladeira 4 Portas
+										</a>
+									</li>
+									<li>
+										<a onClick={(e) => {this.handleClick(e)}} href='#dispenser-de-agua-e-gelo' name="dispenser-de-agua-e-gelo" className="links tagMenu" data-tag="click_dispenser_de_agua_e_gelo">
+											Dispenser de água e gelo
+										</a>
+									</li>
+									<li>
+										<a onClick={(e) => this.handleClick(e)} href='#fresh-control' name="fresh-control" className="links tagMenu" data-tag="click_fresh_control">
+											Fresh Control
+										</a>
+									</li>
+									<li>
+										<a onClick={(e) => this.handleClick(e)} href='#convertible-space' name="convertible-space" className="links tagMenu" data-tag="click_convertible_space">
+											Convertible Space
+										</a>
+									</li>
+									<li>
+										<a onClick={(e) => this.handleClick(e)} href='#atencao-detalhes' name="atencao-detalhes" className="links tagMenu" data-tag="click_atencao_aos_detalhes">
+											Atenção aos detalhes
+										</a>
+									</li>
+									{ this.props.versao == "qrcode" && (
+										<li className="btnAct">
+											<a onClick={(e) => this.handleClick(e)} href='#video-inverse4' name="video-inverse4" className="links tagMenu" data-tag="click_ver_video">
+												Ver Vídeo
+											</a>
+										</li>
+									)}
+									{ this.props.versao == "video" && (
+										<li>
+											<a onClick={(e) => this.handleClick(e)} href='#video-inverse4' name="video-inverse4" className="links tagMenu" data-tag="click_ver_video">
+												<span>Ver Vídeo</span>
+											</a>
+										</li>
+									)} 
+									
+									<li>
+										<a onClick={(e) => this.handleClick(e)} href='#especificacoes' name="especificacoes" className="links tagMenu" data-tag="click_especificacoes">
+											Especificações
+										</a>
+									</li>
+									<li>
+										<a onClick={(e) => this.handleClick("ja-tenho")} href='#ja-tenho' name="ja-tenho" className={`${this.state.jatenho ? "link active ja-tenho tagMenu" : "link ja-tenho tagMenu" }`} data-tag="click_ja_tenho">
+											Já tenho essa geladeira
+										</a>
+									</li>
 
-				<GeladeiraInverse versao={this.props.versao}></GeladeiraInverse>
-				<Dispenser versao={this.props.versao}></Dispenser>
-				<FreshControl versao={this.props.versao}></FreshControl>
-				<ConvertibleSpace versao={this.props.versao}></ConvertibleSpace>
-				<AtencaoDetalhes versao={this.props.versao}></AtencaoDetalhes>
-				<Video versao={this.props.versao}></Video>
-				{ this.props.versao == "qrcode" && <Vitrine versao={this.props.versao}/> }
-				{ this.props.versao == "video" && <VitrineCompra versao={this.props.versao}/> }
-				<EspecificacoesTecnicas versao={this.props.versao}></EspecificacoesTecnicas>
-=======
-						<div className="menu__lp">
-							<div className="menu__lp-wrap">
-								<nav id="nav">
-									<ul>
-										<li>
-											<a onClick={(e) => {this.handleClick(e)}} href='#geladeira-inverse-4' name="geladeira-inverse-4"  className={`${this.state.jatenho ? "link menu__title" : "link menu__title" }`}>
-												Geladeira 4 Portas
+									{ this.props.versao == "video" && (
+										<li className="btnAct">
+											<a onClick={(e) => this.handleClick(e)} href='#vitrine'  className="links tagMenu" name="vitrine" data-tag="click_comprar">
+												Comprar
 											</a>
 										</li>
-										<li>
-											<a onClick={(e) => {this.handleClick(e)}} href='#dispenser-de-agua-e-gelo' name="dispenser-de-agua-e-gelo" className="links">
-												Dispenser de água e gelo
-											</a>
-										</li>
-										<li>
-											<a onClick={(e) => this.handleClick(e)} href='#fresh-control' name="fresh-control" className="links">
-												Fresh Control
-											</a>
-										</li>
-										<li>
-											<a onClick={(e) => this.handleClick(e)} href='#convertible-space' name="convertible-space" className="links">
-												Convertible Space
-											</a>
-										</li>
-										<li>
-											<a onClick={(e) => this.handleClick(e)} href='#atencao-detalhes' name="atencao-detalhes" className="links">
-												Atenção nos detalhes
-											</a>
-										</li>
-										{ this.props.versao == "qrcode" && (
-											<li className="btnAct">
-												<a onClick={(e) => this.handleClick(e)} href='#video-inverse4' name="video-inverse4" className="links" >
-													Ver Vídeo
-												</a>
-											</li>
-										)}
-										{ this.props.versao == "video" && (
-											<li>
-												<a onClick={(e) => this.handleClick(e)} href='#video-inverse4' name="video-inverse4" className="links">
-													<span>Ver Vídeo</span>
-												</a>
-											</li>
-										)} 
-										
-										<li>
-											<a onClick={(e) => this.handleClick(e)} href='#especificacoes' name="especificacoes" className="links">
-												Especificações
-											</a>
-										</li>
-										<li>
-											<a onClick={(e) => this.handleClick("ja-tenho")} href='#ja-tenho' name="ja-tenho" className={`${this.state.jatenho ? "link active ja-tenho" : "link ja-tenho" }`}>
-												Já tenho essa geladeira
-											</a>
-										</li>
-
-										{ this.props.versao == "video" && (
-											<li className="btnAct">
-												<a onClick={(e) => this.handleClick(e)} href='#vitrine'  className="links" name="vitrine">
-													Comprar
-												</a>
-											</li>
-										)}
-									</ul>
-								</nav>
-							</div>
+									)}
+								</ul>
+							</nav>
 						</div>
+					</div>
 				</Headroom> 
 
 				{this.state.jatenho && (<JaTenho/>)}
@@ -193,19 +216,17 @@ class versaoOriginal extends React.Component {
 				{this.state.versaoEstatica && (
 					<div>
 						<GeladeiraInverse versao={this.props.versao}/>
-						<Dispenser/>
-						<FreshControl/>
-						<ConvertibleSpace/>
-						<AtencaoDetalhes/>
-						<Video/>
+						<Dispenser versao={this.props.versao}/>
+						<FreshControl versao={this.props.versao}/>
+						<ConvertibleSpace versao={this.props.versao}/>
+						<AtencaoDetalhes versao={this.props.versao}/>
+						<Video versao={this.props.versao}/>
 						{ this.props.versao == "qrcode" && <Vitrine/> }
 						{ this.props.versao == "video" && <VitrineCompra/> }
-						<EspecificacoesTecnicas/>
+						<EspecificacoesTecnicas versao={this.props.versao}/>
 					</div>
 				)}
->>>>>>> feature/versao2
 
-				
 			</div>
 		)
 	}

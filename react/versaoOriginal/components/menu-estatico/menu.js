@@ -88,7 +88,7 @@ class Menu extends React.Component {
                     <nav id="nav">
                         <ul>
                             <li>
-                                <AnchorLink offset={() => 55} href='#geladeira-inverse-4' name="geladeira-inverse" className="links tagMenu" data-tag="click_geladeira_4_portas">
+                                <AnchorLink offset={() => 55} href='#geladeira-inverse-4' name="geladeira-inverse-4" className="links tagMenu" data-tag="click_geladeira_4_portas">
                                     <h1>Geladeira 4 Portas</h1>
                                 </AnchorLink>
                             </li>
@@ -118,7 +118,7 @@ class Menu extends React.Component {
                                 </AnchorLink>
                             </li>
                             <li>
-                                <AnchorLink offset={() => 55} href='#ja-tenho' name="ja-tenho" className="links">
+                                <AnchorLink offset={() => 55} href='#ja-tenho' name="ja-tenho" className="tagMenu" data-tag="click_ja_tenho">
                                     <span>Já tenho essa geladeira</span>
                                 </AnchorLink>
                             </li>

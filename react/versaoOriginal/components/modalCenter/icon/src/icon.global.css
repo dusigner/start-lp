@@ -1,0 +1,335 @@
+/*
+    Jussi - Brastemp-next.
+    Autor: Vinícius Pereira Zebral (vinicius.pereira@jussi.com.br).
+    Data: 09/06/2018.
+    Descrição: Component box-icon - CSS.
+*/
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'brastemp-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-coifa-vitreous-ilha:before {
+  content: "\e900";
+}
+.icon-coifa-vitreous-parede:before {
+  content: "\e901";
+}
+.icon-cooktop-vitreous-gas:before {
+  content: "\e902";
+}
+.icon-cooktop-vitreous-inducao:before {
+  content: "\e903";
+}
+.icon-forno-vitreous:before {
+  content: "\e904";
+}
+.icon-geladeira-vitreous:before {
+  content: "\e905";
+}
+.icon-lavadora-vitreous:before {
+  content: "\e906";
+}
+.icon-microondas-vitreous:before {
+  content: "\e907";
+}
+.icon-iconSimboloRetro:before {
+  content: "\e908";
+}
+.icon-adega:before {
+  content: "\e909";
+}
+.icon-alerta:before {
+  content: "\e90a";
+}
+.icon-arrow:before {
+  content: "\e90b";
+}
+.icon-arrow2:before {
+  content: "\e90c";
+}
+.icon-arrow-full:before {
+  content: "\e90d";
+}
+.icon-atendimento:before {
+  content: "\e90e";
+}
+.icon-carrinho:before {
+  content: "\e90f";
+}
+.icon-chaleira:before {
+  content: "\e910";
+}
+.icon-check:before {
+  content: "\e911";
+}
+.icon-coifa:before {
+  content: "\e912";
+}
+.icon-cooktop:before {
+  content: "\e913";
+}
+.icon-delivery:before {
+  content: "\e914";
+}
+.icon-depurador:before {
+  content: "\e915";
+}
+.icon-embutir:before {
+  content: "\e916";
+}
+.icon-error:before {
+  content: "\e917";
+}
+.icon-expandir:before {
+  content: "\e918";
+}
+.icon-external-link:before {
+  content: "\e919";
+}
+.icon-external-link-hover:before {
+  content: "\e91a";
+}
+.icon-facebook:before {
+  content: "\e91b";
+}
+.icon-fav:before {
+  content: "\e91c";
+}
+.icon-fav-full:before {
+  content: "\e91d";
+}
+.icon-fechar:before {
+  content: "\e91e";
+}
+.icon-fogao:before {
+  content: "\e91f";
+}
+.icon-fogao-embutir:before {
+  content: "\e920";
+}
+.icon-forno:before {
+  content: "\e921";
+}
+.icon-freezer:before {
+  content: "\e922";
+}
+.icon-frigobar:before {
+  content: "\e923";
+}
+.icon-geladeira:before {
+  content: "\e924";
+}
+.icon-igual:before {
+  content: "\e925";
+}
+.icon-info:before {
+  content: "\e926";
+}
+.icon-instagram:before {
+  content: "\e927";
+}
+.icon-lancamentos:before {
+  content: "\e928";
+}
+.icon-lavadora:before {
+  content: "\e929";
+}
+.icon-lavaloucas:before {
+  content: "\e92a";
+}
+.icon-lavaloucas-embutir:before {
+  content: "\e92b";
+}
+.icon-linhas-especiais:before {
+  content: "\e92c";
+}
+.icon-linkedin:before {
+  content: "\e92d";
+}
+.icon-lock:before {
+  content: "\e92e";
+}
+.icon-menu:before {
+  content: "\e92f";
+}
+.icon-microondas:before {
+  content: "\e930";
+}
+.icon-pecas:before {
+  content: "\e931";
+}
+.icon-pin:before {
+  content: "\e932";
+}
+.icon-purificador:before {
+  content: "\e933";
+}
+.icon-reduzir:before {
+  content: "\e934";
+}
+.icon-refresh:before {
+  content: "\e935";
+}
+.icon-search:before {
+  content: "\e936";
+}
+.icon-secadora:before {
+  content: "\e937";
+}
+.icon-senha-off:before {
+  content: "\e938";
+}
+.icon-senha-on:before {
+  content: "\e939";
+}
+.icon-veja-mais:before {
+  content: "\e93a";
+}
+.icon-youtube:before {
+  content: "\e93b";
+}
+.icon-alterar-data:before {
+  content: "\e93c";
+}
+.icon-alterar-pagamento:before {
+  content: "\e93d";
+}
+.icon-alterar-senha:before {
+  content: "\e93e";
+}
+.icon-cancelar-assinatura:before {
+  content: "\e93f";
+}
+.icon-carrinho-compras:before {
+  content: "\e940";
+}
+.icon-contestacao-cobranca:before {
+  content: "\e941";
+}
+.icon-endereco-entrega:before {
+  content: "\e942";
+}
+.icon-excluir-conta:before {
+  content: "\e943";
+}
+.icon-fale-conosco:before {
+  content: "\e944";
+}
+.icon-historico-fatura:before {
+  content: "\e945";
+}
+.icon-mais-purificador:before {
+  content: "\e946";
+}
+.icon-endereco:before {
+  content: "\e947";
+}
+.icon-meu-purificador:before {
+  content: "\e948";
+}
+.icon-dados-cadastrais:before {
+  content: "\e949";
+}
+.icon-pedidos:before {
+  content: "\e94a";
+}
+.icon-produtos-registrados:before {
+  content: "\e94b";
+}
+.icon-minha-conta:before {
+  content: "\e94c";
+}
+.icon-solicitacoes:before {
+  content: "\e94d";
+}
+.icon-mudanca-endereco:before {
+  content: "\e94e";
+}
+.icon-perguntas-frequentes:before {
+  content: "\e94f";
+}
+.icon-regularizar-pagamento:before {
+  content: "\e950";
+}
+.icon-segunda-via-fatura:before {
+  content: "\e951";
+}
+.icon-solicitar-visita-tecnica:before {
+  content: "\e952";
+}
+.icon-trocar-titular:before {
+  content: "\e953";
+}
+.icon-icon-filter:before {
+  content: "\e954";
+}
+.icon-tag-icon:before {
+  content: "\e955";
+}
+.icon-telefone:before {
+  content: "\e956";
+}
+.icon-send:before {
+  content: "\e957";
+}
+.icon-microphone:before {
+  content: "\e958";
+}
+.icon-uniE959:before {
+  content: "\e959";
+}
+.icon-uniE95A:before {
+  content: "\e95a";
+}
+.icon-uniE95B:before {
+  content: "\e95b";
+}
+.icon-uniE95C:before {
+  content: "\e95c";
+}
+.icon-uniE95D:before {
+  content: "\e95d";
+}
+.icon-uniE95E:before {
+  content: "\e95e";
+}
+.icon-uniE95F:before {
+  content: "\e95f";
+}
+.icon-uniE960:before {
+  content: "\e960";
+}
+.icon-uniE961:before {
+  content: "\e961";
+}
+.icon-editar:before {
+  content: "\e962";
+}
+.icon-bblend:before {
+  content: "\e963";
+}
+.icon-fogo:before {
+  content: "\e964";
+}
+.icon-glp:before {
+  content: "\e965";
+}
+.icon-instalacao:before {
+  content: "\e966";
+}
+.icon-gn:before {
+  content: "\e967";
+}
+.icon-alerta-grande:before {
+  content: "\e972";
+}

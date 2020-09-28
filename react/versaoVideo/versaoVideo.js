@@ -8,10 +8,11 @@ import $ from 'jquery'
 import VitrineCompra from '../versaoOriginal/layout/vitrine-compra/vitrine'
 import AtencaoDetalhes from '../versaoOriginal/layout/atencao-detalhes/atencao-detalhes';
 import Video from './layout/video/video';
+import Jatenho from '../versaoOriginal/layout/ja-tenho/ja-tenho'
 
 // CSSs
 import './versaoVideo.global.css';
-import "./components/menu/menu.global.css";
+/*import "./components/menu/menu.global.css";*/
 
 class VersaoVideo extends React.Component {
 
@@ -21,7 +22,8 @@ class VersaoVideo extends React.Component {
 			visao_geral: true,
 			video: false,
 			especificacoes: false,
-			vitrine: false
+			vitrine: false,
+			jatenho: false
 		};
 	}
 	
@@ -73,6 +75,7 @@ class VersaoVideo extends React.Component {
 				video: false,
 				especificacoes: false,
 				vitrine: false,
+				jatenho: false
 			})
 		}
 		if(e == "video"){
@@ -82,6 +85,7 @@ class VersaoVideo extends React.Component {
 				video: true,
 				especificacoes: false,
 				vitrine: false,
+				jatenho: false
 			})
 			
 		}
@@ -93,16 +97,42 @@ class VersaoVideo extends React.Component {
 				video: false,
 				especificacoes: true,
 				vitrine: false,
+				jatenho: false
 			})
 		} 
 		if(e == "vitrine") {
+			window.scrollTo(0, 0)
+			disableScroll.off()
+			if(!this.state.vitrine){
+				this.setState({
+					visao_geral: false,
+					video: false,
+					especificacoes: false,
+					vitrine: true,
+					jatenho: false
+				})
+			} else {
+				this.setState({
+					visao_geral: true,
+					video: false,
+					especificacoes: false,
+					vitrine: false,
+					jatenho: false
+				})
+			}
+			
+		
+			
+		}
+		if(e == "jatenho") {
 			window.scrollTo(0, 0)
 			disableScroll.off()
 			this.setState({
 				visao_geral: false,
 				video: false,
 				especificacoes: false,
-				vitrine: true,
+				vitrine: false,
+				jatenho: true
 			})
 		}
 	}
@@ -136,8 +166,13 @@ class VersaoVideo extends React.Component {
 										</a>
 									</li>
 									<li>
-										<a name="menu_superior"  onClick={() => this.handleClick("vitrine")} className={`${this.state.vitrine ? "active link" : "link" }`}>
-											<span>Comprar</span>
+										<a onClick={() => this.handleClick("jatenho")} className={`${this.state.jatenho ? "active link" : "link" }`}>
+											<span>Já tenho essa geladeira</span>
+										</a>
+									</li>
+									<li>
+										<a name="menu_superior" onClick={() => this.handleClick("vitrine")} className={`${this.state.vitrine ? "active link" : "link" }`}>
+											<span>{this.state.vitrine ? "Fechar" : "Comprar" }</span>
 										</a>
 									</li>
 								</ul>
@@ -166,6 +201,11 @@ class VersaoVideo extends React.Component {
 				{this.state.vitrine && (
 					<section>
 						<VitrineCompra/>
+					</section>
+				)}
+				{this.state.jatenho && (
+					<section>
+						<Jatenho/>
 					</section>
 				)}
 			</div>

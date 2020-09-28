@@ -3,6 +3,8 @@ import Slider from "../../../node_modules/react-slick";
 //components
 import './vitrine.global.css';
 
+var tag1s;
+
 class Vitrine extends React.Component {
 
     constructor(props) {
@@ -11,15 +13,72 @@ class Vitrine extends React.Component {
           nav1: null,
           nav2: null
         };
-      }
+    }
+
     
-      componentDidMount() {
+    componentDidMount() {
         this.setState({
-          nav1: this.slider1,
-          nav2: this.slider2
+            nav1: this.slider1,
+            nav2: this.slider2
         });
 
-      }
+        // Inicio Tag
+        var sec1,sec4,sec10;
+        let vali1=0,vali2=0,vali3=0;
+        const versao = this.props.versao; 
+
+        const observer = new IntersectionObserver(function(entries) {
+            if(entries[0].isIntersecting === true) {
+                
+                if (versao == 'qrcode'){
+                    if (vali1 == 0){
+                        sec1 = setTimeout(()=>{
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_vitrine ',
+                                label: '1'
+                            });
+                        }, 3000)
+                        vali1 = 1;
+                    }
+                    if (vali2 == 0){
+                        sec4 = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_vitrine ',
+                                label: '4'
+                            });
+                        }, 4000);
+                        vali2 = 1;
+                    }
+                    if (vali3 == 0){
+                        sec10 = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_vitrine ',
+                                label: '10'
+                            });
+                        }, 10000);
+                        vali3 = 1;
+                    }
+                }
+
+            } else {
+                clearTimeout(sec1);
+                clearTimeout(sec4);
+                clearTimeout(sec10);
+            }
+        }, { threshold: [0.5] });
+        
+        observer.observe(document.querySelector("#vitrine"));
+        //Fim tag
+
+    }
+
+
     
       render() {
         return (
@@ -93,6 +152,17 @@ class Vitrine extends React.Component {
                     swipeToSlide={true}
                     focusOnSelect={true}
                     centerMode={true}
+                    afterChange= {(current) => {
+                        clearTimeout(tag1s);
+                        tag1s = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_vitrine_fotos ',
+                                label: 'foto-'+current,
+                            });
+                        }, 1000);
+                    } }
                     >
                         <div className="item">
                             <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-01.png"></img>

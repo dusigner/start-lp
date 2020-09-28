@@ -1,0 +1,69 @@
+
+/*
+    Visie.
+    Autor: Eduardo Soares (eduardo@visie.com.br).
+    Data: 30/04/2020.
+    Descrição: Component Modal Center - CSS.
+*/
+
+.modal-overlay {
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0, 0.8);
+	animation: opacityIn 0.3s forwards ease-in;
+}
+
+.modal-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	background-color: black;
+	position: absolute;
+	width: 70vw;
+	height: 80vh;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	z-index: 6;
+	transition: all .90s linear;
+	animation: showModal 0.3s ease-in forwards;
+}
+
+.btn-close-modal-center {
+	right: 21px;
+	top: 19px;
+}
+.icon.icon-fechar {
+    font-size: 20px;
+}
+
+@media (max-width: 769px) {
+	.btn-close-modal-center {
+		top: 2px;
+		right: 2px;
+    }
+    .icon.icon-fechar {
+        font-size: 15px;
+	}
+	.modal-wrap {
+		width: 99vw;
+		height: 56.25vw;
+	}
+}
+
+@keyframes opacityIn {
+    to { opacity: 1;}
+    from { opacity: 0;}
+}
+
+@keyframes showModal {
+	from {
+		opacity: 0;
+		top: 100%;
+	}
+	to {
+		opacity: 1;
+		top: 56%;
+	}
+}

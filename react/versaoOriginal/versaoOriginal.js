@@ -62,7 +62,7 @@ class versaoOriginal extends React.Component {
 			if(window.innerWidth < 1024){
 				const height = document.querySelector("#geladeira-inverse-4").clientHeight;
 				if(document.documentElement.scrollTop > height + 300){
-					menu.scrollLeft = active[0].offsetLeft - (screen.width / 2 - active[0].offsetWidth / 2);  
+					menu.scrollLeft = active[0].offsetLeft - (screen.width / 2 - active[0].offsetWidth / 2 - 80);  
 				}else {
 					menu.scrollLeft = active[0].offsetLeft - 10;
 				}
@@ -77,6 +77,11 @@ class versaoOriginal extends React.Component {
 	handleClick=(e)=> {
 		
 		if(e == "ja-tenho") {
+			const menu = document.getElementsByClassName('menu__lp')[0];
+			const active = document.querySelectorAll('.ja-tenho');
+			console.log(menu)
+			console.log(active)
+			menu.scrollLeft = active.offsetLeft
 			this.setState({
 				jatenho: true,
 				versaoEstatica: false,
@@ -105,7 +110,7 @@ class versaoOriginal extends React.Component {
 								<nav id="nav">
 									<ul>
 										<li>
-											<a onClick={(e) => {this.handleClick(e)}} href='#geladeira-inverse-4' name="geladeira-inverse-4" className="links menu__title">
+											<a onClick={(e) => {this.handleClick(e)}} href='#geladeira-inverse-4' name="geladeira-inverse-4"  className={`${this.state.jatenho ? "link menu__title" : "link menu__title" }`}>
 												Geladeira 4 Portas
 											</a>
 										</li>
@@ -131,8 +136,8 @@ class versaoOriginal extends React.Component {
 										</li>
 										{ this.props.versao == "qrcode" && (
 											<li className="btnAct">
-												<a onClick={(e) => this.handleClick(e)} href='#video-inverse4'  className="links" name="video-refri">
-													Ver vídeo
+												<a onClick={(e) => this.handleClick(e)} href='#video-inverse4' name="video-inverse4" className="links" >
+													Ver Vídeo
 												</a>
 											</li>
 										)}
@@ -150,13 +155,14 @@ class versaoOriginal extends React.Component {
 											</a>
 										</li>
 										<li>
-											<a onClick={(e) => this.handleClick("ja-tenho")} href='#ja-tenho' name="ja-tenho" className="links">
+											<a onClick={(e) => this.handleClick("ja-tenho")} href='#ja-tenho' name="ja-tenho" className={`${this.state.jatenho ? "link active ja-tenho" : "link ja-tenho" }`}>
 												Já tenho essa geladeira
 											</a>
 										</li>
+
 										{ this.props.versao == "video" && (
 											<li className="btnAct">
-												<a onClick={(e) => this.handleClick(e)} href='#vitrine'  className="links" name="video-refri">
+												<a onClick={(e) => this.handleClick(e)} href='#vitrine'  className="links" name="vitrine">
 													Comprar
 												</a>
 											</li>
@@ -166,6 +172,8 @@ class versaoOriginal extends React.Component {
 							</div>
 						</div>
 				</Headroom> 
+
+				{this.state.jatenho && (<JaTenho/>)}
 
 				{this.state.versaoEstatica && (
 					<div>
@@ -181,7 +189,7 @@ class versaoOriginal extends React.Component {
 					</div>
 				)}
 
-				{this.state.jatenho && (<JaTenho/>)}
+				
 			</div>
 		)
 	}

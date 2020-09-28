@@ -85,7 +85,8 @@
     background: black;
 }
 
-.menu__lp nav ul li.btnAct a:hover {
+.menu__lp nav ul li.btnAct a:hover,
+.menu__lp nav ul li.btnAct a.active {
     background: #F08B1D;
     color: white;
     padding: 5px 0;
@@ -98,7 +99,8 @@
     padding: 0 10px;
     background: #000;
     transform: translate(0,-50%);
-    height: 32px
+    height: 32px;
+    z-index: 1;
 }
 
 .menu__lp {

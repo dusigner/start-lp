@@ -105,26 +105,29 @@ html {
 .versaoVideo .menu__lp nav a.active {
     text-shadow: 0px 0px #fff;  
 }
-.versaoVideo .menu__lp nav ul li:last-child {
+/* .versaoVideo .menu__lp nav ul li:last-child {
     position: unset;
     padding: 0;
     height: 100%;
-}
+} */
 
 /* BOTÃO EU QUERO - COMPRAR */
+.versaoVideo .menu__lp nav ul li:last-child {
+    margin: 14px 0;
+}
 .versaoVideo .menu__lp nav ul li:last-child a {
-    padding: 5px 0px;
     border: 1px solid #F08B1D;
     color: #F08B1D;
     font-weight: normal;
     font-size: 12px;
     text-transform: uppercase;
-    width: 100px;
-    bottom: 0 !important;
     background: black;
+    padding: 5px 0px;
+    width: 100px;
 }
 
-.versaoVideo .menu__lp nav ul li:last-child a:hover, .versaoVideo .menu__lp nav ul li:last-child a.active {
+.versaoVideo .menu__lp nav ul li:last-child a:hover, 
+.versaoVideo .menu__lp nav ul li:last-child a.active {
     background: #F08B1D;
     color: white;
     padding: 5px 0;

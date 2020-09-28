@@ -12,7 +12,7 @@ import Jatenho from '../versaoOriginal/layout/ja-tenho/ja-tenho'
 
 // CSSs
 import './versaoVideo.global.css';
-import "./components/menu/menu.global.css";
+/*import "./components/menu/menu.global.css";*/
 
 class VersaoVideo extends React.Component {
 
@@ -171,7 +171,7 @@ class VersaoVideo extends React.Component {
 										</a>
 									</li>
 									<li>
-										<a name="menu_superior"  onClick={() => this.handleClick("vitrine")} className={`${this.state.vitrine ? "active link" : "link" }`}>
+										<a name="menu_superior" onClick={() => this.handleClick("vitrine")} className={`${this.state.vitrine ? "active link" : "link" }`}>
 											<span>{this.state.vitrine ? "Fechar" : "Comprar" }</span>
 										</a>
 									</li>

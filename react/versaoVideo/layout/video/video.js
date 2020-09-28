@@ -111,7 +111,7 @@ class GeladeiraInverse extends React.Component {
 
     render() {
         return (
-            <div id="video-inverse4" className="video-refri observevideo">
+            <div id="video-inverse4" className="video-refri section">
                 <Video
                     versao={this.props.versao}
                     poster="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/poster-video-geladeira-inverse-4.jpg" 

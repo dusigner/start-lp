@@ -81,7 +81,7 @@ class Vitrine extends React.Component {
     
       render() {
         return (
-            <div id="vitrine" className="vitrine -com-compra">
+            <div id="vitrine" className="vitrine -com-compra section">
 
                 <div className="vitrine-info">
                     <h4 className="desktop">BRO90AK • Geladeira</h4>

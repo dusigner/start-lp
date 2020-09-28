@@ -185,7 +185,13 @@ class versaoOriginal extends React.Component {
 											</a>
 										</li>
 									)} 
-									
+									{ this.props.versao == "video" && (
+										<li className="btnAct">
+											<a onClick={(e) => this.handleClick(e)} href='#vitrine'  className="links tagMenu" name="vitrine" data-tag="click_comprar">
+												Comprar
+											</a>
+										</li>
+									)}
 									<li>
 										<a onClick={(e) => this.handleClick(e)} href='#especificacoes' name="especificacoes" className="links tagMenu" data-tag="click_especificacoes">
 											Especificações
@@ -197,13 +203,7 @@ class versaoOriginal extends React.Component {
 										</a>
 									</li>
 
-									{ this.props.versao == "video" && (
-										<li className="btnAct">
-											<a onClick={(e) => this.handleClick(e)} href='#vitrine'  className="links tagMenu" name="vitrine" data-tag="click_comprar">
-												Comprar
-											</a>
-										</li>
-									)}
+									
 								</ul>
 							</nav>
 						</div>

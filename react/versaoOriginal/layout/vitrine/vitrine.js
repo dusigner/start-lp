@@ -3,6 +3,8 @@ import Slider from "../../../node_modules/react-slick";
 //components
 import './vitrine.global.css';
 
+var tag1s;
+
 class Vitrine extends React.Component {
 
     constructor(props) {
@@ -75,6 +77,8 @@ class Vitrine extends React.Component {
         //Fim tag
 
     }
+
+
     
       render() {
         return (
@@ -148,6 +152,17 @@ class Vitrine extends React.Component {
                     swipeToSlide={true}
                     focusOnSelect={true}
                     centerMode={true}
+                    afterChange= {(current) => {
+                        clearTimeout(tag1s);
+                        tag1s = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_vitrine_fotos ',
+                                label: 'foto-'+current,
+                            });
+                        }, 1000);
+                    } }
                     >
                         <div className="item">
                             <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-01.png"></img>

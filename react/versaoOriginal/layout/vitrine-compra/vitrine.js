@@ -154,6 +154,17 @@ class Vitrine extends React.Component {
                     swipeToSlide={true}
                     focusOnSelect={true}
                     centerMode={true}
+                    afterChange= {(current) => {
+                        clearTimeout(tag1s);
+                        tag1s = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_mobile',
+                                action: 'visibility_vitrine_fotos ',
+                                label: 'foto-'+current,
+                            });
+                        }, 1000);
+                    } }
                     >
                         <div className="item">
                             <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-01.png"></img>
@@ -207,8 +218,14 @@ class Vitrine extends React.Component {
                 </div>
 
                 <div className="vitrine-info mobile">
-
-                    <a href="https://www.brastemp.com.br/geladeira-brastemp-inverse-4-frost-free-543-litros-cor-inox-com-convertible-space-bro90ak/p?idsku=326029418">Comprar</a>
+                    <a onClick={()=>{
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_mobile',
+                            action: 'click_vitrine_comprar',
+                            label: 'comprar'
+                        });
+                    }} href="https://www.brastemp.com.br/geladeira-brastemp-inverse-4-frost-free-543-litros-cor-inox-com-convertible-space-bro90ak/p?idsku=326029418">Comprar</a>
 
                 </div>
                 

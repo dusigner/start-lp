@@ -13,6 +13,10 @@ let agua="https://img.imageboss.me/consul/cdn/animation:true/wp-content/uploads/
 
 class Dispenser extends React.Component {
 
+    constructor(props) {
+		super(props);
+    }
+
     componentDidMount(){
 
         let target = document.querySelector('.interactive');
@@ -28,11 +32,43 @@ class Dispenser extends React.Component {
                 if (element.dataset.agua == "true") {
                     element.classList.add('active');
                     target.src = agua;
+                    if (versao == 'video'){
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_external',
+                            action: 'click_dispenser_de_agua_e_gelo ',
+                            label: 'agua'
+                        })
+                    }
+                    if (versao == 'video'){
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_mobile',
+                            action: 'click_dispenser_de_agua_e_gelo ',
+                            label: 'agua'
+                        })
+                    }
                 }
 
                 if (element.dataset.gelo == "true") {
                     element.classList.add('active');
                     target.src = gelo;
+                    if (versao == 'qrcode'){
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_external',
+                            action: 'click_dispenser_de_agua_e_gelo ',
+                            label: 'gelo'
+                        })
+                    }
+                    if (versao == 'video'){
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_mobile',
+                            action: 'click_dispenser_de_agua_e_gelo ',
+                            label: 'gelo'
+                        })
+                    }
                 }
 
             })

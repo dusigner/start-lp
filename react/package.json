@@ -2,6 +2,7 @@
   "dependencies": {
     "apollo-client": "^2.4.7",
     "apollo-client-preset": "^1.0.8",
+    "axios": "^0.20.0",
     "disable-scroll": "^0.5.1",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.7.3",

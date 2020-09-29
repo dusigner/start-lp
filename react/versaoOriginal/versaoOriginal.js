@@ -98,8 +98,7 @@ class versaoOriginal extends React.Component {
 			const active = document.querySelectorAll('nav .active');
 			
 			if(window.innerWidth < 1024){
-				const height = document.querySelector("#geladeira-inverse-4").clientHeight;
-				if(document.documentElement.scrollTop > height + 300){
+				if(document.documentElement.scrollTop > 300){
 					menu.scrollLeft = active[0].offsetLeft - (screen.width / 2 - active[0].offsetWidth / 2 - 80);  
 				}else {
 					menu.scrollLeft = active[0].offsetLeft - 10;
@@ -182,11 +181,17 @@ class versaoOriginal extends React.Component {
 									{ this.props.versao == "video" && (
 										<li>
 											<a onClick={(e) => this.handleClick(e)} href='#video-inverse4' name="video-inverse4" className="links tagMenu" data-tag="click_ver_video">
-												<span>Ver Vídeo</span>
+												Ver Vídeo
 											</a>
 										</li>
 									)} 
-									
+									{ this.props.versao == "video" && (
+										<li className="btnAct">
+											<a onClick={(e) => this.handleClick(e)} href='#vitrine'  className="links tagMenu" name="vitrine" data-tag="click_comprar">
+												Comprar
+											</a>
+										</li>
+									)}
 									<li>
 										<a onClick={(e) => this.handleClick(e)} href='#especificacoes' name="especificacoes" className="links tagMenu" data-tag="click_especificacoes">
 											Especificações
@@ -198,13 +203,7 @@ class versaoOriginal extends React.Component {
 										</a>
 									</li>
 
-									{ this.props.versao == "video" && (
-										<li className="btnAct">
-											<a onClick={(e) => this.handleClick(e)} href='#vitrine'  className="links tagMenu" name="vitrine" data-tag="click_comprar">
-												Comprar
-											</a>
-										</li>
-									)}
+									
 								</ul>
 							</nav>
 						</div>

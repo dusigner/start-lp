@@ -53,11 +53,11 @@ class Scrollvideo extends React.Component {
             }
         });
 
-        $("#gelo").click(function(e) {
+        $("#gelo, #repeat").click(function(e) {
             e.preventDefault();
             video.currentTime = 6.8;
             $("#agua").removeClass('active');
-            $(this).addClass('active');
+            $("#gelo").addClass('active');
             video.play()
         });
         $("#agua").click(function(e) {
@@ -86,7 +86,7 @@ class Scrollvideo extends React.Component {
             }
             if(video.currentTime >= 2.2 && video.currentTime <= 2.5){
                 video.pause();
-                TweenLite.to(actionMouse, 0.9, { opacity: 1, zIndex:3 });
+                TweenLite.to(actionMouse, 0.9, { opacity: 1, zIndex:4 });
                 TweenMax.fromTo(arrow, 1, { y: -5 }, { y: 20, yoyo: false, repeat: -1 });
             
             }
@@ -112,7 +112,7 @@ class Scrollvideo extends React.Component {
             /** Scene 2 - PAUSE */
             if(video.currentTime >= 14.1 && video.currentTime <= 14.50){
                 video.pause()
-                TweenLite.to(actionMouse, 0.9, { opacity: 1, zIndex:3 });
+                TweenLite.to(actionMouse, 0.9, { opacity: 1, zIndex:4 });
                 TweenMax.fromTo(arrow, 1, { y: -5 }, { y: 20, yoyo: false, repeat: -1 });
             }
             /** Scene 3 - PLAY */
@@ -123,7 +123,7 @@ class Scrollvideo extends React.Component {
             if(video.currentTime >= 17.8 &&  video.currentTime <= 18.0){
                 video.pause()
                 TweenLite.to(scene3, 1, {opacity: 1, zIndex:3,});
-                TweenLite.to(actionMouse, 0.9, { opacity: 1, zIndex:3 });
+                TweenLite.to(actionMouse, 0.9, { opacity: 1, zIndex:4 });
                 TweenMax.fromTo(arrow, 1, { y: -5 }, { y: 20, yoyo: false, repeat: -1 });
             }
             /** Scene 4 - PLAY */
@@ -132,6 +132,8 @@ class Scrollvideo extends React.Component {
             }
             if(video.currentTime >= 25 && video.currentTime <= 25.3){
                 TweenLite.to(scene4, 1, {opacity: 1, zIndex:3,});
+                TweenLite.to(actionMouse, 0.9, { opacity: 1, zIndex:4 });
+                TweenMax.fromTo(arrow, 1, { y: -5 }, { y: 20, yoyo: false, repeat: -1 });
             }
             
             //ranger
@@ -194,15 +196,22 @@ class Scrollvideo extends React.Component {
         }
     }
 
+    handleClick=()=>{
+        const video = document.querySelector(".videobg");
+        video.play()
+
+    }
+
 
   render() {
     return (
         <div className="intro">
-            <div className="scene2__content-mouse">
-                Role para ver mais
+            <div onClick={()=>this.handleClick()} className="scene2__content-mouse">
+                <p>Role para ver mais</p>
                 <svg id="arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
                 <path d="M1.41 0.590088L6 5.17009L10.59 0.590088L12 2.00009L6 8.00009L0 2.00009L1.41 0.590088Z" fill="white"/>
                 </svg>
+                <div className="bg-blur"></div>
             </div>
             <div className="scene1">
                 <div className="scene1__content">
@@ -216,6 +225,7 @@ class Scrollvideo extends React.Component {
                         <div className="scene2__content-col1">
                             <h2>Dispenser de água e gelo</h2>
                             <p>Tenha água fresca e mais de 1,5kg de gelo por dia e ainda escolha entre gelo em cubos ou gelo picado</p>
+                            <div className="bg-blur"></div>
                         </div>
                         <div className="scene2__content-col2">
                             <div className="switch-dispenser__video">
@@ -223,6 +233,15 @@ class Scrollvideo extends React.Component {
                                 <span className="line"></span>
                                 <a id="agua" href="#">Água</a>
                             </div>
+                            <div  className="switch-dispenser__repeat">
+                                <a id="repeat" href="#">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 7V0L15.36 2.64C13.74 1.01 11.49 0 9 0C4.03 0 0 4.03 0 9C0 13.97 4.03 18 9 18C13.97 18 18 13.97 18 9H16C16 12.86 12.86 16 9 16C5.14 16 2 12.86 2 9C2 5.14 5.14 2 9 2C10.93 2 12.68 2.79 13.95 4.05L11 7H18Z" fill="white"/>
+                                    </svg>
+                                    Repetir
+                                </a>
+                            </div>
+
                         </div>
                     </div>
                     
@@ -242,6 +261,7 @@ class Scrollvideo extends React.Component {
                     <div>
                         <Title setClass="center" textMF="Convertible Space" textDF="Convertible Space"/>
                         <p>Compartimento com controle independente <br className="mobile"></br> de <br className="desktop"></br> temperatura, você escolhe entre freezer ou <br className="mobile"></br><br className="desktop"></br> refrigerador com mais de 12 opções de <br className="mobile"></br><br className="desktop"></br> temperatura</p>
+                        <div className="bg-blur"></div>
                     </div>
                     <div>
                         <div className="line-chose">

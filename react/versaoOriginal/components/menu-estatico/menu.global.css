@@ -15,7 +15,7 @@
     bottom: 0;
     left: 0;
 }
-.menu__lp h1 {
+.menu__lp .menu__tile {
     font-family: Soleto,sans-serif;
     font-weight: bold;
     font-size: 14px;
@@ -29,7 +29,7 @@
 .menu__lp nav ul{
     display: flex;
     align-items: flex-end;
-    width: 945px !important;
+    width: 1115px !important;
     justify-content: space-around!important;
     padding: 0;
     margin: 0;
@@ -74,7 +74,7 @@
 }
 
 /* BOTÃO EU QUERO - COMPRAR */
-.menu__lp nav ul li:last-child a {
+.menu__lp nav ul li.btnAct a {
     padding: 5px 0px;
     border: 1px solid #F08B1D;
     color: #F08B1D;
@@ -85,20 +85,22 @@
     background: black;
 }
 
-.menu__lp nav ul li:last-child a:hover {
+.menu__lp nav ul li.btnAct a:hover,
+.menu__lp nav ul li.btnAct a.active {
     background: #F08B1D;
     color: white;
     padding: 5px 0;
 }
 
-.menu__lp nav ul li:last-child {
+.menu__lp nav ul li.btnAct {
     position: fixed;
     left: calc(100% - 130px);
     top: 50%;
     padding: 0 10px;
     background: #000;
     transform: translate(0,-50%);
-    height: 32px
+    height: 32px;
+    z-index: 1;
 }
 
 .menu__lp {

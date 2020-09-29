@@ -3,6 +3,9 @@ import React from 'react';
 import Title from '../../components/title/title';
 import './convertible-space.global.css';
 
+let tag;
+let versao; 
+
 class ConvertibleSpace extends React.Component {
 
     constructor(props) {
@@ -10,7 +13,101 @@ class ConvertibleSpace extends React.Component {
 		this.state = {
 			value: 0
 		}
-	}
+    }
+    
+    componentDidMount() {
+
+        // Inicio Tag
+        var sec1,sec4,sec10;
+        let vali1=0,vali2=0,vali3=0;
+        versao = this.props.versao;
+
+        const observer = new IntersectionObserver(function(entries) {
+            if(entries[0].isIntersecting === true) {
+                
+                if (versao == 'qrcode'){
+                    if (vali1 == 0){
+                        sec1 = setTimeout(()=>{
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_convertible_space ',
+                                label: '1',
+                            });
+                        }, 3000)
+                        vali1 = 1;
+                    }
+                    if (vali2 == 0){
+                        sec4 = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_convertible_space ',
+                                label: '4',
+                            });
+                        }, 4000);
+                        vali2 = 1;
+                    }
+                    if (vali3 == 0){
+                        sec10 = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_convertible_space ',
+                                label: '10',
+                            });
+                        }, 10000);
+                        vali3 = 1;
+                    }
+                }
+
+                if (versao == 'video'){
+                    if (vali1 == 0){
+                        sec1 = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_mobile',
+                                action: 'visibility_convertible_space ',
+                                label: 1
+                            });
+                        }, 1000);
+                        vali1 = 1;
+                    }
+                    if (vali2 == 0){
+                        sec4 = setTimeout(()=>{
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_mobile',
+                                action: 'visibility_convertible_space ',
+                                label: 4
+                            });
+                        }, 4000);
+                        vali2 = 1;
+                    }
+                    if (vali3 == 0){
+                        sec10 = setTimeout(()=>{
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_mobile',
+                                action: 'visibility_convertible_space ',
+                                label: 10
+                            });
+                        }, 10000);
+                        vali3 = 1;
+                    }
+                }
+
+            } else {
+                clearTimeout(sec1);
+                clearTimeout(sec4);
+                clearTimeout(sec10);
+            }
+        }, { threshold: [0.5] });
+        
+        observer.observe(document.querySelector("#convertible-space"));
+        //Fim tag
+    }
+
     
     handleChange = (event) => {
         
@@ -48,6 +145,145 @@ class ConvertibleSpace extends React.Component {
 
         } else {
             this.setState({value: event.target.value});
+        }
+
+        if (this.state.value < 110) {
+            clearTimeout(tag);
+            if (versao=="qrcode"){
+                tag = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_external',
+                        action: 'slider_convertible_space ',
+                        label: 'vinhos_e_cervejas_artesanais'
+                    })
+                }, 1000);
+            }
+            if (versao=="video"){
+                tag = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_mobile',
+                        action: 'slider_convertible_space ',
+                        label: 'vinhos_e_cervejas_artesanais'
+                    })
+                }, 1000);
+            }
+        }
+        if (this.state.value > 110 && this.state.value < 260) {
+            clearTimeout(tag);
+            if (versao=="qrcode"){
+                tag = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_external',
+                        action: 'slider_convertible_space ',
+                        label: 'frutas_e_vegetais'
+                    })
+                }, 1000);
+            }
+            if (versao=="video"){
+                tag = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_mobile',
+                        action: 'slider_convertible_space ',
+                        label: 'frutas_e_vegetais'
+                    })
+                }, 1000);
+            }
+        }
+        if (this.state.value > 260 && this.state.value < 550) {
+            clearTimeout(tag);
+            if (versao=="qrcode"){
+                tag = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_external',
+                        action: 'slider_convertible_space ',
+                        label: 'carnes_e_peixes'
+                    })
+                }, 1000);
+            }
+            if (versao=="video"){
+                tag = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_mobile',
+                        action: 'slider_convertible_space ',
+                        label: 'carnes_e_peixes'
+                    })
+                }, 1000);
+            }
+        }
+        if (this.state.value > 550 && this.state.value < 740) {
+            clearTimeout(tag);
+            if (versao=="qrcode"){
+                tag = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_external',
+                        action: 'slider_convertible_space ',
+                        label: 'congelamento_suave'
+                    })
+                }, 1000);
+            }
+            if (versao=="video"){
+                tag = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_mobile',
+                        action: 'slider_convertible_space ',
+                        label: 'congelamento_suave'
+                    })
+                }, 1000);
+            }
+        }
+        if (this.state.value > 740 && this.state.value < 920) {
+            clearTimeout(tag);
+            if (versao=="qrcode"){
+                tag = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_external',
+                        action: 'slider_convertible_space ',
+                        label: 'congelamento_medio'
+                    })
+                }, 1000);
+            }
+            if (versao=="video"){
+                tag = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_mobile',
+                        action: 'slider_convertible_space ',
+                        label: 'congelamento_medio'
+                    })
+                }, 1000);
+            }
+        }
+        if (this.state.value > 920) {
+            clearTimeout(tag);
+            if (versao=="qrcode"){
+                tag = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_external',
+                        action: 'slider_convertible_space ',
+                        label: 'congelamento_intenso'
+                    })
+                }, 1000);
+            }
+            if (versao=="video"){
+                tag = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_mobile',
+                        action: 'slider_convertible_space ',
+                        label: 'congelamento_intenso'
+                    })
+                }, 1000);
+            }
         }
 
     }

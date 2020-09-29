@@ -13,6 +13,10 @@ let agua="https://img.imageboss.me/consul/cdn/animation:true/wp-content/uploads/
 
 class Dispenser extends React.Component {
 
+    constructor(props) {
+		super(props);
+    }
+
     componentDidMount(){
 
         let target = document.querySelector('.interactive');
@@ -28,11 +32,43 @@ class Dispenser extends React.Component {
                 if (element.dataset.agua == "true") {
                     element.classList.add('active');
                     target.src = agua;
+                    if (versao == 'video'){
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_external',
+                            action: 'click_dispenser_de_agua_e_gelo ',
+                            label: 'agua'
+                        })
+                    }
+                    if (versao == 'video'){
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_mobile',
+                            action: 'click_dispenser_de_agua_e_gelo ',
+                            label: 'agua'
+                        })
+                    }
                 }
 
                 if (element.dataset.gelo == "true") {
                     element.classList.add('active');
                     target.src = gelo;
+                    if (versao == 'qrcode'){
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_external',
+                            action: 'click_dispenser_de_agua_e_gelo ',
+                            label: 'gelo'
+                        })
+                    }
+                    if (versao == 'video'){
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_mobile',
+                            action: 'click_dispenser_de_agua_e_gelo ',
+                            label: 'gelo'
+                        })
+                    }
                 }
 
             })
@@ -40,15 +76,104 @@ class Dispenser extends React.Component {
 
         window.addEventListener('scroll', this.onWindowScroll);
 
+
+        // Inicio Tag
+        var sec1,sec4,sec10;
+        let vali1=0,vali2=0,vali3=0;
+        const versao = this.props.versao; 
+
+        const observer = new IntersectionObserver(function(entries) {
+            if(entries[0].isIntersecting === true) {
+                
+                if (versao == 'qrcode'){
+                    if (vali1 == 0){
+                        sec1 = setTimeout(()=>{
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_dispenser_de_agua_e_gelo',
+                                label: '1'
+                            });
+                        }, 3000)
+                        vali1 = 1;
+                    }
+                    if (vali2 == 0){
+                        sec4 = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_dispenser_de_agua_e_gelo',
+                                label: '4'
+                            });
+                        }, 4000);
+                        vali2 = 1;
+                    }
+                    if (vali3 == 0){
+                        sec10 = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_dispenser_de_agua_e_gelo',
+                                label: '10'
+                            });
+                        }, 10000);
+                        vali3 = 1;
+                    }
+                }
+
+                if (versao == 'video'){
+                    if (vali1 == 0){
+                        sec1 = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_mobile',
+                                action: 'visibility_dispenser_de_agua_e_gelo',
+                                label: '1'
+                            });
+                        }, 1000);
+                        vali1 = 1;
+                    }
+                    if (vali2 == 0){
+                        sec4 = setTimeout(()=>{
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_mobile',
+                                action: 'visibility_dispenser_de_agua_e_gelo',
+                                label: '4'
+                            });
+                        }, 4000);
+                        vali2 = 1;
+                    }
+                    if (vali3 == 0){
+                        sec10 = setTimeout(()=>{
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_mobile',
+                                action: 'visibility_dispenser_de_agua_e_gelo',
+                                label: '10'
+                            });
+                        }, 10000);
+                        vali3 = 1;
+                    }
+                }
+
+            } else {
+                clearTimeout(sec1);
+                clearTimeout(sec4);
+                clearTimeout(sec10);
+            }
+        }, { threshold: [0.5] });
+        
+        observer.observe(document.querySelector("#dispenser-de-agua-e-gelo"));
+        //Fim tag
+
     }
-     
+ 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.onWindowScroll);
     }
 
     onWindowScroll = () => {
-
-        console.log("scrollllllll");
 
         if ((document.documentElement.scrollTop + 55) > document.querySelector("#dispenser-de-agua-e-gelo").offsetTop){
             

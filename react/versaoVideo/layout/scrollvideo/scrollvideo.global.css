@@ -24,7 +24,14 @@
     top: 0;
     transition: all 1s;
 }
-
+.bg-blur {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    filter: blur(250px);
+    position: absolute;
+    top: 0;
+}
 /*********
  Scene 1
 *********/
@@ -82,6 +89,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+}
+.scene2__content-bg {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    filter: blur(250px);
+    position: absolute;
 }
 .scene2__content-col2 {
     width: 337px;
@@ -90,6 +105,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.switch-dispenser__repeat {
+    width: 160px;
+    margin-left: -75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.switch-dispenser__repeat a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -27px;
+}
+.switch-dispenser__repeat a svg {
+    margin-right: 10px;
 }
 .switch-dispenser__video {
     width: 160px;
@@ -167,11 +201,13 @@
     font-size: 42px;
     line-height: 52px;
     margin-bottom: 25px;
+    z-index: 1;
 }
 .scene2__content-col1 p {
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
+    z-index: 1;
 }
 .scene2__content-mouse {
     position: absolute;
@@ -183,9 +219,18 @@
     opacity: 0;
     transform: translateX(-50%);
     color: white;
+    cursor: pointer;
+}
+.scene2__content-mouse .bg-blur {
+    filter: blur(33px);
+}
+.scene2__content-mouse p {
+    z-index: 1;
+    margin: 0;
 }
 .scene2__content-mouse svg {
     margin-top: 10px;
+    z-index: 1;
 }
 /*********
  Scene 3
@@ -253,6 +298,9 @@
 .scene4__content {
     width: 100%;
     max-width: 1055px;
+}
+.scene4__content div:first-child {
+    position: relative;
 }
 .convertible__space {
     position: relative;

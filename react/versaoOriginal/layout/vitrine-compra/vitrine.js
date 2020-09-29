@@ -141,7 +141,7 @@ class Vitrine extends React.Component {
                             <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-15.png"></img>
                         </div>
                         <div className="item">
-                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-16.png"></img>
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-17.png"></img>
                         </div>
                     </Slider>
 
@@ -212,7 +212,7 @@ class Vitrine extends React.Component {
                             <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-15.png"></img>
                         </div>
                         <div className="item">
-                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-16.png"></img>
+                            <img src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/vitrine-17.png"></img>
                         </div>
                     </Slider>
                 </div>

@@ -14,12 +14,10 @@ import Vitrine from './layout/vitrine/vitrine'
 import VitrineCompra from './layout/vitrine-compra/vitrine'
 import EspecificacoesTecnicas from './layout/especificacoes/especificacoes';
 import JaTenho from './layout/ja-tenho/ja-tenho'
-
-
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import "./components/menu-estatico/menu.global.css";
+import AlertJatenho from './components/alert-jatenho/alert-jatenho';
 
 // Assets
+import "./components/menu-estatico/menu.global.css";
 import './versaoOriginal.global.css';
 
 class versaoOriginal extends React.Component {
@@ -137,6 +135,13 @@ class versaoOriginal extends React.Component {
 		}
 	}
 
+	handerJatenho=()=>{
+		this.setState({
+			jatenho: true,
+			versaoEstatica: false,
+		})
+	}
+
 	render() {
 
 		return (
@@ -215,6 +220,9 @@ class versaoOriginal extends React.Component {
 				{this.state.versaoEstatica && (
 					<div>
 						<GeladeiraInverse versao={this.props.versao}/>
+						{ this.props.versao == "qrcode" && 
+							<AlertJatenho handler={this.handerJatenho}/> 
+						}
 						<Dispenser versao={this.props.versao}/>
 						<FreshControl versao={this.props.versao}/>
 						<ConvertibleSpace versao={this.props.versao}/>

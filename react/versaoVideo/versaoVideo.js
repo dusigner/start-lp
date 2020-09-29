@@ -9,6 +9,7 @@ import VitrineCompra from '../versaoOriginal/layout/vitrine-compra/vitrine'
 import AtencaoDetalhes from '../versaoOriginal/layout/atencao-detalhes/atencao-detalhes';
 import Video from './layout/video/video';
 import Jatenho from '../versaoOriginal/layout/ja-tenho/ja-tenho'
+import AlertJatenho from '../versaoOriginal/components/alert-jatenho/alert-jatenho'
 
 // CSSs
 import './versaoVideo.global.css';
@@ -136,6 +137,18 @@ class VersaoVideo extends React.Component {
 			})
 		}
 	}
+
+	handerJatenho=()=>{
+		window.scrollTo(0, 0)
+			disableScroll.off()
+			this.setState({
+				visao_geral: false,
+				video: false,
+				especificacoes: false,
+				vitrine: false,
+				jatenho: true
+			})
+	}
 	
 	render() {
 		
@@ -185,6 +198,7 @@ class VersaoVideo extends React.Component {
 					<section id="geral">
 						<Scrollvideo />
 						<AtencaoDetalhes/>
+						<AlertJatenho handler={this.handerJatenho}/> 
 						<Video/>
 					</section>
 				)}

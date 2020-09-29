@@ -38,17 +38,22 @@ class JaTenho extends React.Component {
         this.slider.slickPrev();
     }
     postArrow =()=> {
-        const totalSlider = document.querySelectorAll(".slick-slide")
-        return(
-            <div id="postsArrow">
-                <button className="button" onClick={this.previous}>
-                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none"><path d="M0.590027 10.59L5.17003 6L0.590027 1.41L2.00003 0L8.00003 6L2.00003 12L0.590027 10.59Z" fill="#F55D2F"/></svg>
-                </button>
-                <button className="button" onClick={this.next}>
-                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none"><path d="M0.590027 10.59L5.17003 6L0.590027 1.41L2.00003 0L8.00003 6L2.00003 12L0.590027 10.59Z" fill="#F55D2F"/></svg>
-                </button>
-            </div>
-        )
+        const silderSlick = document.querySelectorAll(".posts__itens")
+        if(window.innerWidth > 1025 && silderSlick.length < 4){
+            //não exibe setas no desktop se tiver apenas 4 slider
+            return(<></>)
+        } else {
+            return(
+                <div id="postsArrow">
+                    <button className="button" onClick={this.previous}>
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none"><path d="M0.590027 10.59L5.17003 6L0.590027 1.41L2.00003 0L8.00003 6L2.00003 12L0.590027 10.59Z" fill="#F55D2F"/></svg>
+                    </button>
+                    <button className="button" onClick={this.next}>
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none"><path d="M0.590027 10.59L5.17003 6L0.590027 1.41L2.00003 0L8.00003 6L2.00003 12L0.590027 10.59Z" fill="#F55D2F"/></svg>
+                    </button>
+                </div>
+            )
+        }
     }
 
     handleChange = (e) =>{
@@ -390,7 +395,7 @@ class JaTenho extends React.Component {
                         {this.postArrow()}
                     </div>
                         <Slider ref={c => (this.slider = c)} {...settings}>
-                            <div className="posts__itens" key={1}>
+                            <div className="posts__itens" >
                                 <a href="https://www.brastemp.com.br/experience/casa-e-decor/como-organizar-geladeira-dicas-simples-para-nao-errar-mais" className="posts__itens-img" title="Link para o Post">
                                     <Picture
                                         sources = {[
@@ -423,7 +428,7 @@ class JaTenho extends React.Component {
                                     </a>
                                 </div>
                             </div>
-                            <div className="posts__itens" key={2}>
+                            <div className="posts__itens" >
                                 <a href="https://www.brastemp.com.br/experience/casa-e-decor/como-limpar-geladeira" className="posts__itens-img" title="Link para o Post">
                                     <Picture
                                         sources = {[
@@ -455,7 +460,7 @@ class JaTenho extends React.Component {
                                     </a>
                                 </div>
                             </div>
-                            <div className="posts__itens" key={3}>
+                            <div className="posts__itens" >
                                 <a href="https://www.brastemp.com.br/experience/tech/da-geladeira-a-lava-louca-os-utensilios-que-agucam-os-5-sentidos-na-cozinha" className="posts__itens-img" title="Link para o Post">
                                     <Picture
                                         sources = {[
@@ -487,7 +492,7 @@ class JaTenho extends React.Component {
                                     </a>
                                 </div>
                             </div>
-                            <div className="posts__itens" key={4}>
+                            <div className="posts__itens" >
                                 <a href="https://www.brastemp.com.br/experience/gastronomia/receitas-de-drinks" className="posts__itens-img" title="Link para o Post">
                                     <Picture
                                         sources = {[

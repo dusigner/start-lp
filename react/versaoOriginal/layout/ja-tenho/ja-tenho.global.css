@@ -1,6 +1,7 @@
 
 .ja-tenho.section {
     background: black;
+    padding-bottom: 1px;
 }
 .banner {
     display: flex;

@@ -80,8 +80,10 @@ class versaoOriginal extends React.Component {
 
         const links = document.querySelectorAll('.links');
 		const sections = document.querySelectorAll('.section');
+		const menu = document.getElementsByClassName('menu__lp')[0];
+		const active = document.querySelectorAll('nav .active');
+		
 		if(!this.state.jatenho){
-			function changeLinkState() {
 				let index = sections.length;
 	
 				while(--index && window.scrollY + 55 < sections[index].offsetTop) {}
@@ -91,9 +93,6 @@ class versaoOriginal extends React.Component {
 					
 				);
 				links[index].classList.add('active');
-	
-				const menu = document.getElementsByClassName('menu__lp')[0];
-				const active = document.querySelectorAll('nav .active');
 				
 				if(window.innerWidth < 1024){
 					if(document.documentElement.scrollTop > 300){
@@ -102,22 +101,10 @@ class versaoOriginal extends React.Component {
 						menu.scrollLeft = active[0].offsetLeft - 10;
 					}
 				}
-			}
-			changeLinkState();
-			window.addEventListener('scroll', changeLinkState);
 		} else {
-			if(window.scrollY == 0) {
-					const menu = document.getElementsByClassName('menu__lp')[0];
-					console.log("menu: ", menu)
-					const active = document.querySelectorAll('nav .active');
-					if(active.length >= 2){
-						console.log(active)
-						active[0].classList.remove("active")
-						menu.scrollLeft = active[1].offsetLeft; 
-
-					}
-				
-			}
+			links.forEach(
+				(link) => link.classList.remove('active')
+			);
 		}
         
 

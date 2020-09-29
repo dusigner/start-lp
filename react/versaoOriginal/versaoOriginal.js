@@ -80,32 +80,49 @@ class versaoOriginal extends React.Component {
 
         const links = document.querySelectorAll('.links');
 		const sections = document.querySelectorAll('.section');
-		
-        function changeLinkState() {
-            let index = sections.length;
-
-            while(--index && window.scrollY + 55 < sections[index].offsetTop) {}
-            
-            links.forEach(
-                (link) => link.classList.remove('active')
-                
-            );
-            links[index].classList.add('active');
-
-            const menu = document.getElementsByClassName('menu__lp')[0];
-			const active = document.querySelectorAll('nav .active');
-			
-			if(window.innerWidth < 1024){
-				if(document.documentElement.scrollTop > 300){
-					menu.scrollLeft = active[0].offsetLeft - (screen.width / 2 - active[0].offsetWidth / 2 - 80);  
-				}else {
-					menu.scrollLeft = active[0].offsetLeft - 10;
+		if(!this.state.jatenho){
+			function changeLinkState() {
+				let index = sections.length;
+	
+				while(--index && window.scrollY + 55 < sections[index].offsetTop) {}
+				
+				links.forEach(
+					(link) => link.classList.remove('active')
+					
+				);
+				links[index].classList.add('active');
+	
+				const menu = document.getElementsByClassName('menu__lp')[0];
+				const active = document.querySelectorAll('nav .active');
+				
+				if(window.innerWidth < 1024){
+					if(document.documentElement.scrollTop > 300){
+						menu.scrollLeft = active[0].offsetLeft - (screen.width / 2 - active[0].offsetWidth / 2 - 80);  
+					}else {
+						menu.scrollLeft = active[0].offsetLeft - 10;
+					}
 				}
 			}
-        }
+			changeLinkState();
+			window.addEventListener('scroll', changeLinkState);
+		} else {
+			if(window.scrollY == 0) {
+					const menu = document.getElementsByClassName('menu__lp')[0];
+					console.log("menu: ", menu)
+					const active = document.querySelectorAll('nav .active');
+					if(active.length >= 2){
+						console.log(active)
+						active[0].classList.remove("active")
+						menu.scrollLeft = active[1].offsetLeft; 
 
-        changeLinkState();
-        window.addEventListener('scroll', changeLinkState);
+					}
+				
+			}
+		}
+        
+
+        
+        
 
 	};
 	
@@ -114,8 +131,6 @@ class versaoOriginal extends React.Component {
 		if(e == "ja-tenho") {
 			const menu = document.getElementsByClassName('menu__lp')[0];
 			const active = document.querySelectorAll('.ja-tenho');
-			console.log(menu)
-			console.log(active)
 			menu.scrollLeft = active.offsetLeft
 			this.setState({
 				jatenho: true,
@@ -152,7 +167,12 @@ class versaoOriginal extends React.Component {
 							<nav id="nav">
 								<ul>
 									<li>
-										<a onClick={(e) => {this.handleClick(e)}} href='#geladeira-inverse-4' name="geladeira-inverse-4"  className={`${this.state.jatenho ? "links menu__title tagMenu" : "links menu__title" }`} data-tag="click_geladeira_4_portas">
+										<a 
+											onClick={(e) => {this.handleClick(e)}} 
+											href='#geladeira-inverse-4' 
+											name="geladeira-inverse-4"
+											className={`${this.state.jatenho ? "links menu__title tagMenu" : "links menu__title" }`} 
+											data-tag="click_geladeira_4_portas">
 											Geladeira 4 Portas
 										</a>
 									</li>

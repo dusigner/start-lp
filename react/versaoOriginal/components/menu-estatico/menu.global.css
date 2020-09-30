@@ -93,7 +93,7 @@
 }
 
 .menu__lp nav ul li.btnAct {
-    position: fixed;
+    position: absolute;
     left: calc(100% - 130px);
     top: 50%;
     padding: 0 10px;
@@ -114,6 +114,7 @@
     height: 100%;
     max-width: none;
     width: 95%;
+    position: relative;
 }
 .menu__lp nav ul{
     width: 100%;

@@ -317,15 +317,15 @@ class JaTenho extends React.Component {
                                     <Picture
                                         sources = {[
                                             {
-                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video02.jpg",
+                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video02.png",
                                                 media: "(max-width: 767px)",
                                             },
                                             {
-                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video02.jpg",
+                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video02.png",
                                                 media: "(min-width: 1024px)",
                                             },
                                             {
-                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video02.jpg",
+                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video02.png",
                                                 media: "(min-width: 768px)",
                                             },
                                         ]}
@@ -342,15 +342,15 @@ class JaTenho extends React.Component {
                                     <Picture
                                         sources = {[
                                             {
-                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video03.jpg",
+                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video03.png",
                                                 media: "(max-width: 767px)",
                                             },
                                             {
-                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video03.jpg",
+                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video03.png",
                                                 media: "(min-width: 1024px)",
                                             },
                                             {
-                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video03.jpg",
+                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video03.png",
                                                 media: "(min-width: 768px)",
                                             },
                                         ]}
@@ -367,15 +367,15 @@ class JaTenho extends React.Component {
                                     <Picture
                                         sources = {[
                                             {
-                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video04.jpg",
+                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video04.png",
                                                 media: "(max-width: 767px)",
                                             },
                                             {
-                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video04.jpg",
+                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video04.png",
                                                 media: "(min-width: 1024px)",
                                             },
                                             {
-                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video04.jpg",
+                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/video04.png",
                                                 media: "(min-width: 768px)",
                                             },
                                         ]}

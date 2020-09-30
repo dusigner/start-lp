@@ -65,7 +65,7 @@
 @media (min-width: 768px){
 
     .video-refri {
-        padding: 120px 0;
+        padding: 120px 0 68px 0;
     }
 
     .video-refri .video {
@@ -78,7 +78,7 @@
     .poster__video {
         width: calc(100% - 50px);
         max-width: 1200px;
-        height: 75%;
+        height: 78%;
     }
 
 }

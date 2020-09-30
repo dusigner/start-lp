@@ -177,6 +177,10 @@
     line-height: 140%;
     z-index: 1;
 }
+.convertible-space p.text {
+    width: 81%;
+    margin: 0 auto;
+}
 
 .convertible-space p .mobile {
     display: block;
@@ -221,6 +225,9 @@
         width: 385px;
         text-align: left;
     }
+    .convertible-space > p.text {
+        width: 400px;
+    }
 
     .convertible-space .line-chose {
         bottom: 50%;
@@ -236,7 +243,7 @@
     }
 
     .convertible-space > p {
-        right: calc(50% + 150px);
+        right: calc(50% + 138px);
     }
 
     .convertible-space {

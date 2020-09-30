@@ -216,7 +216,11 @@ class Scrollvideo extends React.Component {
             <div className="scene1">
                 <div className="scene1__content">
                     <h2>Brastemp Inverse | 4</h2>
-                    <p>Máximo design, máxima sofisticação. Com 4 compartimentos e mais de <a href="https://www.brastemp.com.br/eletrodomesticos/geladeira---refrigerador" title="Geladeira Brastemp">500L</a> para você armazenar tudo o que quiser.</p>
+                    <p>
+                        Cuidadosamente projetado, por dentro e por fora, 
+                        com o que há de mais moderno no <a href="https://www.brastemp.com.br/eletrodomesticos/geladeira---refrigerador" title="Geladeira Brastemp">mercado</a>: Design flush, 
+                        acabamento premium na cor inox, detalhes cromados e painel touch espelhado.
+                    </p>
                 </div>
             </div>
             <div className="scene2">
@@ -224,7 +228,10 @@ class Scrollvideo extends React.Component {
                     <div className="scene2__content-grid">
                         <div className="scene2__content-col1">
                             <h2>Dispenser de água e gelo</h2>
-                            <p>Tenha água fresca e mais de 1,5kg de gelo por dia e ainda escolha entre gelo em cubos ou gelo picado</p>
+                            <p>
+                                Tenha água fresca e mais de 1,5kg de gelo por dia¹, 
+                                podendo escolher entre gelos em cubos ou picados.
+                            </p>
                             <div className="bg-blur"></div>
                         </div>
                         <div className="scene2__content-col2">
@@ -251,7 +258,11 @@ class Scrollvideo extends React.Component {
                 <div className="scene3__content">
                     <div className="scene3__content-text">
                         <h2>Fresh Control</h2>
-                        <p>Com o exclusivo sistema Fresh Control, conserve os alimentos frescos por até 15 dias e elimine até 99% das bactérias em qualquer lugar da geladeira</p>
+                        <p>
+                            Tecnologia que ajuda a conservar seus alimentos 
+                            frescos por até 15 dias² e elimina até 99% das 
+                            bactérias³ da sua geladeira.
+                        </p>
                     </div>
                     <div className="scene3__content-filter"/>
                 </div>
@@ -260,7 +271,12 @@ class Scrollvideo extends React.Component {
                 <div className="convertible__space scene4__content">
                     <div>
                         <Title setClass="center" textMF="Convertible Space" textDF="Convertible Space"/>
-                        <p>Compartimento com controle independente <br className="mobile"></br> de <br className="desktop"></br> temperatura, você escolhe entre freezer ou <br className="mobile"></br><br className="desktop"></br> refrigerador com mais de 12 opções de <br className="mobile"></br><br className="desktop"></br> temperatura</p>
+                        <p className="text">
+                            Compartimento com controle de temperatura independente 
+                            para escolher entre freezer, geladeira ou adega, com 
+                            até 12 opções de temperatura para criar o ambiente 
+                            ideal para os mais variados tipos de alimentos e bebidas.
+                        </p>
                         <div className="bg-blur"></div>
                     </div>
                     <div>

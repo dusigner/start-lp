@@ -166,3 +166,17 @@ width: 100%;
         width: 70%;
     }
 }
+.small__texts {
+    width: 960px;
+    font-weight: 300;
+    font-size: 11px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    line-height: 18px;
+}
+.small__texts small {
+    display: block;
+    margin-bottom: 15px;
+}

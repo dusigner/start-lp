@@ -302,7 +302,7 @@ class ConvertibleSpace extends React.Component {
 
                 <Title setClass="center" textMF="Convertible Space" textDF="Convertible Space"/>
 
-                <p>Compartimento com controle independente <br className="mobile"></br> de <br className="desktop"></br> temperatura, você escolhe entre freezer ou <br className="mobile"></br><br className="desktop"></br> refrigerador com mais de 12 opções de <br className="mobile"></br><br className="desktop"></br> temperatura</p>
+                <p className="text">Compartimento com controle de temperatura independente para escolher entre freezer, geladeira ou adega, com até 12 opções de temperatura para criar o ambiente ideal para os mais variados tipos de alimentos e bebidas.</p>
 
                 <div className="line-chose">
 

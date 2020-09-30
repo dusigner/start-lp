@@ -200,6 +200,11 @@ class VersaoVideo extends React.Component {
 						<AtencaoDetalhes/>
 						<AlertJatenho handler={this.handerJatenho}/> 
 						<Video/>
+						<div className="small__texts">
+							<small>¹*Baseado em testes internos feitos com o modelo com pressão de água de 20 psi (14mca) : armazenamento de gelo de até 1,3 kg de uma vez/capacidade de fabricação de gelo de até 1,6kg em 24 horas</small>
+							<small>²*Teste realizado com maçã, tomate, pimentão, lima e kiwi, em condições controladas de teste a 25°C de temperatura ambiente, no ajuste médio de temperatura do produto. Considerando alimentos inicialmente frescos e secos</small>
+							<small>³*Considerando somente o espaço interno do refrigerador. Teste realizado no laboratório P.H. s.r.l. / TÜV SUD Group com as seguintes bactérias: Escherichia coli e Staphylococcus aureus</small>
+						</div>
 					</section>
 				)}
 				{this.state.video && (

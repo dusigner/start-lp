@@ -27,6 +27,8 @@
     font-size: 14px;
     line-height: 140%;
     z-index: 1;
+    width: 81%;
+    margin: 0 auto;
 }
 
 .fresh-control p .mobile {
@@ -84,6 +86,7 @@
     .fresh-control p {
         font-size: 16px;
         line-height: 29px;
+        width: 540px;
     }
 
     .fresh-control p .mobile {

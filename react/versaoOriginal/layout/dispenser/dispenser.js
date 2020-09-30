@@ -209,7 +209,12 @@ class Dispenser extends React.Component {
 
                 <Title setClass="center" textMF="Dispenser de água e gelo" textDF="Dispenser de água e gelo"/>
 
-                <p>Tenha água fresca e mais de 1,5kg de gelo por <br className="mobile"></br> dia e ainda <br className="desktop"></br> escolha entre gelo em cubos ou <br className="mobile"></br> gelo picado</p>
+                {/* <p>Tenha água fresca e mais de 1,5kg de gelo por <br className="mobile"></br> dia e ainda <br className="desktop"></br> escolha entre gelo em cubos ou <br className="mobile"></br> gelo picado</p> */}
+                <p>
+                    Tenha água fresca e mais de 1,5kg de 
+                    gelo por dia¹, podendo escolher entre 
+                    gelos em cubos ou picados.
+                </p>
 
                 <div className="switch-dispenser">
                     <a data-gelo="true">Gelo</a>

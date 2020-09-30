@@ -104,7 +104,9 @@ class FrechControl extends React.Component {
 
                 <Title setClass="center" textMF="Fresh Control" textDF="Fresh Control"/>
 
-                <p>Com o exclusivo sistema Fresh Control, <br className="mobile"></br> conserve os alimentos frescos por até 15 dias  <br className="desktop"></br><br className="mobile"></br> e elimine até 99% das bactérias em qualquer <br className="mobile"></br> lugar da geladeira</p>
+                <p>
+                    Tecnologia que ajuda a conservar seus alimentos frescos por até 15 dias² e elimina até 99% das bactérias³ da sua geladeira.
+                </p>
 
                 <div className="fresh-animate">
                     <img src="https://img.imageboss.me/consul/cdn/animation:true/wp-content/uploads/2020/09/FreshControl-Brastemp.gif"></img>

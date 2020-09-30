@@ -69,7 +69,7 @@
 
 @media (min-width: 768px) {
     .especificacoes {
-        padding: 60px 40px 100px;
+        padding: 60px 40px 0;
     }
 
     .especificacoes picture img {
@@ -137,6 +137,8 @@
 
     .especificacoes p {
         font-size: 18px;
+        width: 695px;
+        margin: 0 auto;
     }
 
 }

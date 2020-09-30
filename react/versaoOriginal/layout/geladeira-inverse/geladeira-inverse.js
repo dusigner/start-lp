@@ -115,7 +115,7 @@ class GeladeiraInverse extends React.Component {
 
                 <Title setClass="center" textMF="Brastemp Inverse | 4" textDF="Brastemp Inverse | 4"/>
 
-                <p>
+                {/* <p>
                         Máximo design, máxima sofisticação. Com 
                         <br className="mobile"></br> 4 compartimentos {<> </>}
                         <br className="desktop"></br>e mais de
@@ -123,6 +123,11 @@ class GeladeiraInverse extends React.Component {
 					    { this.props.versao == "video" && <> <a href="https://www.brastemp.com.br/eletrodomesticos/geladeira---refrigerador" title="Geladeira Brastemp">500L</a> </> }
                         para 
                         <br className="mobile"></br> você armazenar tudo o que quiser. 
+                </p> */}
+                <p>
+                    Cuidadosamente projetado, por dentro e por fora, 
+                    com o que há de mais moderno no <a href="https://www.brastemp.com.br/eletrodomesticos/geladeira---refrigerador" title="Geladeira Brastemp">mercado</a>: Design flush, 
+                    acabamento premium na cor inox, detalhes cromados e painel touch espelhado.
                 </p>
 
                 <div >

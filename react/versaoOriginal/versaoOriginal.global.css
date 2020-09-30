@@ -29,3 +29,18 @@ html {
     align-items: center;
     justify-content: center;
 }
+.small__texts {
+    font-weight: 300;
+    font-size: 11px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    background: #1C1C1C;
+    padding: 5%;
+    line-height: 18px;
+}
+.small__texts small {
+    display: block;
+    margin-bottom: 15px;
+}

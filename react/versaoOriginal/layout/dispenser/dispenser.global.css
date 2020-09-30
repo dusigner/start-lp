@@ -45,6 +45,8 @@
     font-size: 14px;
     line-height: 140%;
     z-index: 1;
+    width: 81%;
+    margin: 0 auto;
 }
 
 .dispenser-de-agua-e-gelo p .mobile {
@@ -166,6 +168,7 @@
     .dispenser-de-agua-e-gelo p {
         font-size: 16px;
         line-height: 29px;
+        width: 400px;
     }
 
     .dispenser-de-agua-e-gelo p .mobile {

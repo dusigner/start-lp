@@ -91,9 +91,13 @@
     color: white;
     padding: 5px 0;
 }
-
+@media(min-width:1025px) {
+    .menu__lp nav ul li.btnAct {
+        position: absolute;
+    }
+}
 .menu__lp nav ul li.btnAct {
-    position: absolute;
+    position: fixed;
     left: calc(100% - 130px);
     top: 50%;
     padding: 0 10px;

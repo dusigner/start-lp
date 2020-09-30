@@ -190,7 +190,12 @@ class AtencaoDetalhes extends React.Component {
                 <div id="easy-access" className="acesso-info">
                     <div>
                         <h3>Easy Access</h3>
-                        <p>Deslize a bandeja e acesse os produtos <br></br> do dia a dia</p>
+                        <p>
+                            Deslize a primeira prateleira do freezer e 
+                            acesse os alimentos do fundo facilmente, 
+                            além de conseguir armazenar potes altos 
+                            ou com tampa.
+                        </p>
                     </div>
                     <picture>
                         <div className="efectHover">
@@ -202,7 +207,10 @@ class AtencaoDetalhes extends React.Component {
                 <div id="in-dor-ice" className="acesso-info">
                     <div>
                         <h3>In Door Ice</h3>
-                        <p>Exclusiva fabricação de gelo integrada <br></br> à porta: mais espaço interno na sua <br></br> geladeira</p>
+                        <p>
+                            Fabricação de gelo integrada à porta, o que 
+                            dá mais espaço interno para a sua geladeira.
+                        </p>
                     </div>
                     <picture>
                         <div className="efectHover">

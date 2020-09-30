@@ -284,9 +284,13 @@ class EspecificacoesTecnicas extends React.Component {
 
                 <Title setClass="center" textMF="Especificações técnicas" textDF="Especificações técnicas"/>
 
-                {
-                    //<p>O exclusivo sistema Fresh Control combina <br className="mobile"></br> maior estabilidade de temperatura, <br className="desktop"></br> controle <br className="mobile"></br> de umidade e purificação do ar para manter <br className="mobile"></br> os alimentos bem preservados <br className="desktop"></br> em qualquer <br className="mobile"></br> lugar da geladeira.</p>
-                }
+                
+                <p>
+                    O exclusivo sistema Fresh Control combina maior estabilidade 
+                    de temperatura, controle de umidade e purificação do ar para 
+                    manter os alimentos bem preservados em qualquer lugar da geladeira.
+                </p>
+            
 
                 <dl className="especDiv">
                     <dt>Cor principal <br className="mobile"></br> (visão frontal)</dt>

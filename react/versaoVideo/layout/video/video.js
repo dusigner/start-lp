@@ -117,7 +117,6 @@ class GeladeiraInverse extends React.Component {
                     poster="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/poster-video-geladeira-inverse-4.jpg" 
                     setSrc="https://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/brastemp_lancamento_geladeira_jupiter_oti.mp4"
                 />
-
             </div>
         )
     }

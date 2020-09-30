@@ -416,7 +416,7 @@ class JaTenho extends React.Component {
                                 </a>
                                 <div className="posts__itens-txt">
                                     <h1>Como organizar a geladeira: dicas simples para não errar mais</h1>
-                                    <small>22/04/2020 • Editoria</small>
+                                    <small>24/01/2020 • Casa e Decor</small>
                                     <p>
                                         Se você está se perguntando quem está fazendo pão 
                                         caseiro recentemente, a resposta é “todo o mundo.
@@ -449,7 +449,7 @@ class JaTenho extends React.Component {
                                 </a>
                                 <div className="posts__itens-txt">
                                     <h1>Como limpar geladeira? O guia para limpar seu refrigerador</h1>
-                                    <small>22/04/2020 • Editoria</small>
+                                    <small>29/06/2020 • Casa e Decor</small>
                                     <p>
                                         A geladeira é o aparelho da cozinha que nunca descansa. 
                                         Mesmo assim, provavelmente, você não limpa com a mesma 
@@ -481,7 +481,7 @@ class JaTenho extends React.Component {
                                 </a>
                                 <div className="posts__itens-txt">
                                     <h1>Da geladeira à lava-louça: os utensílios que aguçam os 5 sentidos na cozinha</h1>
-                                    <small>22/04/2020 • Editoria</small>
+                                    <small>31/01/2020 • Tech</small>
                                     <p>
                                         Podemos dizer que, nos últimos 15 ou 20 anos, 
                                         a tecnologia transformou a maneira como vivemos. 
@@ -513,7 +513,7 @@ class JaTenho extends React.Component {
                                 </a>
                                 <div className="posts__itens-txt">
                                     <h1>Dicas e receitas de drinks para você surpreender!</h1>
-                                    <small>22/04/2020 • Editoria</small>
+                                    <small>31/08/2020 • Gastronomia</small>
                                     <p>
                                         Você está dando uma festinha ou tem um encontro. 
                                         Talvez você só queira aprender a arte do bartender 

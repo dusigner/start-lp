@@ -117,8 +117,8 @@ class GeladeiraInverse extends React.Component {
 
                 <p>
                         Máximo design, máxima sofisticação. Com 
-                        <br className="mobile"></br> 4 compartimentos
-                        <br className="desktop"></br> e mais de
+                        <br className="mobile"></br> 4 compartimentos {<> </>}
+                        <br className="desktop"></br>e mais de
                         { this.props.versao == "qrcode" && <> 500L </> }
 					    { this.props.versao == "video" && <> <a href="https://www.brastemp.com.br/eletrodomesticos/geladeira---refrigerador" title="Geladeira Brastemp">500L</a> </> }
                         para 

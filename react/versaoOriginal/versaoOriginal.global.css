@@ -16,7 +16,7 @@ html {
 }
 .versaoOriginal .headroom--unpinned {
     position: fixed;
-    transform: translate3d(0px, -172%, 0px);
+    transform: translate3d(0px, -100px, 0px);
     transition: all 0.5s ease-in-out 0s;
 }
 .versaoOriginal .headroom--pinned {

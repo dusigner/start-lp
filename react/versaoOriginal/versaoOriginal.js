@@ -105,6 +105,7 @@ class versaoOriginal extends React.Component {
 			links.forEach(
 				(link) => link.classList.remove('active')
 			);
+			menu.scrollLeft = active[0].offsetLeft - 10;
 		}
         
 

@@ -284,14 +284,6 @@ class EspecificacoesTecnicas extends React.Component {
 
                 <Title setClass="center" textMF="Especificações técnicas" textDF="Especificações técnicas"/>
 
-                
-                <p>
-                    O exclusivo sistema Fresh Control combina maior estabilidade 
-                    de temperatura, controle de umidade e purificação do ar para 
-                    manter os alimentos bem preservados em qualquer lugar da geladeira.
-                </p>
-            
-
                 <dl className="especDiv">
                     <dt>Cor principal <br className="mobile"></br> (visão frontal)</dt>
                     <dd>Inox</dd>
@@ -304,7 +296,7 @@ class EspecificacoesTecnicas extends React.Component {
                     <dt>Dimensões sem embalagem</dt>
                     <dd>Largura 90.5cm <br></br> Altura 187.2cm <br></br> Profundidade 72.4cm</dd>
                     <dt>Dimensões com embalagem</dt>
-                    <dd>Largura 99.1 cm <br></br> Altura 198.1cm <br></br> Profundidade 79.5cm </dd>
+                    <dd>Largura 99.6 cm <br></br> Altura 198.1cm <br></br> Profundidade 79.5cm </dd>
                     <dt>Número de portas</dt>
                     <dd>4</dd>
                     <dt id="posicao-do-freezer">Posição do freezer</dt>

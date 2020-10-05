@@ -102,6 +102,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 0;
 }
 .switch-dispenser__repeat {
     width: 160px;

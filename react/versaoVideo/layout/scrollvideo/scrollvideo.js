@@ -27,7 +27,8 @@ class Scrollvideo extends React.Component {
         const scene3 = document.querySelector(".scene3");
         const scene4 = document.querySelector(".scene4");
         const actionMouse = document.querySelector(".scene2__content-mouse");
-        const arrow  = document.querySelector("#arrow")
+        const arrow  = document.querySelector("#arrow");
+        const dispenser = document.querySelector(".scene2__content-col2")
 
         //Frist Play Video Bg
         window.scrollTo(0, 0)
@@ -112,7 +113,7 @@ class Scrollvideo extends React.Component {
             /** Scene 2 - PAUSE */
             if(video.currentTime >= 14.1 && video.currentTime <= 14.50){
                 video.pause()
-                TweenLite.to(actionMouse, 0.9, { opacity: 1, zIndex:4 });
+                TweenLite.to([actionMouse,dispenser], 0.9, { opacity: 1, zIndex:4 });
                 TweenMax.fromTo(arrow, 1, { y: -5 }, { y: 20, yoyo: false, repeat: -1 });
             }
             /** Scene 3 - PLAY */

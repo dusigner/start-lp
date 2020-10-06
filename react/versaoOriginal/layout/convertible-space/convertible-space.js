@@ -314,7 +314,7 @@ class ConvertibleSpace extends React.Component {
                         <h3>MODO<br></br>FREEZER</h3>
                         <p className={`${this.state.value > 550 && this.state.value < 740 ? "active" : "" }`} onClick={this.btn_suave}>-7°C</p>
                         <p className={`${this.state.value > 740 && this.state.value < 920 ? "active" : "" }`} onClick={this.btn_medio}>-12°C</p>
-                        <p className={`${this.state.value > 920 ? "active" : "" }`} onClick={this.btn_intenso}>-16°C a<br></br>22°C</p>
+                        <p className={`${this.state.value > 920 ? "active" : "" }`} onClick={this.btn_intenso}>-16°C a<br></br>-22°C</p>
                     </div>
 
                     <div className="line-text-index">

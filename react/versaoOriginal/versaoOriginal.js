@@ -31,6 +31,7 @@ class versaoOriginal extends React.Component {
 	}
 
 	componentDidMount() {
+
 		document.addEventListener('scroll', this.trackScrolling);
 		
 		// Inicio Tag
@@ -215,7 +216,6 @@ class versaoOriginal extends React.Component {
 											Já tenho essa geladeira
 										</a>
 									</li>
-
 									
 								</ul>
 							</nav>
@@ -223,7 +223,7 @@ class versaoOriginal extends React.Component {
 					</div>
 				</Headroom> 
 
-				{this.state.jatenho && (<JaTenho/>)}
+				{this.state.jatenho && (<JaTenho versao={this.props.versao}/>)}
 
 				{this.state.versaoEstatica && (
 					<div>

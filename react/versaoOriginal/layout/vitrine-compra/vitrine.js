@@ -3,6 +3,8 @@ import Slider from "../../../node_modules/react-slick";
 //components
 import './vitrine-compra.global.css';
 
+var tag1s;
+
 class Vitrine extends React.Component {
 
     constructor(props) {
@@ -28,38 +30,74 @@ class Vitrine extends React.Component {
             if(entries[0].isIntersecting === true) {
 
                 if (versao == 'video'){
-                    if (vali1 == 0){
-                        sec1 = setTimeout(()=>{ 
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_vitrine ',
-                                label: '1'
-                            });
-                        }, 1000);
-                        vali1 = 1;
-                    }
-                    if (vali2 == 0){
-                        sec4 = setTimeout(()=>{
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_vitrine ',
-                                label: '4'
-                            });
-                        }, 4000);
-                        vali2 = 1;
-                    }
-                    if (vali3 == 0){
-                        sec10 = setTimeout(()=>{
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_vitrine ',
-                                label: '10'
-                            });
-                        }, 10000);
-                        vali3 = 1;
+                    if(window.innerWidth < 1025){
+                        if (vali1 == 0){
+                            sec1 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_vitrine ',
+                                    label: '1'
+                                });
+                            }, 1000);
+                            vali1 = 1;
+                        }
+                        if (vali2 == 0){
+                            sec4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_vitrine ',
+                                    label: '4'
+                                });
+                            }, 4000);
+                            vali2 = 1;
+                        }
+                        if (vali3 == 0){
+                            sec10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_vitrine ',
+                                    label: '10'
+                                });
+                            }, 10000);
+                            vali3 = 1;
+                        }
+                    } else {
+                        if (vali1 == 0){
+                            sec1 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_vitrine',
+                                    label: '1'
+                                });
+                            }, 1000);
+                            vali1 = 1;
+                        }
+                        if (vali2 == 0){
+                            sec4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_vitrine',
+                                    label: '4'
+                                });
+                            }, 4000);
+                            vali2 = 1;
+                        }
+                        if (vali3 == 0){
+                            sec10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_vitrine',
+                                    label: '10'
+                                });
+                            }, 10000);
+                            vali3 = 1;
+                        }
                     }
                 }
 
@@ -156,14 +194,25 @@ class Vitrine extends React.Component {
                     centerMode={true}
                     afterChange= {(current) => {
                         clearTimeout(tag1s);
-                        tag1s = setTimeout(()=>{ 
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_vitrine_fotos ',
-                                label: 'foto-'+current,
-                            });
-                        }, 1000);
+                        if(window.innerWidth < 1025){
+                            tag1s = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_vitrine_fotos ',
+                                    label: 'foto-'+current,
+                                });
+                            }, 1000);
+                        } else {
+                            tag1s = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_vitrine_fotos ',
+                                    label: 'foto-'+current,
+                                });
+                            }, 1000);
+                        }
                     } }
                     >
                         <div className="item">
@@ -219,12 +268,21 @@ class Vitrine extends React.Component {
 
                 <div className="vitrine-info mobile">
                     <a onClick={()=>{
-                        dataLayer.push({
-                            event: 'generic',
-                            category: 'jupiter_inverse4_lp_internal_mobile',
-                            action: 'click_vitrine_comprar',
-                            label: 'comprar'
-                        });
+                        if(window.innerWidth < 1025){
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_mobile',
+                                action: 'click_vitrine_comprar',
+                                label: 'comprar'
+                            });
+                        } else {
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_desktop',
+                                action: 'click_vitrine_comprar',
+                                label: 'comprar'
+                            });
+                        }
                     }} href="https://www.brastemp.com.br/geladeira-brastemp-inverse-4-frost-free-543-litros-cor-inox-com-convertible-space-bro90ak/p?idsku=326029418">Comprar</a>
 
                 </div>

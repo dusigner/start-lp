@@ -52,38 +52,75 @@ class AtencaoDetalhes extends React.Component {
                 }
 
                 if (versao == 'video'){
-                    if (vali1 == 0){
-                        sec1 = setTimeout(()=>{ 
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_easy_access ',
-                                label: 1
-                            });
-                        }, 1000);
-                        vali1 = 1;
-                    }
-                    if (vali2 == 0){
-                        sec4 = setTimeout(()=>{
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_easy_access ',
-                                label: 4
-                            });
-                        }, 4000);
-                        vali2 = 1;
-                    }
-                    if (vali3 == 0){
-                        sec10 = setTimeout(()=>{
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_easy_access ',
-                                label: 10
-                            });
-                        }, 10000);
-                        vali3 = 1;
+
+                    if(window.innerWidth < 1025){
+                        if (vali1 == 0){
+                            sec1 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_easy_access',
+                                    label: 1
+                                });
+                            }, 1000);
+                            vali1 = 1;
+                        }
+                        if (vali2 == 0){
+                            sec4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_easy_access',
+                                    label: 4
+                                });
+                            }, 4000);
+                            vali2 = 1;
+                        }
+                        if (vali3 == 0){
+                            sec10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_easy_access',
+                                    label: 10
+                                });
+                            }, 10000);
+                            vali3 = 1;
+                        }
+                    } else {
+                        if (vali1 == 0){
+                            sec1 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_easy_access',
+                                    label: 1
+                                });
+                            }, 1000);
+                            vali1 = 1;
+                        }
+                        if (vali2 == 0){
+                            sec4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_easy_access',
+                                    label: 4
+                                });
+                            }, 4000);
+                            vali2 = 1;
+                        }
+                        if (vali3 == 0){
+                            sec10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_easy_access',
+                                    label: 10
+                                });
+                            }, 10000);
+                            vali3 = 1;
+                        }
                     }
                 }
 
@@ -134,38 +171,75 @@ class AtencaoDetalhes extends React.Component {
                 }
 
                 if (versao == 'video'){
-                    if (vali1 == 0){
-                        sec1 = setTimeout(()=>{ 
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_in_dor_ice ',
-                                label: '1'
-                            });
-                        }, 1000);
-                        vali1 = 1;
-                    }
-                    if (vali2 == 0){
-                        sec4 = setTimeout(()=>{
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_in_dor_ice ',
-                                label: '4'
-                            });
-                        }, 4000);
-                        vali2 = 1;
-                    }
-                    if (vali3 == 0){
-                        sec10 = setTimeout(()=>{
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_in_dor_ice ',
-                                label: '10'
-                            });
-                        }, 10000);
-                        vali3 = 1;
+
+                    if(window.innerWidth < 1025){
+                        if (vali1 == 0){
+                            sec1 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_in_dor_ice',
+                                    label: '1'
+                                });
+                            }, 1000);
+                            vali1 = 1;
+                        }
+                        if (vali2 == 0){
+                            sec4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_in_dor_ice',
+                                    label: '4'
+                                });
+                            }, 4000);
+                            vali2 = 1;
+                        }
+                        if (vali3 == 0){
+                            sec10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_in_dor_ice',
+                                    label: '10'
+                                });
+                            }, 10000);
+                            vali3 = 1;
+                        }
+                    } else {
+                        if (vali1 == 0){
+                            sec1 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_in_dor_ice',
+                                    label: '1'
+                                });
+                            }, 1000);
+                            vali1 = 1;
+                        }
+                        if (vali2 == 0){
+                            sec4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_in_dor_ice',
+                                    label: '4'
+                                });
+                            }, 4000);
+                            vali2 = 1;
+                        }
+                        if (vali3 == 0){
+                            sec10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_in_dor_ice',
+                                    label: '10'
+                                });
+                            }, 10000);
+                            vali3 = 1;
+                        }
                     }
                 }
 
@@ -175,7 +249,7 @@ class AtencaoDetalhes extends React.Component {
                 clearTimeout(sec10);
             }
         }, { threshold: [0.5] });
-        
+
         observer1.observe(document.querySelector("#easy-access"));
         observer2.observe(document.querySelector("#in-dor-ice"));
         //Fim tag

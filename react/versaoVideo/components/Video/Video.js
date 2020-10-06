@@ -82,59 +82,118 @@ class Video extends React.Component {
                 }
             }
             if (versao == 'video'){
-                if (startPush==0) {
-                    if (videoTime >= 0.01){
-                        dataLayer.push({
-                            event: 'generic',
-                            category: 'jupiter_inverse4_lp_internal_mobile',
-                            action: 'percentage_video_inverse4',
-                            label: '0.01'
-                        })
-                        startPush=1;
+
+                if(window.innerWidth < 1025){
+                    if (startPush==0) {
+                        if (videoTime >= 0.01){
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_mobile',
+                                action: 'percentage_video_inverse4',
+                                label: '0.01'
+                            })
+                            startPush=1;
+                        }
                     }
-                }
-                if (firstPush==0) {
-                    if (videoTime >= 25){
-                        dataLayer.push({
-                            event: 'generic',
-                            category: 'jupiter_inverse4_lp_internal_mobile',
-                            action: 'percentage_video_inverse4',
-                            label: '25'
-                        })
-                        firstPush=1;
+                    if (firstPush==0) {
+                        if (videoTime >= 25){
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_mobile',
+                                action: 'percentage_video_inverse4',
+                                label: '25'
+                            })
+                            firstPush=1;
+                        }
                     }
-                }
-                if (secondPush==0) {
-                    if (videoTime >= 50){
-                        dataLayer.push({
-                            event: 'generic',
-                            category: 'jupiter_inverse4_lp_internal_mobile',
-                            action: 'percentage_video_inverse4',
-                            label: '50'
-                        })
-                        secondPush=1;
+                    if (secondPush==0) {
+                        if (videoTime >= 50){
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_mobile',
+                                action: 'percentage_video_inverse4',
+                                label: '50'
+                            })
+                            secondPush=1;
+                        }
                     }
-                }
-                if (thirdPush==0) {
-                    if (videoTime >= 75){
-                        dataLayer.push({
-                            event: 'generic',
-                            category: 'jupiter_inverse4_lp_internal_mobile',
-                            action: 'percentage_video_inverse4',
-                            label: '75'
-                        })
-                        thirdPush=1;
+                    if (thirdPush==0) {
+                        if (videoTime >= 75){
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_mobile',
+                                action: 'percentage_video_inverse4',
+                                label: '75'
+                            })
+                            thirdPush=1;
+                        }
                     }
-                }
-                if (fourthPush==0) {
-                    if (videoTime >= 100){
-                        dataLayer.push({
-                            event: 'generic',
-                            category: 'jupiter_inverse4_lp_internal_mobile',
-                            action: 'percentage_video_inverse4',
-                            label: '100'
-                        })
-                        fourthPush=1;
+                    if (fourthPush==0) {
+                        if (videoTime >= 100){
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_mobile',
+                                action: 'percentage_video_inverse4',
+                                label: '100'
+                            })
+                            fourthPush=1;
+                        }
+                    }
+                } else {
+                    if (startPush==0) {
+                        if (videoTime >= 0.01){
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_desktop',
+                                action: 'percentage_video_inverse4',
+                                label: '0.01'
+                            })
+                            startPush=1;
+                        }
+                    }
+                    if (firstPush==0) {
+                        if (videoTime >= 25){
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_desktop',
+                                action: 'percentage_video_inverse4',
+                                label: '25'
+                            })
+                            firstPush=1;
+                        }
+                    }
+                    if (secondPush==0) {
+                        if (videoTime >= 50){
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_desktop',
+                                action: 'percentage_video_inverse4',
+                                label: '50'
+                            })
+                            secondPush=1;
+                        }
+                    }
+                    if (thirdPush==0) {
+                        if (videoTime >= 75){
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_desktop',
+                                action: 'percentage_video_inverse4',
+                                label: '75'
+                            })
+                            thirdPush=1;
+                        }
+                    }
+                    if (fourthPush==0) {
+                        if (videoTime >= 100){
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_internal_desktop',
+                                action: 'percentage_video_inverse4',
+                                label: '100'
+                            })
+                            fourthPush=1;
+                        }
                     }
                 }
             }

@@ -64,38 +64,74 @@ class EspecificacoesTecnicas extends React.Component {
                 }
 
                 if (versao == 'video'){
-                    if (vali1t == 0){
-                        sec1 = setTimeout(()=>{ 
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_especificacoes_tecnicas_tipo_de_degelo ',
-                                label: '1'
-                            });
-                        }, 1000);
-                        vali1t = 1;
-                    }
-                    if (vali2t == 0){
-                        sec4 = setTimeout(()=>{
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_especificacoes_tecnicas_tipo_de_degelo ',
-                                label: '4'
-                            });
-                        }, 4000);
-                        vali2t = 1;
-                    }
-                    if (vali3t == 0){
-                        sec10 = setTimeout(()=>{
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_especificacoes_tecnicas_tipo_de_degelo ',
-                                label: '10'
-                            });
-                        }, 10000);
-                        vali3t = 1;
+                    if(window.innerWidth < 1025){
+                        if (vali1t == 0){
+                            sec1 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_especificacoes_tecnicas_tipo_de_degelo ',
+                                    label: '1'
+                                });
+                            }, 1000);
+                            vali1t = 1;
+                        }
+                        if (vali2t == 0){
+                            sec4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_especificacoes_tecnicas_tipo_de_degelo ',
+                                    label: '4'
+                                });
+                            }, 4000);
+                            vali2t = 1;
+                        }
+                        if (vali3t == 0){
+                            sec10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_especificacoes_tecnicas_tipo_de_degelo ',
+                                    label: '10'
+                                });
+                            }, 10000);
+                            vali3t = 1;
+                        }
+                    } else {
+                        if (vali1t == 0){
+                            sec1 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_especificacoes_tecnicas_tipo_de_degelo ',
+                                    label: '1'
+                                });
+                            }, 1000);
+                            vali1t = 1;
+                        }
+                        if (vali2t == 0){
+                            sec4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_especificacoes_tecnicas_tipo_de_degelo ',
+                                    label: '4'
+                                });
+                            }, 4000);
+                            vali2t = 1;
+                        }
+                        if (vali3t == 0){
+                            sec10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_especificacoes_tecnicas_tipo_de_degelo ',
+                                    label: '10'
+                                });
+                            }, 10000);
+                            vali3t = 1;
+                        }
                     }
                 }
 

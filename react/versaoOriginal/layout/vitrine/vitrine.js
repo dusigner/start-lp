@@ -39,7 +39,7 @@ class Vitrine extends React.Component {
                                 action: 'visibility_vitrine ',
                                 label: '1'
                             });
-                        }, 3000)
+                        }, 1000)
                         vali1 = 1;
                     }
                     if (vali2 == 0){

@@ -59,38 +59,74 @@ class GeladeiraInverse extends React.Component {
                 }
 
                 if (versao == 'video'){
-                    if (vali1 == 0){
-                        sec1 = setTimeout(()=>{ 
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_video_inverse4',
-                                label: 1
-                            });
-                        }, 1000);
-                        vali1 = 1;
-                    }
-                    if (vali2 == 0){
-                        sec4 = setTimeout(()=>{
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_video_inverse4',
-                                label: 4
-                            });
-                        }, 4000);
-                        vali2 = 1;
-                    }
-                    if (vali3 == 0){
-                        sec10 = setTimeout(()=>{
-                            dataLayer.push({
-                                event: 'generic',
-                                category: 'jupiter_inverse4_lp_internal_mobile',
-                                action: 'visibility_video_inverse4',
-                                label: 10
-                            });
-                        }, 10000);
-                        vali3 = 1;
+                    if(window.innerWidth < 1025){
+                        if (vali1 == 0){
+                            sec1 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_video_inverse4',
+                                    label: 1
+                                });
+                            }, 1000);
+                            vali1 = 1;
+                        }
+                        if (vali2 == 0){
+                            sec4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_video_inverse4',
+                                    label: 4
+                                });
+                            }, 4000);
+                            vali2 = 1;
+                        }
+                        if (vali3 == 0){
+                            sec10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_video_inverse4',
+                                    label: 10
+                                });
+                            }, 10000);
+                            vali3 = 1;
+                        }
+                    } else {
+                        if (vali1 == 0){
+                            sec1 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_video_inverse4',
+                                    label: 1
+                                });
+                            }, 1000);
+                            vali1 = 1;
+                        }
+                        if (vali2 == 0){
+                            sec4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_video_inverse4',
+                                    label: 4
+                                });
+                            }, 4000);
+                            vali2 = 1;
+                        }
+                        if (vali3 == 0){
+                            sec10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_video_inverse4',
+                                    label: 10
+                                });
+                            }, 10000);
+                            vali3 = 1;
+                        }
                     }
                 }
 

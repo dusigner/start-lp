@@ -296,7 +296,7 @@ class EspecificacoesTecnicas extends React.Component {
                     <dt>Dimensões sem embalagem</dt>
                     <dd>Largura 91,1cm <br></br> Altura 187.7cm <br></br> Profundidade 73.3cm (com porta)<br></br> Profundidade 62.0cm (sem porta)</dd>
                     <dt>Dimensões com embalagem</dt>
-                    <dd>Largura 99.6 cm <br></br> Altura 199.1cm <br></br> Profundidade 79.4cm </dd>
+                    <dd>Largura 99.6cm <br></br> Altura 199.1cm <br></br> Profundidade 79.4cm </dd>
                     <dt>Número de portas</dt>
                     <dd>4</dd>
                     <dt id="posicao-do-freezer">Posição do freezer</dt>

@@ -435,11 +435,12 @@ class JaTenho extends React.Component {
         // Inicio Tag
         var secc1,secc4,secc10;
         let valii1=0,valii2=0,valii3=0;
+        var versao = this.props.versao;
 
         const observer1 = new IntersectionObserver(function(entries) {
             if(entries[0].isIntersecting === true) {
                 
-                if (this.props.versao == 'qrcode'){
+                if (versao == 'qrcode'){
                     if (valii1 == 0){
                         secc1 = setTimeout(()=>{
                             dataLayer.push({
@@ -475,7 +476,7 @@ class JaTenho extends React.Component {
                     }
                 }
 
-                if (this.props.versao == 'video'){
+                if (versao == 'video'){
                     if (window.innerWidth < 1025){
                         if (valii1 == 0){
                             secc1 = setTimeout(()=>{
@@ -557,7 +558,7 @@ class JaTenho extends React.Component {
         const observer2 = new IntersectionObserver(function(entries) {
             if(entries[0].isIntersecting === true) {
                 
-                if (this.props.versao == 'qrcode'){
+                if (versao == 'qrcode'){
                     if (valii1 == 0){
                         secc1 = setTimeout(()=>{
                             dataLayer.push({
@@ -593,7 +594,7 @@ class JaTenho extends React.Component {
                     }
                 }
 
-                if (this.props.versao == 'video'){
+                if (versao == 'video'){
                     if (window.innerWidth < 1025){
                         if (valii1 == 0){
                             secc1 = setTimeout(()=>{

@@ -18,7 +18,7 @@ class versaoOriginal extends Component {
     renderContent(){
         if(window.innerWidth > 1025){
             return (
-                <VersaoVideo/>
+                <VersaoVideo versao="video"/>
             )
         } 
         if(window.innerWidth < 1025) {

@@ -27,10 +27,32 @@ class VersaoVideo extends React.Component {
 			jatenho: false
 		};
 	}
-	
-     componentDidMount() {
+	 
+	 componentDidMount() {
 		window.addEventListener('scroll', this.onWindowScroll)
-     }
+		
+		// Inicio Tag
+		const linksMenu = document.querySelectorAll('.tagMenu');
+		
+		if (this.props.versao == "video") {
+
+			linksMenu.forEach(element => {
+
+				element.addEventListener('click', ()=>{
+					
+					dataLayer.push({
+						event: 'generic',
+						category: 'jupiter_inverse4_lp_internal_desktop',
+						action: 'click_header_inverse4 ',
+						label: element.dataset.tag,
+					})
+	
+				})
+			});
+
+		}
+		// Fim Tag
+    }
     
      componentWillUnmount() {
 		window.removeEventListener('scroll', this.onWindowScroll);
@@ -62,7 +84,7 @@ class VersaoVideo extends React.Component {
 				}
 			}, { threshold: [0.5] });
 		
-			videoActive.observe(document.querySelector(".observevideo"));
+			videoActive.observe(document.querySelector(".observerSection"));
 		}
 	}
 
@@ -158,33 +180,33 @@ class VersaoVideo extends React.Component {
 					<>
 					<div className="menu__lp">
 						<div className="menu__lp-wrap">
-							<a href="https://www.brastemp.com.br/eletrodomesticos/geladeira---refrigerador/4-portas" title="Geladeira 4 Portas" className="linkH1">
+							<a href="https://www.brastemp.com.br/eletrodomesticos/geladeira---refrigerador/4-portas" title="Geladeira 4 Portas" className="linkH1 tagMenu" data-tag="geladeira_4portas">
 								<h1>Geladeira 4 Portas</h1>
 							</a>
 							<nav id="nav">
 								<ul>
 									<li>
-										<a id="visao_geral" onClick={() => this.handleClick("visao_geral")} className={`${this.state.visao_geral ? "active link" : "link" }`}>
+										<a id="visao_geral" onClick={() => this.handleClick("visao_geral")} className={`${this.state.visao_geral ? "active link" : "link" } tagMenu`} data-tag="visao_geral">
 											<span>Visão Geral</span>
 										</a>
 									</li>
 									<li>
-										<a id="ver_video" onClick={() => this.handleClick("video")}className={`${this.state.video ? "active link" : "link" }`}>
+										<a id="ver_video" onClick={() => this.handleClick("video")}className={`${this.state.video ? "active link" : "link" } tagMenu`} data-tag="ver_video">
 											<span>Ver Vídeo</span>
 										</a>
 									</li>
 									<li>
-										<a onClick={() => this.handleClick("especificacoes")} className={`${this.state.especificacoes ? "active link" : "link" }`}>
+										<a onClick={() => this.handleClick("especificacoes")} className={`${this.state.especificacoes ? "active link" : "link" } tagMenu`} data-tag="especificacoes">
 											<span>Especificações técnicas</span>
 										</a>
 									</li>
 									<li>
-										<a onClick={() => this.handleClick("jatenho")} className={`${this.state.jatenho ? "active link" : "link" }`}>
+										<a onClick={() => this.handleClick("jatenho")} className={`${this.state.jatenho ? "active link" : "link" } tagMenu`} data-tag="ja_tenho">
 											<span>Já tenho essa geladeira</span>
 										</a>
 									</li>
 									<li>
-										<a name="menu_superior" onClick={() => this.handleClick("vitrine")} className={`${this.state.vitrine ? "active link" : "link" }`}>
+										<a name="menu_superior" onClick={() => this.handleClick("vitrine")} className={`${this.state.vitrine ? "active link" : "link" } tagMenu`} data-tag="comprar">
 											<span>{this.state.vitrine ? "Fechar" : "Comprar" }</span>
 										</a>
 									</li>
@@ -197,7 +219,7 @@ class VersaoVideo extends React.Component {
 				{this.state.visao_geral && (
 					<section id="geral">
 						<Scrollvideo />
-						<AtencaoDetalhes/>
+						<AtencaoDetalhes versao="video"/>
 						<AlertJatenho handler={this.handerJatenho}/> 
 						<Video/>
 						<div className="small__texts">
@@ -214,17 +236,17 @@ class VersaoVideo extends React.Component {
 				)}
 				{this.state.especificacoes && (
 					<section>
-						<EspecificacoesTecnicas />
+						<EspecificacoesTecnicas versao="video" />
 					</section>
 				)}
 				{this.state.vitrine && (
 					<section>
-						<VitrineCompra/>
+						<VitrineCompra versao="video"/>
 					</section>
 				)}
 				{this.state.jatenho && (
 					<section>
-						<Jatenho/>
+						<Jatenho versao="video"/>
 					</section>
 				)}
 			</div>

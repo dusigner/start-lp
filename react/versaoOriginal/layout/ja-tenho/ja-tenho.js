@@ -104,6 +104,34 @@ class JaTenho extends React.Component {
                 formError: false,
                 formSuccess: true
             } );
+
+            if(this.props.versao == "video"){
+                if(window.innerWidth < 1025){
+                    dataLayer.push({
+                        event: 'generic',
+                          category: 'jupiter_inverse4_lp_internal_mobile',
+                          action: 'newsletter_inverse4 ',
+                          label: 'cadastro_realizado_com_sucesso'
+                    })
+                } else {
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_Desktop',
+                        action: 'newsletter_inverse4 ',
+                        label: 'cadastro_realizado_com_sucesso'
+                    })
+                }
+            }
+
+            if(this.props.versao == "qrcode"){
+                dataLayer.push({
+                    event: 'generic',
+                    category: 'jupiter_inverse4_lp_external',
+                    action: 'newsletter_inverse4 ',
+                    label: 'cadastro_realizado_com_sucesso'
+                })
+            }
+            
         } )
         .catch( error => {
             this.setState( {
@@ -111,8 +139,123 @@ class JaTenho extends React.Component {
                 formError: true,
                 formSuccess: false
             } );
+
+
+            if(this.props.versao == "video"){
+                if(window.innerWidth < 1025){
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_mobile',
+                        action: 'newsletter_inverse4 ',
+                        label: 'preencha_todos_os_campos_corretamente'
+                    })
+                } else {
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_Desktop',
+                        action: 'newsletter_inverse4 ',
+                        label: 'preencha_todos_os_campos_corretamente'
+                    })
+                }
+            }
+
+            if(this.props.versao == "qrcode"){
+                dataLayer.push({
+                    event: 'generic',
+                    category: 'jupiter_inverse4_lp_external',
+                    action: 'newsletter_inverse4 ',
+                    label: 'preencha_todos_os_campos_corretamente'
+                })
+            }
+            
         } );
     };
+
+    tagVideo (nameVideo, idPlayer) {
+
+        let tag;
+        if(this.props.versao=='video'){
+            if(window.innerWidth < 1025){
+                tag = 'jupiter_inverse4_lp_internal_mobile'
+            } else {
+                tag = 'jupiter_inverse4_lp_internal_Desktop'
+            }
+        }
+        if(this.props.versao=='qrcode'){
+            tag = 'jupiter_inverse4_lp_external'
+        }
+
+        var video = document.getElementById(idPlayer);
+
+        let firstPush = 0,
+            secondPush = 0,
+            thirdPush = 0,
+            fourthPush = 0,
+            lastPush = 0;
+
+        video.addEventListener("timeupdate", function(){
+
+            const videoTime = (video.currentTime / video.duration * 100).toFixed(2);
+
+            if (firstPush==0) {
+                if (videoTime >= 0.01){
+                    dataLayer.push({
+                        event: 'generic',
+                        category: tag,
+                        action: 'percentage_video_'+nameVideo,
+                        label: '0.01'
+                    })
+                    firstPush=1;
+                }
+            }
+            if (secondPush==0) {
+                if (videoTime >= 25){
+                    dataLayer.push({
+                        event: 'generic',
+                        category: tag,
+                        action: 'percentage_video_'+nameVideo,
+                        label: '25'
+                    })
+                    secondPush=1;
+                }
+            }
+            if (thirdPush==0) {
+                if (videoTime >= 50){
+                    dataLayer.push({
+                        event: 'generic',
+                        category: tag,
+                        action: 'percentage_video_'+nameVideo,
+                        label: '50'
+                    })
+                    thirdPush=1;
+                }
+            }
+            if (fourthPush==0) {
+                if (videoTime >= 75){
+                    dataLayer.push({
+                        event: 'generic',
+                        category: tag,
+                        action: 'percentage_video'+nameVideo,
+                        label: '75'
+                    })
+                    fourthPush=1;
+                }
+            }
+            if (lastPush==0) {
+                if (videoTime >= 100){
+                    dataLayer.push({
+                        event: 'generic',
+                        category: tagName,
+                        action: 'percentage_video'+nameVideo,
+                        label: '100'
+                    })
+                    lastPush=1;
+                }
+            }
+
+        })
+
+    }
 
     showModal() {
 		return (
@@ -121,23 +264,23 @@ class JaTenho extends React.Component {
                 event={this.state.eventModal}
 			>
             {this.state.videos.video1 && (
-                <video className="modal__video" width="100%" autoPlay="true" height="80%" controls >
+                <video id="video1" className="modal__video" width="100%" autoPlay="true" height="80%" controls data-tag="">
                     <source src="http://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/brastemp-geladeiras-instalacao.mp4" type="video/mp4"></source>
                 </video>
                 
             )}
             {this.state.videos.video2 && (
-                <video className="modal__video" width="100%" autoPlay="true" height="80%" controls >
+                <video id="video2" className="modal__video" width="100%" autoPlay="true" height="80%" controls data-tag="">
                     <source src="http://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/brastemp-geladeiras-dispenser.mp4" type="video/mp4"></source>
                 </video>
             )}
             {this.state.videos.video3 && (
-                <video className="modal__video" width="100%" autoPlay="true" height="80%" controls >
+                <video id="video3" className="modal__video" width="100%" autoPlay="true" height="80%" controls data-tag="">
                     <source src="https://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/brastemp-geladeiras-fresh-control.mp4" type="video/mp4"></source>
                 </video>  
             )}
             {this.state.videos.video4 && (
-                <video className="modal__video" width="100%" autoPlay="true" height="80%" controls >
+                <video id="video4" className="modal__video" width="100%" autoPlay="true" height="80%" controls data-tag="">
                     <source src="http://consulwp.s3.amazonaws.com/wp-content/uploads/2020/09/brastemp-geladeiras-programacao.mp4" type="video/mp4"></source>
                 </video>
             )}
@@ -161,7 +304,7 @@ class JaTenho extends React.Component {
 	
 	}
 
-	onClickShow(videoNum) {
+	onClickShow(videoNum ,tag) {
 		this.setState({
             videos : {
                 [videoNum]: true,
@@ -169,8 +312,372 @@ class JaTenho extends React.Component {
             eventModal: "show",
             scroll: window.scrollY,
         });
-	}
-    
+
+        setTimeout(()=>{
+            if(videoNum=="video1"){
+                this.tagVideo('como_solicitar_a_instalacao_da_minha_geladeira', videoNum)
+            } else if(videoNum=="video2"){
+                this.tagVideo('como_ter_agua_fresca_e_gelo_pronto_na_porta_da_minha_geladeira', videoNum)
+            } else if(videoNum=="video3"){
+                this.tagVideo('como_conservar_os_alimentos_frescos_por_ate_15_dias_na_minha_geladeira', videoNum)
+            } else if(videoNum=="video4"){
+                this.tagVideo('como_ajustar_a_temperatura_da_minha_geladeira', videoNum)
+            }
+
+            // Inicio Tag
+        
+        if(this.state.eventModal == "show") {
+
+            var sec1,sec4,sec10;
+            let vali1=0,vali2=0,vali3=0;
+            let name,tag;
+
+            if(videoNum=="video1"){
+                name = 'como_solicitar_a_instalacao_da_minha_geladeira';
+            } else if(videoNum=="video2"){
+                name = 'como_ter_agua_fresca_e_gelo_pronto_na_porta_da_minha_geladeira';
+            } else if(videoNum=="video3"){
+                name = 'como_conservar_os_alimentos_frescos_por_ate_15_dias_na_minha_geladeira';
+            } else if(videoNum=="video4"){
+                name = 'como_ajustar_a_temperatura_da_minha_geladeira';
+            }
+
+            if(this.props.versao=='video'){
+                if(window.innerWidth < 1025){
+                    tag = 'jupiter_inverse4_lp_internal_mobile'
+                } else {
+                    tag = 'jupiter_inverse4_lp_internal_Desktop'
+                }
+            }
+            if(this.props.versao=='qrcode'){
+                tag = 'jupiter_inverse4_lp_external'
+            }
+
+            
+            if (vali1 == 0){
+                sec1 = setTimeout(()=>{
+                    dataLayer.push({
+                        event: 'generic',
+                        category: tag,
+                        action: 'visibility_video_'+name,
+                        label: '1'
+                    });
+                }, 3000)
+                vali1 = 1;
+            }
+            if (vali2 == 0){
+                sec4 = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: tag,
+                        action: 'visibility_video_'+name,
+                        label: '4'
+                    });
+                }, 4000);
+                vali2 = 1;
+            }
+            if (vali3 == 0){
+                sec10 = setTimeout(()=>{ 
+                    dataLayer.push({
+                        event: 'generic',
+                        category: tag,
+                        action: 'visibility_video_'+name,
+                        label: '10'
+                    });
+                }, 10000);
+                vali3 = 1;
+            }
+            
+
+            
+
+        } else {
+            clearTimeout(sec1);
+            clearTimeout(sec4);
+            clearTimeout(sec10);
+        }
+        },500)
+
+        if (this.props.versao == "video"){
+            if(window.innerWidth < 1025){
+                dataLayer.push({
+                    event: 'generic',
+                    category: 'jupiter_inverse4_lp_internal_mobile',
+                    action: 'click_content_inverse4 ',
+                    label: tag
+                })
+            } else {
+                dataLayer.push({
+                    event: 'generic',
+                    category: 'jupiter_inverse4_lp_internal_Desktop',
+                    action: 'click_content_inverse4 ',
+                    label: tag
+                })
+            }
+            if (this.props.versao == "qrcode"){
+                dataLayer.push({
+                    event: 'generic',
+                    category: 'jupiter_inverse4_lp_external',
+                    action: 'click_content_inverse4 ',
+                    label: tag
+                })
+            }
+        }
+
+    }
+
+    componentDidMount() {
+        this.setState({
+            nav1: this.slider1,
+            nav2: this.slider2
+        });
+
+        // Inicio Tag
+        var secc1,secc4,secc10;
+        let valii1=0,valii2=0,valii3=0;
+        var versao = this.props.versao;
+
+        const observer1 = new IntersectionObserver(function(entries) {
+            if(entries[0].isIntersecting === true) {
+                
+                if (versao == 'qrcode'){
+                    if (valii1 == 0){
+                        secc1 = setTimeout(()=>{
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_ja_tem_a_nova_brastemp_inverse_4 ',
+                                label: '1'
+                            })
+                        }, 1000)
+                        valii1 = 1;
+                    }
+                    if (valii2 == 0){
+                        secc4 = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_ja_tem_a_nova_brastemp_inverse_4 ',
+                                label: '4'
+                            });
+                        }, 4000);
+                        valii2 = 1;
+                    }
+                    if (valii3 == 0){
+                        secc10 = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_ja_tem_a_nova_brastemp_inverse_4 ',
+                                label: '10'
+                            });
+                        }, 10000);
+                        valii3 = 1;
+                    }
+                }
+
+                if (versao == 'video'){
+                    if (window.innerWidth < 1025){
+                        if (valii1 == 0){
+                            secc1 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_ja_tem_a_nova_brastemp_inverse_4 ',
+                                    label: '1'
+                                });
+                            }, 1000)
+                            valii1 = 1;
+                        }
+                        if (valii2 == 0){
+                            secc4 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_ja_tem_a_nova_brastemp_inverse_4 ',
+                                    label: '1'
+                                });
+                            }, 4000);
+                            valii2 = 1;
+                        }
+                        if (valii3 == 0){
+                            secc10 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_ja_tem_a_nova_brastemp_inverse_4 ',
+                                    label: '1'
+                                });
+                            }, 10000);
+                            valii3 = 1;
+                        }
+                    } else {
+                        if (valii1 == 0){
+                            secc1 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_Desktop',
+                                    action: 'visibility_ja_tem_a_nova_brastemp_inverse_4 ',
+                                    label: '1'
+                                });
+                            }, 1000)
+                            valii1 = 1;
+                        }
+                        if (valii2 == 0){
+                            secc4 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_Desktop',
+                                    action: 'visibility_ja_tem_a_nova_brastemp_inverse_4 ',
+                                    label: '4'
+                                });
+                            }, 4000);
+                            valii2 = 1;
+                        }
+                        if (valii3 == 0){
+                            secc10 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_Desktop',
+                                    action: 'visibility_ja_tem_a_nova_brastemp_inverse_4 ',
+                                    label: '10'
+                                });
+                            }, 10000);
+                            valii3 = 1;
+                        }
+                    }
+                }
+
+            } else {
+                clearTimeout(secc1);
+                clearTimeout(secc4);
+                clearTimeout(secc10);
+            }
+        }, { threshold: [0.5] });
+
+        const observer2 = new IntersectionObserver(function(entries) {
+            if(entries[0].isIntersecting === true) {
+                
+                if (versao == 'qrcode'){
+                    if (valii1 == 0){
+                        secc1 = setTimeout(()=>{
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_newsletter_inverse4 ',
+                                label: '1'
+                            })
+                        }, 1000)
+                        valii1 = 1;
+                    }
+                    if (valii2 == 0){
+                        secc4 = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_newsletter_inverse4 ',
+                                label: '4'
+                            });
+                        }, 4000);
+                        valii2 = 1;
+                    }
+                    if (valii3 == 0){
+                        secc10 = setTimeout(()=>{ 
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_newsletter_inverse4 ',
+                                label: '10'
+                            });
+                        }, 10000);
+                        valii3 = 1;
+                    }
+                }
+
+                if (versao == 'video'){
+                    if (window.innerWidth < 1025){
+                        if (valii1 == 0){
+                            secc1 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_newsletter_inverse4 ',
+                                    label: '1'
+                                });
+                            }, 1000)
+                            valii1 = 1;
+                        }
+                        if (valii2 == 0){
+                            secc4 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_newsletter_inverse4 ',
+                                    label: '1'
+                                });
+                            }, 4000);
+                            valii2 = 1;
+                        }
+                        if (valii3 == 0){
+                            secc10 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_newsletter_inverse4 ',
+                                    label: '1'
+                                });
+                            }, 10000);
+                            valii3 = 1;
+                        }
+                    } else {
+                        if (valii1 == 0){
+                            secc1 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_Desktop',
+                                    action: 'visibility_newsletter_inverse4 ',
+                                    label: '1'
+                                });
+                            }, 1000)
+                            valii1 = 1;
+                        }
+                        if (valii2 == 0){
+                            secc4 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_Desktop',
+                                    action: 'visibility_newsletter_inverse4 ',
+                                    label: '4'
+                                });
+                            }, 4000);
+                            valii2 = 1;
+                        }
+                        if (valii3 == 0){
+                            secc10 = setTimeout(()=>{ 
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_Desktop',
+                                    action: 'visibility_newsletter_inverse4 ',
+                                    label: '10'
+                                });
+                            }, 10000);
+                            valii3 = 1;
+                        }
+                    }
+                }
+
+            } else {
+                clearTimeout(secc1);
+                clearTimeout(secc4);
+                clearTimeout(secc10);
+            }
+        }, { threshold: [0.5] });
+        
+        observer1.observe(document.querySelector("#banner"));
+        observer2.observe(document.querySelector("#newsletter"));
+        //Fim tag
+
+    }
 
     render() {
 
@@ -180,6 +687,34 @@ class JaTenho extends React.Component {
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 1,
+            beforeChange: () => {
+                if(this.props.versao=="video"){
+                    if(window.innerWidth < 1025){
+                        dataLayer.push({
+                            event: 'generic',
+                              category: 'jupiter_inverse4_lp_internal_mobile',
+                              action: 'click_content_arrows ',
+                              label: 'ir ou Voltar '
+                        })
+                    } else {
+                        dataLayer.push({
+                            event: 'generic',
+                              category: 'jupiter_inverse4_lp_internal_Desktop',
+                              action: 'click_content_arrows ',
+                              label: 'ir ou Voltar '
+                        })
+                    }
+                }
+                if(this.props.versao=="qrcode"){
+                    dataLayer.push({
+                        event: 'generic',
+                          category: 'jupiter_inverse4_lp_external',
+                          action: 'click_content_arrows ',
+                          label: 'ir ou Voltar '
+                    })
+                }
+                
+            },
             responsive: [
                 {
                   breakpoint: 1024,
@@ -209,11 +744,38 @@ class JaTenho extends React.Component {
         return (
             <div id="jatenho" className="ja-tenho section">
                 {this.state.eventModal == "show" && this.showModal()}
-                <section className="banner">
+                <section id="banner" className="banner">
                     <div className="banner__text">
                         <h2>Já tem a nova geladeira Brastemp Inverse | 4?</h2>
                         <p>Confira o conteúdo especial da Brastemp para novos donos</p>
-                        <a href="#ver-mais" title="" className="button__secondary">Ver mais</a>
+                        <a href="#ver-mais" title="" className="button__secondary" onClick={()=>{
+                            if (this.props.versao == "video"){
+                                if(window.innerWidth < 1025){
+                                    dataLayer.push({
+                                        event: 'generic',
+                                        category: 'jupiter_inverse4_lp_internal_mobile',
+                                        action: 'click_content_ver_mais ',
+                                        label: 'ver_mais'
+                                    })
+                                } else {
+                                    dataLayer.push({
+                                        event: 'generic',
+                                        category: 'jupiter_inverse4_lp_internal_Desktop',
+                                        action: 'click_content_ver_mais ',
+                                        label: 'ver_mais'
+                                    })
+                                }
+                                if (this.props.versao == "qrcode"){
+                                    dataLayer.push({
+                                        event: 'generic',
+                                        category: 'jupiter_inverse4_lp_external',
+                                        action: 'click_content_ver_mais ',
+                                        label: 'ver_mais'
+                                    })
+                                }
+                            }
+                            
+                        }}>Ver mais</a>
                     </div>
                     <Picture
                     sources = {[
@@ -232,7 +794,7 @@ class JaTenho extends React.Component {
                     ]}
                 />
                 </section>
-                <section className="newslatter">
+                <section id="newsletter" className="newslatter">
                     <div className="newslatter__wrap">
                         <div className="newslatter__wrap-text">
                             <h2>Exclusivo para novos donos</h2>
@@ -284,7 +846,7 @@ class JaTenho extends React.Component {
                                 <p>Confira o conteúdo especial da Brastemp para novos donos.</p>
                                 <h3>Como solicitar a instalação da minha geladeira?</h3>
                             </div>
-                            <div onClick={() => this.onClickShow("video1")} className="videos__play">
+                            <div onClick={() => this.onClickShow("video1","como_solicitar_a_instalacao_da_minha_geladeira")} className="videos__play">
                                 <span className="videos__play-border"></span>
                                 <svg width="186" height="186" viewBox="0 0 186 186" fill="none">
                                     <path d="M76.5698 58.72L77.477 57.5254C77.0232 57.1808 76.4134 57.1231 75.903 57.3763C75.3926 57.6296 75.0698 58.1502 75.0698 58.72H76.5698ZM122.05 93.26L122.957 94.4546C123.33 94.1709 123.55 93.729 123.55 93.26C123.55 92.791 123.33 92.3491 122.957 92.0654L122.05 93.26ZM76.5698 127.8H75.0698C75.0698 128.37 75.3926 128.89 75.903 129.144C76.4134 129.397 77.0232 129.339 77.477 128.995L76.5698 127.8ZM1.50977 92.68L3.00977 92.68L3.00977 92.6797L1.50977 92.68ZM75.6626 59.9146L121.143 94.4546L122.957 92.0654L77.477 57.5254L75.6626 59.9146ZM121.143 92.0654L75.6626 126.605L77.477 128.995L122.957 94.4546L121.143 92.0654ZM78.0698 127.8V58.72H75.0698V127.8H78.0698ZM182.37 92.68C182.37 142.212 142.221 182.36 92.6898 182.36V185.36C143.878 185.36 185.37 143.868 185.37 92.68H182.37ZM92.6898 182.36C43.1582 182.36 3.00977 142.212 3.00977 92.68H0.00976746C0.00976746 143.868 41.5013 185.36 92.6898 185.36V182.36ZM3.00977 92.6797C2.99993 43.1484 43.1481 3 92.6798 3V0C41.4914 0 -0.000397067 41.4916 0.00976749 92.6803L3.00977 92.6797ZM92.6798 3C142.212 3 182.37 43.1486 182.37 92.68H185.37C185.37 41.4914 143.868 0 92.6798 0V3Z" fill="#F08B1D"/>
@@ -309,7 +871,7 @@ class JaTenho extends React.Component {
                         </div>
                         <div className="videos__gallery">
                             <div className="videos__gallery-wrap">
-                                <div onClick={() => this.onClickShow("video2")}  className="videos__play">
+                                <div onClick={() => this.onClickShow("video2","como_ter_agua_fresca_e_gelo_pronto_na_porta_da_minha_geladeira")}  className="videos__play">
                                     <span className="videos__play-border"></span>
                                     <svg width="186" height="186" viewBox="0 0 186 186" fill="none">
                                         <path d="M76.5698 58.72L77.477 57.5254C77.0232 57.1808 76.4134 57.1231 75.903 57.3763C75.3926 57.6296 75.0698 58.1502 75.0698 58.72H76.5698ZM122.05 93.26L122.957 94.4546C123.33 94.1709 123.55 93.729 123.55 93.26C123.55 92.791 123.33 92.3491 122.957 92.0654L122.05 93.26ZM76.5698 127.8H75.0698C75.0698 128.37 75.3926 128.89 75.903 129.144C76.4134 129.397 77.0232 129.339 77.477 128.995L76.5698 127.8ZM1.50977 92.68L3.00977 92.68L3.00977 92.6797L1.50977 92.68ZM75.6626 59.9146L121.143 94.4546L122.957 92.0654L77.477 57.5254L75.6626 59.9146ZM121.143 92.0654L75.6626 126.605L77.477 128.995L122.957 94.4546L121.143 92.0654ZM78.0698 127.8V58.72H75.0698V127.8H78.0698ZM182.37 92.68C182.37 142.212 142.221 182.36 92.6898 182.36V185.36C143.878 185.36 185.37 143.868 185.37 92.68H182.37ZM92.6898 182.36C43.1582 182.36 3.00977 142.212 3.00977 92.68H0.00976746C0.00976746 143.868 41.5013 185.36 92.6898 185.36V182.36ZM3.00977 92.6797C2.99993 43.1484 43.1481 3 92.6798 3V0C41.4914 0 -0.000397067 41.4916 0.00976749 92.6803L3.00977 92.6797ZM92.6798 3C142.212 3 182.37 43.1486 182.37 92.68H185.37C185.37 41.4914 143.868 0 92.6798 0V3Z" fill="#F08B1D"/>
@@ -334,7 +896,7 @@ class JaTenho extends React.Component {
                                 <p>Como ter água fresca e gelo pronto na porta da minha geladeira?</p>
                             </div>
                             <div className="videos__gallery-wrap">
-                                <div  onClick={() => this.onClickShow("video3")}  className="videos__play">
+                                <div  onClick={() => this.onClickShow("video3","como_conservar_os_alimentos_frescos_por_ate_15_dias_na_minha_geladeira")}  className="videos__play">
                                     <span className="videos__play-border"></span>
                                     <svg width="186" height="186" viewBox="0 0 186 186" fill="none">
                                         <path d="M76.5698 58.72L77.477 57.5254C77.0232 57.1808 76.4134 57.1231 75.903 57.3763C75.3926 57.6296 75.0698 58.1502 75.0698 58.72H76.5698ZM122.05 93.26L122.957 94.4546C123.33 94.1709 123.55 93.729 123.55 93.26C123.55 92.791 123.33 92.3491 122.957 92.0654L122.05 93.26ZM76.5698 127.8H75.0698C75.0698 128.37 75.3926 128.89 75.903 129.144C76.4134 129.397 77.0232 129.339 77.477 128.995L76.5698 127.8ZM1.50977 92.68L3.00977 92.68L3.00977 92.6797L1.50977 92.68ZM75.6626 59.9146L121.143 94.4546L122.957 92.0654L77.477 57.5254L75.6626 59.9146ZM121.143 92.0654L75.6626 126.605L77.477 128.995L122.957 94.4546L121.143 92.0654ZM78.0698 127.8V58.72H75.0698V127.8H78.0698ZM182.37 92.68C182.37 142.212 142.221 182.36 92.6898 182.36V185.36C143.878 185.36 185.37 143.868 185.37 92.68H182.37ZM92.6898 182.36C43.1582 182.36 3.00977 142.212 3.00977 92.68H0.00976746C0.00976746 143.868 41.5013 185.36 92.6898 185.36V182.36ZM3.00977 92.6797C2.99993 43.1484 43.1481 3 92.6798 3V0C41.4914 0 -0.000397067 41.4916 0.00976749 92.6803L3.00977 92.6797ZM92.6798 3C142.212 3 182.37 43.1486 182.37 92.68H185.37C185.37 41.4914 143.868 0 92.6798 0V3Z" fill="#F08B1D"/>
@@ -359,7 +921,7 @@ class JaTenho extends React.Component {
                                 <p>Como conservar os alimentos frescos por até 15 dias na minha geladeira?</p>
                             </div>
                             <div className="videos__gallery-wrap">
-                                <div onClick={() => this.onClickShow("video4")}  className="videos__play">
+                                <div onClick={() => this.onClickShow("video4","como_ajustar_a_temperatura_da_minha_geladeira")}  className="videos__play">
                                     <span className="videos__play-border"></span>
                                     <svg width="186" height="186" viewBox="0 0 186 186" fill="none">
                                         <path d="M76.5698 58.72L77.477 57.5254C77.0232 57.1808 76.4134 57.1231 75.903 57.3763C75.3926 57.6296 75.0698 58.1502 75.0698 58.72H76.5698ZM122.05 93.26L122.957 94.4546C123.33 94.1709 123.55 93.729 123.55 93.26C123.55 92.791 123.33 92.3491 122.957 92.0654L122.05 93.26ZM76.5698 127.8H75.0698C75.0698 128.37 75.3926 128.89 75.903 129.144C76.4134 129.397 77.0232 129.339 77.477 128.995L76.5698 127.8ZM1.50977 92.68L3.00977 92.68L3.00977 92.6797L1.50977 92.68ZM75.6626 59.9146L121.143 94.4546L122.957 92.0654L77.477 57.5254L75.6626 59.9146ZM121.143 92.0654L75.6626 126.605L77.477 128.995L122.957 94.4546L121.143 92.0654ZM78.0698 127.8V58.72H75.0698V127.8H78.0698ZM182.37 92.68C182.37 142.212 142.221 182.36 92.6898 182.36V185.36C143.878 185.36 185.37 143.868 185.37 92.68H182.37ZM92.6898 182.36C43.1582 182.36 3.00977 142.212 3.00977 92.68H0.00976746C0.00976746 143.868 41.5013 185.36 92.6898 185.36V182.36ZM3.00977 92.6797C2.99993 43.1484 43.1481 3 92.6798 3V0C41.4914 0 -0.000397067 41.4916 0.00976749 92.6803L3.00977 92.6797ZM92.6798 3C142.212 3 182.37 43.1486 182.37 92.68H185.37C185.37 41.4914 143.868 0 92.6798 0V3Z" fill="#F08B1D"/>

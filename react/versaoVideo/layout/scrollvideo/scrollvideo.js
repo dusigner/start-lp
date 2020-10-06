@@ -30,7 +30,10 @@ class Scrollvideo extends React.Component {
         const arrow  = document.querySelector("#arrow");
         const dispenser = document.querySelector(".scene2__content-col2")
 
-        //Frist Play Video Bg
+        let sec1,sec4,sec10;
+        let cena1=0,cena2=0,cena3=0,cena4=0;
+
+        //First Play Video Bg
         window.scrollTo(0, 0)
         video.play()
         if(window.scrollY <= 1){
@@ -60,6 +63,13 @@ class Scrollvideo extends React.Component {
             $("#agua").removeClass('active');
             $("#gelo").addClass('active');
             video.play()
+
+            dataLayer.push({
+                event: 'generic',
+                  category: 'jupiter_inverse4_lp_internal_desktop',
+                  action: 'click_dispenser_de_agua_e_gelo ',
+                  label: 'click_gelo'
+            })
         });
         $("#agua").click(function(e) {
             e.preventDefault();
@@ -67,6 +77,13 @@ class Scrollvideo extends React.Component {
             $("#gelo").removeClass('active');
             $(this).addClass('active');
             video.play()
+
+            dataLayer.push({
+                event: 'generic',
+                  category: 'jupiter_inverse4_lp_internal_desktop',
+                  action: 'click_dispenser_de_agua_e_gelo ',
+                  label: 'click_agua'
+            })
         });
 
         video.addEventListener('timeupdate', (event) => {
@@ -81,6 +98,39 @@ class Scrollvideo extends React.Component {
             if(video.currentTime >= 0 && video.currentTime < 2.1){
                 TweenLite.to([scene1, scene2,scene3,scene4, actionMouse], 0.5, {opacity: 0});
                 video.play()
+
+                /* Tag */
+                if (cena1 == 0){
+                    clearTimeout(sec1);
+                    clearTimeout(sec4);
+                    clearTimeout(sec10);
+
+                    sec1 = setTimeout(()=>{
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_desktop',
+                            action: 'visibility_brastemp_inverse_4 ',
+                            label: '1'
+                        });
+                    }, 1000);
+                    sec4 = setTimeout(()=>{
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_desktop',
+                            action: 'visibility_brastemp_inverse_4 ',
+                            label: '4'
+                        });
+                    }, 4000);
+                    sec10 = setTimeout(()=>{
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_desktop',
+                            action: 'visibility_brastemp_inverse_4 ',
+                            label: '10'
+                        });
+                    }, 10000);
+                    cena1 = 1;
+                }
             }
             if(video.currentTime >= 1.2 && video.currentTime <= 2.5 ){
                 TweenLite.to(scene1, 0.9, { opacity: 1, zIndex:3 });
@@ -95,7 +145,6 @@ class Scrollvideo extends React.Component {
             if(video.currentTime >= 2.6 && video.currentTime <= 3.7){
                 TweenLite.to([scene1,actionMouse], 0.5, { opacity: 0, zIndex:1 });
             }
-            //
             if(video.currentTime < 6.0 && video.currentTime > 13.9){
                 $("#gelo","#agua").removeClass('active');
             }
@@ -115,6 +164,39 @@ class Scrollvideo extends React.Component {
                 video.pause()
                 TweenLite.to([actionMouse,dispenser], 0.9, { opacity: 1, zIndex:4 });
                 TweenMax.fromTo(arrow, 1, { y: -5 }, { y: 20, yoyo: false, repeat: -1 });
+
+                /* Tag */
+                if (cena2 == 0){
+                    clearTimeout(sec1);
+                    clearTimeout(sec4);
+                    clearTimeout(sec10);
+
+                    sec1 = setTimeout(()=>{
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_desktop',
+                            action: 'visibility_dispenser_de_agua_e_gelo ',
+                            label: '1'
+                        });
+                    }, 1000);
+                    sec4 = setTimeout(()=>{
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_desktop',
+                            action: 'visibility_dispenser_de_agua_e_gelo ',
+                            label: '4'
+                        });
+                    }, 4000);
+                    sec10 = setTimeout(()=>{
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_desktop',
+                            action: 'visibility_dispenser_de_agua_e_gelo ',
+                            label: '10'
+                        });
+                    }, 10000);
+                    cena2 = 1;
+                }
             }
             /** Scene 3 - PLAY */
             if(video.currentTime >= 14.53 &&  video.currentTime <= 16.2){
@@ -126,11 +208,77 @@ class Scrollvideo extends React.Component {
                 TweenLite.to(scene3, 1, {opacity: 1, zIndex:3,});
                 TweenLite.to(actionMouse, 0.9, { opacity: 1, zIndex:4 });
                 TweenMax.fromTo(arrow, 1, { y: -5 }, { y: 20, yoyo: false, repeat: -1 });
+
+                /* Tag */
+                if (cena3 == 0){
+                    clearTimeout(sec1);
+                    clearTimeout(sec4);
+                    clearTimeout(sec10);
+
+                    sec1 = setTimeout(()=>{
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_desktop',
+                            action: 'visibility_fresh_control ',
+                            label: '1'
+                        });
+                    }, 1000);
+                    sec4 = setTimeout(()=>{
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_desktop',
+                            action: 'visibility_fresh_control ',
+                            label: '4'
+                        });
+                    }, 4000);
+                    sec10 = setTimeout(()=>{
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_desktop',
+                            action: 'visibility_fresh_control ',
+                            label: '10'
+                        });
+                    }, 10000);
+                    cena3 = 1;
+                }
             }
             /** Scene 4 - PLAY */
             if(video.currentTime >= 18.09 &&  video.currentTime <= 19.1){
                 TweenLite.to([scene3,actionMouse], 1, {opacity: 0, zIndex:2,});
+                /* Tag */
+                if (cena4 == 0){
+                    clearTimeout(sec1);
+                    clearTimeout(sec4);
+                    clearTimeout(sec10);
+
+                    sec1 = setTimeout(()=>{
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_desktop',
+                            action: 'visibility_convertible_space ',
+                            label: '1'
+                        });
+                    }, 1000);
+                    sec4 = setTimeout(()=>{
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_desktop',
+                            action: 'visibility_convertible_space ',
+                            label: '4'
+                        });
+                    }, 4000);
+                    sec10 = setTimeout(()=>{
+                        dataLayer.push({
+                            event: 'generic',
+                            category: 'jupiter_inverse4_lp_internal_desktop',
+                            action: 'visibility_convertible_space ',
+                            label: '10'
+                        });
+                    }, 10000);
+                    cena4 = 1;
+                }
             }
+
             if(video.currentTime >= 25 && video.currentTime <= 25.3){
                 TweenLite.to(scene4, 1, {opacity: 1, zIndex:3,});
                 TweenLite.to(actionMouse, 0.9, { opacity: 1, zIndex:4 });
@@ -141,26 +289,80 @@ class Scrollvideo extends React.Component {
             if(video.currentTime >= 25){
                 $(".slider").val(26)
                 this.setState({value: 26});
+
+                setTimeout(()=>{
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_desktop',
+                        action: 'slider_convertible_space ',
+                        label: 'vinhos_e_cervejas_artesanais'
+                    })
+                },1000);
             }
             if(video.currentTime >= 26.5){
                 $(".slider").val(180)
                 this.setState({value: 180})
+
+                setTimeout(()=>{
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_desktop',
+                        action: 'slider_convertible_space ',
+                        label: 'frutas_e_vegetais'
+                    })
+                },1000);
             }
             if(video.currentTime >= 27.5){
                 $(".slider").val(337)
                 this.setState({value: 337})
+
+                setTimeout(()=>{
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_desktop',
+                        action: 'slider_convertible_space ',
+                        label: 'carnes_e_peixes'
+                    })
+                },1000);
             }
             if(video.currentTime >= 28.5){
                 $(".slider").val(651)
                 this.setState({value: 651})
+
+                setTimeout(()=>{
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_desktop',
+                        action: 'slider_convertible_space ',
+                        label: 'congelamento_suave'
+                    })
+                },1000);
             }
             if(video.currentTime >= 29.5){
                 $(".slider").val(811)
                 this.setState({value: 811})
+
+                setTimeout(()=>{
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_desktop',
+                        action: 'slider_convertible_space ',
+                        label: 'congelamento_medio'
+                    })
+                },1000);
             }
             if(video.currentTime >= 30.5){
                 $(".slider").val(1000)
                 this.setState({value: 1000})
+
+                setTimeout(()=>{
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_desktop',
+                        action: 'slider_convertible_space ',
+                        label: 'congelamento_intenso'
+                    })
+                },1000);
             }
           });
 
@@ -199,8 +401,13 @@ class Scrollvideo extends React.Component {
 
     handleClick=()=>{
         const video = document.querySelector(".videobg");
-        video.play()
-
+        video.play();
+        dataLayer.push({
+            event: 'generic',
+            category: 'jupiter_inverse4_lp_internal_desktop',
+            action: 'click_role_para_ver_mais ',
+            label: 'click_role_para_ver_mais'
+        });
     }
 
 

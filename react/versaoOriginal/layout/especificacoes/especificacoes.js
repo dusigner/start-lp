@@ -353,8 +353,8 @@ class EspecificacoesTecnicas extends React.Component {
                     </dd>
                     <dt>Pressão máxima de água⁴</dt>
                     <dd>
-                        10 metros de coluna de água (m.c.a)<br/>
-                        100 kPa<br/>
+                        80 metros de coluna de água (m.c.a)<br/>
+                        800 kPa<br/>
                         8 bar
                     </dd>
 

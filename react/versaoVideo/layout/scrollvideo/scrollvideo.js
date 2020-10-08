@@ -435,7 +435,7 @@ class Scrollvideo extends React.Component {
                 <div className="scene2__content">
                     <div className="scene2__content-grid">
                         <div className="scene2__content-col1">
-                            <h2>Dispenser de água e gelo</h2>
+                            <h2>Dispenser de água e gelo⁴</h2>
                             <p>
                                 Tenha água fresca e mais de 1,5kg de gelo por dia¹, 
                                 podendo escolher entre gelos em cubos ou picados.

@@ -40,8 +40,8 @@
 
 .especificacoes picture img {
     display: block;
-    width: 100%;
-    max-width: 300px;
+    width: auto;
+    max-width: 390px;
     margin: 0 0;
 }
 
@@ -73,7 +73,7 @@
     }
 
     .especificacoes picture img {
-        max-width: 520px;
+        max-width: 640px;
     }
 
     .especificacoes .especDiv {

@@ -844,7 +844,7 @@ class JaTenho extends React.Component {
                             <div className="videos__wrap-txt">
                                 <h2>Dicas para aproveitar ao máximo a sua nova geladeira</h2>
                                 <p>Confira o conteúdo especial da Brastemp para novos donos.</p>
-                                <h3>Como solicitar a instalação da minha geladeira?</h3>
+                                <h3>Como solicitar a instalação⁴ da minha geladeira?</h3>
                             </div>
                             <div onClick={() => this.onClickShow("video1","como_solicitar_a_instalacao_da_minha_geladeira")} className="videos__play">
                                 <span className="videos__play-border"></span>
@@ -957,6 +957,36 @@ class JaTenho extends React.Component {
                         {this.postArrow()}
                     </div>
                         <Slider ref={c => (this.slider = c)} {...settings}>
+                        <div className="posts__itens" >
+                                <a href="https://www.brastemp.com.br/experience/tech/temperatura-ideal-para-geladeira" className="posts__itens-img" title="Link para o Post">
+                                    <Picture
+                                        sources = {[
+                                            {
+                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/Post05.jpg",
+                                                media: "(max-width: 767px)",
+                                            },
+                                            {
+                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/Post05.jpg",
+                                                media: "(min-width: 1024px)",
+                                            },
+                                            {
+                                                srcSet: "https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/Post05.jpg",
+                                                media: "(min-width: 768px)",
+                                            },
+                                        ]}
+                                    />
+                                </a>
+                                <div className="posts__itens-txt">
+                                    <h1>A temperatura ideal para geladeira!</h1>
+                                    <small>08/10/2020 • Tech</small>
+                                    <p>
+                                    Você sabe a temperatura ideal de sua geladeira? Veja como aproveitar o melhor da performance do seu eletrodoméstico e conheça a geladeira Brastemp do MasterChef Brasil – líder em tecnologia.
+                                    </p>
+                                    <a href="https://www.brastemp.com.br/experience/tech/temperatura-ideal-para-geladeira"  title="Continuar lendo">
+                                        Continuar lendo
+                                    </a>
+                                </div>
+                            </div>
                             <div className="posts__itens" >
                                 <a href="https://www.brastemp.com.br/experience/casa-e-decor/como-organizar-geladeira-dicas-simples-para-nao-errar-mais" className="posts__itens-img" title="Link para o Post">
                                     <Picture
@@ -985,7 +1015,7 @@ class JaTenho extends React.Component {
                                         Dê uma olhada nas mídias sociais e isso parecerá 
                                         cada vez mais preciso...
                                     </p>
-                                    <a href="#"  title="Continuar lendo">
+                                    <a href="https://www.brastemp.com.br/experience/casa-e-decor/como-organizar-geladeira-dicas-simples-para-nao-errar-mais"  title="Continuar lendo">
                                         Continuar lendo
                                     </a>
                                 </div>
@@ -1017,7 +1047,7 @@ class JaTenho extends React.Component {
                                         Mesmo assim, provavelmente, você não limpa com a mesma 
                                         frequência que outras superfícies domésticas.
                                     </p>
-                                    <a href="" className="txt"  title="Continuar lendo">
+                                    <a href="https://www.brastemp.com.br/experience/casa-e-decor/como-limpar-geladeira" className="txt"  title="Continuar lendo">
                                         Continuar lendo
                                     </a>
                                 </div>
@@ -1055,7 +1085,7 @@ class JaTenho extends React.Component {
                                 </div>
                             </div>
                             <div className="posts__itens" >
-                                <a href="https://www.brastemp.com.br/experience/gastronomia/receitas-de-drinks" className="posts__itens-img" title="Link para o Post">
+                                <a href="https://www.brastemp.com.br/experience/tech/da-geladeira-a-lava-louca-os-utensilios-que-agucam-os-5-sentidos-na-cozinha" className="posts__itens-img" title="Link para o Post">
                                     <Picture
                                         sources = {[
                                             {
@@ -1081,7 +1111,7 @@ class JaTenho extends React.Component {
                                         Talvez você só queira aprender a arte do bartender 
                                         e impressionar algum convidado especial.
                                     </p>
-                                    <a href="" className="txt"  title="Continuar lendo">
+                                    <a href="https://www.brastemp.com.br/experience/tech/da-geladeira-a-lava-louca-os-utensilios-que-agucam-os-5-sentidos-na-cozinha" className="txt"  title="Continuar lendo">
                                         Continuar lendo
                                     </a>
                                 </div>
@@ -1089,6 +1119,9 @@ class JaTenho extends React.Component {
                         </Slider>
                     
                 </section>
+                <div className="small__texts">
+                    <small>⁴*É necessário que o fornecimento de água tenha uma pressão de 10 a 80 metros de coluna de água (m.c.a), para que o sistema de purificação de água funcione adequadamente.</small>
+                </div>
                 <Mutation mutation={ClientesJupter}>
                     {ClientesJupter => {
                         this.ClientesJupter = ClientesJupter;

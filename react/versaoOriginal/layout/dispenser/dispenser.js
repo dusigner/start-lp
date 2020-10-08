@@ -207,7 +207,7 @@ class Dispenser extends React.Component {
         return (
             <div id="dispenser-de-agua-e-gelo" className="dispenser-de-agua-e-gelo section">
 
-                <Title setClass="center" textMF="Dispenser de água e gelo" textDF="Dispenser de água e gelo"/>
+                <Title setClass="center" textMF="Dispenser de água e gelo⁴" textDF="Dispenser de água e gelo⁴"/>
 
                 {/* <p>Tenha água fresca e mais de 1,5kg de gelo por <br className="mobile"></br> dia e ainda <br className="desktop"></br> escolha entre gelo em cubos ou <br className="mobile"></br> gelo picado</p> */}
                 <p>

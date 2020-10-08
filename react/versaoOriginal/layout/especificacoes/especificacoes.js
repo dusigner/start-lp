@@ -345,6 +345,19 @@ class EspecificacoesTecnicas extends React.Component {
                     <dd>127 V - A</dd>
                     <dt>Classificação <br className="mobile"></br> energética</dt>
                     <dd>220 V - A</dd>
+                    <dt>Pressão mínima de água⁴</dt>
+                    <dd>
+                        10 metros de coluna de água (m.c.a)<br/>
+                        100 kPa<br/>
+                        1 bar
+                    </dd>
+                    <dt>Pressão máxima de água⁴</dt>
+                    <dd>
+                        10 metros de coluna de água (m.c.a)<br/>
+                        100 kPa<br/>
+                        8 bar
+                    </dd>
+
                 </dl>
 
                 <Picture

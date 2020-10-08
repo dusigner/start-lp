@@ -540,3 +540,12 @@
         text-align: left;
     }
 }
+
+/* Disclaimers */
+
+.ja-tenho.section .small__texts {
+    background-color: #000;
+    padding: 0 0 20px;
+    width: calc(100% - 20px);
+    margin: 0 auto;
+}

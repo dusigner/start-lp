@@ -517,7 +517,7 @@ class Scrollvideo extends React.Component {
                                 <h3>MODO<br></br>FREEZER</h3>
                                 <p className={`${this.state.value > 550 && this.state.value < 740 ? "active" : "" }`}>-7°C</p>
                                 <p className={`${this.state.value > 740 && this.state.value < 920 ? "active" : "" }`}>-12°C</p>
-                                <p className={`${this.state.value > 920 ? "active" : "" }`}>-16°C a<br></br>22°C</p>
+                                <p className={`${this.state.value > 920 ? "active" : "" }`}>-16°C a<br></br>-22°C</p>
                             </div>
                             <div className="bg-filter"></div>
                         </div>

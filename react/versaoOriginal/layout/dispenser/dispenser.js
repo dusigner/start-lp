@@ -32,7 +32,7 @@ class Dispenser extends React.Component {
                 if (element.dataset.agua == "true") {
                     element.classList.add('active');
                     target.src = agua;
-                    if (versao == 'video'){
+                    if (versao == 'qrcode'){
                         dataLayer.push({
                             event: 'generic',
                             category: 'jupiter_inverse4_lp_external',

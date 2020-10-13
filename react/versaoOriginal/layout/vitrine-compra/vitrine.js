@@ -39,6 +39,12 @@ class Vitrine extends React.Component {
                                     action: 'visibility_vitrine ',
                                     label: '1'
                                 });
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_vitrine_fotos ',
+                                    label: 'foto-0',
+                                });
                             }, 1000);
                             vali1 = 1;
                         }
@@ -72,6 +78,12 @@ class Vitrine extends React.Component {
                                     category: 'jupiter_inverse4_lp_internal_desktop',
                                     action: 'visibility_vitrine',
                                     label: '1'
+                                });
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_vitrine_fotos ',
+                                    label: 'foto-0',
                                 });
                             }, 1000);
                             vali1 = 1;

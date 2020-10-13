@@ -93,6 +93,33 @@ class JaTenho extends React.Component {
                 formError: true,
                 formSuccess: false
             })
+
+            if(this.props.versao == "video"){
+                if(window.innerWidth < 1025){
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_mobile',
+                        action: 'newsletter_inverse4 ',
+                        label: 'preencha_todos_os_campos_corretamente'
+                    })
+                } else {
+                    dataLayer.push({
+                        event: 'generic',
+                        category: 'jupiter_inverse4_lp_internal_Desktop',
+                        action: 'newsletter_inverse4 ',
+                        label: 'preencha_todos_os_campos_corretamente'
+                    })
+                }
+            }
+
+            if(this.props.versao == "qrcode"){
+                dataLayer.push({
+                    event: 'generic',
+                    category: 'jupiter_inverse4_lp_external',
+                    action: 'newsletter_inverse4 ',
+                    label: 'preencha_todos_os_campos_corretamente'
+                })
+            }
         }
     }
 
@@ -434,7 +461,9 @@ class JaTenho extends React.Component {
 
         // Inicio Tag
         var secc1,secc4,secc10;
+        let vali1=0,vali2=0,vali3=0;
         let valii1=0,valii2=0,valii3=0;
+        let valiii1=0,valiii2=0,valiii3=0;
         var versao = this.props.versao;
 
         const observer1 = new IntersectionObserver(function(entries) {
@@ -478,7 +507,7 @@ class JaTenho extends React.Component {
 
                 if (versao == 'video'){
                     if (window.innerWidth < 1025){
-                        if (valii1 == 0){
+                        if (vali1 == 0){
                             secc1 = setTimeout(()=>{
                                 dataLayer.push({
                                     event: 'generic',
@@ -487,9 +516,9 @@ class JaTenho extends React.Component {
                                     label: '1'
                                 });
                             }, 1000)
-                            valii1 = 1;
+                            vali1 = 1;
                         }
-                        if (valii2 == 0){
+                        if (vali2 == 0){
                             secc4 = setTimeout(()=>{ 
                                 dataLayer.push({
                                     event: 'generic',
@@ -498,9 +527,9 @@ class JaTenho extends React.Component {
                                     label: '1'
                                 });
                             }, 4000);
-                            valii2 = 1;
+                            vali2 = 1;
                         }
-                        if (valii3 == 0){
+                        if (vali3 == 0){
                             secc10 = setTimeout(()=>{ 
                                 dataLayer.push({
                                     event: 'generic',
@@ -509,10 +538,10 @@ class JaTenho extends React.Component {
                                     label: '1'
                                 });
                             }, 10000);
-                            valii3 = 1;
+                            vali3 = 1;
                         }
                     } else {
-                        if (valii1 == 0){
+                        if (vali1 == 0){
                             secc1 = setTimeout(()=>{
                                 dataLayer.push({
                                     event: 'generic',
@@ -521,9 +550,9 @@ class JaTenho extends React.Component {
                                     label: '1'
                                 });
                             }, 1000)
-                            valii1 = 1;
+                            vali1 = 1;
                         }
-                        if (valii2 == 0){
+                        if (vali2 == 0){
                             secc4 = setTimeout(()=>{ 
                                 dataLayer.push({
                                     event: 'generic',
@@ -532,9 +561,9 @@ class JaTenho extends React.Component {
                                     label: '4'
                                 });
                             }, 4000);
-                            valii2 = 1;
+                            vali2 = 1;
                         }
-                        if (valii3 == 0){
+                        if (vali3 == 0){
                             secc10 = setTimeout(()=>{ 
                                 dataLayer.push({
                                     event: 'generic',
@@ -543,7 +572,7 @@ class JaTenho extends React.Component {
                                     label: '10'
                                 });
                             }, 10000);
-                            valii3 = 1;
+                            vali3 = 1;
                         }
                     }
                 }
@@ -672,9 +701,357 @@ class JaTenho extends React.Component {
                 clearTimeout(secc10);
             }
         }, { threshold: [0.5] });
+
+
+        const observer3 = new IntersectionObserver(function(entries) {
+            if(entries[0].isIntersecting === true) {
+                
+                if (versao == 'video'){
+                    if (valiii1 == 0){
+                        if(window.innerWidth() < 480){
+                            secc1 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '1'
+                                })
+                            }, 1000)
+                        } else if (window.innerWidth() > 480 && window.innerWidth() < 600) {
+                            secc1 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '1'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_content_como_organizar_a_geladeira_dicas_simples_para_nao_errar_mais',
+                                    label: '1'
+                                })
+                            }, 1000)
+                        } else {
+                            secc1 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '1'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_content_como_organizar_a_geladeira_dicas_simples_para_nao_errar_mais',
+                                    label: '1'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_content_como_limpar_geladeira_o_guia_para_limpar_seu_refrigerador',
+                                    label: '1'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_content_da_geladeira_a_lava_louca_os_utensilios_que_agucam_os_5_sentidos_na_cozinha',
+                                    label: '1'
+                                })
+                            }, 1000)
+                        }
+                        valiii1 = 1;
+                    }
+                    if (valiii2 == 0){
+                        if(window.innerWidth() < 480){
+                            secc4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '4'
+                                })
+                            }, 1000)
+                        } else if (window.innerWidth() > 480 && window.innerWidth() < 600) {
+                            secc4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '4'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_content_como_organizar_a_geladeira_dicas_simples_para_nao_errar_mais',
+                                    label: '4'
+                                })
+                            }, 1000)
+                        } else {
+                            secc4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '4'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_content_como_organizar_a_geladeira_dicas_simples_para_nao_errar_mais',
+                                    label: '4'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_content_como_limpar_geladeira_o_guia_para_limpar_seu_refrigerador',
+                                    label: '4'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_content_da_geladeira_a_lava_louca_os_utensilios_que_agucam_os_5_sentidos_na_cozinha',
+                                    label: '4'
+                                })
+                            }, 1000)
+                        }
+                        valiii2 = 1;
+                    }
+                    if (valiii3 == 0){
+                        if(window.innerWidth() < 480){
+                            secc10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '10'
+                                })
+                            }, 1000)
+                        } else if (window.innerWidth() > 480 && window.innerWidth() < 600) {
+                            secc10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '10'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_mobile',
+                                    action: 'visibility_content_como_organizar_a_geladeira_dicas_simples_para_nao_errar_mais',
+                                    label: '10'
+                                })
+                            }, 1000)
+                        } else {
+                            secc10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '10'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_content_como_organizar_a_geladeira_dicas_simples_para_nao_errar_mais',
+                                    label: '10'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_content_como_limpar_geladeira_o_guia_para_limpar_seu_refrigerador',
+                                    label: '10'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_internal_desktop',
+                                    action: 'visibility_content_da_geladeira_a_lava_louca_os_utensilios_que_agucam_os_5_sentidos_na_cozinha',
+                                    label: '10'
+                                })
+                            }, 1000)
+                        }
+                        valiii3 = 1;
+                    }
+                }
+
+                if (versao == 'qrcode'){
+                    if (valiii1 == 0){
+                        if(window.innerWidth() < 480){
+                            secc1 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '1'
+                                })
+                            }, 1000)
+                        } else if (window.innerWidth() > 480 && window.innerWidth() < 600) {
+                            secc1 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '1'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_como_organizar_a_geladeira_dicas_simples_para_nao_errar_mais',
+                                    label: '1'
+                                })
+                            }, 1000)
+                        } else {
+                            secc1 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '1'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_como_organizar_a_geladeira_dicas_simples_para_nao_errar_mais',
+                                    label: '1'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_como_limpar_geladeira_o_guia_para_limpar_seu_refrigerador',
+                                    label: '1'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_da_geladeira_a_lava_louca_os_utensilios_que_agucam_os_5_sentidos_na_cozinha',
+                                    label: '1'
+                                })
+                            }, 1000)
+                        }
+                        valiii1 = 1;
+                    }
+                    if (valiii2 == 0){
+                        if(window.innerWidth() < 480){
+                            secc4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '4'
+                                })
+                            }, 1000)
+                        } else if (window.innerWidth() > 480 && window.innerWidth() < 600) {
+                            secc4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '4'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_como_organizar_a_geladeira_dicas_simples_para_nao_errar_mais',
+                                    label: '4'
+                                })
+                            }, 1000)
+                        } else {
+                            secc4 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '4'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_como_organizar_a_geladeira_dicas_simples_para_nao_errar_mais',
+                                    label: '4'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_como_limpar_geladeira_o_guia_para_limpar_seu_refrigerador',
+                                    label: '4'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_da_geladeira_a_lava_louca_os_utensilios_que_agucam_os_5_sentidos_na_cozinha',
+                                    label: '4'
+                                })
+                            }, 1000)
+                        }
+                        valiii2 = 1;
+                    }
+                    if (valiii3 == 0){
+                        if(window.innerWidth() < 480){
+                            secc10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '10'
+                                })
+                            }, 1000)
+                        } else if (window.innerWidth() > 480 && window.innerWidth() < 600) {
+                            secc10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '10'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_como_organizar_a_geladeira_dicas_simples_para_nao_errar_mais',
+                                    label: '10'
+                                })
+                            }, 1000)
+                        } else {
+                            secc10 = setTimeout(()=>{
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_temperatura_ideal_para_geladeira',
+                                    label: '10'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_como_organizar_a_geladeira_dicas_simples_para_nao_errar_mais',
+                                    label: '10'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_como_limpar_geladeira_o_guia_para_limpar_seu_refrigerador',
+                                    label: '10'
+                                })
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'visibility_content_da_geladeira_a_lava_louca_os_utensilios_que_agucam_os_5_sentidos_na_cozinha',
+                                    label: '10'
+                                })
+                            }, 1000)
+                        }
+                        valiii3 = 1;
+                    }
+                }
+
+            } else {
+                clearTimeout(secc1);
+                clearTimeout(secc4);
+                clearTimeout(secc10);
+            }
+        }, { threshold: [0.5] });
         
         observer1.observe(document.querySelector("#banner"));
         observer2.observe(document.querySelector("#newsletter"));
+        observer3.observe(document.querySelector("#posts"));
         //Fim tag
 
     }
@@ -765,16 +1142,15 @@ class JaTenho extends React.Component {
                                         label: 'ver_mais'
                                     })
                                 }
-                                if (this.props.versao == "qrcode"){
-                                    dataLayer.push({
-                                        event: 'generic',
-                                        category: 'jupiter_inverse4_lp_external',
-                                        action: 'click_content_ver_mais ',
-                                        label: 'ver_mais'
-                                    })
-                                }
                             }
-                            
+                            if (this.props.versao == "qrcode"){
+                                dataLayer.push({
+                                    event: 'generic',
+                                    category: 'jupiter_inverse4_lp_external',
+                                    action: 'click_content_ver_mais ',
+                                    label: 'ver_mais'
+                                })
+                            }
                         }}>Ver mais</a>
                     </div>
                     <Picture
@@ -948,7 +1324,7 @@ class JaTenho extends React.Component {
                         </div>
                     </div>
                 </section>
-                <section className="posts">
+                <section id="posts" className="posts">
                     <div className="posts__bg">
                     </div>
 

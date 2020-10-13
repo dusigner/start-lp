@@ -160,7 +160,7 @@ class versaoOriginal extends React.Component {
 											onClick={(e) => {this.handleClick(e)}} 
 											href='#geladeira-inverse-4' 
 											name="geladeira-inverse-4"
-											className={`${this.state.jatenho ? "links menu__title tagMenu" : "links menu__title" }`} 
+											className={`${this.state.jatenho ? "links menu__title tagMenu" : "links menu__title tagMenu" }`} 
 											data-tag="click_geladeira_4_portas">
 											Geladeira 4 Portas
 										</a>
@@ -236,8 +236,8 @@ class versaoOriginal extends React.Component {
 						<ConvertibleSpace versao={this.props.versao}/>
 						<AtencaoDetalhes versao={this.props.versao}/>
 						<Video versao={this.props.versao}/>
-						{ this.props.versao == "qrcode" && <Vitrine/> }
-						{ this.props.versao == "video" && <VitrineCompra/> }
+						{ this.props.versao == "qrcode" && <Vitrine versao={this.props.versao}/> }
+						{ this.props.versao == "video" && <VitrineCompra versao={this.props.versao}/> }
 						<EspecificacoesTecnicas versao={this.props.versao}/>
 						<div className="small__texts">
 							<small>¹*Baseado em testes internos feitos com o modelo com pressão de água de 20 psi (14mca) : armazenamento de gelo de até 1,3 kg de uma vez/capacidade de fabricação de gelo de até 1,6kg em 24 horas</small>

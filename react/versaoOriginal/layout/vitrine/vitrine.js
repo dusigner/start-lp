@@ -39,6 +39,12 @@ class Vitrine extends React.Component {
                                 action: 'visibility_vitrine ',
                                 label: '1'
                             });
+                            dataLayer.push({
+                                event: 'generic',
+                                category: 'jupiter_inverse4_lp_external',
+                                action: 'visibility_vitrine_fotos ',
+                                label: 'foto-0',
+                            });
                         }, 1000)
                         vali1 = 1;
                     }

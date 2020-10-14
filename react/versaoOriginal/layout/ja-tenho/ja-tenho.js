@@ -1064,31 +1064,62 @@ class JaTenho extends React.Component {
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 1,
-            beforeChange: () => {
-                if(this.props.versao=="video"){
-                    if(window.innerWidth < 1025){
+            beforeChange: (current, next) => {
+
+                if ( next < current || (next == 4 && current == 0) ) {
+                    if(this.props.versao=="video"){
+                        if(window.innerWidth < 1025){
+                            dataLayer.push({
+                                event: 'generic',
+                                  category: 'jupiter_inverse4_lp_internal_mobile',
+                                  action: 'click_content_arrows ',
+                                  label: 'Voltar '
+                            })
+                        } else {
+                            dataLayer.push({
+                                event: 'generic',
+                                  category: 'jupiter_inverse4_lp_internal_Desktop',
+                                  action: 'click_content_arrows ',
+                                  label: 'Voltar '
+                            })
+                        }
+                    }
+                    if(this.props.versao=="qrcode"){
                         dataLayer.push({
                             event: 'generic',
-                              category: 'jupiter_inverse4_lp_internal_mobile',
+                              category: 'jupiter_inverse4_lp_external',
                               action: 'click_content_arrows ',
-                              label: 'ir ou Voltar '
-                        })
-                    } else {
-                        dataLayer.push({
-                            event: 'generic',
-                              category: 'jupiter_inverse4_lp_internal_Desktop',
-                              action: 'click_content_arrows ',
-                              label: 'ir ou Voltar '
+                              label: 'Voltar '
                         })
                     }
                 }
-                if(this.props.versao=="qrcode"){
-                    dataLayer.push({
-                        event: 'generic',
-                          category: 'jupiter_inverse4_lp_external',
-                          action: 'click_content_arrows ',
-                          label: 'ir ou Voltar '
-                    })
+
+                if ( next > current || (current == 4 && next == 0 ) ) {
+                    if(this.props.versao=="video"){
+                        if(window.innerWidth < 1025){
+                            dataLayer.push({
+                                event: 'generic',
+                                  category: 'jupiter_inverse4_lp_internal_mobile',
+                                  action: 'click_content_arrows ',
+                                  label: 'ir'
+                            })
+                        } else {
+                            dataLayer.push({
+                                event: 'generic',
+                                  category: 'jupiter_inverse4_lp_internal_Desktop',
+                                  action: 'click_content_arrows ',
+                                  label: 'ir'
+                            })
+                        }
+                    }
+                    if(this.props.versao=="qrcode"){
+                        dataLayer.push({
+                            event: 'generic',
+                              category: 'jupiter_inverse4_lp_external',
+                              action: 'click_content_arrows ',
+                              label: 'ir'
+                        })
+                    }
                 }
                 
             },

@@ -13,9 +13,9 @@
     z-index: 3 !important;
 }
 */
-body.bg-base {
+/* body.bg-base {
     overflow: hidden;
-}
+} */
 @media (min-width: 1025px) {
     .versaoOriginal {
         display: none;

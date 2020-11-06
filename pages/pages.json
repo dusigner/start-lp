@@ -1,29 +1,20 @@
 {
   "routes": {
-    "store/versaoOriginal": {
-      "path": "/eletrodomesticos/geladeira---refrigerador/4-portas"
-    },
-    "store/versaoQrcode": {
-      "path": "/inverse4"
+    "store/bblend": {
+      "path": "/eletrodomesticos/catbblend"
     }
   },
   "pages": {
-    "store/versaoOriginal": [
+    "store/bblend": [
       {
         "name": "Brastemp",
-        "template": "versaoOriginal"
-      }
-    ],
-    "store/versaoQrcode": [
-      {
-        "name": "Brastemp",
-        "template": "versaoQrcode"
+        "template": "bblend"
       }
     ]
   },
   "templates": {
-    "versaoOriginal": {
-      "component": "versaoOriginal",
+    "bblend": {
+      "component": "bblend",
       "extensions": {
         "header": {
           "component": "brastemp.header/Header"
@@ -33,23 +24,8 @@
         }
       },
       "props": {
-        "title": "Geladeira 4 Portas: Geladeira Inverse",
-        "description": "Conheça a nova Geladeira Brastemp Inverse: Confira o novo modelo de Geladeira 4 portas com Freezer Embaixo e degelo Frost Free. Clique já!"
-      }
-    },
-    "versaoQrcode": {
-      "component": "versaoQrcode",
-      "extensions": {
-        "header": {
-          "component": "brastemp.header/Header"
-        },
-        "footer": {
-          "component": "brastemp.footer/Footer"
-        }
-      },
-      "props": {
-        "title": "Geladeira Inverse: Geladeira 500 Litros",
-        "description": "Conheça a nova Geladeira 4 Portas: Confira o novo modelo de Geladeira Inverse com 500 litros e mais compartimentos para refrigerar seus alimentos. Clique já!"
+        "title": "Bblend",
+        "description": "Bblend. Clique já!"
       }
     }
   }

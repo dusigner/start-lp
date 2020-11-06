@@ -1,9 +1,0 @@
-mutation saveClientMasterData($firstName: String $email: String) {
-    saveClientMasterData(firstName: $firstName email: $email) {
-        email
-        firstName
-        Id
-        Message
-        Message
-    }
-}

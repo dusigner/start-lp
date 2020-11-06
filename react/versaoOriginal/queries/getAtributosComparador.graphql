@@ -1,6 +1,0 @@
-query variables($skus: [String]!)
-{
-  getAtributosComparador(skus:$skus){
-    attr
-  }
-} 

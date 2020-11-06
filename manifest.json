@@ -1,16 +1,16 @@
 {
   "vendor": "brastemp",
-  "name": "lp-brastemp-lancamentorefri",
-  "version": "0.3.6",
-  "title": "Brastemp Lançamento Refrigeradora",
-  "description": "Landing Page Lançamento Refrigeradora",
+  "name": "lp-brastemp-bblendlayout",
+  "version": "0.1.1",
+  "title": "Brastemp Categoria Bblend",
+  "description": "Landing Page Categoria Bblend",
   "defaultLocale": "pt-BR",
   "categories": [],
   "builders": {
     "pages": "0.x",
     "react": "2.x"
   },
-  "mustUpdateAt": "2020-08-13",
+  "mustUpdateAt": "2020-11-06",
   "registries": [
     "smartcheckout"
   ],
@@ -26,9 +26,6 @@
     "brastemp.components": "1.x",
     "brastemp.queries": "1.x",
     "brastemp.utils": "1.x",
-    "brastemp.ecohouse-pj-components": "1.x",
-    "brastemp.ecohouse-pj-queries": "1.x",
-    "brastemp.ecohouse-pj-utils": "1.x",
     "brastemp.layout-context": "1.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"

@@ -1,0 +1,8 @@
+.main {
+    background: #000;
+}
+@media (min-width: 1025px) {
+    .main {
+        background: #000;
+    }
+}
